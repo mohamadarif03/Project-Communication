@@ -11,6 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+        <script src="https://cdn.tailwindcss.com"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- App css -->
