@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CommunicationController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RuleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 });
+
+Route::get('/dashboard',[Controller::class,'index']);
+Route::get('/dashboardadmin',[Controller::class,'admin']);
+Route::get('/role',[RoleController::class,'index']);
+Route::get('/rule',[RuleController::class,'index']);
+Route::get('/cummunication-type',[CommunicationController::class,'index']);
+Route::get('/users',[Controller::class,'users']);

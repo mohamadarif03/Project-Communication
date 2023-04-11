@@ -100,6 +100,14 @@ body {
   width: 20px;
   font-size: 18px;
 }
+#sidebar-menu > ul > li > a svg {
+  display: inline-block;
+  line-height: 1.0625rem;
+  margin: 0 10px 0 3px;
+  text-align: center;
+  width: 20px;
+  font-size: 18px;
+}
 #sidebar-menu > ul > li > a .drop-arrow {
   float: right;
 }
