@@ -24,7 +24,7 @@
                     class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                     type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                     data-te-ripple-init data-te-ripple-color="light">
-                    Dropdown button
+                    Communication type
                     <span class="ml-2 w-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                             class="h-5 w-5">

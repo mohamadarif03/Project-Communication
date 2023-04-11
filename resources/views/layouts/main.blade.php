@@ -28,55 +28,47 @@
                 <ul class="list-unstyled topnav-menu float-right mb-0">
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="mdi mdi-email-outline noti-icon"></i>
+                            <i class="mdi mdi-bell-outline noti-icon"></i>
                             <span class="noti-icon-badge"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-lg">
                             <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5 class="font-16 text-white m-0">
-                                    <span class="float-right">
-                                        <a href="#" class="text-white">
-                                            <small>Clear All</small>
-                                        </a>
-                                    </span>Messages
-                                </h5>
-                            </div>
+                           
 
                             <div class="slimscroll noti-scroll">
 
                                 <div class="inbox-widget">
                                     <a href="#">
                                         <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg" class="rounded-circle" alt=""></div>
+                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg" class="rounded-lg" alt=""></div>
                                             <p class="inbox-item-author">Chadengle</p>
                                             <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
                                         </div>
                                     </a>
                                     <a href="#">
                                         <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="rounded-circle" alt=""></div>
+                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="rounded-lg" alt=""></div>
                                             <p class="inbox-item-author">Tomaslau</p>
                                             <p class="inbox-item-text text-truncate">I've finished it! See you so...</p>
                                         </div>
                                     </a>
                                     <a href="#">
                                         <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="rounded-circle" alt=""></div>
+                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="rounded-lg" alt=""></div>
                                             <p class="inbox-item-author">Stillnotdavid</p>
                                             <p class="inbox-item-text text-truncate">This theme is awesome!</p>
                                         </div>
                                     </a>
                                     <a href="#">
                                         <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="rounded-circle" alt=""></div>
+                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="rounded-lg" alt=""></div>
                                             <p class="inbox-item-author">Kurafire</p>
                                             <p class="inbox-item-text text-truncate">Nice to meet you</p>
                                         </div>
                                     </a>
                                     <a href="#">
                                         <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="rounded-circle" alt=""></div>
+                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="rounded-lg" alt=""></div>
                                             <p class="inbox-item-author">Shahedk</p>
                                             <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
 
@@ -86,10 +78,10 @@
 
                             </div>
                             <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item text-primary notify-item notify-all">
-                                View all
+                            <div class="dropdown-item text-primary notify-item notify-all" style="text-align: center">
+                                Read all
                                 <i class="fi-arrow-right"></i>
-                            </a>
+                            </div>
                         </div>
                     </li>
 
@@ -101,9 +93,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow text-white m-0">Welcome !</h6>
-                            </div>
+                            
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -170,7 +160,7 @@
                             <li class="menu-title">Pages</li>
 
                             <li class="@yield('Dashboard.li')">
-                                <a href="index.html" class="@yield('Dashboard.a')">
+                                <a href="dashboardadmin" class="@yield('Dashboard.a')">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Dashboard </span>
                                 </a>
@@ -201,7 +191,7 @@
                             </li>                         
                             <li>
                                 <a href="calendar.html">
-                                    <i class="mdi mdi-account"></i>
+                                    <i class="mdi mdi-dots-vertical"></i>
                                     <span> User </span>
                                 </a>
                             </li>
