@@ -16,7 +16,7 @@
         <div class="flex">
             <div class="relative mr-4" data-te-dropdown-ref>
                 <button
-                    class="flex items-center whitespace-nowrap rounded bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
+                    class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                     type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                     data-te-ripple-init data-te-ripple-color="light">
                     Dropdown button
@@ -60,6 +60,7 @@
                                 <tr>
                                     <th scope="col" class="px-6 py-4">#</th>
                                     <th scope="col" class="px-6 py-4">Name</th>
+                                    <th scope="col" class="px-6 py-4">Color</th>
                                     <th scope="col" class="px-6 py-4">Action</th>
                                     
                                 </tr>
@@ -68,6 +69,9 @@
                                 <tr class="border-b border-dashed dark:border-neutral-500">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
                                     <td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">Mark</td>
+                                    <td class="whitespace-nowrap px-6 py-4">
+                                        <div class="rounded-circle w-8 h-8" style=" background-color:rgb(255, 72, 0);"></div>
+                                    </td>
                                     <td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                         <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                       </svg>
@@ -83,6 +87,9 @@
                                 <tr class="border-b border-dashed dark:border-neutral-500">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
                                     <td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">Jacob</td>
+                                    <td class="whitespace-nowrap px-6 py-4">
+                                        <div class="rounded-circle w-8 h-8" style=" background-color:rgb(9, 255, 0);"></div>
+                                    </td>
                                     <td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                         <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                       </svg>
@@ -98,6 +105,9 @@
                                 <tr class="border-b border-dashed dark:border-neutral-500">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
                                     <td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">Larry</td>
+                                    <td class="whitespace-nowrap px-6 py-4">
+                                        <div class="rounded-circle w-8 h-8" style=" background-color:aqua;"></div>
+                                    </td>
                                     <td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                         <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                       </svg>
