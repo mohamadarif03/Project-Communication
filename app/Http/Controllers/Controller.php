@@ -18,4 +18,7 @@ class Controller extends BaseController
     public function admin(){
         return view('admin.dashboard');
     }
+    public function users(){
+        return view('admin.users');
+    }
 }
