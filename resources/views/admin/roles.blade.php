@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('Roles.li','mm-active')
 @section('Roles.a','active')
+
 @section('content')
 <div class="content">
 
@@ -15,7 +16,7 @@
         <div class="flex">
             <div class="relative mr-4" data-te-dropdown-ref>
                 <button
-                    class="flex items-center whitespace-nowrap rounded bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
+                    class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                     type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                     data-te-ripple-init data-te-ripple-color="light">
                     Dropdown button
@@ -116,7 +117,5 @@
             </div>
         </div>
     </div>
-
-
 </div> 
 @endsection

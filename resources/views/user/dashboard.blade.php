@@ -1,8 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="content">
-                    
+<div class="content">                 
     <!-- Start Content-->
     <div class="container-fluid">
         <h1 class="text-xxl font-bold mb-2">Hi, Jenifer</h1>
