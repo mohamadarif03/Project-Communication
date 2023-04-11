@@ -25,5 +25,5 @@ Route::get('/dashboard',[Controller::class,'index']);
 Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
 Route::get('/rule',[RuleController::class,'index']);
-Route::get('/cummunication-type',[CommunicationController::class,'index']);
+Route::get('/communication-type',[CommunicationController::class,'index']);
 Route::get('/users',[Controller::class,'users']);
