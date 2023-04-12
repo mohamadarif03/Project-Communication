@@ -188,7 +188,7 @@
         <div class="flex mt-2 gap-4 items-center">
             <label for="color" class="mb-2 mr-1 text-sm font-medium text-gray-900 ">Color</label>
             <div class="flex rounded-md border" style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
-                <input type="text" class="border-r" id="put" style="background-color: transparent; padding-right: 50px;">
+                <input type="text" class="border-r" id="put" style="background-color: transparent; padding-right: 50px;" disabled>
                 <input type="color" name="" id="get" onchange="fetch()">
             </div>
         </div>
@@ -234,12 +234,12 @@
       <div class="relative p-4">
         <div class="flex gap-4 items-center">
           <label for="update-name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
-          <input type="text" id="update-name" value="" class="bg-gray-50 border-2 border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
+          <input type="text" id="update-name" value="" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
         </div>
         <div class="flex mt-2 gap-4 items-center">
             <label for="color" class="mb-2 mr-1 text-sm font-medium text-gray-900 ">Color</label>
-            <div class="flex rounded-md" style="border: 2px solid gray; box-sizing: border-box; padding: 0; padding-left: 9px;">
-                <input type="text" class="" value="" id="put2" style="background-color: transparent; border-right: 2px solid gray; padding-right: 50px;">
+            <div class="flex rounded-md border" style="box-sizing: border-box; padding: 0; padding-left: 9px;">
+                <input type="text" class="border-r" value="" id="put2" style="background-color: transparent; padding-right: 50px;" disabled>
                 <input type="color" name="" value="" id="get2" onchange="fetch()">
             </div>
         </div>

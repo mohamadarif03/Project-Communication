@@ -169,7 +169,7 @@
       <div class="relative p-4">
         <div class="flex gap-4 items-center">
           <label for="first_name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
-          <input type="text" id="first_name" class="bg-gray-50 border-2 border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
+          <input type="text" id="first_name" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
         </div>
       </div>
 
@@ -213,7 +213,7 @@
       <div class="relative p-4">
         <div class="flex gap-4 items-center">
           <label for="update-name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
-          <input type="text" id="update-name" value="" class="bg-gray-50 border-2 border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
+          <input type="text" id="update-name" value="" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
         </div>
       </div>
 

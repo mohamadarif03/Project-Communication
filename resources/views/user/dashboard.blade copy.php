@@ -160,38 +160,7 @@
                     </div>
                 </div>
             </div>
-            <div class="rounded-md bg-white flex flex-col col-span-2 text-center bg-transparent">
-                <div class="rounded-md my-auto bg-white" style="height: 32%;">
-                    <div class="flex flex-col h-full w-full items-center justify-center">
-                        <div class="">
-                            <h1 class="text-5xl font-bold">29</h1>
-                        </div>
-                        <div class="">
-                            <p class="text-sm font-bold">Total Communication</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-md my-auto bg-white" style="height: 32%;">
-                    <div class="flex flex-col h-full w-full items-center justify-center">
-                        <div class="">
-                            <h1 class="text-5xl font-bold">29</h1>
-                        </div>
-                        <div class="">
-                            <p class="text-sm font-bold">Total Communication</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-md my-auto bg-white" style="height: 32%;">
-                    <div class="flex flex-col h-full w-full items-center justify-center">
-                        <div class="">
-                            <h1 class="text-5xl font-bold">29</h1>
-                        </div>
-                        <div class="">
-                            <p class="text-sm font-bold">Total Communication</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class=" h-96 rounded-md bg-slate-300 col-span-2"></div>
             <div class=" h-96 rounded-md bg-slate-300 col-span-4"></div>
         </div>
     </div> <!-- end container-fluid -->
