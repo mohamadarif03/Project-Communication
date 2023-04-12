@@ -9,7 +9,7 @@
         <div class="container-fluid flex justify-between">
 
             <div class="">
-                <button type="button" data-te-toggle="modal" id="btn-create-modal" data-te-target="#create" data-te-ripple-init
+                <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1" data-te-ripple-init
                     data-te-ripple-color="light"
                     class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+
                     Add
@@ -119,7 +119,8 @@
                     </svg>Search</button>
             </div>
 
-        </div> <!-- end container-fluid -->
+        </div> 
+        <!-- end container-fluid -->
         <div class="flex" style="margin-top: 70px">
             <div class="block rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"
                 style="background-color: #ECFFF4; border: 2px solid #27AE60;">
@@ -183,19 +184,10 @@
 
     </div>
 
-    <button type="button" id="btn-open-modal-create1" data-te-toggle="modal" data-te-target="#create1"
-        data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
-    </button>
-
-
-    <button type="button" id="btn-open-modal-create2" data-te-toggle="modal" data-te-target="#create2"
-        data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
-    </button>
-
-
+    <!--Modal 1-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-        id="create" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+        id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
             <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
@@ -273,14 +265,14 @@
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
-                    <button type="button" id="btn-close-modal1"
+                    <button type="button" id="btn-close-modal-create-step-1"
                         class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Cancel
                     </button>
                     <button type="button"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
-                        data-te-ripple-init data-te-ripple-color="light" id="btn-next">
+                        data-te-ripple-init data-te-ripple-color="light" id="btn-next-create-step-2">
                         Next
                     </button>
                 </div>
@@ -288,13 +280,14 @@
         </div>
     </div>
 
-
-
-
+    <!-- Open Modal 2-->
+    <button type="button" id="btn-open-modal-create-step-2" data-te-toggle="modal" data-te-target="#create-step-2"
+        data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
+    </button>
     <!--Modal 2-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-        id="create1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+        id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
             <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
@@ -362,18 +355,17 @@
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
-                    <button type="button" id="btn-back"
+                    <button type="button" id="btn-back-create-step-1"
                         class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200">
-                        Back1
+                        Back
                     </button>
-                    <button class="hidden w-0 h-0" type="button" id="btn-back-close"
-                        class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
-                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                    <button type="button" id="btn-close-modal-create-step-2"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
+                        class="hidden">
                     </button>
-                    
                     <button type="button"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
-                        data-te-ripple-init data-te-ripple-color="light" id="btn-next1">
+                        data-te-ripple-init data-te-ripple-color="light" id="btn-next-create-step-3">
                         Next
                     </button>
                 </div>
@@ -381,11 +373,14 @@
         </div>
     </div>
 
-
+    <!--Open Modal 3-->
+    <button type="button" id="btn-open-modal-create-step-3" data-te-toggle="modal" data-te-target="#create-step-3"
+        data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
+    </button>
     <!--Modal 3-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-        id="create2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+        id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
             <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
@@ -462,10 +457,14 @@
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
-                    <button type="button" id="btn-back1"
+                    <button type="button" class="hidden w-0 h-0" id="btn-close-modal-create-step-3"
                         class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
-                        Back2
+                    </button>
+                    <button type="button" id="btn-back-create-step-2"
+                        class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                        Back
                     </button>
                     <button type="button"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "

@@ -1,17 +1,20 @@
 new TomSelect('#type')
 
 
-$('#btn-next').click(function(){
-    $('#btn-close-modal1').click()
-    $('#btn-open-modal-create1').click()
+$('#btn-next-create-step-2').click(function(){
+    $('#btn-close-modal-create-step-1').click()
+    $('#btn-open-modal-create-step-2').click()
 })
-$('#btn-next1').click(function(){
-    $('#btn-back').click()
-    $('#btn-open-modal-create2').click()
+$('#btn-next-create-step-3').click(function(){
+    $('#btn-close-modal-create-step-2').click()
+    $('#btn-open-modal-create-step-3').click()
 })
-$('#btn-back').click(function(){
-    $('#btn-create-modal').click()
+
+$('#btn-back-create-step-1').click(function(){
+    $('#btn-close-modal-create-step-2').click()
+    $('#btn-open-modal-create-step-1').click()
 })
-$('#btn-back1').click(function(){
-    $('#btn-open-modal-create1').click()
+$('#btn-back-create-step-2').click(function(){
+    $('#btn-close-modal-create-step-3').click()
+    $('#btn-open-modal-create-step-2').click()
 })

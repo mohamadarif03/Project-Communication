@@ -53,7 +53,8 @@
                 </svg>Search</button>
         </div>
 
-    </div> <!-- end container-fluid -->
+    </div>
+     <!-- end container-fluid -->
     <div class="w-full flex">
 
         <div class="flex flex-col mx-auto rounded-lg" style="background-color: white; margin-top: 10%; width: 95%;">
