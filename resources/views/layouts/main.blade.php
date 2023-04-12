@@ -5,6 +5,7 @@
 <head>
         <meta charset="utf-8" />
         <title>Dashboard | ATN News - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Responsive bootstrap 4 admin template" name="description" />
         <meta content="Coderthemes" name="author" />
@@ -17,7 +18,6 @@
         href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
         <script src="https://cdn.tailwindcss.com/3.3.0"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/inputcolor.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('plugin/sweetalert2/dist/sweetalert2.min.css')}}">
         <!-- App css -->
         <link rel="stylesheet" href="{{asset('plugin/tom-select/dist/css/tom-select.css')}}">
@@ -240,8 +240,6 @@
         </div>
         <!-- END wrapper -->
         <!-- Jquery -->
-        <script src="{{asset('js/inputcolor.js')}}"></script>
-
         <script src="{{asset('plugin/jquery/dist/jquery.min.js')}}"></script>
         <!-- Vendor js -->
         <script src="{{asset('assets/js/vendor.min.js')}}"></script>

@@ -25,7 +25,6 @@ Route::post('/', [AuthController::class, 'authenticating']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 
-
 Route::get('/dashboard',[Controller::class,'index'])->middleware('auth');
 Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
@@ -35,3 +34,6 @@ Route::get('/users',[Controller::class,'users']);
 
 
 Route::get('/communication',[CommunicationController::class,'communication']);
+
+//Role
+Route::post('/store-role',[RoleController::class,'store']);
