@@ -10,8 +10,14 @@
 
             <div class="">
                 <button type="button"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">+
-                    Add</button>
+                id="btn-create"
+                data-te-toggle="modal"
+                data-te-target="#create"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+                class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+
+                Add
+                </button>
             </div>
             <div class="flex">
                 <div class="relative mr-4" data-te-dropdown-ref>
@@ -187,4 +193,61 @@
             </div>
         </div>
     </div>
+
+<!--Modal Create-->
+<div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+id="create"
+tabindex="-1"
+aria-labelledby="exampleModalCenterTitle"
+aria-modal="true"
+role="dialog">
+    <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
+      <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none " style="width: 60%">
+        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+            <!--Modal title-->
+            <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                Add Communication Type
+            </h5>
+            <!--Close button-->
+            <button type="button" class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-modal-dismiss aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!--Modal body-->
+        <div class="relative p-4">
+            <div>
+                <div class="mb-1.5 flex items-center gap-3">
+                    <label for="name" class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Name</label>
+                    <input type="text" id="name" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Name" required>
+                </div>
+                <div class="mb-1.5 flex items-center gap-3">
+                    <label for="email" class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Email</label>
+                    <input type="email" id="email" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Email" required>
+                </div>
+                <div class="mb-1.5 flex items-center gap-3">
+                    <label for="password" class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Password</label>
+                    <input type="password" id="password" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Password" required>
+                </div>
+                <div class="mb-1.5 flex items-center gap-3">
+                    <label for="password_confirmation" class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Password Confirmation</label>
+                    <input type="password" id="password_confirmation" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Password Confirmation" required>
+                </div>
+            </div>    
+        </div>
+
+        <!--Modal footer-->
+        <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+            <button type="button" id="btn-close-modal1" class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                Cancel
+            </button>
+            <button type="button" class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] " id="btn-next">
+                Save
+            </button>
+        </div>
+      </div>
+    </div>
+</div>
 @endsection

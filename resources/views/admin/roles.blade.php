@@ -49,7 +49,8 @@
                 </svg>Search</button>
         </div>
 
-    </div> <!-- end container-fluid -->
+    </div> 
+    <!-- end container-fluid -->
     <div class="w-full flex">
 
         <div class="flex flex-col mx-auto rounded-lg" style="background-color: white; margin-top: 10%; width: 95%;">
@@ -230,7 +231,7 @@
   </div>
 </div>
 
-<!--Modal Update-->
+<!--Modal Delete-->
 <div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
   id="delete"
   tabindex="-1"
