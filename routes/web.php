@@ -5,6 +5,7 @@ use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,9 @@ Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
 Route::get('/rule',[RuleController::class,'index']);
 Route::get('/communication-type',[CommunicationController::class,'index']);
-Route::get('/users',[Controller::class,'users']);
+
+Route::get('/users',[UserController::class,'index']);
+Route::post('/store-user',[UserController::class,'insert'])->name('store-user');
 
 
 Route::get('/communication',[CommunicationController::class,'communication']);
