@@ -20,7 +20,9 @@ return new class extends Migration
             ->references('id')
             ->on('users')
             ->cascadeOnDelete();
-            $table->foreignId('role_id');
+            $table->foreignId('role_id')
+            ->references('id')
+            ->on('roles');
             $table->timestamps();
         });
     }

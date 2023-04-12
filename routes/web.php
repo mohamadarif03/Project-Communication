@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\RoleController;
@@ -17,11 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
 
-Route::get('/dashboard',[Controller::class,'index']);
+Route::get('signin',[AuthController::class,'index'])->name('signin');
+Route::post('signin', [AuthController::class, 'authenticating']);
+
+Route::get('logout', [AuthController::class, 'logout']);
+
+
+
+Route::get('/dashboard',[Controller::class,'index'])->middleware('auth');
 Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
 Route::get('/rule',[RuleController::class,'index']);

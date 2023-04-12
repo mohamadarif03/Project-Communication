@@ -53,9 +53,9 @@
     </div>
     <!-- end container-fluid -->
     <div class="grid mx-3 gap-3 grid-cols-3 mt-4">
-        <div class="col-span-1 border-2 w-full h-36 px-2 py-1 mt-1 rounded-md">
+        <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
             <div class="h-8 p-2 items-center w-full flex" data-te-dropdown-ref>
-                <button class="ml-auto h-5 w-5 rounded-circle bg-gray-200" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                <button class="ml-auto h-5 w-5 rounded-circle bg-transparent" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
                     <svg class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>
                 </button>
                 <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
@@ -98,12 +98,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-1 border-2 w-full h-36 px-2 py-1 mt-1 rounded-md">
+        <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
             <div class="h-8 p-2 items-center w-full flex" data-te-dropdown-ref>
-                <button class="ml-auto h-5 w-5 rounded-circle bg-gray-200" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                <button class="ml-auto h-5 w-5 rounded-circle bg-transparent" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
                     <svg class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>
                 </button>
-                <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none p-2 bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                     aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                     <li>
                             <button class="btn-edit flex items-center" data-name="Larry" data-color="#00ffff">
@@ -143,12 +143,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-1 border-2 w-full h-36 px-2 py-1 mt-1 rounded-md">
+        <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
             <div class="h-8 p-2 items-center w-full flex" data-te-dropdown-ref>
-                <button class="ml-auto h-5 w-5 rounded-circle bg-gray-200" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                <button class="ml-auto h-5 w-5 rounded-circle bg-transparent" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
                     <svg class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>
                 </button>
-                <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none p-1 bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                     aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                     <li>
                             <button class="btn-edit flex items-center" data-name="Larry" data-color="#00ffff">
@@ -188,12 +188,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-span-1 border-2 w-full h-36 px-2 py-1 mt-1 rounded-md">
+        <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
             <div class="h-8 p-2 items-center w-full flex" data-te-dropdown-ref>
-                <button class="ml-auto h-5 w-5 rounded-circle bg-gray-200" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                <button class="ml-auto h-5 w-5 rounded-circle bg-transparent" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
                     <svg class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>
                 </button>
-                <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none p-1 bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                     aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                     <li>
                             <button class="btn-edit flex items-center" data-name="Larry" data-color="#00ffff">
@@ -233,6 +233,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
 

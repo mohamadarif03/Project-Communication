@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreignId('role_id');
             $table->foreign('role_id')
             ->references('id')
-            ->on('role');
+            ->on('roles');
             $table->timestamps();
         });
     }
