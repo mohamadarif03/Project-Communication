@@ -1,3 +1,6 @@
+var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+
 $('.btn-delete').click(function(){
     var name = $(this).data('name')
     $('#communication-name').html(name)
@@ -7,7 +10,7 @@ $('.btn-delete').click(function(){
 $('.btn-edit').click(function(){ 
     var name = $(this).data('name')
     var color = $(this).data('color')
-    $('#get2').val(color)
+    $('#colorupdate').val(color)
     fetch_update()
     $('#put').val(color)
     $('#update-name').val(name)
@@ -15,11 +18,53 @@ $('.btn-edit').click(function(){
 })
 
 function fetch() {
-    var get = document.getElementById("get").value;
-    document.getElementById("put").value = get;
+    var color = document.getElementById("color").value;
+    document.getElementById("put").value = color;
 }
 
 function fetch_update() {
-    var get = document.getElementById("get2").value;
-    document.getElementById("put2").value = get;
+    var colorupdate = document.getElementById("colorupdate").value;
+    document.getElementById("put2").value = colorupdate;
+}
+
+function create(){
+    var type = $('#type').val()
+    var color = $('#color').val()
+    $.ajax({
+        type:'POST',
+        url:'/store-communication-type',
+        data:{
+            _token:csrfToken,
+            type:type,
+            color:color
+        },
+        
+        success:function(response){
+            Swal.fire({
+                title: 'success!',
+                text: 'Success Create New User!',
+                icon: 'success'
+            })
+            $('#type').val('')
+            $('#color').val('')
+
+            $('#btn-close-modal').click()
+            location.reload()
+        },
+        error:function(response){
+            var errors = response.responseJSON.errors;
+            var errorMessage = '';
+
+            $.each(errors, function(key, value) {
+                errorMessage += '<p class="text-red-500">' + value + '</p>';
+            });
+
+            Swal.fire({
+                title: 'Error!',
+                html: errorMessage,
+                // html: response.responseJSON.message,
+                icon: 'error',
+            })
+        }
+    })
 }

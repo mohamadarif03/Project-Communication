@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommunicationController;
+use App\Http\Controllers\CommunicationTypeController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
+use App\Http\Requests\CommunicationTypeRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +32,10 @@ Route::get('/dashboard',[Controller::class,'index'])->middleware('auth');
 Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
 Route::get('/rule',[RuleController::class,'index']);
-Route::get('/communication-type',[CommunicationController::class,'index']);
+
+Route::get('/communication-type',[CommunicationTypeController::class,'index']);
+Route::post('/store-communication-type',[CommunicationTypeController::class,'insert'])->name('store-communication-type');
+
 
 Route::get('/users',[UserController::class,'index']);
 Route::post('/store-user',[UserController::class,'insert'])->name('store-user');

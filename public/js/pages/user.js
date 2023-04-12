@@ -55,30 +55,13 @@ function create(){
 
             Swal.fire({
                 title: 'Error!',
-                // html: errorMessage,
-                html: response.responseJSON.message,
+                html: errorMessage,
+                // html: response.responseJSON.message,
                 icon: 'error',
             })
         }
     })
 }
 
-$(document).ready(function() {
-    $.ajax({
-        url: "{{ route('users') }}", // URL untuk memanggil fungsi getData di Controller
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-            var html = '';
-            $.each(data, function(key, value) {
-                html += '<div class="my-auto">';
-                html += '<h1 class="text-md font-semibold">'+ value.name +'</h1>';
-                html += '<h3 class="text-sm">'+ value.email+ '</h3>';
-                html += '</div>';
-            });
-            $('#get-data-users').html(html); // Masukkan data ke dalam tabel
-        }
-    });
-});
 
 

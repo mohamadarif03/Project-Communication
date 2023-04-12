@@ -15,11 +15,6 @@ class UserController extends Controller
         $data = DB::table('users')->get();
         return view('admin.users', compact('data'));
     }
-    public function getData()
-    {
-        $data = DB::table('users')->get();
-        return response()->json($data);
-    }
     public function insert(UserRequest $request)
     {
         User::create([
