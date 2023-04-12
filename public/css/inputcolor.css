@@ -1,0 +1,18 @@
+#get{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#get::-webkit-color-swatch{
+    border-radius: 2px;
+    border: none;
+}
+#get::-moz-color-swatch{
+    border-radius: 2px;
+    border: none;
+}

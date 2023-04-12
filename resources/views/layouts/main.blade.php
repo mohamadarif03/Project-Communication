@@ -17,6 +17,7 @@
         href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
         <script src="https://cdn.tailwindcss.com/3.3.0"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/inputcolor.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('plugin/sweetalert2/dist/sweetalert2.min.css')}}">
         <!-- App css -->
         <link rel="stylesheet" href="{{asset('plugin/tom-select/dist/css/tom-select.css')}}">
@@ -176,8 +177,8 @@
                                     <span>Roles</span>
                                 </a>
                             </li>
-                            <li class="@yield('Communication.li')">
-                                <a href="communication-type" class="@yield('Communication.a')">
+                            <li class="@yield('Communication.us')">
+                                <a href="communication-type" class="@yield('Communication.u')">
                                     <svg fill="@yield('Communication.svg')" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M204 906q-57-55-90.5-129.5T80 616q0-83 31.5-156T197 333q54-54 127-85.5T480 216q83 0 156 31.5T763 333q54 54 85.5 127T880 616q0 86-33.5 160.5T756 906l-43-43q50-47 78.5-110T820 616q0-142-99-241t-241-99q-142 0-241 99t-99 241q0 74 28.5 137T247 863l-43 43Zm113-113q-35-33-56-78.5T240 616q0-100 70-170t170-70q100 0 170 70t70 170q0 53-21 98.5T643 793l-43-43q28-25 44-59t16-75q0-75-52.5-127.5T480 436q-75 0-127.5 52.5T300 616q0 41 16 75t44 59l-43 43Zm163-97q-33 0-56.5-23.5T400 616q0-33 23.5-56.5T480 536q33 0 56.5 23.5T560 616q0 33-23.5 56.5T480 696Z"/></svg>                                
                                     <span>Communication Type</span>
                                 </a>
@@ -194,10 +195,10 @@
                                     <span>Users</span>
                                 </a>
                             </li>                         
-                            <li>
-                                <a href="calendar.html">
-                                    <i class="mdi mdi-dots-vertical"></i>
-                                    <span> User </span>
+                            <li class="@yield('Communication.us')">
+                                <a href="communication" class="@yield('Communication.u')">
+                                    <svg fill="@yield('Communicationuser.svg')" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M204 906q-57-55-90.5-129.5T80 616q0-83 31.5-156T197 333q54-54 127-85.5T480 216q83 0 156 31.5T763 333q54 54 85.5 127T880 616q0 86-33.5 160.5T756 906l-43-43q50-47 78.5-110T820 616q0-142-99-241t-241-99q-142 0-241 99t-99 241q0 74 28.5 137T247 863l-43 43Zm113-113q-35-33-56-78.5T240 616q0-100 70-170t170-70q100 0 170 70t70 170q0 53-21 98.5T643 793l-43-43q28-25 44-59t16-75q0-75-52.5-127.5T480 436q-75 0-127.5 52.5T300 616q0 41 16 75t44 59l-43 43Zm163-97q-33 0-56.5-23.5T400 616q0-33 23.5-56.5T480 536q33 0 56.5 23.5T560 616q0 33-23.5 56.5T480 696Z"/></svg>                                
+                                    <span>Communication</span>
                                 </a>
                             </li>
                             <li>
@@ -251,6 +252,8 @@
         </div>
         <!-- END wrapper -->
         <!-- Jquery -->
+        <script src="{{asset('js/inputcolor.js')}}"></script>
+
         <script src="{{asset('plugin/jquery/dist/jquery.min.js')}}"></script>
         <!-- Vendor js -->
         <script src="{{asset('assets/js/vendor.min.js')}}"></script>

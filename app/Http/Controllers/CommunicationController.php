@@ -9,4 +9,10 @@ class CommunicationController extends Controller
     public function index(){
         return view('admin.communications');
     }
+
+    public function communication()
+    {
+        return view('user.communications');
+
+    }
 }

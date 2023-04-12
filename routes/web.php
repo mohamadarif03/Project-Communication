@@ -27,3 +27,6 @@ Route::get('/role',[RoleController::class,'index']);
 Route::get('/rule',[RuleController::class,'index']);
 Route::get('/communication-type',[CommunicationController::class,'index']);
 Route::get('/users',[Controller::class,'users']);
+
+
+Route::get('/communication',[CommunicationController::class,'communication']);
