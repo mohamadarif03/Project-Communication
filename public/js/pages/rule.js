@@ -17,7 +17,7 @@ $('#btn-next').click(function(){
 $('#btn-back').click(function(){
     $('#btn-create').click()
 })
-$('#btn-back2').click(function(){
+$('#btn-back-update').click(function(){
     $('#btn-update-modal').click()
 })
 
