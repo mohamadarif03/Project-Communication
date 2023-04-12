@@ -9,17 +9,17 @@
         <div class="container-fluid flex justify-between">
 
             <div class="">
-                <button type="button" data-te-toggle="modal" data-te-target="#exampleModalCenter1" data-te-ripple-init
+                <button type="button" data-te-toggle="modal" data-te-target="#create" data-te-ripple-init
                     data-te-ripple-color="light"
                     class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+
                     Add
                 </button>
-                
+
             </div>
             <div class="flex">
                 <div class="relative mr-2" data-te-dropdown-ref>
                     <button
-                        class="flex items-center whitespace-nowrap rounded bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
+                        class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                         type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                         data-te-ripple-init data-te-ripple-color="light">
                         year
@@ -42,7 +42,7 @@
                 </div>
                 <div class="relative mr-2" data-te-dropdown-ref>
                     <button
-                        class="flex items-center whitespace-nowrap rounded bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
+                        class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                         type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                         data-te-ripple-init data-te-ripple-color="light">
                         month
@@ -65,7 +65,7 @@
                 </div>
                 <div class="relative mr-2" data-te-dropdown-ref>
                     <button
-                        class="flex items-center whitespace-nowrap rounded bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
+                        class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                         type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                         data-te-ripple-init data-te-ripple-color="light">
                         communication type
@@ -88,7 +88,7 @@
                 </div>
                 <div class="relative mr-2" data-te-dropdown-ref>
                     <button
-                        class="flex items-center whitespace-nowrap rounded bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
+                        class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                         type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                         data-te-ripple-init data-te-ripple-color="light">
                         complete
@@ -127,7 +127,7 @@
                 <div class="h-8 p-2 items-center w-full flex justify-between ">
                     <a href=""data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init
                         data-te-ripple-color="light">
-                        <input type="checkbox" style="cursor: pointer;" checked>
+                        <input type="checkbox" class="" style="cursor: pointer;" checked>
                     </a>
                     <p class="rounded-md text-xs text-white py-0.5 px-2" style="background-color: #27AE60">13 May 2023</p>
                 </div>
@@ -182,155 +182,296 @@
         </div>
 
     </div>
+    <button type="button" id="btn-open-modal-create1" data-te-toggle="modal" data-te-target="#create1"
+        data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
+    </button>
+    <button type="button" id="btn-open-modal-create2" data-te-toggle="modal" data-te-target="#create2"
+        data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
+    </button>
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-        id="exampleModalCenter1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
-        role="dialog">
+        id="create" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
-            class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
-            <div
-                class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
-
+            class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
+            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="width: 60%">
+                <div
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                    <!--Modal title-->
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        Add Communication Type
+                    </h5>
+                    <!--Close button-->
+                    <button type="button"
+                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
 
                 <!--Modal body-->
-                <div class="flex">
-                    <div class="relative p-4">
-                        <h5 class="text-xl font-medium leading-normal text-neutral-800" style="margin-bottom: 60px"
-                            id="exampleModalScrollableLabel">
-                            Add Communication
-                        </h5>
-                        <ul class="relative m-0 w-full list-none overflow-hidden p-0 transition-[height] duration-200 ease-in-out"
-                            data-te-stepper-init data-te-stepper-type="vertical">
-                            <!--First item-->
-                            <li data-te-stepper-step-ref
-                                class="relative h-fit after:absolute after:left-[3rem] after:top-[3.9rem] after:mt-px after:h-[calc(100%-2rem)] after:w-px after:bg-[#e0e0e0] after:content-[''] dark:after:bg-neutral-600">
-                                <div data-te-stepper-head-ref
-                                    class="flex items-center p-6 leading-[1.3rem] no-underline after:bg-[#e0e0e0] after:content-['']">
-                                    <span data-te-stepper-head-icon-ref
-                                        class="mr-3 flex h-[3rem] w-[3rem] items-center justify-center rounded-lg text-sm font-medium text-white">
+                <div class="relative p-4">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         1
                                     </span>
-                                    <span data-te-stepper-head-text-ref
-                                        class="text-neutral-500 after:absolute after:flex after:text-[0.8rem] after:content-[data-content] dark:text-gray-900">
-                                        step1
-                                    </span>
-                                </div>
-                                <div data-te-stepper-content-ref
-                                    class="transition-[height, margin-bottom, padding-top, padding-bottom] left-0 overflow-hidden pb-6 pl-[3.75rem] pr-6 ps-1 duration-300 ease-in-out">
-
-                                </div>
-                            </li>
-
-                            <!--Second item-->
-                            <li data-te-stepper-step-ref
-                                class="relative h-fit after:absolute after:left-[2.45rem] after:top-[3.6rem] after:mt-px after:h-[calc(100%-2.45rem)] after:w-px after:bg-[#e0e0e0] after:content-[''] dark:after:bg-neutral-600">
-                                <div data-te-stepper-head-ref
-                                    class="flex items-center p-6 leading-[1.3rem] no-underline after:bg-[#e0e0e0] after:content-['']">
-                                    <span data-te-stepper-head-icon-ref
-                                        class="mr-3 flex h-[3rem] w-[3rem] items-center justify-center rounded-lg bg-[#ebedef] text-sm font-medium text-[#40464f]">
+                                    <h3 class="font-medium leading-tight">Communication</h3>
+                                    <p class="text-sm">Type of Communication</p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         2
                                     </span>
-                                    <span data-te-stepper-head-text-ref
-                                        class="text-neutral-500 after:absolute after:flex after:text-[0.8rem] after:content-[data-content] dark:text-neutral-300">
-                                        step2
-                                    </span>
-                                </div>
-                                <div data-te-stepper-content-ref
-                                    class="transition-[height, margin-bottom, padding-top, padding-bottom] left-0 overflow-hidden pb-6 pl-[3.75rem] pr-6 ps-1 duration-300 ease-in-out">
-
-                                </div>
-                            </li>
-
-                            <!--Third item-->
-                            <li data-te-stepper-step-ref class="relative h-fit">
-                                <div data-te-stepper-head-ref
-                                    class="flex items-center p-6 leading-[1.3rem] no-underline after:bg-[#e0e0e0] after:content-['']">
-                                    <span data-te-stepper-head-icon-ref
-                                        class="mr-3 flex h-[3rem] w-[3rem] items-center justify-center rounded-lg bg-[#ebedef] text-sm font-medium text-[#40464f]">
+                                    <h3 class="font-medium leading-tight">Date</h3>
+                                    <p class="text-sm">communication creation date</p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         3
                                     </span>
-                                    <span data-te-stepper-head-text-ref
-                                        class="text-neutral-500 after:absolute after:flex after:text-[0.8rem] after:content-[data-content] dark:text-neutral-300">
-                                        step3
-                                    </span>
-                                </div>
-                                <div data-te-stepper-content-ref
-                                    class="transition-[height, margin-bottom, padding-top, padding-bottom] left-0 overflow-hidden pb-6 pl-[3.75rem] pr-6 ps-1 duration-300 ease-in-out">
-
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="">
-                        <div class="relative" data-te-dropdown-ref>
-                            <div class="" style="margin-left:20%; margin-top:70%">
-                                <h5 class="text-sm font-medium text-neutral-800"
-                                id="exampleModalScrollableLabel" style="display: flex">
-                                Communication Type
-                            </h3>
-                            <button
-                              class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out motion-reduce:transition-none" style="border: 2px solid black;"
-                              type="button"
-                              id="dropdownMenuButton4"
-                              data-te-dropdown-toggle-ref
-                              aria-expanded="false"
-                              data-te-ripple-init
-                              data-te-ripple-color="light">
-                              Monthly Report
-                              <span class="ml-2 w-2">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  fill="currentColor"
-                                  class="h-5 w-5">
-                                  <path
-                                    fill-rule="evenodd"
-                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                    clip-rule="evenodd" />
-                                </svg>
-                              </span>
-                            </button>
+                                    <h3 class="font-medium leading-tight">Files / Links</h3>
+                                    <p class="text-sm">attachment files or links</p>
+                                </li>
+                            </ol>
                         </div>
+                        <div>
+                            <div class="">
+                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication
+                                    Type</label>
+                                <Select id="type" name="type" class="" placeholder="Choose Type">
+                                    <option value=""></option>
+                                    <option value="Monthly Report">Monthly Report</option>
+                                    <option value="Quarter Report">Quarter Report</option>
+                                </Select>
+                            </div>
+                            <div class="">
+                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">To</label><br>
+                                <input type="text"
+                                    class="peer block min-h-[auto] w-full rounded border-0 bg-gray-200 px-3 py-[0.32rem] leading-[1.6] outline outline-offset-1 outline-gray-300 transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                                    id="exampleFormControlInput1" disabled style="border: 2px solid gray"
+                                    placeholder="Example label" />
 
-                            <ul
-                              class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-                              aria-labelledby="dropdownMenuButton4"
-                              data-te-dropdown-menu-ref>
-                              <li>
-                                <a
-                                  class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                  href="#"
-                                  data-te-dropdown-item-ref
-                                  >Action</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                  href="#"
-                                  data-te-dropdown-item-ref
-                                  >Another action</a
-                                >
-                              </li>
-                              <li>
-                                <a
-                                  class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                  href="#"
-                                  data-te-dropdown-item-ref
-                                  >Something else here</a
-                                >
-                              </li>
-                            </ul>
-                          </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
+                <!--Modal footer-->
+                <div
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                    <button type="button" id="btn-close-modal1"
+                        class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                        Cancel
+                    </button>
+                    <button type="button"
+                        class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
+                        data-te-ripple-init data-te-ripple-color="light" id="btn-next">
+                        Next
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
 
+
+
+    <!--Modal 2-->
+    <div data-te-modal-init
+        class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="create1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref
+            class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
+            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="width: 60%">
+                <div
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                    <!--Modal title-->
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        Add Communication Type
+                    </h5>
+                    <!--Close button-->
+                    <button type="button"
+                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!--Modal body-->
+                <div class="relative p-4">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
+                                        1
+                                    </span>
+                                    <h3 class="font-medium leading-tight">Communication</h3>
+                                    <p class="text-sm">Type of Communication</p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
+                                        2
+                                    </span>
+                                    <h3 class="font-medium leading-tight">Date</h3>
+                                    <p class="text-sm">communication creation date</p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
+                                        3
+                                    </span>
+                                    <h3 class="font-medium leading-tight">Files / Links</h3>
+                                    <p class="text-sm">attachment files or links</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <div class="">
+                                <label for="date" class=" mb-2 text-sm font-medium">Date</label><br>
+                                <input type="date"
+                                    class="peer block min-h-[auto] w-full rounded border-0 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
+                                    id="exampleFormControlInput5" aria-label="" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Modal footer-->
+                <div
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                    <button type="button" id="btn-close-modal2"
+                        class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                        Cancel
+                    </button>
+                    <button type="button"
+                        class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
+                        data-te-ripple-init data-te-ripple-color="light" id="btn-next1">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal 3-->
+    <div data-te-modal-init
+        class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="create2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref
+            class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
+            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="width: 60%">
+                <div
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                    <!--Modal title-->
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        Add Communication Type
+                    </h5>
+                    <!--Close button-->
+                    <button type="button"
+                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!--Modal body-->
+                <div class="relative p-4">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
+                                        1
+                                    </span>
+                                    <h3 class="font-medium leading-tight">Communication</h3>
+                                    <p class="text-sm">Type of Communication</p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
+                                        2
+                                    </span>
+                                    <h3 class="font-medium leading-tight">Date</h3>
+                                    <p class="text-sm">communication creation date</p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span
+                                        class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
+                                        3
+                                    </span>
+                                    <h3 class="font-medium leading-tight">Files / Links</h3>
+                                    <p class="text-sm">attachment files or links</p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <div class="">
+
+                                <label for="file" class=" mb-2 text-sm font-medium">File</label><br>
+                                <input
+                                    class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+                                    type="file" id="formFile" />
+
+                            </div>
+                            <div class="">
+
+                                <label for="url" class=" mb-2 text-sm font-medium">Links</label><br>
+                                <input
+                                    class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+                                    type="url" id="formFile" placeholder="https://"/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Modal footer-->
+                <div
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                    <button type="button"
+                        class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                        Back
+                    </button>
+                    <button type="button"
+                        class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
+                        data-te-ripple-init data-te-ripple-color="light">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {{-- Modal Konfirmasi Hapus --}}
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
@@ -379,4 +520,7 @@
             </div>
         </div>
     </div>
+@endsection
+@section('javascript')
+    <script src="{{ asset('js/pages/communication.js') }}"></script>
 @endsection

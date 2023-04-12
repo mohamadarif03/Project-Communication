@@ -61,7 +61,10 @@ input[type="text"], input[type="password"] {
             </form>
           </div>
           <div class="signup-image">
-            <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+            <figure>
+              
+              <img src="{{asset('login/images/undraw_completed_03xt 1.png')}}" width="50%" alt="sing up image">
+            </figure>
             
         </div>
       </div>
