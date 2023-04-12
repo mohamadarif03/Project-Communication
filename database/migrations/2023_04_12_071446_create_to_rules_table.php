@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('to_roles', function (Blueprint $table) {
+        Schema::create('to_rolus', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rule_id');
             $table->foreign('rule_id')
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('to_roles');
+        Schema::dropIfExists('to_rolus');
     }
 };
