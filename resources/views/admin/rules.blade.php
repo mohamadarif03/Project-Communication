@@ -8,8 +8,13 @@
 
         <div class="">
             <button type="button"
-                class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">+
-                Add</button>
+                data-te-toggle="modal"
+                data-te-target="#create"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+                class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+
+                Add
+            </button>
         </div>
         <div class="flex">
             <div class="relative mr-4" data-te-dropdown-ref>
@@ -213,4 +218,81 @@
             </div>
         </div>
     </div>
+
+    <!--Modal Create-->
+<div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+id="create"
+tabindex="-1"
+aria-labelledby="exampleModalCenterTitle"
+aria-modal="true"
+role="dialog">
+    <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
+      <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none " style="width: 60%">
+        <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+            <!--Modal title-->
+            <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                Add Communication Type
+            </h5>
+            <!--Close button-->
+            <button type="button" class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-modal-dismiss aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!--Modal body-->
+        <div class="relative p-4">
+            <div class="grid grid-cols-2">
+                <div>
+                    <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">                  
+                        <li class="mb-10 ml-6">            
+                            <span class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
+                                1
+                            </span>
+                            <h3 class="font-medium leading-tight">Detail</h3>
+                            <p class="text-sm">Name and Type of Communication</p>
+                        </li>
+                        <li class="mb-10 ml-6">
+                            <span class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
+                                2
+                            </span>
+                            <h3 class="font-medium leading-tight">To</h3>
+                            <p class="text-sm">The Receiver of The Communication</p>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <div class="">
+                        <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
+                        <Select id="type" name="type" class="" placeholder="Choose Type">
+                            <option value=""></option>
+                            <option value="Monthly Report">Monthly Report</option>
+                            <option value="Quarter Report">Quarter Report</option>
+                        </Select>
+                    </div>
+                    <div class="">
+                        <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
+                        <input type="text" id="" class="">
+                    </div>
+                </div>
+            </div>     
+        </div>
+
+        <!--Modal footer-->
+        <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+            <button type="button" class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                Cancel
+            </button>
+            <button type="button" class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] " data-te-ripple-init data-te-ripple-color="light">
+                Next
+            </button>
+        </div>
+      </div>
+    </div>
+</div>
+@endsection
+
+@section('javascript')
+<script src="{{asset('js/pages/rule.js')}}"></script>
 @endsection

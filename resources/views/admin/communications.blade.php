@@ -184,9 +184,12 @@
           <label for="name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
           <input type="text" id="name" class="bg-gray-50 border-2 border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
         </div>
-        <div class="flex gap-4 mt-4 items-center">
-            <label for="color" class="mb-2 text-sm font-medium text-gray-900 ">Color</label>
-            <input type="color" id="color" class="w-24" placeholder="" required>
+        <div class="flex mt-2 gap-4 items-center">
+            <label for="color" class="mb-2 mr-1 text-sm font-medium text-gray-900 ">Color</label>
+            <div class="flex rounded-md" style="border: 2px solid gray; box-sizing: border-box; padding: 0; padding-left: 9px;">
+                <input type="text" class="" id="put" style="background-color: transparent; border-right: 2px solid gray; padding-right: 50px;">
+                <input type="color" name="" id="get" onchange="fetch()">
+            </div>
         </div>
       </div>
 
@@ -232,9 +235,12 @@
           <label for="update-name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
           <input type="text" id="update-name" value="" class="bg-gray-50 border-2 border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
         </div>
-        <div class="flex gap-4 mt-4 items-center">
-            <label for="update-color" class="mb-2 text-sm font-medium text-gray-900 ">Color</label>
-            <input type="color" id="update-color" class="w-24" placeholder="" required>
+        <div class="flex mt-2 gap-4 items-center">
+            <label for="color" class="mb-2 mr-1 text-sm font-medium text-gray-900 ">Color</label>
+            <div class="flex rounded-md" style="border: 2px solid gray; box-sizing: border-box; padding: 0; padding-left: 9px;">
+                <input type="text" class="" value="" id="put2" style="background-color: transparent; border-right: 2px solid gray; padding-right: 50px;">
+                <input type="color" name="" value="" id="get2" onchange="fetch()">
+            </div>
         </div>
       </div>
 
@@ -264,7 +270,7 @@
       <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
         <!--Modal title-->
         <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-          Delete Role
+          Delete Communication Type
         </h5>
         <!--Close button-->
         <button type="button" class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none" data-te-modal-dismiss aria-label="Close">
