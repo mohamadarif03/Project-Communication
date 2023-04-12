@@ -17,8 +17,9 @@
         href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
         <script src="https://cdn.tailwindcss.com/3.3.0"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{asset('plugin/sweetalert2/dist/sweetalert2.min.css')}}">
         <!-- App css -->
+        <link rel="stylesheet" href="{{asset('plugin/tom-select/dist/css/tom-select.css')}}">
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css"  id="app-stylesheet" />
@@ -249,20 +250,23 @@
 
         </div>
         <!-- END wrapper -->
-
+        <!-- Jquery -->
+        <script src="{{asset('plugin/jquery/dist/jquery.min.js')}}"></script>
         <!-- Vendor js -->
         <script src="{{asset('assets/js/vendor.min.js')}}"></script>
-
+        <!-- Plugin -->
+        <script src="{{asset('plugin/sweetalert2/dist/sweetalert2.all.min.js')}}"></script>
+        <script src="{{asset('plugin/tom-select/dist/js/tom-select.complete.min.js')}}"></script>
+        <script src="{{asset('plugin/sweetalert2/dist/sweetalert2.min.js')}}"></script>
         <!--Morris Chart-->
         <script src="{{asset('assets/libs/morris-js/morris.min.js')}}"></script>
         <script src="{{asset('assets/libs/raphael/raphael.min.js')}}"></script>
-
         <!-- Dashboard init js-->
         <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
         <!-- App js -->
-        <script src="{{asset('assets/js/app.min.js')}}"></script>
-        <script src="{{asset('js/app.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-        
+        <script src="{{asset('js/app.js')}}"></script>
+        <script src="{{asset('assets/js/app.min.js')}}"></script>
+        @yield('javascript')
     </body>
 </html>
