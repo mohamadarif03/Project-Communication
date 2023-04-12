@@ -120,14 +120,16 @@ role="dialog">
 
         <!--Modal body-->
         <div class="relative p-4">
+            <form action="" method="post">
+                @csrf
             <div>
                 <div class="mb-1.5 flex items-center gap-3">
                     <label for="name" class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Name</label>
-                    <input type="text" id="name" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Name" required>
+                    <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Name" required>
                 </div>
                 <div class="mb-1.5 flex items-center gap-3">
                     <label for="email" class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Email</label>
-                    <input type="email" id="email" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Email" required>
+                    <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="Email" required>
                 </div>
                 <div class="mb-1.5 flex items-center gap-3">
                     <label for="password" class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Password</label>
@@ -146,6 +148,8 @@ role="dialog">
                     </Select>
                 </div>
             </div>    
+        </form>
+
         </div>
 
         <!--Modal footer-->
