@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('Communication.li', 'mm-active')
-@section('Communication.a', 'active')
-@section('Communication.svg', 'white')
+@section('Communicationuser.li', 'mm-active')
+@section('Communicationuser.a', 'active')
+@section('Communicationuser.svg', 'white')
 @section('content')
     <div class="content">
 
