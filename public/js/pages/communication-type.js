@@ -83,7 +83,7 @@ function edit(id){
 
 function remove(id) {
     $.ajax({
-      url: '/delete-communication-type/3',
+      url: '/delete-communication-type/1',
       method: 'DELETE',
       data:{
         _token:csrfToken
@@ -94,8 +94,6 @@ function remove(id) {
             text: 'Success Delete Data!',
             icon: 'success'
         })
-        $('#type').val('')
-        $('#color').val('')
 
         $('#btn-close-modal').click()
         location.reload()
@@ -114,6 +112,7 @@ function remove(id) {
             html: response.responseJSON.message,
             icon: 'error',
         })
+
     }
     });
   }

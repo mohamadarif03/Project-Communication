@@ -39,7 +39,7 @@ Route::post('/store-rule',[RuleController::class,'insert']);
 //Communicationn Type
 Route::get('/communication-type',[CommunicationTypeController::class,'index']);
 Route::post('/store-communication-type',[CommunicationTypeController::class,'insert'])->name('store-communication-type');
-Route::delete('/delete/{id}',[CommunicationTypeController::class,'delete']);
+Route::delete('/delete-communication-type/{id}',[CommunicationTypeController::class,'delete']);
 
 //User
 Route::get('/users',[UserController::class,'index']);

@@ -15,6 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $data = User::with('userrole')->where('name','!=','admin')->get();
+        
         return view('admin.users', compact('data'));
     }
     public function insert(UserRequest $request)

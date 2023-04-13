@@ -82,7 +82,7 @@
                 </ul>           
             </div>
             <div class="h-16 flex p-2 items-center w-full ">
-                <div class="h-12 flex w-12 bg-red-400 rounded-circle">
+                <div class="h-12 flex w-12 rounded-circle" style="background-color: {{$row->communicationType->color}}">
                     <p class="text-white m-auto font-semibold">FE</p>
                 </div>
                 <div class="ml-2 flex my-auto">
