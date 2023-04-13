@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CommunicationTypeRequest;
+use App\Http\Requests\CommunicationUpdateTypeRequest;
 use App\Models\CommunicationType;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class CommunicationTypeController extends Controller
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
-    public function update(CommunicationTypeRequest $request, $id)
+    public function update(CommunicationUpdateTypeRequest $request, $id)
     {
         $data = CommunicationType::find($id);
         $data->update([

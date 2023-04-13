@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\CommunicationType;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CommunicationUpdateTypeRequest extends FormRequest
@@ -14,7 +15,7 @@ class CommunicationUpdateTypeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,8 +28,9 @@ class CommunicationUpdateTypeRequest extends FormRequest
         return [
             'type' =>  [
                 'required',
-                CommunicationType::unique(user::class)->ignore($this->route('id'))
+                Rule::unique(CommunicationType::class)->ignore($this->route('id'))
             ],
+            'color' => 'required'
         ];
     }
 }
