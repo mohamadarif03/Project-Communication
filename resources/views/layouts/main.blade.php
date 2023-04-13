@@ -12,11 +12,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
-        <script src="https://cdn.tailwindcss.com"></script>
         <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
-        <script src="https://cdn.tailwindcss.com/3.3.0"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('plugin/sweetalert2/dist/sweetalert2.min.css')}}">
         <!-- App css -->
@@ -99,6 +97,9 @@
                             <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                            <!-- item-->
+                            
+
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="mdi mdi-account-outline"></i>
