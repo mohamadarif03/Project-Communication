@@ -20,24 +20,32 @@ function GetData(){
                             '</tbody>'+
                         '</table>'
             $('#table').html(html)
-            $.each(response,function(index,data){
-                var row = '<tr class="border-b border-dashed ">'+
-                            '<td class="whitespace-nowrap px-6 py-4 font-medium">'+(index+1)+'</td>'+ 
-                            '<td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">'+data.name+'</td>'+ 
-                            '<td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;">'+ 
-                            '<button onclick="edit('+data.id+')" id="btn-edit-'+data.id+'" data-name="'+data.name+'">'+ 
-                                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/></svg>'+ 
-                            '</button>'+ 
-                            '<button onclick="removeModal('+data.id+')" id="btn-delete-'+data.id+'" class="btn-delete" data-name="'+data.name+'">'+ 
-                                '<svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">'+ 
-                                    '<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>'+ 
-                                    '<path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>'+ 
-                                '</svg>'+ 
-                            '</button>'+                                    
-                            '</td>'+                                  
-                        '</tr>'
-                $('#Data').append(row)
-            })
+            if(response.length > 0){
+                $.each(response,function(index,data){
+                    var row = '<tr class="border-b border-dashed ">'+
+                                '<td class="whitespace-nowrap px-6 py-4 font-medium">'+(index+1)+'</td>'+ 
+                                '<td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">'+data.name+'</td>'+ 
+                                '<td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;">'+ 
+                                '<button onclick="edit('+data.id+')" id="btn-edit-'+data.id+'" data-name="'+data.name+'">'+ 
+                                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/></svg>'+ 
+                                '</button>'+ 
+                                '<button onclick="removeModal('+data.id+')" id="btn-delete-'+data.id+'" class="btn-delete" data-name="'+data.name+'">'+ 
+                                    '<svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">'+ 
+                                        '<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>'+ 
+                                        '<path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>'+ 
+                                    '</svg>'+ 
+                                '</button>'+                                    
+                                '</td>'+                                  
+                            '</tr>'
+                    $('#Data').append(row)
+                })
+            }else{
+                var src = "src='../img/not-found.svg'";
+                var row =   '<img '+src+' class="w-1/4 mt-4" alt="">'+
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no roles found !</p>'
+                $('#table').append(row)
+            }
+            
         }
     })
 }
@@ -57,7 +65,8 @@ function create(){
                 text: 'Success Create New Role!',
                 icon: 'success'
             })
-            location.reload()
+            $('#name').val('')
+            GetData()
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -107,7 +116,9 @@ function update(){
                 icon: 'success',
                 timer: 4000
             })
-            location.reload()
+            $('#update-name').val('')
+            $('#update-id').val('')
+            GetData()
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -142,7 +153,7 @@ function remove(){
                 icon: 'success',
                 timer: 4000
             })
-            location.reload()
+            GetData()
         },
         error: function(response){
             Swal.fire({
