@@ -121,7 +121,7 @@
                         class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                         <!--Modal title-->
                         <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                            Add Communication Type
+                            Add Users
                         </h5>
                         <!--Close button-->
                         <button type="button"
@@ -144,6 +144,9 @@
                                 <input type="text" id="name" name="name"
                                     class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     style="border-radius: 3px" placeholder="Name" required>
+                                <input type="hidden" id="profile" name="profile"
+                                    class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    style="border-radius: 3px" value="default.png">
                             </div>
                             <div class="mb-1.5 flex items-center gap-3">
                                 <label for="email"

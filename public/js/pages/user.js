@@ -25,6 +25,7 @@ function create(){
     var password = $('#password').val()
     var role = $('#role').val()
     var password_confirmation = $('#password_confirmation').val()
+    var profile = $('#profile').val()
     $.ajax({
         type:'POST',
         url:'/store-user',
@@ -34,7 +35,8 @@ function create(){
             email:email,
             password:password,
             role:role,
-            password_confirmation:password_confirmation
+            password_confirmation:password_confirmation,
+            profile:profile
         },
         success:function(response){
             Swal.fire({
@@ -57,8 +59,8 @@ function create(){
 
             Swal.fire({
                 title: 'Error!',
-                html: errorMessage,
-                // html: response.responseJSON.message,
+                // html: errorMessage,
+                html: response.responseJSON.message,
                 icon: 'error',
             })
         }
