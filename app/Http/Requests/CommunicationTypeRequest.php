@@ -25,6 +25,7 @@ class CommunicationTypeRequest extends FormRequest
     {
         return [
             'type' => 'required',
+            'color' => 'required',
            
         ];
     }

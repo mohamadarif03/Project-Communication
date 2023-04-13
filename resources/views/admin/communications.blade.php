@@ -72,7 +72,7 @@
                                                 </svg>
                                             </button>
                                            
-                                            <button class="btn-delete" onclick="remove($row->id)">
+                                            <button class="btn-delete" onclick="removemodal({{$row->id}})">
                                                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;"
                                                     width="16" height="16" fill="currentColor" class="bi bi-trash"
                                                     viewBox="0 0 16 16">
@@ -203,7 +203,7 @@
                             style="box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" value="" id="put2"
                                 style="background-color: transparent; padding-right: 50px;" disabled>
-                            <input type="color" name="" value="" id="colorupdate" onchange="fetch()">
+                            <input type="color" name="" value="" id="update-color" onchange="fetch()">
                         </div>
                     </div>
                 </div>
@@ -265,7 +265,7 @@
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
                     </button>
-                    <button type="button" onclick="remove()"
+                    <button type="button" onclick="remove()" 
                         class="ml-1 inline-block rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#C43B19] transition duration-150 ease-in-out hover:bg-red-500 focus:bg-red-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-red-500"
                         data-te-ripple-init data-te-ripple-color="light">
                         Delete

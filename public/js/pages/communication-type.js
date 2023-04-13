@@ -3,21 +3,6 @@ var csrfToken = $('meta[name="csrf-token"]').attr('content');
 new TomSelect('#forsearch')
 
 
-$('.btn-delete').click(function(){
-    var name = $(this).data('name')
-    $('#communication-name').html(name)
-    $('#btn-delete-modal').click()
-})
-
-$('.btn-edit').click(function(){ 
-    var name = $(this).data('name')
-    var color = $(this).data('color')
-    $('#colorupdate').val(color)
-    fetch_update()
-    $('#put').val(color)
-    $('#update-name').val(name)
-    $('#btn-update-modal').click()
-})
 
 function fetch() {
     var color = document.getElementById("color").value;
@@ -25,7 +10,7 @@ function fetch() {
 }
 
 function fetch_update() {
-    var colorupdate = document.getElementById("colorupdate").value;
+    var colorupdate = document.getElementById("update-color").value;
     document.getElementById("put2").value = colorupdate;
 }
 
@@ -95,13 +80,17 @@ function update(){
         success: function(response){
             Swal.fire({
                 title: 'Success!',
-                text: 'Success Update Role!',
+                text: 'Success Update Data!',
                 icon: 'success',
                 timer: 4000
             })
             $('#update-name').val('')
             $('#update-color').val('')
             $('#update-id').val('')
+            $('#btn-close-modal').click()
+            location.reload()
+
+
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -112,7 +101,7 @@ function update(){
             });
 
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Error!',
                 // html: errorMessage,
                 html: response.responseJSON.message,
                 icon: 'error',
@@ -121,11 +110,17 @@ function update(){
     })
 }
 
+function removemodal(id) {
+    var name = $(this).data('name')
+    $('#communication-name').html(name)
+    $('#delete-id').val(id)
+    $('#btn-delete-modal').click()
+}
 
-
-function remove(id) {
+function remove() {
+    var id = $('#delete-id').val()
     $.ajax({
-      url: '/delete-communication-type/1',
+      url: '/delete-communication-type/' +id,
       method: 'DELETE',
       data:{
         _token:csrfToken
