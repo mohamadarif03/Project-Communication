@@ -56,69 +56,47 @@
         <div class="flex flex-col mx-auto rounded-lg" style="background-color: white; margin-top: 10%; width: 95%;">
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                    <div class="overflow-hidden">
-                        <table class="min-w-full text-left text-sm font-light">
-                            <thead class="border-b font-medium ">
-                                <tr>
-                                    <th scope="col" class="px-6 py-4">#</th>
-                                    <th scope="col" class="px-6 py-4">Name</th>
-                                    <th scope="col" class="px-6 py-4">Action</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b border-dashed ">
-                                    <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
-                                    <td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">Chief</td>
-                                    <td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;">
-                                      <button class="btn-edit" data-name="Chief">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                        </svg>
-                                      </button>
-                                      <button class="btn-delete" data-name="Chief">
-                                        <svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                                          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                                        </svg>
-                                      </button>                                     
-                                    </td>                                  
-                                </tr>
-                                <tr class="border-b border-dashed ">
-                                    <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
-                                    <td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">Sales</td>
-                                    <td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;">
-                                      <button class="btn-edit" data-name="Sales">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                        </svg>
-                                      </button>
-                                      <button class="btn-delete" data-name="Sales">
-                                        <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                                          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                                        </svg>
-                                      </button>     
-                                    </td>                                
-                                </tr>
-                                <tr class="border-b border-dashed ">
-                                    <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
-                                    <td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">Manager</td>
-                                    <td class="whitespace-nowrap px-6 py-4 flex" style="color: rgb(24, 24, 24); font-weight: 400;">
-                                      <button class="btn-edit" data-name="Manager">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                        </svg>
-                                      </button>
-                                      <button class="btn-delete" data-name="Manager">
-                                        <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                                          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                                        </svg>
-                                      </button>
-                                   </td>                                  
-                                </tr>
-                            </tbody>
+                    <div class="overflow-hidden p-4" id="table">
+                        <table class="w-full">
+                          <thead>
+                            <th>
+                              <div class="bg-slate-300 h-6 rounded-sm animate-pulse w-full">
+
+                              </div>
+                            </th>
+                            <th>
+                              <div class="bg-slate-300 h-6 rounded-sm animate-pulse w-full">
+
+                              </div>
+                            </th>
+                            <th>
+                              <div class="bg-slate-300 h-6 rounded-sm animate-pulse w-full">
+
+                              </div>
+                            </th>
+                          </thead>
+                          <tbody>
+                            <tr class="mt-3">
+                              <td colspan="3">
+                                <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="3">
+                                <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="3">
+                                <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                              </td>
+                            </tr>
+                            <tr class="">
+                              <td colspan="3">
+                                <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                              </td>
+                            </tr>
+                          </tbody>
                         </table>
                     </div>
                 </div>
@@ -211,10 +189,11 @@
 
       <!--Modal body-->
       <div class="relative p-4">
-        <div class="flex gap-4 items-center">
+        <form class="flex gap-4 items-center">
+          <input type="hidden" class="w-0 h-0 hidden" value="" id="update-id">
           <label for="update-name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
           <input type="text" id="update-name" value="" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Role" required>
-        </div>
+        </form>
       </div>
 
       <!--Modal footer-->
@@ -223,7 +202,7 @@
         <button type="button" class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
           Close
         </button>
-        <button type="button" class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 " data-te-ripple-init data-te-ripple-color="light">
+        <button type="button" onclick="update()" class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 " data-te-ripple-init data-te-ripple-color="light">
           Save
         </button>
       </div>
@@ -255,6 +234,7 @@
 
       <!--Modal body-->
       <div class="relative p-4">
+        <input type="hidden" class="hidden w-0 h-0" value="" id="delete-id">
         <p>Are you sure you want to delete role <span id="roles-name"></span>?</p>
       </div>
 
@@ -264,7 +244,7 @@
         <button type="button" class="inline-block rounded bg-red-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
           Close
         </button>
-        <button type="button" class="ml-1 inline-block rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#C43B19] transition duration-150 ease-in-out hover:bg-red-500 focus:bg-red-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-red-500" data-te-ripple-init data-te-ripple-color="light">
+        <button onclick="remove()" type="button" class="ml-1 inline-block rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#C43B19] transition duration-150 ease-in-out hover:bg-red-500 focus:bg-red-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-red-500" data-te-ripple-init data-te-ripple-color="light">
           Delete
         </button>
       </div>
