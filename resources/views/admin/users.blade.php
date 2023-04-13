@@ -21,7 +21,7 @@
                         class="flex items-center whitespace-nowrap bg-white rounded-lg px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-gray-500 transition duration-150 ease-in-out hover:bg-primary-600"
                         type="button" id="dropdownMenuButton1" data-te-dropdown-toggle-ref aria-expanded="false"
                         data-te-ripple-init data-te-ripple-color="light">
-                        Communication type
+                        Role
                         <span class="ml-2 w-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                                 <path fill-rule="evenodd"
@@ -66,7 +66,7 @@
                     <ul class="absolute z-[1000] float-left border-2 m-0 hidden min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                         aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                         <li>
-                            <button class="btn-edit flex items-center" data-name="Larry" data-color="#00ffff">
+                            <button id="btn-edit-{{$row->id}}" class=" flex items-center" data-name="{{$row->name}}" data-email="{{$row->email}}" data-role="{{$row->userrole->pluck('role_id')}}" onclick="edit({{$row->id}})" >
                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16"
                                     fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                     <path
@@ -76,7 +76,7 @@
                             </button>
                         </li>
                         <li>
-                            <button class="btn-delete flex items-center" data-color="Larry">
+                            <button class="btn-delete flex items-center" onclick="removeModal({{$row->id}})">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16"
                                     fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path
@@ -91,8 +91,8 @@
                 </div>
                     
                 <div class="h-16 flex p-2 items-center w-full ">
-                    <div class="h-12 flex w-12 bg-red-400 rounded-circle">
-                        <p class="text-white m-auto font-semibold">FE</p>
+                    <div class="h-12 flex w-12 overflow-hidden rounded-circle">
+                        <img class="w-12 h-12 rounded-circle" src="{{asset('profile/'.$row->profile)}}" alt="">
                     </div>
                     <div class="ml-2 flex my-auto" id="get-data-users">
                         <div class="my-auto">
@@ -167,15 +167,13 @@
                                     class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     style="border-radius: 3px" placeholder="Password Confirmation" required>
                             </div>
-                            {{-- <div class="mb-1.5 flex items-center gap-3">
+                            <div class="mb-1.5 flex items-center gap-3">
                                 <label for="role"
                                     class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Role</label>
                                 <Select multiple id="role" name="role" class="w-full" placeholder="Role">
                                     <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
                                 </Select>
-                            </div> --}}
+                            </div>
                         </div>
 
                     </div>
@@ -259,6 +257,14 @@
                                 class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 style="border-radius: 3px" placeholder="Password Confirmation" required>
                         </div>
+                        <div class="mb-1.5 flex items-center gap-3">
+                            <label for="role"
+                                class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Role</label>
+                            <Select multiple id="update-role" name="role" value="2" class="w-full" placeholder="Role">
+                                <option value=""></option>
+                            </Select>
+                        </div>
+                        <input type="hidden" name="hidden w-0 h-0" id="update-id">
                     </div>
                 </div>
 
@@ -271,6 +277,7 @@
                         Cancel
                     </button>
                     <button type="submit"
+                    onclick="update()"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
                         id="btn-next">
                         Save
@@ -310,18 +317,21 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <p>Are you sure you want to delete this user?</p>
+                    <input type="hidden" id="delete-id" class="hidden w-0 h-0" value="">
+                    <p>Are you sure you want to delete this user <span id="delete-name"></span> ?</p>
                 </div>
 
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
                     <button type="button"
+                    id="btn-close-modal-delete"
                         class="inline-block rounded bg-red-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
                     </button>
                     <button type="button"
+                        onclick="remove()"
                         class="ml-1 inline-block rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#C43B19] transition duration-150 ease-in-out hover:bg-red-500 focus:bg-red-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-red-500"
                         data-te-ripple-init data-te-ripple-color="light">
                         Delete

@@ -41,9 +41,11 @@ Route::get('/communication-type',[CommunicationTypeController::class,'index']);
 Route::post('/store-communication-type',[CommunicationTypeController::class,'insert'])->name('store-communication-type');
 Route::delete('/delete/{id}',[CommunicationTypeController::class,'delete']);
 
-
+//User
 Route::get('/users',[UserController::class,'index']);
 Route::post('/store-user',[UserController::class,'insert'])->name('store-user');
+Route::put('/update-user/{id}',[UserController::class,'update']);
+Route::delete('/delete-user/{id}',[UserController::class,'delete']);
 
 
 Route::get('/communication',[CommunicationController::class,'communication']);
