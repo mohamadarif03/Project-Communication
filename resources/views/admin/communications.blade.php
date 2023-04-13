@@ -64,7 +64,7 @@
                                         </td>
                                         <td class="whitespace-nowrap px-6 py-4 flex"
                                             style="color: rgb(24, 24, 24); font-weight: 400;">
-                                            <button class="btn-edit" data-id="{{$row->id}}" data-name="{{$row->type}}" data-color="{{$row->color}}">
+                                            <button class="btn-edit" onclick="edit($row->id)" id="btn-edit-{{$row->id}}" data-name="{{$row->type}}" data-color="{{$row->color}}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                                     <path
@@ -72,7 +72,7 @@
                                                 </svg>
                                             </button>
                                            
-                                            <button class="btn-delete" onclick="">
+                                            <button class="btn-delete" onclick="remove($row->id)">
                                                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;"
                                                     width="16" height="16" fill="currentColor" class="bi bi-trash"
                                                     viewBox="0 0 16 16">
@@ -187,6 +187,7 @@
                         </svg>
                     </button>
                 </div>
+                <input type="hidden" id="update-id">
 
                 <!--Modal body-->
                 <div class="relative p-4">
@@ -215,7 +216,7 @@
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
                     </button>
-                    <button type="button"
+                    <button type="button" onclick="update()"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 "
                         data-te-ripple-init data-te-ripple-color="light">
                         Save

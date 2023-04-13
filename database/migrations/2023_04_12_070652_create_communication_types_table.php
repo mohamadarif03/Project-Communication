@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('communication_types', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
+            $table->string('type')->unique();
             $table->string('color');
             $table->timestamps();
         });

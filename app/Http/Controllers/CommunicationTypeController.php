@@ -23,6 +23,15 @@ class CommunicationTypeController extends Controller
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
+    public function update(CommunicationTypeRequest $request, $id)
+    {
+        $data = CommunicationType::find($id);
+        $data::update([
+            'type' => $request ->type,
+            'color' => $request ->color,
+        ]);
+        return response()->json(['message' => 'Success Create New Type!']);
+    }
     public function delete($id)
     {
         $data = CommunicationType::find($id);

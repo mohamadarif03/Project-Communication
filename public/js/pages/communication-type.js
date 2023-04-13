@@ -73,11 +73,53 @@ function create(){
 
 function edit(id){
     var name = $('#btn-edit-'+id).data('name')
+    var color = $('#btn-edit-'+id).data('color')
     $('#update-name').val(name)
+    $('#update-color').val(color)
     $('#update-id').val(id)
     $('#btn-update-modal').click()
 }
 
+function update(){
+    var name = $('#update-name').val()
+    var color = $('#update-color').val()
+    var id = $('#update-id').val()
+    $.ajax({
+        type:'PUT',
+        url:'/update-communication-type/'+id,
+        data:{
+            _token:csrfToken,
+            name:name,
+            color:color,
+        },
+        success: function(response){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Success Update Role!',
+                icon: 'success',
+                timer: 4000
+            })
+            $('#update-name').val('')
+            $('#update-color').val('')
+            $('#update-id').val('')
+        },
+        error:function(response){
+            var errors = response.responseJSON.errors;
+            var errorMessage = '';
+
+            $.each(errors, function(key, value) {
+                errorMessage += '<p class="text-red-500">' + value + '</p>';
+            });
+
+            Swal.fire({
+                title: 'Gagal!',
+                // html: errorMessage,
+                html: response.responseJSON.message,
+                icon: 'error',
+            })
+        }
+    })
+}
 
 
 
