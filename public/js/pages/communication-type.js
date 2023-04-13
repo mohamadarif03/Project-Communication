@@ -71,11 +71,19 @@ function create(){
     })
 }
 
+function edit(id){
+    var name = $('#btn-edit-'+id).data('name')
+    $('#update-name').val(name)
+    $('#update-id').val(id)
+    $('#btn-update-modal').click()
+}
 
-function deleteData(id) {
 
+
+
+function remove(id) {
     $.ajax({
-      url: '/delete-communication-type/' +id,
+      url: '/delete-communication-type/3',
       method: 'DELETE',
       data:{
         _token:csrfToken

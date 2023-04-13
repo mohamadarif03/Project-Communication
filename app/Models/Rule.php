@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CommunicationType extends Model
+class Rule extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
-    public function rule()
+    public function communicationType()
     {
-        return $this->hasMany(rule::class);
+        return $this->BelongsTo(CommunicationType::class, 'communication_type_id', 'id');
     }
 }

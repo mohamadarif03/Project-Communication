@@ -251,8 +251,9 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <p>Are you sure you want to delete communication <span id="communication-name"></span>?</p>
-                </div>
+                    <input type="hidden" class="hidden w-0 h-0" value="" id="delete-id">
+                    <p>Are you sure you want to delete this data?</p>
+                  </div>
 
                 <!--Modal footer-->
                 <div
@@ -262,7 +263,7 @@
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
                     </button>
-                    <button type="button" onclick="deleteData()"
+                    <button type="button" onclick="remove()"
                         class="ml-1 inline-block rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#C43B19] transition duration-150 ease-in-out hover:bg-red-500 focus:bg-red-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-red-500"
                         data-te-ripple-init data-te-ripple-color="light">
                         Delete

@@ -291,15 +291,18 @@ role="dialog">
                 <div>
                     <div class="">
                         <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
-                        <Select id="type" name="type" class="" placeholder="Choose Type">
+                        <Select id="communication_type_id" name="communication_type_id" class="" placeholder="Choose Type">
                             <option value=""></option>
-                            <option value="Monthly Report">Monthly Report</option>
-                            <option value="Quarter Report">Quarter Report</option>
+                            @foreach ($data as $row)
+                                
+                            @endforeach
+                            <option value="1">Monthly Report</option>
+                            <option value="2">Quarter Report</option>
                         </Select>
                     </div>
                     <div class="mt-1.5">
                         <label for="type" class=" mb-2 block text-sm font-medium text-gray-900 ">How</label>
-                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="How" required>
+                        <input type="text" id="how" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="How" required>
                     </div>
                 </div>
             </div>     
@@ -379,7 +382,7 @@ role="dialog">
             <button id="btn-back" type="button" class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200" data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                 Back
             </button>
-            <button type="button" class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] " data-te-ripple-init data-te-ripple-color="light">
+            <button type="button" onclick="create()" class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] " data-te-ripple-init data-te-ripple-color="light">
                 Save
             </button>
         </div>

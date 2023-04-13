@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CommunicationType;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -16,7 +19,11 @@ class Controller extends BaseController
     }
 
     public function admin(){
-        return view('admin.dashboard');
+
+        $userCount = User::count();
+        $communicationtypeCount = CommunicationType::count();
+        $role = Role::count();
+        return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
     }
    
 }

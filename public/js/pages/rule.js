@@ -1,4 +1,7 @@
-new TomSelect('#type')
+var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+
+new TomSelect('#communication_type_id')
 new TomSelect('#type2')
 
 
@@ -33,3 +36,47 @@ $('#btn-next2').click(function(){
 $('.btn-delete').click(function(){
     $('#btn-delete-modal').click()
 })
+
+
+function create(){
+    var communication_type_id = $('#communication_type_id').val()
+    var how = $('#how').val()
+    $.ajax({
+        type:'POST',
+        url:'/store-rule',
+        data:{
+            _token:csrfToken,
+            communication_type_id:communication_type_id,
+            how:how
+        },
+        
+        success:function(response){
+            Swal.fire({
+                title: 'success!',
+                text: 'Success Create New Type!',
+                icon: 'success'
+            })
+            $('#communication_type_id').val('')
+            $('#how').val('')
+
+            $('#btn-close-modal1').click()
+            location.reload()
+        },
+
+        error:function(response){
+            var errors = response.responseJSON.errors;
+            var errorMessage = '';
+
+            $.each(errors, function(key, value) {
+                errorMessage += '<p class="text-red-500">' + value + '</p>';
+            });
+
+            Swal.fire({
+                title: 'Error!',
+                // html: errorMessage,
+                html: response.responseJSON.message,
+                icon: 'error',
+            })
+        }
+    })
+}

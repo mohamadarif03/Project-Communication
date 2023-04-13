@@ -31,11 +31,15 @@ Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/dashboard',[Controller::class,'index'])->middleware('auth');
 Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
-Route::get('/rule',[RuleController::class,'index']);
 
+//Rule
+Route::get('/rule',[RuleController::class,'index']);
+Route::post('/store-rule',[RuleController::class,'insert']);
+
+//Communicationn Type
 Route::get('/communication-type',[CommunicationTypeController::class,'index']);
 Route::post('/store-communication-type',[CommunicationTypeController::class,'insert'])->name('store-communication-type');
-Route::get('/delete-communication-type/{id}',[CommunicationTypeController::class,'delete'])->name('delete-communication-type');
+Route::delete('/delete/{id}',[CommunicationTypeController::class,'delete']);
 
 
 Route::get('/users',[UserController::class,'index']);
