@@ -185,7 +185,7 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="communication-type-task">Task</a></li>
-                                    <li><a href="pages-login.html">Standart</a></li>
+                                    <li><a href="communication-type-standart">Standart</a></li>
                                 </ul>
                             </li>
                             <li class="">

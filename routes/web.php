@@ -36,11 +36,17 @@ Route::get('/role',[RoleController::class,'view']);
 Route::get('/rule',[RuleController::class,'view']);
 Route::post('/store-rule',[RuleController::class,'insert']);
 
-//Communicationn Type
+//Communicationn Type Task
 Route::get('/communication-type-task',[CommunicationTypeController::class,'view']);
-Route::post('/store-communication-type',[CommunicationTypeController::class,'insert'])->name('store-communication-type');
-Route::put('/update-communication-type/{id}',[CommunicationTypeController::class,'update']);
-Route::delete('/delete-communication-type/{id}',[CommunicationTypeController::class,'delete']);
+Route::post('/store-communication-type-task',[CommunicationTypeController::class,'insert']);
+Route::put('/update-communication-type-task/{id}',[CommunicationTypeController::class,'update']);
+Route::delete('/delete-communication-type-task/{id}',[CommunicationTypeController::class,'delete']);
+
+//Communicationn Type Standart
+Route::get('/communication-type-standart',[CommunicationTypeController::class,'viewStandart']);
+Route::post('/store-communication-type-standart',[CommunicationTypeController::class,'insertStandart']);
+Route::put('/update-communication-type-standart/{id}',[CommunicationTypeController::class,'updateStandart']);
+Route::delete('/delete-communication-type-standart/{id}',[CommunicationTypeController::class,'deleteStandart']);
 
 //User
 Route::get('/users',[UserController::class,'view']);

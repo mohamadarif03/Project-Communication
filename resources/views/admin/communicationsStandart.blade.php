@@ -55,7 +55,6 @@
                                         <th scope="col" class="px-6 py-4">#</th>
                                         <th scope="col" class="px-6 py-4">Name</th>
                                         <th scope="col" class="px-6 py-4">Color</th>
-                                        <th scope="col" class="px-6 py-4">Description</th>
                                         <th scope="col" class="px-6 py-4">Action</th>
 
                                     </tr>
@@ -71,13 +70,11 @@
                                                     <div class="rounded-circle w-8 h-8"
                                                     style=" background-color:{{ $row->color }}"></div>
                                                 </td>
-                                                <td class="whitespace-nowrap px-6 py-4"
-                                                    style="color: rgb(24, 24, 24); font-weight: 400;">{{ $row->description }}</td>
                                             <td class="whitespace-nowrap px-6 py-4 flex"
                                                 style="color: rgb(24, 24, 24); font-weight: 400;">
                                                 <button class="btn-edit" onclick="edit({{ $row->id }})"
                                                     id="btn-edit-{{ $row->id }}" data-name="{{ $row->type }}"
-                                                    data-color="{{ $row->color }}" data-description="{{$row->description}}">
+                                                    data-color="{{ $row->color }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                                         <path
@@ -153,14 +150,11 @@
                         <div class="flex rounded-md border"
                             style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" id="put"
-                                style="background-color: transparent; padding-right: 50px;" disabled>
+                                style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
                             <input type="color" name="" id="color" onchange="fetch()">
                         </div>
                     </div>
-                    <div class="flex gap-4 mt-2 items-center">
-                        <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
-                        <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
-                    </div>
+                   
                 </div>
 
                 <!--Modal footer-->
@@ -224,10 +218,7 @@
                             <input type="color" name="" value="" id="update-color" onchange="fetch()">
                         </div>
                     </div>
-                    <div class="flex gap-4 mt-2 items-center">
-                        <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
-                        <textarea id="update-description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
-                    </div>
+                   
                 </div>
 
                 <!--Modal footer-->
@@ -299,5 +290,5 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/pages/communication-type.js') }}"></script>
+    <script src="{{ asset('js/pages/communication-type-standart.js') }}"></script>
 @endsection

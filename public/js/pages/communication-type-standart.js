@@ -16,15 +16,13 @@ function fetch_update() {
 function create(){
     var type = $('#type').val()
     var color = $('#color').val()
-    var description = $('#description').val()
     $.ajax({
         type:'POST',
-        url:'/store-communication-type',
+        url:'/store-communication-type-standart',
         data:{
             _token:csrfToken,
             type:type,
             color:color,
-            description:description
         },
         
         success:function(response){
@@ -35,8 +33,6 @@ function create(){
             })
             $('#type').val('')
             $('#color').val('')
-            $('#description').val('')
-
             $('#btn-close-modal').click()
             location.reload()
         },
@@ -64,7 +60,6 @@ function edit(id){
     var description = $('#btn-edit-'+id).data('description')
     $('#update-name').val(name)
     $('#update-color').val(color)
-    $('#update-description').val(description)
     $('#update-id').val(id)
     $('#btn-update-modal').click()
 }
@@ -72,11 +67,10 @@ function edit(id){
 function update(){
     var name = $('#update-name').val()
     var color = $('#update-color').val()
-    var description = $('#update-description').val()
     var id = $('#update-id').val()
     $.ajax({
         type:'PUT',
-        url:'/update-communication-type/'+id,
+        url:'/update-communication-type-standart/'+id,
         data:{
             _token:csrfToken,
             type:name,
@@ -92,7 +86,6 @@ function update(){
             })
             $('#update-name').val('')
             $('#update-color').val('')
-            $('#update-description').val('')
             $('#update-id').val('')
             $('#btn-close-modal').click()
             location.reload()
@@ -127,7 +120,7 @@ function removemodal(id) {
 function remove() {
     var id = $('#delete-id').val()
     $.ajax({
-      url: '/delete-communication-type/' +id,
+      url: '/delete-communication-type-standart/' +id,
       method: 'DELETE',
       data:{
         _token:csrfToken
