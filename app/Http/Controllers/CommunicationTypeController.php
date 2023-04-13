@@ -26,9 +26,9 @@ class CommunicationTypeController extends Controller
     public function update(CommunicationTypeRequest $request, $id)
     {
         $data = CommunicationType::find($id);
-        $data::update([
-            'type' => $request ->type,
-            'color' => $request ->color,
+        $data->update([
+            'type' => $request->type,
+            'color' => $request->color,
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }

@@ -50,7 +50,7 @@
             </div>
 
         </div> <!-- end container-fluid -->
-        
+        @if(count($data) > 0)
         <div class="grid mx-3 gap-3 grid-cols-3 mt-4">
             @foreach ($data as $row)
             <div class="col-span-1 w-full h-full px-2 py-1 mt-1 rounded-md bg-white">
@@ -105,6 +105,12 @@
             </div>
             @endforeach
         </div>
+        @else
+        <div class="w-full h-full mt-16 flex flex-col items-center justify-center">
+            <img src="{{asset('img/not-found.svg')}}" class="w-1/4 mt-4" alt="">
+            <p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no user found !</p>
+        </div>
+        @endif
     </div>
 
     <!--Modal Create-->

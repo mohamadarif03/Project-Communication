@@ -42,7 +42,7 @@ function GetData(){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   '<img '+src+' class="w-1/4 mt-4" alt="">'+
-                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no roles found !</p>'
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no role found !</p>'
                 $('#table').append(row)
             }
             
