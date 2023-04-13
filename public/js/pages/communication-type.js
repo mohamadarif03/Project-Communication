@@ -89,7 +89,7 @@ function update(){
         url:'/update-communication-type/'+id,
         data:{
             _token:csrfToken,
-            name:name,
+            type:name,
             color:color,
         },
         success: function(response){

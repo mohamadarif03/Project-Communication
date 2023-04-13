@@ -64,7 +64,7 @@
                                         </td>
                                         <td class="whitespace-nowrap px-6 py-4 flex"
                                             style="color: rgb(24, 24, 24); font-weight: 400;">
-                                            <button class="btn-edit" onclick="edit($row->id)" id="btn-edit-{{$row->id}}" data-name="{{$row->type}}" data-color="{{$row->color}}">
+                                            <button class="btn-edit" onclick="edit({{$row->id}})" id="btn-edit-{{$row->id}}" data-name="{{$row->type}}" data-color="{{$row->color}}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                                     <path
