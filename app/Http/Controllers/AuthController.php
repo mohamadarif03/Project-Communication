@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    public function index()
+    public function view()
     {
         return view('login');
     }

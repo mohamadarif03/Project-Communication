@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/',[AuthController::class,'index'])->name('/');
+Route::get('/',[AuthController::class,'view'])->name('/');
 Route::post('/', [AuthController::class, 'authenticating']);
 
 
@@ -30,14 +30,14 @@ Route::post('/', [AuthController::class, 'authenticating']);
 Route::middleware('auth')->group(function () {
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/dashboard',[Controller::class,'index']);
-Route::get('/role',[RoleController::class,'index']);
+Route::get('/role',[RoleController::class,'view']);
 
 //Rule
-Route::get('/rule',[RuleController::class,'index']);
+Route::get('/rule',[RuleController::class,'view']);
 Route::post('/store-rule',[RuleController::class,'insert']);
 
 //Communicationn Type
-Route::get('/communication-type',[CommunicationTypeController::class,'index']);
+Route::get('/communication-type-task',[CommunicationTypeController::class,'view']);
 Route::post('/store-communication-type',[CommunicationTypeController::class,'insert'])->name('store-communication-type');
 Route::put('/update-communication-type/{id}',[CommunicationTypeController::class,'update']);
 Route::delete('/delete-communication-type/{id}',[CommunicationTypeController::class,'delete']);

@@ -10,9 +10,10 @@ use Illuminate\Http\Request;
 
 class CommunicationTypeController extends Controller
 {
-    public function index(){
+    public function view(){
 
         $data = CommunicationType::paginate(5);
+        // dd($data);
         return view('admin.communications', [
             'data' => $data
         ]);
@@ -22,6 +23,7 @@ class CommunicationTypeController extends Controller
         CommunicationType::create([
             'type' => $request ->type,
             'color' => $request ->color,
+            'description' => $request ->description,
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
@@ -31,6 +33,7 @@ class CommunicationTypeController extends Controller
         $data->update([
             'type' => $request->type,
             'color' => $request->color,
+            'description' => $request->description,
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
@@ -39,12 +42,12 @@ class CommunicationTypeController extends Controller
         $rule = Rule::where('communication_type_id',$id)->count();
         if($rule > 0){
             return response()->json([
-                'error' => "there is a user with this role, can't delete it"
+                'error' => "This Data Is In Use, Cannot Delete Data"
             ],400);
         }
         CommunicationType::findorfail($id)->delete();
         return response()->json([
-            'success' => 'Success Delete Role!'
+            'success' => 'Success Delete Data!'
         ],200);
 
     }

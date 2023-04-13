@@ -55,6 +55,7 @@
                                         <th scope="col" class="px-6 py-4">#</th>
                                         <th scope="col" class="px-6 py-4">Name</th>
                                         <th scope="col" class="px-6 py-4">Color</th>
+                                        <th scope="col" class="px-6 py-4">Description</th>
                                         <th scope="col" class="px-6 py-4">Action</th>
 
                                     </tr>
@@ -66,15 +67,17 @@
                                             <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $i }}</td>
                                             <td class="whitespace-nowrap px-6 py-4"
                                                 style="color: rgb(24, 24, 24); font-weight: 400;">{{ $row->type }}</td>
-                                            <td class="whitespace-nowrap px-6 py-4">
-                                                <div class="rounded-circle w-8 h-8"
+                                                <td class="whitespace-nowrap px-6 py-4">
+                                                    <div class="rounded-circle w-8 h-8"
                                                     style=" background-color:{{ $row->color }}"></div>
-                                            </td>
+                                                </td>
+                                                <td class="whitespace-nowrap px-6 py-4"
+                                                    style="color: rgb(24, 24, 24); font-weight: 400;">{{ $row->description }}</td>
                                             <td class="whitespace-nowrap px-6 py-4 flex"
                                                 style="color: rgb(24, 24, 24); font-weight: 400;">
                                                 <button class="btn-edit" onclick="edit({{ $row->id }})"
                                                     id="btn-edit-{{ $row->id }}" data-name="{{ $row->type }}"
-                                                    data-color="{{ $row->color }}">
+                                                    data-color="{{ $row->color }}" data-description="{{$row->description}}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                                         <path
@@ -139,19 +142,24 @@
                 <!--Modal body-->
                 <div class="relative p-4">
                     <div class="flex gap-4 items-center">
-                        <label for="name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                        <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ml-6">Name</label>
                         <input type="text" id="type"
                             class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="Communication Type">
                     </div>
+                   
                     <div class="flex mt-2 gap-4 items-center">
-                        <label for="color" class="mb-2 mr-1 text-sm font-medium text-gray-900 ">Color</label>
+                        <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
                         <div class="flex rounded-md border"
                             style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" id="put"
                                 style="background-color: transparent; padding-right: 50px;" disabled>
                             <input type="color" name="" id="color" onchange="fetch()">
                         </div>
+                    </div>
+                    <div class="flex gap-4 mt-2 items-center">
+                        <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
+                        <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
                     </div>
                 </div>
 
@@ -185,7 +193,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Edit Communication Type
+                        Update Communication Type
                     </h5>
                     <!--Close button-->
                     <button type="button"
@@ -215,6 +223,10 @@
                                 style="background-color: transparent; padding-right: 50px;" disabled>
                             <input type="color" name="" value="" id="update-color" onchange="fetch()">
                         </div>
+                    </div>
+                    <div class="flex gap-4 mt-2 items-center">
+                        <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
+                        <textarea id="update-description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
                     </div>
                 </div>
 

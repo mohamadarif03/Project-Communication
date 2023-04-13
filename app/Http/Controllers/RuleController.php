@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class RuleController extends Controller
 {
-    public function index(){
+    public function view(){
 
         $data = CommunicationType::orderBy('created_at', 'desc')->get();
         $rule = Rule::orderBy('created_at', 'desc')->get();

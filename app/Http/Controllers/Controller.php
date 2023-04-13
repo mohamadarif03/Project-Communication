@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\CommunicationChart;
 use App\Models\CommunicationType;
 use App\Models\Role;
 use App\Models\User;
@@ -14,14 +15,16 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(){
+    public function index(CommunicationChart $CommunicationChart){
         if(in_array(1,Auth()->user()->userrole->pluck('role_id')->toarray())){ 
             $userCount = User::count();
             $communicationtypeCount = CommunicationType::count();
             $role = Role::count();
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
-            return view('user.dashboard');
+            return view('user.dashboard', [
+                'CommunicationChart' => $CommunicationChart->build()
+            ]);
         }
     }
    

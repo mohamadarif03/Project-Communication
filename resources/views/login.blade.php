@@ -50,7 +50,7 @@ input[type="text"], input[type="password"] {
                 <p class="" style="color: rgb(32, 31, 31);">Username</p>
                 <div class="form-group">
                   <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                  <input type="text" style="border: none; padding: 15px; border-radius: 12px 12px;" name="name" id="name" placeholder="     Your Name"/>
+                  <input type="text" style="border: none; padding: 15px; border-radius: 12px 12px;" name="name" id="name" placeholder="Your Name"/>
                 </div>
               </div>
               <div class="">

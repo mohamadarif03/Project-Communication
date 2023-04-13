@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
-    public function index(){
+    public function view(){
         return view('admin.roles');
     }
 

@@ -4,7 +4,7 @@
 <div class="content">                 
     <!-- Start Content-->
     <div class="container-fluid">
-        <h1 class="text-xxl font-bold mb-2">Hi, Jenifer</h1>
+        <h1 class="text-xxl font-bold mb-2">Hi, {{Auth()->user()->name}}</h1>
         <div class="grid grid-cols-12 gap-2">
             <div class=" rounded-md border bg-white col-span-3">
                 <div class="border-b-2 pb-2">
@@ -192,9 +192,14 @@
                     </div>
                 </div>
             </div>
-            <div class=" h-96 rounded-md bg-slate-300 col-span-4"></div>
+            <div class="rounded-md bg-white col-span-4">
+                {!! $CommunicationChart->container() !!} 
+            </div>
         </div>
     </div> <!-- end container-fluid -->
 
 </div>
+<script src="{{ $CommunicationChart->cdn() }}"></script>
+
+{{ $CommunicationChart->script() }}
 @endsection

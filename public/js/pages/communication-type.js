@@ -16,13 +16,15 @@ function fetch_update() {
 function create(){
     var type = $('#type').val()
     var color = $('#color').val()
+    var description = $('#description').val()
     $.ajax({
         type:'POST',
         url:'/store-communication-type',
         data:{
             _token:csrfToken,
             type:type,
-            color:color
+            color:color,
+            description:description
         },
         
         success:function(response){
@@ -33,6 +35,7 @@ function create(){
             })
             $('#type').val('')
             $('#color').val('')
+            $('#description').val('')
 
             $('#btn-close-modal').click()
             location.reload()
@@ -47,8 +50,8 @@ function create(){
 
             Swal.fire({
                 title: 'Error!',
-                html: errorMessage,
-                // html: response.responseJSON.message,
+                // html: errorMessage,
+                html: response.responseJSON.message,
                 icon: 'error',
             })
         }
@@ -58,8 +61,10 @@ function create(){
 function edit(id){
     var name = $('#btn-edit-'+id).data('name')
     var color = $('#btn-edit-'+id).data('color')
+    var description = $('#btn-edit-'+id).data('description')
     $('#update-name').val(name)
     $('#update-color').val(color)
+    $('#update-description').val(description)
     $('#update-id').val(id)
     $('#btn-update-modal').click()
 }
@@ -67,6 +72,7 @@ function edit(id){
 function update(){
     var name = $('#update-name').val()
     var color = $('#update-color').val()
+    var description = $('#update-description').val()
     var id = $('#update-id').val()
     $.ajax({
         type:'PUT',
@@ -75,6 +81,7 @@ function update(){
             _token:csrfToken,
             type:name,
             color:color,
+            description:description,
         },
         success: function(response){
             Swal.fire({
@@ -85,6 +92,7 @@ function update(){
             })
             $('#update-name').val('')
             $('#update-color').val('')
+            $('#update-description').val('')
             $('#update-id').val('')
             $('#btn-close-modal').click()
             location.reload()
@@ -124,31 +132,22 @@ function remove() {
       data:{
         _token:csrfToken
       },
-      success:function(response){
+      success: function(response){
         Swal.fire({
-            title: 'success!',
-            text: 'Success Delete Data!',
-            icon: 'success'
+            title: 'Success!',
+            text: 'Success Delete Role!',
+            icon: 'success',
+            timer: 4000
         })
-
-        $('#btn-close-modal').click()
         location.reload()
+        GetData()
     },
-    error:function(response){
-        var errors = response.responseJSON.errors;
-        var errorMessage = '';
-
-        $.each(errors, function(key, value) {
-            errorMessage += '<p class="text-red-500">' + value + '</p>';
-        });
-
+    error: function(response){
         Swal.fire({
             title: 'Error!',
-            // html: errorMessage,
-            html: response.responseJSON.message,
-            icon: 'error',
+            text: JSON.parse(response.responseText).error,
+            icon: 'error'
         })
-
     }
     });
   }
