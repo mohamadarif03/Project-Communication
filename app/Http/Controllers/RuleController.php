@@ -10,9 +10,10 @@ class RuleController extends Controller
 {
     public function index(){
 
-        $data = CommunicationType::orderBy('created_at', 'desc');
+        $data = CommunicationType::orderBy('created_at', 'desc')->get();
+        $rule = Rule::orderBy('created_at', 'desc')->get();
 
-        return view('admin.rules', compact('data'));
+        return view('admin.rules', compact('data', 'rule'));
     }
     public function insert(Request $request)
     {
@@ -20,6 +21,7 @@ class RuleController extends Controller
             'communication_type_id' => $request ->communication_type_id,
             'how' => $request ->how,
         ]);
+
         return response()->json(['message' => 'Success Create New User!']);
     }
 }
