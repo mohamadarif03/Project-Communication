@@ -28,5 +28,9 @@ class DatabaseSeeder extends Seeder
             'role' => 1,
             'profile' => 'default.png',
         ]);
+        DB::table('user_roles')->insert([
+            'user_id' => '1',
+            'role_id' => '1',
+        ]);
     }
 }
