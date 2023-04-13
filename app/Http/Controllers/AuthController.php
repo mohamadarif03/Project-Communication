@@ -17,16 +17,20 @@ class AuthController extends Controller
     public function authenticating(Request $request)
     {
         $credentials = $request->validate([
-            'name' => ['required'],
-            'password' => ['required'],
+            'name' => 'required',
+            'password' => 'required',
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
+
+           
             return redirect()->intended('dashboard');
-            
         }
+        Session::flash('status', 'Gagal Login');
+        Session::flash('message', 'Email/Password Yang Anda Masukkan Salah');
+        return redirect('/');
+
     }
     public function logout(Request $request)
     {
