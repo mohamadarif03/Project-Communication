@@ -80,14 +80,14 @@
                     </ul>
                 </div>
                     
-                <div class="h-16 flex p-2 items-center w-full ">
+                <div class="h-16 flex p-2 pt-0 items-center w-full ">
                     <div class="h-12 flex w-12 overflow-hidden rounded-circle">
                         <img class="w-12 h-12 rounded-circle" src="{{asset('profile/'.$row->profile)}}" alt="">
                     </div>
                     <div class="ml-2 flex my-auto" id="get-data-users">
                         <div class="my-auto">
-                            <h1 class="text-md font-semibold">{{$row->name}}</h1>
-                            <h3 class="text-sm">{{$row->email}}</h3>
+                            <h1 class="text-sm my-0 font-semibold">{{$row->name}}</h1>
+                            <h3 class="text-sm my-0">{{$row->email}}</h3>
                         </div>
                     </div>
                 </div>
