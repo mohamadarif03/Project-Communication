@@ -15,7 +15,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-        dd(Auth()->user()->userrole->pluck('role_id')->toarray());
         if(in_array(1,Auth()->user()->userrole->pluck('role_id')->toarray())){
             
             return view('admin.dashboard');
