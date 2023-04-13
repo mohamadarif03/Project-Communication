@@ -9,7 +9,7 @@
         <div class="flex" style="margin-top: 70px">
 
             
-            <div class="flex items-center block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+            <div class="flex items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
                 style="width: 200px; height:150px; margin-right:20px">
                 <div class="">
 
@@ -36,7 +36,7 @@
                 </div>
 
             </div>
-            <div class="flex items-center block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+            <div class=" flex items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
                 style="width: 200px; height:150px; margin-right:20px">
                 <div class="">
 
@@ -63,7 +63,7 @@
                 </div>
 
             </div>
-            <div class="flex items-center block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+            <div class="flex items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
                 style="width: 200px; height:150px; margin-right:20px">
                 <div class="">
 

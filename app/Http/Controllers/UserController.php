@@ -18,6 +18,10 @@ class UserController extends Controller
         
         return view('admin.users', compact('data'));
     }
+    public function data(){
+        $data = User::with('userrole')->where('name','!=','admin')->get();
+        return response()->json($data);
+    }
     public function insert(UserRequest $request)
     {
         $user = User::create([

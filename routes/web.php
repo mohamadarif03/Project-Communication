@@ -30,7 +30,6 @@ Route::post('/', [AuthController::class, 'authenticating']);
 Route::middleware('auth')->group(function () {
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/dashboard',[Controller::class,'index']);
-Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
 
 //Rule
