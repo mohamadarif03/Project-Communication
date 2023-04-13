@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Role;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class RoleRequest extends FormRequest
+class UpdateRoleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +26,10 @@ class RoleRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:roles,name'
+            'name' => [
+                'required',
+                Rule::unique(Role::class)->ignore($this->route('id'))
+            ]
         ];
     }
 }

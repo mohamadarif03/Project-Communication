@@ -45,4 +45,7 @@ Route::post('/store-user',[UserController::class,'insert'])->name('store-user');
 Route::get('/communication',[CommunicationController::class,'communication']);
 
 //Role
+Route::get('/data-role',[RoleController::class,'data']);
 Route::post('/store-role',[RoleController::class,'store']);
+Route::put('/update-role/{id}',[RoleController::class,'update']);
+Route::delete('/delete-role/{id}',[RoleController::class,'delete']);
