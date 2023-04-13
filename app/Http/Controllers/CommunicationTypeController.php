@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CommunicationTypeRequest;
 use App\Http\Requests\CommunicationUpdateTypeRequest;
 use App\Models\CommunicationType;
+use App\Models\Rule;
 use Illuminate\Http\Request;
 
 class CommunicationTypeController extends Controller
@@ -35,9 +36,16 @@ class CommunicationTypeController extends Controller
     }
     public function delete($id)
     {
-        $data = CommunicationType::find($id);
-        $data->delete();
-        return response()->json(['message' => 'Success Delete Type!']);
+        $rule = Rule::where('communication_type_id',$id)->count();
+        if($rule > 0){
+            return response()->json([
+                'error' => "there is a user with this role, can't delete it"
+            ],400);
+        }
+        CommunicationType::findorfail($id)->delete();
+        return response()->json([
+            'success' => 'Success Delete Role!'
+        ],200);
 
     }
 }

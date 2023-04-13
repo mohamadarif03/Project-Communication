@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UserRequest;
+use App\Models\Role;
 use App\Models\User;
 use App\Models\UserRole;
 use Illuminate\Http\Request;
@@ -12,11 +13,18 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function index()
+    public function view(Request $request)
     {
-        $data = User::with('userrole')->where('name','!=','admin')->get();
         
-        return view('admin.users', compact('data'));
+        $katakunci = $request->katakunci;
+        $data = User::whereHas('userrole', function($query) use ($katakunci) {
+            $query->where('role_id', 'LIKE', '%'.$katakunci.'%');
+        })->where('name','!=','admin')->get();
+
+        $role = Role::where('id','!=', 1)->get();
+        
+        
+        return view('admin.users', compact('data', 'role'));
     }
     public function data(){
         $data = User::with('userrole')->where('name','!=','admin')->get();

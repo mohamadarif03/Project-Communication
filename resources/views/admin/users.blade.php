@@ -14,23 +14,20 @@
                     Add
                 </button>
             </div>
+            <form class="d-flex" action="{{ url('users') }}" method="get">
+
             <div class="flex">
-                <div class="">
-                    <form class="d-flex" action="{{ url('communication-type') }}" method="get">
-                        
-                        <select id="countries" class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 mr-3 focus:outline-none">
-                            {{-- <option selected>Choose a country</option> --}}
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="FR">France</option>
-                            <option value="DE">Germany</option>
+                <div class="mr-3">
+                        <select id="countries" name="katakunci" class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 focus:outline-none">
+                            @foreach ($role as $row)
+                            <option value="{{$row->id}}">{{$row->name}}</option>
+                            @endforeach
                           </select>
-                    </form>
                 </div>
 
                 <div class="">
 
-                    <button type="button"
+                    <button type="submit"
                         class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 flex"><svg
                             style="margin-right: 13px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -39,6 +36,8 @@
                         </svg>Search</button>
                 </div>
             </div>
+        </form>
+
 
         </div>
         @if(count($data) > 0)

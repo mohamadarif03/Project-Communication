@@ -43,7 +43,7 @@ Route::put('/update-communication-type/{id}',[CommunicationTypeController::class
 Route::delete('/delete-communication-type/{id}',[CommunicationTypeController::class,'delete']);
 
 //User
-Route::get('/users',[UserController::class,'index']);
+Route::get('/users',[UserController::class,'view']);
 Route::post('/store-user',[UserController::class,'insert'])->name('store-user');
 Route::put('/update-user/{id}',[UserController::class,'update']);
 Route::delete('/delete-user/{id}',[UserController::class,'delete']);
