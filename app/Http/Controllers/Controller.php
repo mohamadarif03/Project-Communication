@@ -15,20 +15,14 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index(){
-        if(in_array(1,Auth()->user()->userrole->pluck('role_id')->toarray())){
-            
-            return view('admin.dashboard');
+        if(in_array(1,Auth()->user()->userrole->pluck('role_id')->toarray())){ 
+            $userCount = User::count();
+            $communicationtypeCount = CommunicationType::count();
+            $role = Role::count();
+            return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
             return view('user.dashboard');
         }
-    }
-
-    public function admin(){
-
-        $userCount = User::count();
-        $communicationtypeCount = CommunicationType::count();
-        $role = Role::count();
-        return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
     }
    
 }
