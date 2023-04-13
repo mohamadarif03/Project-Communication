@@ -35,6 +35,7 @@ Route::get('/rule',[RuleController::class,'index']);
 
 Route::get('/communication-type',[CommunicationTypeController::class,'index']);
 Route::post('/store-communication-type',[CommunicationTypeController::class,'insert'])->name('store-communication-type');
+Route::get('/delete-communication-type/{id}',[CommunicationTypeController::class,'delete'])->name('delete-communication-type');
 
 
 Route::get('/users',[UserController::class,'index']);

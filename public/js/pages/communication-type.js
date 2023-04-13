@@ -42,7 +42,7 @@ function create(){
         success:function(response){
             Swal.fire({
                 title: 'success!',
-                text: 'Success Create New User!',
+                text: 'Success Create New Type!',
                 icon: 'success'
             })
             $('#type').val('')
@@ -68,3 +68,39 @@ function create(){
         }
     })
 }
+
+function deleteData(id) {
+    $.ajax({
+      url: '/delete-communication-type/1',
+      method: 'DELETE',
+
+      success:function(response){
+        Swal.fire({
+            title: 'success!',
+            text: 'Success Delete Data!',
+            icon: 'success'
+        })
+        $('#type').val('')
+        $('#color').val('')
+
+        $('#btn-close-modal').click()
+        location.reload()
+    },
+    error:function(response){
+        var errors = response.responseJSON.errors;
+        var errorMessage = '';
+
+        $.each(errors, function(key, value) {
+            errorMessage += '<p class="text-red-500">' + value + '</p>';
+        });
+
+        Swal.fire({
+            title: 'Error!',
+            // html: errorMessage,
+            html: response.responseJSON.message,
+            icon: 'error',
+        })
+    }
+    });
+  }
+  
