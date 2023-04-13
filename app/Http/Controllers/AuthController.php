@@ -27,9 +27,7 @@ class AuthController extends Controller
            
             return redirect()->intended('dashboard');
         }
-        Session::flash('status', 'Gagal Login');
-        Session::flash('message', 'Email/Password Yang Anda Masukkan Salah');
-        return redirect('/');
+        return redirect('/')->withErrors('Name Or Password Undefined');
 
     }
     public function logout(Request $request)
