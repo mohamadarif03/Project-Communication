@@ -1,5 +1,7 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
+new TomSelect('#forsearch')
+
 
 $('.btn-delete').click(function(){
     var name = $(this).data('name')
@@ -69,11 +71,15 @@ function create(){
     })
 }
 
-function deleteData(id) {
-    $.ajax({
-      url: '/delete-communication-type/1',
-      method: 'DELETE',
 
+function deleteData(id) {
+
+    $.ajax({
+      url: '/delete-communication-type/' +id,
+      method: 'DELETE',
+      data:{
+        _token:csrfToken
+      },
       success:function(response){
         Swal.fire({
             title: 'success!',
