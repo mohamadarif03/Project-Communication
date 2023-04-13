@@ -25,10 +25,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[AuthController::class,'index'])->name('/');
 Route::post('/', [AuthController::class, 'authenticating']);
 
+
+
+Route::middleware('auth')->group(function () {
 Route::get('logout', [AuthController::class, 'logout']);
-
-
-Route::get('/dashboard',[Controller::class,'index'])->middleware('auth');
+Route::get('/dashboard',[Controller::class,'index']);
 Route::get('/dashboardadmin',[Controller::class,'admin']);
 Route::get('/role',[RoleController::class,'index']);
 
@@ -55,3 +56,4 @@ Route::get('/data-role',[RoleController::class,'data']);
 Route::post('/store-role',[RoleController::class,'store']);
 Route::put('/update-role/{id}',[RoleController::class,'update']);
 Route::delete('/delete-role/{id}',[RoleController::class,'delete']);
+});
