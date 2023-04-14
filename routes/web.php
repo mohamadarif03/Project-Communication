@@ -5,6 +5,7 @@ use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\CommunicationTypeController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\responsbilityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
@@ -72,5 +73,8 @@ Route::delete('/delete-role/{id}',[RoleController::class,'delete']);
 //Profil
 Route::get('/profil',[ProfileController::class,'view']);
 Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
+
+
+Route::get('/responsbility',[responsbilityController::class,'view']);
 
 });

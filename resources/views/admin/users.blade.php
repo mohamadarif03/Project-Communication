@@ -37,9 +37,8 @@
                 </div>
             </div>
         </form>
-
-
         </div>
+    </div>
         
         @if(count($data) > 0)
         <div class="grid mx-3 gap-3 grid-cols-3 mt-4">
