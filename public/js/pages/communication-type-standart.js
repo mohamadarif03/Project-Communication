@@ -30,11 +30,13 @@ function create(){
                 title: 'success!',
                 text: 'Success Create New Type!',
                 icon: 'success'
-            })
-            $('#type').val('')
-            $('#color').val('')
-            $('#btn-close-modal').click()
-            location.reload()
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload()
+                }
+            } )
+            // location.reload()
+            $('#btn-close-add').click()
         },
         error:function(response){
             var errors = response.responseJSON.errors;

@@ -66,6 +66,7 @@ function create(){
                 icon: 'success'
             })
             $('#name').val('')
+            $('#btn-close-add').click()
             GetData()
         },
         error:function(response){
@@ -118,6 +119,7 @@ function update(){
             })
             $('#update-name').val('')
             $('#update-id').val('')
+            $('#btn-close-update').click()
             GetData()
         },
         error:function(response){
@@ -153,6 +155,7 @@ function remove(){
                 icon: 'success',
                 timer: 4000
             })
+            $('#btn-close-delete').click()
             GetData()
         },
         error: function(response){

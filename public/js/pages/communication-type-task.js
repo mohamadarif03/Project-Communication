@@ -1,3 +1,4 @@
+
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
 
@@ -32,13 +33,14 @@ function create(){
                 title: 'success!',
                 text: 'Success Create New Type!',
                 icon: 'success'
-            })
-            $('#type').val('')
-            $('#color').val('')
-            $('#description').val('')
-
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload()
+                }
+            } )
             $('#btn-close-modal').click()
-            location.reload()
+
+           
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -89,13 +91,13 @@ function update(){
                 text: 'Success Update Data!',
                 icon: 'success',
                 timer: 4000
-            })
-            $('#update-name').val('')
-            $('#update-color').val('')
-            $('#update-description').val('')
-            $('#update-id').val('')
-            $('#btn-close-modal').click()
-            location.reload()
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload()
+                }
+            } )
+            // location.reload()
+            $('#btn-close-update').click()
 
 
         },
@@ -138,8 +140,13 @@ function remove() {
             text: 'Success Delete Role!',
             icon: 'success',
             timer: 4000
-        })
-        location.reload()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.reload()
+            }
+        } )
+        // location.reload()
+        $('#btn-close-delete').click()
         GetData()
     },
     error: function(response){

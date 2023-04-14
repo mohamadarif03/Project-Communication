@@ -210,13 +210,13 @@
                 <!--Modal body-->
                 <div class="relative p-4">
                     <div class="flex gap-4 items-center">
-                        <label for="update-name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                        <label for="update-name" class=" mb-2 text-xs font-medium text-gray-900 ml-6">Name</label>
                         <input type="text" id="update-name" value=""
                             class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="Role" required>
                     </div>
                     <div class="flex mt-2 gap-4 items-center">
-                        <label for="color" class="mb-2 mr-1 text-sm font-medium text-gray-900 ">Color</label>
+                        <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
                         <div class="flex rounded-md border"
                             style="box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" value="" id="put2"
@@ -233,7 +233,7 @@
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
-                    <button type="button"
+                    <button type="button" id="btn-close-update"
                         class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
@@ -241,7 +241,7 @@
                     <button type="button" onclick="update()"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 "
                         data-te-ripple-init data-te-ripple-color="light">
-                        Save
+                        Update
                     </button>
                 </div>
             </div>
@@ -282,7 +282,7 @@
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
-                    <button type="button"
+                    <button type="button" id="btn-close-delete"
                         class="inline-block rounded bg-red-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
