@@ -59,7 +59,6 @@ function create(){
 function edit(id){
     var name = $('#btn-edit-'+id).data('name')
     var color = $('#btn-edit-'+id).data('color')
-    var description = $('#btn-edit-'+id).data('description')
     $('#update-name').val(name)
     $('#update-color').val(color)
     $('#update-id').val(id)
@@ -77,7 +76,6 @@ function update(){
             _token:csrfToken,
             type:name,
             color:color,
-            description:description,
         },
         success: function(response){
             Swal.fire({
@@ -85,12 +83,13 @@ function update(){
                 text: 'Success Update Data!',
                 icon: 'success',
                 timer: 4000
-            })
-            $('#update-name').val('')
-            $('#update-color').val('')
-            $('#update-id').val('')
-            $('#btn-close-modal').click()
-            location.reload()
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload()
+                }
+            } )
+            // location.reload()
+            $('#btn-close-update').click()
 
 
         },
@@ -133,8 +132,13 @@ function remove() {
             text: 'Success Delete Role!',
             icon: 'success',
             timer: 4000
-        })
-        location.reload()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.reload()
+            }
+        } )
+        // location.reload()
+        $('#btn-close-delete').click()
         GetData()
     },
     error: function(response){
