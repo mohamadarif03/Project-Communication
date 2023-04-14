@@ -35,7 +35,6 @@ class CommunicationTypeController extends Controller
             'type' => $request->type,
             'color' => $request->color,
             'description' => $request->description,
-            'status' => 'task'
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
@@ -80,7 +79,6 @@ class CommunicationTypeController extends Controller
             'type' => $request->type,
             'color' => $request->color,
             'description' => $request->description,
-            'status' => 'status',
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
