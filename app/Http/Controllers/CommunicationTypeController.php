@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CommunicationTypeRequest;
+use App\Http\Requests\CommunicationTypeRequestStandart;
+use App\Http\Requests\CommunicationTypeRequestTask;
 use App\Http\Requests\CommunicationUpdateTypeRequest;
 use App\Models\CommunicationType;
 use App\Models\Rule;
@@ -18,7 +20,7 @@ class CommunicationTypeController extends Controller
             'data' => $data
         ]);
     }
-    public function insert(CommunicationTypeRequest $request)
+    public function insert(CommunicationTypeRequestTask $request)
     {
         CommunicationType::create([
             'type' => $request ->type,
@@ -28,7 +30,7 @@ class CommunicationTypeController extends Controller
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
-    public function update(CommunicationUpdateTypeRequest $request, $id)
+    public function update(CommunicationTypeRequestTask $request, $id)
     {
         $data = CommunicationType::find($id);
         $data->update([
@@ -62,7 +64,7 @@ class CommunicationTypeController extends Controller
             'data' => $data
         ]);
     }
-    public function insertStandart(CommunicationTypeRequest $request)
+    public function insertStandart(CommunicationTypeRequestStandart $request)
     {
         CommunicationType::create([
             'type' => $request ->type,
@@ -72,7 +74,7 @@ class CommunicationTypeController extends Controller
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
-    public function updateStandart(CommunicationUpdateTypeRequest $request, $id)
+    public function updateStandart(CommunicationTypeRequestStandart $request, $id)
     {
         $data = CommunicationType::find($id);
         $data->update([

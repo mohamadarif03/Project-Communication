@@ -40,6 +40,7 @@
 
 
         </div>
+        
         @if(count($data) > 0)
         <div class="grid mx-3 gap-3 grid-cols-3 mt-4">
             @foreach ($data as $row)
@@ -101,7 +102,7 @@
             <p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no user found !</p>
         </div>
         @endif
-    </div>
+    
 
     <!--Modal Create-->
     <form action="/insertuser" method="post">

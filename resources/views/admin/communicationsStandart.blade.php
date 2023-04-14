@@ -43,6 +43,7 @@
 
         </div>
         <!-- end container-fluid -->
+        @if(count($data) > 0)
         <div class="w-full flex">
 
             <div class="flex flex-col mx-auto rounded-lg" style="background-color: white; margin-top: 10%; width: 95%;">
@@ -74,7 +75,7 @@
                                                 style="color: rgb(24, 24, 24); font-weight: 400;">
                                                 <button class="btn-edit" onclick="edit({{ $row->id }})"
                                                     id="btn-edit-{{ $row->id }}" data-name="{{ $row->type }}"
-                                                    data-color="{{ $row->color }}">
+                                                    data-color="{{ $row->color }}" data-description="{{$row->description}}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                                         <path
@@ -103,6 +104,12 @@
                 </div>
             </div>
         </div>
+        @else
+        <div class="w-full h-full mt-16 flex flex-col items-center justify-center">
+            <img src="{{asset('img/not-found.svg')}}" class="w-1/4 mt-4" alt="">
+            <p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no responsibilities found !</p>
+        </div>
+        @endif
     </div>
     <!--Modal Button-->
     <button type="button" id="btn-update-modal" data-te-toggle="modal" data-te-target="#update" data-te-ripple-init
@@ -123,7 +130,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Add Communication Type
+                        Add Responsibilities Type
                     </h5>
                     <!--Close button-->
                     <button type="button"
@@ -142,7 +149,7 @@
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ml-6">Name</label>
                         <input type="text" id="type"
                             class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                            placeholder="Communication Type">
+                            placeholder="Responsibilities Type">
                     </div>
                    
                     <div class="flex mt-2 gap-4 items-center">
@@ -187,7 +194,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Update Communication Type
+                        Update Responsibilities Type
                     </h5>
                     <!--Close button-->
                     <button type="button"
@@ -251,7 +258,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Delete Communication Type
+                        Delete Responsibilities Type
                     </h5>
                     <!--Close button-->
                     <button type="button"
