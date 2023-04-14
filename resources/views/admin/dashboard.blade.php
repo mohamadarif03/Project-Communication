@@ -20,12 +20,12 @@
                         </div>
                     </div>
 
-                    <div class="h-16 flex justify-center">
+                    <div class="h-full flex justify-center">
 
                         <div class="ml-2 flex justify-center">
                             <div class="my-auto">
                                 <h1 class="text-5xl text-gray-900 font-semibold flex justify-center">{{ $userCount }}</h1>
-                                <h3 class="text-sm text-gray-900 font-semibold ml-3  flex justify-center">Users</h3>
+                                <h3 class="text-xs text-gray-900 font-semibold ml-3  flex justify-center">Users</h3>
                             </div>
                         </div>
                     </div>
@@ -43,12 +43,12 @@
                         </div>
                     </div>
 
-                    <div class="h-16 flex justify-center">
+                    <div class="h-full flex justify-center">
 
                         <div class="ml-2 flex justify-center">
                             <div class="my-auto">
                                 <h1 class="text-5xl text-gray-900 font-semibold flex justify-center">{{ $communicationtypeCount }}</h1>
-                                <h3 class="text-sm text-gray-900 font-semibold ml-3  flex justify-center">Communication Type</h3>
+                                <h3 class="text-xs text-gray-900 font-semibold ml-3  flex justify-center">Responsibilities Type</h3>
                             </div>
                         </div>
                     </div>
@@ -70,12 +70,12 @@
                         </div>
                     </div>
 
-                    <div class="h-16 flex justify-center">
+                    <div class="h-full flex justify-center">
 
-                        <div class="ml-2 flex justify-center">
+                        <div class="">
                             <div class="my-auto">
                                 <h1 class="text-5xl text-gray-900 font-semibold flex justify-center">{{ $role }}</h1>
-                                <h3 class="text-sm text-gray-900 font-semibold ml-3  flex justify-center">role</h3>
+                                <h3 class="text-xs text-gray-900 font-semibold ml-3  flex justify-center">role</h3>
                             </div>
                         </div>
                     </div>
