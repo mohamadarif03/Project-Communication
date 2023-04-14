@@ -2,26 +2,75 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RuleRequest;
+use App\Http\Requests\UpdateRuleRequest;
 use App\Models\CommunicationType;
 use App\Models\Rule;
+use App\Models\ToRule;
 use Illuminate\Http\Request;
 
 class RuleController extends Controller
 {
     public function view(){
-
         $data = CommunicationType::orderBy('created_at', 'desc')->get();
-        $rule = Rule::orderBy('created_at', 'desc')->get();
-
-        return view('admin.rules', compact('data', 'rule'));
+        return view('admin.rules', compact('data'));
     }
-    public function insert(Request $request)
+    public function data(Request $request){
+        if($request->search){
+            $data = Rule::with('communicationType')
+                    ->join('to_rules', 'rules.id', '=', 'to_rules.rule_id')   
+                    ->where('to_rules.role_id', 2)
+                    ->get();
+        
+        }else{
+            $data = Rule::with('communicationType')->get();
+        }
+        return response()->json($data);
+        
+    }
+    public function insert(RuleRequest $request)
     {
-        Rule::create([
-            'communication_type_id' => $request ->communication_type_id,
+        $rule = Rule::create([
+            'communication_type_id' => $request ->communication_type,
             'how' => $request ->how,
+            'to' => implode(',',$request->to)
         ]);
+        foreach($request->to as $item){
+            ToRule::create([
+                'rule_id' => $rule->id,
+                'role_id' => $item
+            ]);
+        }
+        
 
-        return response()->json(['message' => 'Success Create New User!']);
+        return response()->json([
+            'success' => 'Success Create New Rule!'
+        ]);
+    }
+
+    public function update(UpdateRuleRequest $request,$id){
+        $rule = Rule::findorfail($id);
+        ToRule::where('rule_id',$rule->id)->delete();
+        foreach($request->to as $item){
+            ToRule::create([
+                'rule_id' => $rule->id,
+                'role_id' => $item
+            ]);
+        }
+        $rule->update([
+            'communication_type_id' => $request ->communication_type,
+            'how' => $request ->how,
+            'to' => implode(',',$request->to)
+        ]);
+        return response()->json([
+            'success' => 'Success Update Rule!'
+        ]);
+    }
+
+    public function delete($id){
+        Rule::findorfail($id)->delete();
+        return response()->json([
+            'success' => 'Success Delete Data!'
+        ]);
     }
 }

@@ -33,6 +33,7 @@ Route::get('/dashboard',[Controller::class,'index']);
 Route::get('/role',[RoleController::class,'view']);
 
 //Rule
+Route::get('/data-rule',[RuleController::class,'data']);
 Route::get('/rule',[RuleController::class,'view']);
 Route::post('/store-rule',[RuleController::class,'insert']);
 

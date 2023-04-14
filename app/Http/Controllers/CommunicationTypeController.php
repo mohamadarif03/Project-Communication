@@ -18,6 +18,10 @@ class CommunicationTypeController extends Controller
             'data' => $data
         ]);
     }
+    public function data(){
+        $data = CommunicationType::all();
+        return response()->json($data);
+    }
     public function insert(CommunicationTypeRequest $request)
     {
         CommunicationType::create([
