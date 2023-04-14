@@ -17,7 +17,7 @@
                 <form class="d-flex" action="{{ url('communication-type') }}" method="get">
                     
                     <select placeholder="all" id="search" class="bg-gray-50 text-gray-900 text-sm rounded-lg block min-w-24 p-2.5 px-4 mr-3 focus:outline-none">
-                        <option value="">All Role</option>
+                        <option value="">All Type</option>
                       </select>
                 </form>
             </div>
@@ -25,6 +25,7 @@
             <div class="">
 
                 <button type="button"
+                    onclick="search()"
                     class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 flex"><svg
                         style="margin-right: 13px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -94,11 +95,8 @@ role="dialog">
                 <div>
                     <div class="">
                         <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Commication Type</label>
-                        <Select id="communication_type_id" name="communication_type_id" class="" placeholder="Choose Type">
+                        <Select id="type" name="communication_type_id" class="" placeholder="Choose Type">
                             <option value=""></option>
-                            @foreach ($data as $row)
-                            <option value="{{$row->id}}">{{$row->type}}</option>
-                            @endforeach
                         </Select>
                     </div>
                     <div class="mt-1.5">
@@ -250,16 +248,14 @@ role="dialog">
                 </div>
                 <div>
                     <div class="">
-                        <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
-                        <Select id="type2" name="type" class="" placeholder="Choose Type">
+                        <label for="update-type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
+                        <Select id="update-type" name="type" class="" placeholder="Choose Type">
                             <option value=""></option>
-                            <option value="Monthly Report">Monthly Report</option>
-                            <option value="Quarter Report">Quarter Report</option>
                         </Select>
                     </div>
                     <div class="mt-1.5">
-                        <label for="type" class=" mb-2 block text-sm font-medium text-gray-900 ">How</label>
-                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="How" required>
+                        <label for="update-how" class=" mb-2 block text-sm font-medium text-gray-900 ">How</label>
+                        <input type="text" id="update-how" class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" style="border-radius: 3px" placeholder="How" required>
                     </div>
                 </div>
             </div>     
@@ -323,11 +319,9 @@ role="dialog">
                 </div>
                 <div>
                     <div class="">
-                        <label for="To2" class=" mb-2 text-sm font-medium text-gray-900 ">To</label>
-                        <Select multiple id="To2" name="To2" class="" placeholder="To Who">
+                        <label for="update-to" class=" mb-2 text-sm font-medium text-gray-900 ">To</label>
+                        <Select multiple id="update-to" name="To2" class="" placeholder="To Who">
                             <option value=""></option>
-                            <option value="Marketing Manager">Marketing Manager</option>
-                            <option value="Sales">Sales</option>
                         </Select>
                     </div>
                 </div>

@@ -38,6 +38,7 @@ Route::get('/rule',[RuleController::class,'view']);
 Route::post('/store-rule',[RuleController::class,'insert']);
 
 //Communicationn Type Task
+Route::get('/data-type',[CommunicationTypeController::class,'data']);
 Route::get('/communication-type-task',[CommunicationTypeController::class,'view']);
 Route::post('/store-communication-type-task',[CommunicationTypeController::class,'insert']);
 Route::put('/update-communication-type-task/{id}',[CommunicationTypeController::class,'update']);

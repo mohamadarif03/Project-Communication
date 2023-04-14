@@ -17,12 +17,12 @@ class RuleController extends Controller
     }
     public function data(Request $request){
         if($request->search){
-            $data = Rule::with('communicationType')
+            $data = Rule::with(['communicationType','torule'])
                     ->where('communication_type_id',$request->search)
                     ->get();
         
         }else{
-            $data = Rule::with('communicationType')->get();
+            $data = Rule::with(['communicationType','torule'])->get();
         }
         return response()->json($data);
         

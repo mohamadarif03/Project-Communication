@@ -10,4 +10,8 @@ class ToRule extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function rule(){
+        return $this->belongsTo(rule::class);
+    }
 }
