@@ -84,9 +84,7 @@ function edit(id){
                 var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
                 $('#update-role').append(row)
             })
-            new TomSelect('#update-role',{
-                plugins: ['remove_button'],
-            })
+            $('#update-role').select2()
         },
         error:function(response){
             console.log(response)
