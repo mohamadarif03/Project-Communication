@@ -1,9 +1,15 @@
 
+
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 load()
 GetData()
 GetType()
 GetRole()
+
+var type
+var to
+var update_type
+var update_to = new TomSelect('#update-to')
 function GetType(){
     $.ajax({
         type:'GET',
@@ -15,8 +21,8 @@ function GetType(){
                 $('#type').append(row)
                 $('#update-type').append(row)
             })
-            new TomSelect('#type')
-            new TomSelect('#update-type')
+            type =  new TomSelect('#type')
+            update_type = new TomSelect('#update-type')
         },
         error:function(response){
             console.log(response)
@@ -29,12 +35,12 @@ function GetRole(){
         url:'/data-role',
         success:function(response){
             $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'">'+data.type+'</option>'
+                var row = '<option value="'+data.id+'">'+data.name+'</option>'
                 $('#To').append(row)
             })
-            new TomSelect('#To',{
+            to =  new TomSelect('#To',{
                 plugins: ['remove_button'],
-            }) 
+            })
         },
         error:function(response){
             console.log(response)
@@ -71,7 +77,7 @@ function GetData(){
                                 '<button onclick="showdropdown('+index+')" class="ml-auto h-5 w-5 rounded-circle bg-transparent">'+
                                     '<svg  class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>'+
                                 '</button>'+
-                                '<ul id="dropdownlist-'+index+'" class="absolute hidden z-[1000] float-left right-9 top-3 border-2 m-0 min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg" >'+
+                                '<ul id="dropdownlist-'+index+'" class="absolute dropdown-edit hidden z-[1000] float-left right-9 top-3 border-2 m-0 min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg" >'+
                                     '<li>'+
                                             '<button id="btn-edit-'+data.id+'" data-type="'+data.communication_type_id+'" data-how="'+data.how+'" data-to="'+data.to+'" onclick="edit('+data.id+')" class="btn-edit flex items-center">'+
                                                 '<svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'+
@@ -128,6 +134,11 @@ function GetData(){
     })
 }
 function showdropdown(index){
+    $('.dropdown-edit').each(function() {
+        if (!$(this).hasClass('hidden')) {
+          $(this).addClass('hidden');
+        }
+    });
     $('#dropdownlist-'+index).toggleClass('hidden');
 }
 
@@ -213,25 +224,38 @@ function edit(id){
     var type = $('#btn-edit-'+id).data('type')
     var how = $('#btn-edit-'+id).data('how')
     var to = $('#btn-edit-'+id).data('to')
-    var to_arr = to.split(',')
+    if (to.length > 1){
+        var to_arr = to.split(',')
+    }else{
+        var to_arr =  [to]
+        console.log('tes')
+    }
+    
+    update_type.destroy()
     $('#update-type').val(type)
+    new TomSelect('#update-type')
+    const remove = $('#update-type-form').find('.ts-wrapper:not(:first)');
+    remove.remove();
     $('#update-how').val(how)
     $('#update-to').html('')
+    update_to.destroy()
     $.ajax({
         type:'GET',
         url:'/data-role',
         success:function(response){
             $.each(response,function(index,data){
                 var selected = ''
-                if(to_arr.includes(data.id)){
+                if(to_arr.includes(String(data.id))){
                     selected = 'selected'
                 }
                 var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
                 $('#update-to').append(row)
-            })
+            })   
             new TomSelect('#update-to',{
                 plugins: ['remove_button'],
             })
+            const remove_to = $('#update-to-form').find('.ts-wrapper:not(:first)');
+                remove_to.remove();
         },
         error:function(response){
             console.log(response)

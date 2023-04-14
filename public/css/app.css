@@ -922,6 +922,9 @@ video {
 .h-\[160px\] {
   height: 160px;
 }
+.h-\[220px\] {
+  height: 220px;
+}
 .h-\[260px\] {
   height: 260px;
 }
@@ -966,18 +969,6 @@ video {
 }
 .h-screen {
   height: 100vh;
-}
-.h-\[\] {
-  height: ;
-}
-.h-\[220\] {
-  height: 220;
-}
-.h-\[220px\] {
-  height: 220px;
-}
-.h-\[20px\] {
-  height: 20px;
 }
 .max-h-\[calc\(100\%-64px\)\] {
   max-height: calc(100% - 64px);
@@ -1895,22 +1886,6 @@ video {
 .py-\[5px\] {
   padding-top: 5px;
   padding-bottom: 5px;
-}
-.px-\[\] {
-  padding-left: ;
-  padding-right: ;
-}
-.px-\[30px\] {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.px-\[50px\] {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-.px-\[500px\] {
-  padding-left: 500px;
-  padding-right: 500px;
 }
 .pb-0 {
   padding-bottom: 0px;
