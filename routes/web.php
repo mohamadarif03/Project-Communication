@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\CommunicationTypeController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
@@ -21,9 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::middleware('only_guest')->group(function () {
 Route::get('/',[AuthController::class,'view'])->name('/');
 Route::post('/', [AuthController::class, 'authenticating']);
+});
+
 
 
 
@@ -39,6 +42,7 @@ Route::post('/store-rule',[RuleController::class,'insert']);
 
 //Communicationn Type Task
 Route::get('/communication-type-task',[CommunicationTypeController::class,'view']);
+Route::get('/data-communication-type-task',[CommunicationTypeController::class,'data']);
 Route::post('/store-communication-type-task',[CommunicationTypeController::class,'insert']);
 Route::put('/update-communication-type-task/{id}',[CommunicationTypeController::class,'update']);
 Route::delete('/delete-communication-type-task/{id}',[CommunicationTypeController::class,'delete']);
@@ -63,4 +67,8 @@ Route::get('/data-role',[RoleController::class,'data']);
 Route::post('/store-role',[RoleController::class,'store']);
 Route::put('/update-role/{id}',[RoleController::class,'update']);
 Route::delete('/delete-role/{id}',[RoleController::class,'delete']);
+
+//Profil
+Route::get('/profil',[ProfileController::class,'view']);
+
 });

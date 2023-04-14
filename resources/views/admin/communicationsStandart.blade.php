@@ -42,74 +42,62 @@
             </div>
 
         </div>
-        <!-- end container-fluid -->
-        @if(count($data) > 0)
+        
         <div class="w-full flex">
 
             <div class="flex flex-col mx-auto rounded-lg" style="background-color: white; margin-top: 3%; width: 95%;">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                        <div class="overflow-hidden">
-                            <table class="min-w-full text-left text-sm font-light">
-                                <thead class="border-b font-medium dark:border-neutral-500">
-                                    <tr>
-                                        <th scope="col" class="px-6 py-4">#</th>
-                                        <th scope="col" class="px-6 py-4">Name</th>
-                                        <th scope="col" class="px-6 py-4">Color</th>
-                                        <th scope="col" class="px-6 py-4">Action</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $i = $data->firstItem(); ?>
-                                    @foreach ($data as $row)
-                                        <tr class="border-b border-dashed dark:border-neutral-500">
-                                            <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $i }}</td>
-                                            <td class="whitespace-nowrap px-6 py-4"
-                                                style="color: rgb(24, 24, 24); font-weight: 400;">{{ $row->type }}</td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="rounded-circle w-8 h-8"
-                                                    style=" background-color:{{ $row->color }}"></div>
-                                                </td>
-                                            <td class="whitespace-nowrap px-6 py-4 flex"
-                                                style="color: rgb(24, 24, 24); font-weight: 400;">
-                                                <button class="btn-edit" onclick="edit({{ $row->id }})"
-                                                    id="btn-edit-{{ $row->id }}" data-name="{{ $row->type }}"
-                                                    data-color="{{ $row->color }}" data-description="{{$row->description}}">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                                    </svg>
-                                                </button>
-
-                                                <button class="btn-delete" onclick="removemodal({{ $row->id }})">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;"
-                                                        width="16" height="16" fill="currentColor"
-                                                        class="bi bi-trash" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
-                                                        <path
-                                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
-                                                    </svg>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <?php $i++; ?>
-                                    @endforeach
-                                </tbody>
+                        <div class="overflow-hidden flex flex-col items-center justify-center p-4" id="table">
+                            <table class="w-full">
+                              <thead>
+                                <th>
+                                  <div class="bg-slate-300 h-6 rounded-sm animate-pulse w-full">
+    
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="bg-slate-300 h-6 rounded-sm animate-pulse w-full">
+    
+                                  </div>
+                                </th>
+                                <th>
+                                  <div class="bg-slate-300 h-6 rounded-sm animate-pulse w-full">
+    
+                                  </div>
+                                </th>
+                              </thead>
+                              <tbody>
+                                <tr class="mt-3">
+                                  <td colspan="3">
+                                    <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                                  </td>
+                                </tr>
+                                <tr class="">
+                                  <td colspan="3">
+                                    <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                                  </td>
+                                </tr>
+                                <tr class="">
+                                  <td colspan="3">
+                                    <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                                  </td>
+                                </tr>
+                                <tr class="">
+                                  <td colspan="3">
+                                    <div class="my-1.5 bg-slate-300 h-6 rounded-sm animate-pulse w-full"></div>
+                                  </td>
+                                </tr>
+                              </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @else
-        <div class="w-full h-full mt-16 flex flex-col items-center justify-center">
-            <img src="{{asset('img/not-found.svg')}}" class="w-1/4 mt-4" alt="">
-            <p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no responsibilities found !</p>
-        </div>
-        @endif
+       
+        <!-- end container-fluid -->
+        
     </div>
     <!--Modal Button-->
     <button type="button" id="btn-update-modal" data-te-toggle="modal" data-te-target="#update" data-te-ripple-init
@@ -161,13 +149,16 @@
                             <input type="color" name="" id="color" onchange="fetch()">
                         </div>
                     </div>
-                   
+                    <div class="flex gap-4 mt-2 items-center">
+                        <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
+                        <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
+                    </div>
                 </div>
 
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
-                    <button type="button" id="btn-close-add"
+                    <button type="button" id="btn-close-modal"
                         class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
@@ -211,13 +202,13 @@
                 <!--Modal body-->
                 <div class="relative p-4">
                     <div class="flex gap-4 items-center">
-                        <label for="update-name" class=" mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                        <label for="update-name" class=" mb-2 text-xs font-medium text-gray-900 ml-6">Name</label>
                         <input type="text" id="update-name" value=""
                             class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="Role" required>
                     </div>
                     <div class="flex mt-2 gap-4 items-center">
-                        <label for="color" class="mb-2 mr-1 text-sm font-medium text-gray-900 ">Color</label>
+                        <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
                         <div class="flex rounded-md border"
                             style="box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" value="" id="put2"
@@ -225,7 +216,10 @@
                             <input type="color" name="" value="" id="update-color" onchange="fetch()">
                         </div>
                     </div>
-                   
+                    <div class="flex gap-4 mt-2 items-center">
+                        <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
+                        <textarea id="update-description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
+                    </div>
                 </div>
 
                 <!--Modal footer-->
@@ -239,7 +233,7 @@
                     <button type="button" onclick="update()"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 "
                         data-te-ripple-init data-te-ripple-color="light">
-                        Save
+                        Update
                     </button>
                 </div>
             </div>
@@ -274,7 +268,7 @@
                 <!--Modal body-->
                 <div class="relative p-4">
                     <input type="hidden" class="hidden w-0 h-0" value="" id="delete-id">
-                    <p>Are you sure you want to delete this data?</p>
+                    <p>Are you sure you want to delete responsibilities <span id="responbilities-type"></span>?</p>
                 </div>
 
                 <!--Modal footer-->
