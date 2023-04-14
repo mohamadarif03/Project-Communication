@@ -18,8 +18,7 @@ class RuleController extends Controller
     public function data(Request $request){
         if($request->search){
             $data = Rule::with('communicationType')
-                    ->join('to_rules', 'rules.id', '=', 'to_rules.rule_id')   
-                    ->where('to_rules.role_id', 2)
+                    ->where('communication_type_id',$request->search)
                     ->get();
         
         }else{
