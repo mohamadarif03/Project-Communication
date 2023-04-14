@@ -980,6 +980,9 @@ video {
 .h-\[160px\] {
   height: 160px;
 }
+.h-\[220px\] {
+  height: 220px;
+}
 .h-\[260px\] {
   height: 260px;
 }
@@ -1024,18 +1027,6 @@ video {
 }
 .h-screen {
   height: 100vh;
-}
-.h-\[\] {
-  height: ;
-}
-.h-\[220\] {
-  height: 220;
-}
-.h-\[220px\] {
-  height: 220px;
-}
-.h-\[20px\] {
-  height: 20px;
 }
 .max-h-\[calc\(100\%-64px\)\] {
   max-height: calc(100% - 64px);

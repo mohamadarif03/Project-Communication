@@ -96,11 +96,8 @@
                                 <div class="">
                                     <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication
                                         Type</label>
-                                    <select id="type"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none block w-full p-2.5">
-                                        <option selected>Choose a country</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
+                                    <select id="type" class="" placeholder="Choose type">
+                                        <option></option>
                                     </select>
 
                                 </div>
@@ -264,7 +261,7 @@
                                 </ol>
                             </div>
                             <div>
-                                <div class="">
+                                <div class="" id="update-type-form">
                                     <label for="update-type"
                                         class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
                                     <Select id="update-type" name="type" class="" placeholder="Choose Type">
@@ -349,7 +346,7 @@
                                 </ol>
                             </div>
                             <div>
-                                <div class="">
+                                <div class="" id="update-to-form">
                                     <label for="update-to" class=" mb-2 text-sm font-medium text-gray-900 ">To</label>
                                     <Select multiple id="update-to" name="To2" class="" placeholder="To Who">
                                         <option value=""></option>
