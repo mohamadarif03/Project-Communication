@@ -12,9 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+        <link rel="stylesheet" href="{{asset('plugin/tw-elements/dist/css/tw-elements.min.css')}}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('plugin/sweetalert2/dist/sweetalert2.min.css')}}">
         <!-- App css -->
@@ -256,7 +254,7 @@
         <!-- Dashboard init js-->
         <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
         <!-- App js -->
-        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <script src="{{asset('plugin/tw-elements/dist/js/tw-elements.umd.min.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
         <script src="{{asset('assets/js/app.min.js')}}"></script>
         @yield('javascript')

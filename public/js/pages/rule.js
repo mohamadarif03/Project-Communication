@@ -1,9 +1,9 @@
+
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 load()
 GetData()
 GetType()
 GetRole()
-
 function GetType(){
     $.ajax({
         type:'GET',
@@ -15,6 +15,8 @@ function GetType(){
                 $('#type').append(row)
                 $('#update-type').append(row)
             })
+            new TomSelect('#type')
+            new TomSelect('#update-type')
         },
         error:function(response){
             console.log(response)
