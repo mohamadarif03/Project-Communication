@@ -103,7 +103,7 @@
                             
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="/profil" class="dropdown-item notify-item">
                                 <i class="mdi mdi-account-outline"></i>
                                 <span>Profile</span>
                             </a>
@@ -111,7 +111,7 @@
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="/logout" class="dropdown-item notify-item">
                                 <i class="mdi mdi-logout-variant"></i>
                                 <span>Logout</span>
                             </a>
@@ -167,7 +167,7 @@
                             <li class="menu-title">Pages</li>
 
                             <li class="@yield('Dashboard.li')">
-                                <a href="dashboardadmin" class="@yield('Dashboard.a')">
+                                <a href="dashboard" class="@yield('Dashboard.a')">
                                     <i class="mdi mdi-view-dashboard"></i>
                                     <span> Dashboard </span>
                                 </a>

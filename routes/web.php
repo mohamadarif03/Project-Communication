@@ -71,5 +71,6 @@ Route::delete('/delete-role/{id}',[RoleController::class,'delete']);
 
 //Profil
 Route::get('/profil',[ProfileController::class,'view']);
+Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
 
 });
