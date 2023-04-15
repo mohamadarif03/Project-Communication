@@ -68,6 +68,7 @@ Route::delete('/delete-user/{id}',[UserController::class,'delete']);
 
 
 Route::get('/communication',[CommunicationController::class,'communication']);
+Route::post('/store-communication',[CommunicationController::class,'insert']);
 
 //Role
 Route::get('/data-role',[RoleController::class,'data']);

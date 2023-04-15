@@ -247,8 +247,6 @@
                                     Type</label>
                                 <Select id="type" name="type" class="" placeholder="Choose Type">
                                     <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
                                 </Select>
                             </div>
                             <div class="">
@@ -348,7 +346,7 @@
                                 <label for="date" class=" mb-2 text-xs font-medium">Date</label><br>
                                 <input type="date"
                                     class="peer block min-h-[auto] w-full rounded border-0 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                                    id="exampleFormControlInput5" aria-label="" />
+                                    id="date" aria-label="" />
 
                             </div>
                         </div>
@@ -463,7 +461,7 @@
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Back
                     </button>
-                    <button type="button"
+                    <button type="button" onclick="create()"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
                         data-te-ripple-init data-te-ripple-color="light">
                         Save

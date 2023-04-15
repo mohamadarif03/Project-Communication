@@ -19,9 +19,8 @@ return new class extends Migration
             $table->foreign('communication_type_id')
             ->references('id')
             ->on('communication_types');
-            $table->date('end_at');
-            $table->longText('link');
-            $table->longText('file');
+            $table->date('date');
+            $table->longText('message');
             $table->timestamps();
         });
     }
