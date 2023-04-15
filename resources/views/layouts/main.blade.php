@@ -21,7 +21,6 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="{{asset('css/inputcolor.css')}}">
         <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css"  id="app-stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     </head>
     <body>
 
@@ -143,7 +142,7 @@
                         <button class="button-menu-mobile waves-effect waves-light">
                             <i class="mdi mdi-menu"></i>
                         </button>
-                        <p class="py-1.5 px-4 font-semibold my-auto role-color rounded-md">Role : <span id="role_user">{{implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray())}}</span></p>
+                        <p class="py-1.5 px-4 font-semibold my-auto role-color rounded-md">Role :{{implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray())}}</p>
                     </li>
 
                 </ul>
@@ -241,9 +240,6 @@
         <script src="{{asset('plugin/jquery/dist/jquery.min.js')}}"></script>
         <!-- Vendor js -->
         <script src="{{asset('assets/js/vendor.min.js')}}"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
         <!-- Plugin -->
         <script src="{{asset('plugin/sweetalert2/dist/sweetalert2.all.min.js')}}"></script>
         <script src="{{asset('plugin/tom-select/dist/js/tom-select.complete.min.js')}}"></script>

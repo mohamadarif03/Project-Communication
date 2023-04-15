@@ -497,7 +497,6 @@ body.enlarged {
   z-index: 100;
 }
 .navbar-custom .topnav-menu > li {
-  float: left;
 }
 .navbar-custom .topnav-menu .nav-link {
   padding: 0 15px;

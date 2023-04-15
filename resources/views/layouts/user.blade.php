@@ -29,7 +29,7 @@
         <div id="wrapper">           
             <!-- Topbar Start -->
             <div class="navbar-custom">
-                <ul class="list-unstyled topnav-menu float-right mb-0">
+                <ul class="list-unstyled flex items-center topnav-menu float-right mb-0">
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="mdi mdi-bell-outline noti-icon"></i>
@@ -143,7 +143,7 @@
                         <button class="button-menu-mobile waves-effect waves-light">
                             <i class="mdi mdi-menu"></i>
                         </button>
-                        <p class="py-1.5 px-4 font-semibold my-auto role-color rounded-md">Role : <span id="role_user"></span></p>
+                        <p class="md:py-1.5 px-4 hidden md:inline-block text-xs md:text-sm p-0.5 py-0.5 font-semibold my-auto role-color rounded-md">Role :{{implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray())}}</p>
                     </li>
                 </ul>
             </div>
@@ -232,7 +232,7 @@
         <!-- Dashboard init js-->
         <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
         <!-- App js -->
-        <script src="{{asset('plugin/tw-elemets/dist/js/tw-elements.umd.min.js')}}"></script>
+        <script src="{{asset('plugin/tw-elements/dist/js/tw-elements.umd.min.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
         <script src="{{asset('assets/js/app.min.js')}}"></script>
         @yield('javascript')

@@ -11,7 +11,7 @@
             <div class="">
                 <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1" data-te-ripple-init
                     data-te-ripple-color="light"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+
+                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
                     Add
                 </button>
 
@@ -34,7 +34,7 @@
                     <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                         aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                         <li>
-                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-xs font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                                 href="#" data-te-dropdown-item-ref>Action Manusia</a>
                         </li>
 
@@ -57,7 +57,7 @@
                     <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                         aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                         <li>
-                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-xs font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                                 href="#" data-te-dropdown-item-ref>Action Manusia</a>
                         </li>
 
@@ -80,7 +80,7 @@
                     <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                         aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                         <li>
-                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-xs font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                                 href="#" data-te-dropdown-item-ref>Action Manusia</a>
                         </li>
 
@@ -103,7 +103,7 @@
                     <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
                         aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
                         <li>
-                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-xs font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                                 href="#" data-te-dropdown-item-ref>Action Manusia</a>
                         </li>
 
@@ -111,7 +111,7 @@
                 </div>
 
                 <button type="button"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 flex"><svg
+                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 flex"><svg
                         style="margin-right: 13px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path
@@ -137,14 +137,14 @@
                     </div>
                     <div class="ml-2 flex my-auto">
                         <div class="my-auto">
-                            <h1 class="text-md font-semibold">Financial Emergencies</h1>
-                            <h3 class="text-sm">Meeting</h3>
+                            <h1 class="text-sm my-0 font-semibold">Financial Emergencies</h1>
+                            <h3 class="text-xs my-0">Meeting</h3>
                         </div>
                     </div>
                 </div>
                 <div class="h-8 w-full flex items-center">
                     <i class="mdi mdi-account"></i>
-                    <p class=" ml-1.5 text-xs">head finance</p>
+                    <p class=" ml-1.5 my-auto text-xs">head finance</p>
                     <div class="ml-auto mr-2 text-xs text-gray-900 font-semibold">
                         Show >
                     </div>
@@ -166,14 +166,14 @@
                     </div>
                     <div class="ml-2 flex my-auto">
                         <div class="my-auto">
-                            <h1 class="text-md font-semibold">Financial Emergencies</h1>
-                            <h3 class="text-sm">Meeting</h3>
+                            <h1 class="text-sm my-0 font-semibold">Financial Emergencies</h1>
+                            <h3 class="text-xs my-0">Meeting</h3>
                         </div>
                     </div>
                 </div>
                 <div class="h-8 w-full flex items-center">
                     <i class="mdi mdi-account"></i>
-                    <p class=" ml-1.5 text-xs">head finance</p>
+                    <p class=" ml-1.5 my-auto text-xs">head finance</p>
                     <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
                         Show >
                     </div>
@@ -219,7 +219,7 @@
                                         1
                                     </span>
                                     <h3 class="font-medium leading-tight">Communication</h3>
-                                    <p class="text-sm">Type of Communication</p>
+                                    <p class="text-xs">Type of Communication</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
@@ -227,7 +227,7 @@
                                         2
                                     </span>
                                     <h3 class="font-medium leading-tight">Date</h3>
-                                    <p class="text-sm">communication creation date</p>
+                                    <p class="text-xs">communication creation date</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
@@ -235,13 +235,13 @@
                                         3
                                     </span>
                                     <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-sm">attachment files or links</p>
+                                    <p class="text-xs">attachment files or links</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
-                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication
+                                <label for="type" class=" mb-2 text-xs font-medium text-gray-900 ">Communication
                                     Type</label>
                                 <Select id="type" name="type" class="" placeholder="Choose Type">
                                     <option value=""></option>
@@ -251,7 +251,7 @@
                             </div>
                             <div class="">
                                 <label for="To"
-                                    class="w-36 mb-2 block text-sm font-medium text-gray-900 ">To</label>
+                                    class="w-36 mb-2 block text-xs font-medium text-gray-900 ">To</label>
                                 <Select multiple id="to" name="to" class="w-full" placeholder="To">
                                     <option value="tfv">ytcvubh</option>
                                     <option value="cy">cy</option>
@@ -321,7 +321,7 @@
                                         1
                                     </span>
                                     <h3 class="font-medium leading-tight">Communication</h3>
-                                    <p class="text-sm">Type of Communication</p>
+                                    <p class="text-xs">Type of Communication</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
@@ -329,7 +329,7 @@
                                         2
                                     </span>
                                     <h3 class="font-medium leading-tight">Date</h3>
-                                    <p class="text-sm">communication creation date</p>
+                                    <p class="text-xs">communication creation date</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
@@ -337,13 +337,13 @@
                                         3
                                     </span>
                                     <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-sm">attachment files or links</p>
+                                    <p class="text-xs">attachment files or links</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
-                                <label for="date" class=" mb-2 text-sm font-medium">Date</label><br>
+                                <label for="date" class=" mb-2 text-xs font-medium">Date</label><br>
                                 <input type="date"
                                     class="peer block min-h-[auto] w-full rounded border-0 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
                                     id="exampleFormControlInput5" aria-label="" />
@@ -414,7 +414,7 @@
                                         1
                                     </span>
                                     <h3 class="font-medium leading-tight">Communication</h3>
-                                    <p class="text-sm">Type of Communication</p>
+                                    <p class="text-xs">Type of Communication</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
@@ -422,7 +422,7 @@
                                         2
                                     </span>
                                     <h3 class="font-medium leading-tight">Date</h3>
-                                    <p class="text-sm">communication creation date</p>
+                                    <p class="text-xs">communication creation date</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
@@ -430,16 +430,16 @@
                                         3
                                     </span>
                                     <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-sm">attachment files or links</p>
+                                    <p class="text-xs">attachment files or links</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
 
-                                <label for="file" class=" mb-2 text-sm font-medium">Message</label><br>
+                                <label for="file" class=" mb-2 text-xs font-medium">Message</label><br>
                                 
-                                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Message"></textarea>
+                                <textarea id="message" rows="4" class="block p-2.5 w-full text-xs text-gray-900 bg-transparent rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Message"></textarea>
 
 
                             </div>
