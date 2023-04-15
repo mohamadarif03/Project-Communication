@@ -40,6 +40,8 @@ Route::get('/role',[RoleController::class,'view']);
 Route::get('/data-rule',[RuleController::class,'data']);
 Route::get('/rule',[RuleController::class,'view']);
 Route::post('/store-rule',[RuleController::class,'insert']);
+Route::put('/update-rule/{id}',[RuleController::class,'update']);
+Route::delete('/delete-rule/{id}',[RuleController::class,'delete']);
 
 //Communicationn Type Task
 Route::get('/data-type',[CommunicationTypeController::class,'data']);

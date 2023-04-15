@@ -8,6 +8,7 @@
             <div class="">
                 <button type="button" data-te-toggle="modal" data-te-target="#create" data-te-ripple-init
                     data-te-ripple-color="light"
+                    id="btn-create"
                     class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+
                     Add
                 </button>
@@ -56,7 +57,7 @@
                         class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                         <!--Modal title-->
                         <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                            Add Communication Type
+                            Add Rule
                         </h5>
                         <!--Close button-->
                         <button type="button"
@@ -141,10 +142,11 @@
                         class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                         <!--Modal title-->
                         <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                            Add Communication Type
+                            Add Rule
                         </h5>
                         <!--Close button-->
                         <button type="button"
+                           id="btn-close-create"
                             class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
                             data-te-modal-dismiss aria-label="Close">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -212,7 +214,7 @@
         <button type="button" id="btn-open-modal-update1" data-te-toggle="modal" data-te-target="#update1"
             data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
         </button>
-        <!--Modal Create-->
+        <!--Modal Update-->
         <div data-te-modal-init
             class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
             id="update" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
@@ -224,7 +226,7 @@
                         class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                         <!--Modal title-->
                         <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                            Add Communication Type
+                            Edit Rule
                         </h5>
                         <!--Close button-->
                         <button type="button"
@@ -262,6 +264,7 @@
                             </div>
                             <div>
                                 <div class="" id="update-type-form">
+                                    <input type="hidden" class="w-0 h-0 hidden" id="update-id" value="">
                                     <label for="update-type"
                                         class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
                                     <Select id="update-type" name="type" class="" placeholder="Choose Type">
@@ -309,10 +312,11 @@
                         class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                         <!--Modal title-->
                         <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                            Add Communication Type
+                            Edit Rule
                         </h5>
                         <!--Close button-->
                         <button type="button"
+                            id="btn-close-update"
                             class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
                             data-te-modal-dismiss aria-label="Close">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -365,6 +369,7 @@
                             Back
                         </button>
                         <button type="button"
+                            onclick="update()"
                             class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
                             data-te-ripple-init data-te-ripple-color="light">
                             Save
@@ -393,6 +398,7 @@
                         </h5>
                         <!--Close button-->
                         <button type="button"
+                            id="btn-close-delete"
                             class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
                             data-te-modal-dismiss aria-label="Close">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -404,6 +410,7 @@
 
                     <!--Modal body-->
                     <div class="relative p-4">
+                        <input type="hidden" class="w-0 h-0 hidden" id="delete-id" value="">
                         <p>Are you sure you want to delete this rules?</p>
                     </div>
 
@@ -416,6 +423,7 @@
                             Close
                         </button>
                         <button type="button"
+                            onclick="remove()"
                             class="ml-1 inline-block rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#C43B19] transition duration-150 ease-in-out hover:bg-red-500 focus:bg-red-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-red-500"
                             data-te-ripple-init data-te-ripple-color="light">
                             Delete

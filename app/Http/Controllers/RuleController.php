@@ -47,7 +47,7 @@ class RuleController extends Controller
         ]);
     }
 
-    public function update(UpdateRuleRequest $request,$id){
+    public function update(RuleRequest $request,$id){
         $rule = Rule::findorfail($id);
         ToRule::where('rule_id',$rule->id)->delete();
         foreach($request->to as $item){
@@ -57,8 +57,8 @@ class RuleController extends Controller
             ]);
         }
         $rule->update([
-            'communication_type_id' => $request ->communication_type,
-            'how' => $request ->how,
+            'communication_type_id' => $request->communication_type,
+            'how' => $request->how,
             'to' => implode(',',$request->to)
         ]);
         return response()->json([

@@ -135,7 +135,7 @@ function GetData(){
 }
 function showdropdown(index){
     $('.dropdown-edit').each(function() {
-        if (!$(this).hasClass('hidden')) {
+        if (!$(this).hasClass('hidden')  && $(this).attr('id') !== ('dropdownlist-' + index)) {
           $(this).addClass('hidden');
         }
     });
@@ -162,17 +162,9 @@ $('#btn-back-update').click(function(){
     $('#btn-update-modal').click()
 })
 
-$('.btn-edit').click(function(){
-    $('#btn-update-modal').click()
-})
-
 $('#btn-next2').click(function(){
     $('#btn-close-modal2').click()
     $('#btn-open-modal-update1').click()
-})
-
-$('.btn-delete').click(function(){
-    $('#btn-delete-modal').click()
 })
 
 function create(){
@@ -197,9 +189,9 @@ function create(){
             })
             $('#type').val('')
             $('#how').val('')
-
-            $('#btn-close-modal1').click()
-            location.reload()
+            $('#to').val('')
+            $('#btn-close-create').click()
+            GetData()
         },
 
         error:function(response){
@@ -213,7 +205,7 @@ function create(){
             Swal.fire({
                 title: 'Error!',
                 // html: errorMessage,
-                html: response.responseJSON.message,
+                html: errorMessage,
                 icon: 'error',
             })
         }
@@ -227,7 +219,7 @@ function edit(id){
     if (to.length > 1){
         var to_arr = to.split(',')
     }else{
-        var to_arr =  [to]
+        var to_arr =  to
         console.log('tes')
     }
     
@@ -238,6 +230,7 @@ function edit(id){
     remove.remove();
     $('#update-how').val(how)
     $('#update-to').html('')
+    $('#update-id').val(id)
     update_to.destroy()
     $.ajax({
         type:'GET',
@@ -245,9 +238,16 @@ function edit(id){
         success:function(response){
             $.each(response,function(index,data){
                 var selected = ''
-                if(to_arr.includes(String(data.id))){
-                    selected = 'selected'
+                if(Array.isArray(to_arr)){
+                    if(to_arr.includes(String(data.id))){
+                        selected = 'selected'
+                    }
+                }else{
+                    if(to_arr == String(data.id)){
+                        selected = 'selected'
+                    }
                 }
+                
                 var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
                 $('#update-to').append(row)
             })   
@@ -265,13 +265,78 @@ function edit(id){
 }
 
 function update(){
+    var type = $('#update-type').val()
+    var how = $('#update-how').val()
+    var to = $('#update-to').val()
+    var id = $('#update-id').val()
+    $.ajax({
+        type:'PUT',
+        url:'/update-rule/'+id,
+        data:{
+            _token:csrfToken,
+            communication_type: type,
+            how:how,
+            to:to
+        },
+        success:function(response){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Success Update Role!',
+                icon: 'success',
+                timer: 4000
+            })
+            $('#update-type').val('')
+            $('#update-how').val('')
+            $('#btn-close-update').click()
+            GetData()
+        },
+        error:function(response){
+            var errors = response.responseJSON.errors;
+            var errorMessage = '';
 
+            $.each(errors, function(key, value) {
+                errorMessage += '<p class="text-red-500">' + value + '</p>';
+            });
+
+            Swal.fire({
+                title: 'Error!',
+                // html: errorMessage,
+                html: errorMessage,
+                icon: 'error',
+            })
+        }
+    })
 }
 
-function removeModal(){
-
+function removeModal(id){
+    $('#delete-id').val(id)
+    $('#btn-delete-modal').click()
 }
 
-function remove(id){
-
+function remove(){
+    var id = $('#delete-id').val()
+    $.ajax({
+        type:'DELETE',
+        url:'/delete-rule/'+id,
+        data:{
+            _token:csrfToken,
+        },
+        success:function(response){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Success Delete Role!',
+                icon: 'success',
+                timer: 4000
+            })
+            $('#btn-close-delete').click()
+            GetData()
+        },
+        error:function(response){
+            Swal.fire({
+                title: 'Error!',
+                text: JSON.parse(response.responseText).error,
+                icon: 'error'
+            })
+        }
+    })
 }
