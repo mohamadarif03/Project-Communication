@@ -75,12 +75,12 @@ function GetData(){
 }
 
 
-
 function create(){
     var type = $('#type').val()
     var color = $('#color').val()
     var description = $('#description').val()
     var from = $('#from').val()
+    var put = $('#put').val()
     $.ajax({
         type:'POST',
         url:'/store-communication-type-task',
@@ -89,7 +89,8 @@ function create(){
             type:type,
             color:color,
             description:description,
-            from:from
+            from:from,
+            put:put
         },
         success:function(response){
             Swal.fire({
@@ -100,23 +101,12 @@ function create(){
             $('#type').val('')
             $('#color').val('')
             $('#description').val('')
+            $('#from').val('')
+            $('#put').val('')
             $('#btn-close-modal').click()
             GetData()
+            $('#from').val('') // tambahkan perintah untuk menghapus nilai dari input "from"
         },
-        error:function(response){
-            var errors = response.responseJSON.errors;
-            var errorMessage = '';
-
-            $.each(errors, function(key, value) {
-                errorMessage += '<p class="text-red-500">' + value + '</p>';
-            });
-
-            Swal.fire({
-                title: 'Gagal!',
-                html: response.responseJSON.message,
-                icon: 'error',
-            })
-        }
     })
 }
 

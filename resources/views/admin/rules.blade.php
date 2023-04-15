@@ -105,7 +105,7 @@
                                 <div class="mt-1.5">
                                     <label for="type" class=" mb-2 block text-sm font-medium text-gray-900 ">How</label>
                                     <input type="text" id="how"
-                                        class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                        class="bg-white border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                         style="border-radius: 3px" placeholder="How" required>
                                 </div>
                             </div>
@@ -275,7 +275,7 @@
                                     <label for="update-how"
                                         class=" mb-2 block text-sm font-medium text-gray-900 ">How</label>
                                     <input type="text" id="update-how"
-                                        class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                        class="bg-white border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                         style="border-radius: 3px" placeholder="How" required>
                                 </div>
                             </div>
