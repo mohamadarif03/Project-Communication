@@ -21,7 +21,6 @@ class CommunicationTypeController extends Controller
     }
     public function data(){
         $data = CommunicationType::where('status', 'task')->get();
-
         return response()->json($data);
     }
     public function insert(CommunicationTypeRequestTask $request)
@@ -38,19 +37,27 @@ class CommunicationTypeController extends Controller
                 'role_id' => $item
             ]);
         }
-        $role = implode(',',$request->from);
-        $data->from = $role;
+        $data->from = implode(',',$request->from);
         $data->save();
         return response()->json(['message' => 'Success Create New Type!']);
     }
     public function update(CommunicationTypeRequestTask $request, $id)
     {
         $data = CommunicationType::findorfail($id);
+        
+        FromCommunicationType::where('communication_type_id',$id)->delete();
+        foreach($request->from as $item){
+            FromCommunicationType::create([
+                'communication_type_id' => $data->id,
+                'role_id' => $item
+            ]);
+        }
         $data->update([
             'type' => $request->type,
             'color' => $request->color,
             'description' => $request->description,
-            'status' => 'task'
+            'status' => 'task',
+            'from' => implode(',',$request->from)
         ]);
        
         return response()->json(['message' => 'Success Create New Type!']);
