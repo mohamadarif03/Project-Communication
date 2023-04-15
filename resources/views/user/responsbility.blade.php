@@ -1,7 +1,7 @@
 @extends('layouts.user')
-@section('Responsbility.li', 'mm-active')
-@section('Responsbility.a', 'active')
-@section('Responsbility.svg', 'white')
+@section('responsbility.li', 'mm-active')
+@section('responsbility.b', 'active')
+@section('responsbility.svg', 'white')
 @section('content')
 
     <div class="content">
@@ -85,16 +85,27 @@
             </div>
             <div class="h-full">
                 <div class="">
-                    <div class="flex justify-between items-center max-h-96 bg-white">
-                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
-                            test
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                            
+                                <h1 class="text-3xl font-bold">Icon</h1>
+                                <p class="text-lg font-bold">Junior gamedesigner</p>
+                                <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+ Add
+                                </button>
                         </div>
-                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
-                            test
+                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                            
+                                <h1 class="text-3xl font-bold">Icon</h1>
+                                <p class="text-lg font-bold">Junior gamedesigner</p>
+                               
                         </div>
-                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
-                            test
+                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                            
+                                <h1 class="text-3xl font-bold">Icon</h1>
+                                <p class="text-lg font-bold">Junior gamedesigner</p>
+                               
                         </div>
+                       
                        
                     </div>
                 </div>
@@ -115,7 +126,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Add Communication Type
+                        Add Project Type
                     </h5>
                     <!--Close button-->
                     <button type="button"
@@ -138,43 +149,40 @@
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         1
                                     </span>
-                                    <h3 class="font-medium leading-tight">Communication</h3>
-                                    <p class="text-sm">Type of Communication</p>
+                                    <h3 class="font-medium leading-tight">Detail</h3>
+                                    <p class="text-sm">Detail Project</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         2
                                     </span>
-                                    <h3 class="font-medium leading-tight">Date</h3>
-                                    <p class="text-sm">communication creation date</p>
+                                    <h3 class="font-medium leading-tight">Project</h3>
+                                    <p class="text-sm">project spesifications</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-sm">attachment files or links</p>
+                                    <h3 class="font-medium leading-tight">Designer</h3>
+                                    <p class="text-sm">set designer</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
-                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication
-                                    Type</label>
-                                <Select id="type" name="type" class="" placeholder="Choose Type">
-                                    <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
-                                </Select>
+                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Project
+                                    Name</label>
+                                    <input
+                                    class="relative m-0 block w-full text-xs min-w-0 flex-auto rounded border bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+                                    type="url" id="formFile" placeholder="Project Name"/>
                             </div>
                             <div class="">
-                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">To</label><br>
-                                <input type="text"
-                                    class="peer block min-h-[auto] w-full rounded border-0 bg-gray-200 px-3 py-[0.32rem] leading-[1.6] outline outline-offset-1 outline-gray-300 transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                                    id="exampleFormControlInput1" disabled style="border: 2px solid gray"
-                                    placeholder="Example label" />
+                                <label for="type" class=" mb-2 mt-4 text-sm font-medium text-gray-900 ">Description</label><br>
+                                <textarea id="description" rows="4"
+                                    class="block p-2.5 w-full text-xs text-gray-900 bg-transparent rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Description..."></textarea>
 
                             </div>
                         </div>
@@ -215,7 +223,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Add Communication Type
+                        Add Project Type
                     </h5>
                     <!--Close button-->
                     <button type="button"
@@ -238,33 +246,44 @@
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         1
                                     </span>
-                                    <h3 class="font-medium leading-tight">Communication</h3>
-                                    <p class="text-sm">Type of Communication</p>
+                                    <h3 class="font-medium leading-tight">Detail</h3>
+                                    <p class="text-sm">Detail Project</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         2
                                     </span>
-                                    <h3 class="font-medium leading-tight">Date</h3>
-                                    <p class="text-sm">communication creation date</p>
+                                    <h3 class="font-medium leading-tight">Project</h3>
+                                    <p class="text-sm">project spesifications</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-sm">attachment files or links</p>
+                                    <h3 class="font-medium leading-tight">Designer</h3>
+                                    <p class="text-sm">set designer</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
-                                <label for="date" class=" mb-2 text-sm font-medium">Date</label><br>
-                                <input type="date"
-                                    class="peer block min-h-[auto] w-full rounded border-0 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                                    id="exampleFormControlInput5" aria-label="" />
+                                <label for="project" class=" mb-2 text-sm font-medium">Project Type</label><br>
+                                <Select id="type" name="type" class="" placeholder="Choose Type">
+                                    <option value=""></option>
+                                    <option value="Monthly Report">Monthly Report</option>
+                                    <option value="Quarter Report">Quarter Report</option>
+                                </Select>
+
+                            </div>
+                            <div class="">
+                                <label for="project" class=" mb-2 mt-4 text-sm font-medium">Project Size</label><br>
+                                <Select id="size" name="size" class="" placeholder="Small">
+                                    <option value=""></option>
+                                    <option value="Monthly Report">Monthly Report</option>
+                                    <option value="Quarter Report">Quarter Report</option>
+                                </Select>
 
                             </div>
                         </div>
@@ -308,7 +327,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Add Communication Type
+                        Add Project Type
                     </h5>
                     <!--Close button-->
                     <button type="button"
@@ -331,44 +350,59 @@
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         1
                                     </span>
-                                    <h3 class="font-medium leading-tight">Communication</h3>
-                                    <p class="text-sm">Type of Communication</p>
+                                    <h3 class="font-medium leading-tight">Detail</h3>
+                                    <p class="text-sm">Detail Project</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         2
                                     </span>
-                                    <h3 class="font-medium leading-tight">Date</h3>
-                                    <p class="text-sm">communication creation date</p>
+                                    <h3 class="font-medium leading-tight">Project</h3>
+                                    <p class="text-sm">project spesifications</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-sm">attachment files or links</p>
+                                    <h3 class="font-medium leading-tight">Designer</h3>
+                                    <p class="text-sm">set designer</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
 
-                                <label for="file" class=" mb-2 text-sm font-medium">File</label><br>
-                                <input
-                                    class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
-                                    type="file" id="formFile" />
+                                <label for="file" class=" mb-2 text-sm font-medium">Junior</label><br>
+                                <Select id="junior" name="junior" class="" placeholder="Junior">
+                                    <option value=""></option>
+                                    <option value="Monthly Report">Monthly Report</option>
+                                    <option value="Quarter Report">Quarter Report</option>
+                                </Select>
 
                             </div>
                             <div class="">
 
-                                <label for="url" class=" mb-2 text-sm font-medium">Links</label><br>
-                                <input
-                                    class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
-                                    type="url" id="formFile" placeholder="https://"/>
+                                <label for="file" class=" mb-2 text-sm font-medium">Medior</label><br>
+                                <Select id="medior" name="medior" class="" placeholder="Medior">
+                                    <option value=""></option>
+                                    <option value="Monthly Report">Monthly Report</option>
+                                    <option value="Quarter Report">Quarter Report</option>
+                                </Select>
 
                             </div>
+                            <div class="">
+
+                                <label for="file" class=" mb-2 text-sm font-medium">Senior</label><br>
+                                <Select id="senior" name="senior" class="" placeholder="Senior">
+                                    <option value=""></option>
+                                    <option value="Monthly Report">Monthly Report</option>
+                                    <option value="Quarter Report">Quarter Report</option>
+                                </Select>
+
+                            </div>
+                        
                         </div>
                     </div>
                 </div>

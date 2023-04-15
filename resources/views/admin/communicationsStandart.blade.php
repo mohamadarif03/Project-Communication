@@ -147,7 +147,7 @@
                         <div class="flex rounded-md border ml-1"
                         style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
                         <input type="text" class="border-r" id="put"
-                        style="background-color: transparent; padding-right: 150px;" placeholder="#000000" disabled>
+                        style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
                         <input type="color" name="" id="color" onchange="fetch()">
                     </div>
                     </div>
@@ -220,7 +220,7 @@
                         <div class="flex rounded-md border"
                             style="box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" value="" id="put2"
-                                style="background-color: transparent; padding-right: 150px;" disabled>
+                                style="background-color: transparent; padding-right: 50px;" disabled>
                             <input type="color" name="" value="" id="update-color" onchange="fetch_update()">
                         </div>
                     </div>
@@ -253,7 +253,7 @@
             </div>
         </div>
     </div>
-    <!--Modal Update-->
+    <!--Modal Detail-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="show" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
@@ -277,11 +277,11 @@
                         </svg>
                     </button>
                 </div>
-                <input type="hidden" id="update-id">
+                <input type="hidden" id="show-id">
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                        <p class="text-xs" id="show-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magni iure repellendus voluptatem officiis obcaecati nulla, neque incidunt tenetur? Soluta modi quibusdam corrupti saepe distinctio aperiam assumenda ut doloribus in?</p>
+                        <p class="text-xs" id="show-description"></p>
                 </div>
 
                 <!--Modal footer-->
@@ -297,7 +297,7 @@
         </div>
     </div>
 
-    <!--Modal Detail-->
+    <!--Modal Delete-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="delete" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">

@@ -85,16 +85,27 @@
             </div>
             <div class="h-full">
                 <div class="">
-                    <div class="flex justify-between items-center max-h-96 bg-white">
-                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
-                            test
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                            
+                                <h1 class="text-3xl font-bold">Icon</h1>
+                                <p class="text-lg font-bold">Junior gamedesigner</p>
+                                <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+ Add
+                                </button>
                         </div>
-                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
-                            test
+                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                            
+                                <h1 class="text-3xl font-bold">Icon</h1>
+                                <p class="text-lg font-bold">Junior gamedesigner</p>
+                               
                         </div>
-                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
-                            test
+                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                            
+                                <h1 class="text-3xl font-bold">Icon</h1>
+                                <p class="text-lg font-bold">Junior gamedesigner</p>
+                               
                         </div>
+                       
                        
                     </div>
                 </div>
