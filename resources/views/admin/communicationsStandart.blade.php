@@ -103,6 +103,9 @@
     <button type="button" id="btn-update-modal" data-te-toggle="modal" data-te-target="#update" data-te-ripple-init
         data-te-ripple-color="light" class="hidden w-0 h-0">+
     </button>
+    <button type="button" id="btn-show-modal" data-te-toggle="modal" data-te-target="#show" data-te-ripple-init
+        data-te-ripple-color="light" class="hidden w-0 h-0">+
+    </button>
     <button type="button" id="btn-delete-modal" data-te-toggle="modal" data-te-target="#delete" data-te-ripple-init
         data-te-ripple-color="light" class="hidden w-0 h-0">+
     </button>
@@ -131,30 +134,36 @@
                     </button>
                 </div>
 
-                <!--Modal body-->
                 <div class="relative p-4">
                     <div class="flex gap-4 items-center">
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ml-6">Name</label>
                         <input type="text" id="type"
-                            class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            class="ml-1 bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="Responsibilities Type">
                     </div>
-                   
+                    
                     <div class="flex mt-2 gap-4 items-center">
                         <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
-                        <div class="flex rounded-md border"
-                            style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
-                            <input type="text" class="border-r" id="put"
-                                style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
-                            <input type="color" name="" id="color" onchange="fetch()">
-                        </div>
+                        <div class="flex rounded-md border ml-1"
+                        style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
+                        <input type="text" class="border-r" id="put"
+                        style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
+                        <input type="color" name="" id="color" onchange="fetch()">
+                    </div>
                     </div>
                     <div class="flex gap-4 mt-2 items-center">
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
                         <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
                     </div>
+                    
+                    <div class="flex gap-4 items-center mt-2">
+                        <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
+                        <Select multiple id="to" name="role" class="w-full ml-4" value="2" placeholder="Role">
+                            <option value="Test">Test</option>
+                            <option value="Iya">Iya</option>
+                        </Select>
+                    </div>
                 </div>
-
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
@@ -220,6 +229,13 @@
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
                         <textarea id="update-description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
                     </div>
+                    <div class="flex gap-4 items-center mt-2">
+                        <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
+                        <Select multiple id="to2" name="role" class="w-full ml-4" value="2" placeholder="Role">
+                            <option value="Test">Test</option>
+                            <option value="Iya">Iya</option>
+                        </Select>
+                    </div>
                 </div>
 
                 <!--Modal footer-->
@@ -239,11 +255,54 @@
             </div>
         </div>
     </div>
-
-    <!--Modal Delete-->
+    <!--Modal Update-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-        id="delete" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+        id="show" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref
+            class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
+            <div
+                class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
+                <div
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                    <!--Modal title-->
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        Detail
+                    </h5>
+                    <!--Close button-->
+                    <button type="button"
+                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <input type="hidden" id="update-id">
+
+                <!--Modal body-->
+                <div class="relative p-4">
+                        <p class="text-xs" id="show-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magni iure repellendus voluptatem officiis obcaecati nulla, neque incidunt tenetur? Soluta modi quibusdam corrupti saepe distinctio aperiam assumenda ut doloribus in?</p>
+                </div>
+
+                <!--Modal footer-->
+                <div
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                    <button type="button" id="btn-close-update"
+                        class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Detail-->
+    <div data-te-modal-init
+        class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="detail" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
             <div
