@@ -82,9 +82,20 @@
                     perferendis. Sapiente in enim pariatur accusamus suscipit quae a nulla labore?
                 </p>
             </div>
-            <div class="flex h-full">
-                <div class="h-96 bg-red-200">
-                    Test
+            <div class="h-full">
+                <div class="">
+                    <div class="flex justify-between items-center max-h-96 bg-white">
+                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
+                            test
+                        </div>
+                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
+                            test
+                        </div>
+                        <div class="px-32 py-20 bg-gray-200 ml-auto rounded-md m-6 border-dashed border-2 border-gray-400">
+                            test
+                        </div>
+                       
+                    </div>
                 </div>
             </div>
 
