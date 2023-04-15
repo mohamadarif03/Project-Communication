@@ -8,7 +8,7 @@ GetCommunication()
 function GetCommunication(){
     $.ajax({
         type:'GET',
-        url:'/data-communication-type-task',
+        url:'/data-communication-type-standart',
         success:function(response){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'">'+data.type+'</option>'
