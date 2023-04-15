@@ -71,6 +71,7 @@ Route::get('/communication',[CommunicationController::class,'communication']);
 Route::post('/store-communication',[CommunicationController::class,'insert']);
 
 //Role
+Route::get('/data-role-paginate',[RoleController::class,'paginate']);
 Route::get('/data-role',[RoleController::class,'data']);
 Route::post('/store-role',[RoleController::class,'store']);
 Route::put('/update-role/{id}',[RoleController::class,'update']);

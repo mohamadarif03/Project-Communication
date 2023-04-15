@@ -2,12 +2,13 @@ var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
 
 
-GetData()
-function GetData(){
+GetData(1)
+function GetData(page){
     $.ajax({
         type:'GET',
-        url:'/data-role',
+        url:'/data-role-paginate?page='+page,
         success:function(response){
+            console.log(response)
             var html = '<table class="min-w-full text-left text-sm font-light">'+
                             '<thead class="border-b font-medium ">'+
                                 '<tr>'+
@@ -20,8 +21,8 @@ function GetData(){
                             '</tbody>'+
                         '</table>'
             $('#table').html(html)
-            if(response.length > 0){
-                $.each(response,function(index,data){
+            if(response.data.data.length > 0){
+                $.each(response.data.data,function(index,data){
                     var row = '<tr class="border-b border-dashed ">'+
                                 '<td class="whitespace-nowrap px-6 py-4 font-medium">'+(index+1)+'</td>'+ 
                                 '<td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">'+data.name+'</td>'+ 
@@ -39,6 +40,7 @@ function GetData(){
                             '</tr>'
                     $('#Data').append(row)
                 })
+                $('#paginate').html(response.links);
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   '<img '+src+' class="w-[20%] mt-4" alt="">'+
@@ -67,7 +69,7 @@ function create(){
             })
             $('#name').val('')
             $('#btn-close-add').click()
-            GetData()
+            GetData(1)
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -120,7 +122,7 @@ function update(){
             $('#update-name').val('')
             $('#update-id').val('')
             $('#btn-close-update').click()
-            GetData()
+            GetData(1)
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -156,7 +158,7 @@ function remove(){
                 timer: 4000
             })
             $('#btn-close-delete').click()
-            GetData()
+            GetData(1)
         },
         error: function(response){
             Swal.fire({

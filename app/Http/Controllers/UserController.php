@@ -26,15 +26,27 @@ class UserController extends Controller
             ])->join('user_roles','users.id','=','user_roles.user_id')
               ->where('users.name','!=','admin')
               ->where('user_roles.role_id',$request->search)
-              ->get();
+              ->paginate(9);
         }else{
             $data = User::with([
                 'userrole' => [
                     'role'
                 ]
-            ])->where('name','!=','admin')->get();
+            ])->where('name','!=','admin')->paginate(9);
         }
-        return response()->json($data);
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
     }
     public function insert(UserRequest $request)
     {

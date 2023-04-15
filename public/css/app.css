@@ -712,10 +712,6 @@ video {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
 .my-\[5px\] {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -979,6 +975,9 @@ video {
 .h-\[72px\] {
   height: 72px;
 }
+.h-\[calc\(100\%-1rem\)\] {
+  height: calc(100% - 1rem);
+}
 .h-auto {
   height: auto;
 }
@@ -988,17 +987,14 @@ video {
 .h-screen {
   height: 100vh;
 }
-.h-\[calc\(100\%-1rem\)\] {
-  height: calc(100% - 1rem);
-}
 .max-h-96 {
   max-height: 24rem;
 }
-.max-h-\[calc\(100\%-64px\)\] {
-  max-height: calc(100% - 64px);
-}
 .max-h-\[100\%\] {
   max-height: 100%;
+}
+.max-h-\[calc\(100\%-64px\)\] {
+  max-height: calc(100% - 64px);
 }
 .min-h-\[305px\] {
   min-height: 305px;
@@ -1343,6 +1339,9 @@ video {
 }
 .cursor-default {
   cursor: default;
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -2681,6 +2680,10 @@ video {
 }
 .hover\:bg-\[unset\]:hover {
   background-color: unset;
+}
+.hover\:bg-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 .hover\:bg-neutral-100:hover {
   --tw-bg-opacity: 1;

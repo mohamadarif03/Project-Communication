@@ -2,7 +2,7 @@
 
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 load()
-GetData()
+GetData(1)
 GetType()
 GetRole()
 
@@ -56,18 +56,18 @@ function load(){
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>`
     $('#Data').html(html)
 }
-function GetData(){
+function GetData(page){
     var search = $('#search').val()
     $.ajax({
         type:'GET',
-        url:'/data-rule',
+        url:'/data-rule?page='+page,
         data:{
             search:search
         },
         success:function(response){
             $('#Data').html('')
-            if(response.length > 0){
-                $.each(response,function(index,data){
+            if(response.data.data.length > 0){
+                $.each(response.data.data,function(index,data){
                     var row = '<div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">'+
                             '<div class="h-8 p-2 items-center w-full relative flex">'+
                                 '<button onclick="showdropdown('+index+')" class="ml-auto h-5 w-5 rounded-circle bg-transparent">'+
@@ -112,6 +112,7 @@ function GetData(){
                         '</div>'
                     $('#Data').append(row)
                 })
+                $('#paginate').html(response.links);
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   
@@ -185,7 +186,7 @@ function create(){
             $('#how').val('')
             $('#to').val('')
             $('#btn-close-create').click()
-            GetData()
+            GetData(1)
         },
 
         error:function(response){
@@ -281,7 +282,7 @@ function update(){
             $('#update-type').val('')
             $('#update-how').val('')
             $('#btn-close-update').click()
-            GetData()
+            GetData(1)
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -322,7 +323,7 @@ function remove(){
                 timer: 4000
             })
             $('#btn-close-delete').click()
-            GetData()
+            GetData(1)
         },
         error:function(response){
             Swal.fire({

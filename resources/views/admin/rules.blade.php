@@ -34,10 +34,14 @@
 
         </div>
         <!-- end container-fluid -->
-        <div class="grid mx-3 gap-3 grid-cols-3 mt-4" id="Data">
+        <div class="w-full flex flex-col">
+            <div class="grid mx-3 gap-3 grid-cols-3 mt-4" id="Data">
+            </div>
+            <div class="mx-auto mt-8" id="paginate">
+
+            </div>
         </div>
-
-
+        
         <button type="button" id="btn-open-modal-create1" data-te-toggle="modal" data-te-target="#create1"
             data-te-ripple-init data-te-ripple-color="light" class="w-0 h-0 hidden">+
         </button>

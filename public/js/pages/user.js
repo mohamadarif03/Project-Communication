@@ -2,7 +2,7 @@
 
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 GetRole()
-GetData()
+GetData(1)
 var update_role = new TomSelect('#update-role')
 function GetRole(){
     $.ajax({
@@ -24,18 +24,18 @@ function GetRole(){
     })
 }
 
-function GetData(){
+function GetData(page){
     var search = $('#search').val()
     $.ajax({
         type:'GET',
-        url:'/data-user',
+        url:'/data-user?page='+page,
         data:{
             search:search
         },
         success:function(response){
             $('#Data').html('')
-            if(response.length > 0){
-                $.each(response,function(index,data){
+            if(response.data.data.length > 0){
+                $.each(response.data.data,function(index,data){
                     var src = 'src="../profile/'+data.profile+'"'
                     var row = '<div class="col-span-1 w-full h-full px-2 py-1 mt-1 rounded-md bg-white">'+
                                 '<div class="h-8 p-2 items-center relative w-full flex">'+
@@ -82,6 +82,7 @@ function GetData(){
                             '</div>'
                     $('#Data').append(row)
                 })
+                $('#paginate').html(response.links);
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   
@@ -133,7 +134,7 @@ function create(){
                 text: 'Success Create New User!',
                 icon: 'success'
             })
-            GetData()
+            GetData(1)
             $('#btn-close-create').click()
         },
         error:function(response){
@@ -224,7 +225,7 @@ function update(){
                 text: 'Success Update User!',
                 icon: 'success',
             })
-            GetData()
+            GetData(1)
             $('#btn-close-update').click()
         },
         error:function(response){
@@ -266,7 +267,7 @@ function remove(){
                 text: 'Success Delete User!',
                 icon: 'success'
             })
-            GetData()
+            GetData(1)
             $('#btn-close-delete').click()     
         },
         error:function(response){
