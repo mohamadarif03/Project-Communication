@@ -17,6 +17,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('communication_type_id');
             $table->foreignId('role_id');
+            $table->foreign('communication_type_id')
+            ->references('id')
+            ->on('roles')
+            ->cascadeOnDelete();
+            $table->foreign('role_id')
+            ->references('id')
+            ->on('roles')
+            ->cascadeOnDelete();
             $table->timestamps();
         });
     }

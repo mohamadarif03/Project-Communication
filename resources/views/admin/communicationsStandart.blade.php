@@ -222,7 +222,7 @@
                             style="box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" value="" id="put2"
                                 style="background-color: transparent; padding-right: 50px;" disabled>
-                            <input type="color" name="" value="" id="update-color" onchange="fetch()">
+                            <input type="color" name="" value="" id="update-color" onchange="fetch_update()">
                         </div>
                     </div>
                     <div class="flex gap-4 mt-2 items-center">

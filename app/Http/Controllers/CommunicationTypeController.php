@@ -8,6 +8,7 @@ use App\Http\Requests\CommunicationTypeRequestTask;
 use App\Http\Requests\CommunicationUpdateTypeRequest;
 use App\Models\CommunicationType;
 use App\Models\Rule;
+use App\Models\ToCommucationType;
 use Illuminate\Http\Request;
 
 class CommunicationTypeController extends Controller
@@ -73,12 +74,21 @@ class CommunicationTypeController extends Controller
     }
     public function insertStandart(CommunicationTypeRequestStandart $request)
     {
-        CommunicationType::create([
+        $data = CommunicationType::create([
             'type' => $request ->type,
             'color' => $request ->color,
             'description' => $request ->description,
             'status' => 'standart'
         ]);
+        foreach($request->role as $item){
+            ToCommucationType::create([
+                'user_id' => $data->id,
+                'role_id' => $item
+            ]);
+        }
+        $role = implode(',',$request->role);
+        $data->role = $role;
+        $data->save();
         return response()->json(['message' => 'Success Create New Type!']);
     }
     public function updateStandart(CommunicationTypeRequestStandart $request, $id)
