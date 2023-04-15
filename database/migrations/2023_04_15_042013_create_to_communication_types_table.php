@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('communication_types', function (Blueprint $table) {
+        Schema::create('to_communication_types', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('color');
-            $table->longText('description')->nullable();
-            $table->string('status');
-            $table->string('from')->nullable();
-            $table->string('to')->nullable();
+            $table->foreignId('communication_type_id');
+            $table->foreignId('role_id');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communication_types');
+        Schema::dropIfExists('to_communication_types');
     }
 };
