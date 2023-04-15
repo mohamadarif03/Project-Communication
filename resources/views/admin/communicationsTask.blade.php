@@ -134,30 +134,36 @@
                     </button>
                 </div>
 
-                <!--Modal body-->
                 <div class="relative p-4">
                     <div class="flex gap-4 items-center">
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ml-6">Name</label>
                         <input type="text" id="type"
-                            class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                            class="ml-1 bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="Responsibilities Type">
                     </div>
-                   
+                    
                     <div class="flex mt-2 gap-4 items-center">
                         <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
-                        <div class="flex rounded-md border"
-                            style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
-                            <input type="text" class="border-r" id="put"
-                                style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
-                            <input type="color" name="" id="color" onchange="fetch()">
-                        </div>
+                        <div class="flex rounded-md border ml-1"
+                        style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
+                        <input type="text" class="border-r" id="put"
+                        style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
+                        <input type="color" name="" id="color" onchange="fetch()">
+                    </div>
                     </div>
                     <div class="flex gap-4 mt-2 items-center">
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
                         <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
                     </div>
+                    
+                    <div class="flex gap-4 items-center mt-2">
+                        <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
+                        <Select multiple id="to" name="role" class="w-full ml-4" value="2" placeholder="Role">
+                            <option value="Test">Test</option>
+                            <option value="Iya">Iya</option>
+                        </Select>
+                    </div>
                 </div>
-
                 <!--Modal footer-->
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
@@ -223,6 +229,13 @@
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
                         <textarea id="update-description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
                     </div>
+                    <div class="flex gap-4 items-center mt-2">
+                        <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
+                        <Select multiple id="to2" name="role" class="w-full ml-4" value="2" placeholder="Role">
+                            <option value="Test">Test</option>
+                            <option value="Iya">Iya</option>
+                        </Select>
+                    </div>
                 </div>
 
                 <!--Modal footer-->
@@ -270,9 +283,7 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    
-                        <h1 class="font-bold text-sm">Detail</h1>
-                        <p class="text-xs" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magni iure repellendus voluptatem officiis obcaecati nulla, neque incidunt tenetur? Soluta modi quibusdam corrupti saepe distinctio aperiam assumenda ut doloribus in?</p>
+                        <p class="text-xs" id="show-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magni iure repellendus voluptatem officiis obcaecati nulla, neque incidunt tenetur? Soluta modi quibusdam corrupti saepe distinctio aperiam assumenda ut doloribus in?</p>
                 </div>
 
                 <!--Modal footer-->

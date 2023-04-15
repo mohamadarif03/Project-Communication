@@ -23,7 +23,7 @@
                 @method('put')
                 @csrf
                 <div class="rounded-md bg-white mt-6 h-[220px] w-full">
-                    <div class="flex items-center border-solid border-b-2 border-sky-500">
+                    <div class="flex items-center border-solid border-b-2 border-gray-200">
                         <h1 class="font-bold text-xl ml-3">Update Profile</h1>
                     </div>
                     <div class="py-2">
@@ -40,7 +40,7 @@
                                 id="exampleFormControlInput1" name="email" value="{{ Auth::user()->email }}" />
                         </div>
                     </div>
-                    <div class="flex items-center border-solid border-t-2 border-sky-500 my-2">
+                    <div class="flex items-center border-solid border-t-2 border-gray-200 my-2">
                         <button type="submit"
                             class="ml-auto inline-block rounded bg-yellow-400 px-3 pb-2 pt-2.5 py-2 mt-1 mx-3 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">+
                             Update</button>
@@ -48,7 +48,7 @@
                 </div>
              
                 <div class="rounded-md bg-white mt-6 h-[220px] w-full">
-                    <div class="flex items-center border-solid border-b-2 border-sky-500">
+                    <div class="flex items-center border-solid border-b-2 border-gray-200">
                         <h1 class="font-bold text-xl ml-3">Reset Password</h1>
                     </div>
                     <div class="py-2">
@@ -65,7 +65,7 @@
                                 id="exampleFormControlInput1" name="confirmPassword" placeholder="admin@gmail.com" />
                         </div>
                     </div>
-                    <div class="flex items-center border-solid border-t-2 border-sky-500 my-2">
+                    <div class="flex items-center border-solid border-t-2 border-gray-200 my-2">
                         <button
                             class="ml-auto inline-block rounded bg-yellow-400 px-3 pb-2 pt-2.5 py-2 mt-1 mx-3 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">+
                             Update</button>
