@@ -21,7 +21,6 @@ return new class extends Migration
             ->on('communication_types');
             $table->date('date');
             $table->longText('message');
-            $table->string('status');
             $table->timestamps();
         });
     }

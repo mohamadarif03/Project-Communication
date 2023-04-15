@@ -122,13 +122,12 @@
         </div>
         <!-- end container-fluid -->
         <div class="grid grid-cols-3 gap-4" style="margin-top: 70px">
-            <div class="block rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"
+            {{-- <div class="block rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"
                 style="background-color: #ECFFF4; border: 2px solid #27AE60;">
 
                 <div class="h-8 p-2 items-center w-full flex justify-between ">
 
                     <input type="checkbox" id="inlineCheckbox2" value="option1" checked>
-                    {{-- </a> --}}
                     <p class="rounded-md text-xs text-white py-0.5 px-2" style="background-color: #27AE60">13 May 2023</p>
                 </div>
                 <div class="h-16 flex p-2 items-center w-full ">
@@ -149,15 +148,11 @@
                         Show >
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 mr-3">
 
-                <div class="h-8 p-2 items-center w-full flex justify-between ">
-                    <a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init
-                        data-te-ripple-color="light">
-                        <input type="checkbox" style="cursor: pointer">
-                    </a>
-                    <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
+                <div class="h-8 p-2 items-center w-full flex">
+                    <p class="bg-slate-300 ml-auto rounded-md text-xs py-0.5 px-2">13 May 2023</p>
                 </div>
                 <div class="h-16 flex p-2 items-center w-full ">
                     <div class="h-12 flex w-12 bg-red-400 rounded-circle">
