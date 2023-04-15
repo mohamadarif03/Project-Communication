@@ -19,12 +19,23 @@ class RuleController extends Controller
         if($request->search){
             $data = Rule::with(['communicationType','torule'])
                     ->where('communication_type_id',$request->search)
-                    ->get();
-        
+                    ->paginate(9);
         }else{
-            $data = Rule::with(['communicationType','torule'])->get();
+            $data = Rule::with(['communicationType','torule'])->paginate(9);    
         }
-        return response()->json($data);
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
         
     }
     public function insert(RuleRequest $request)

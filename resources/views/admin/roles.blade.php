@@ -18,7 +18,7 @@
 
 </div>
     <!-- end container-fluid -->
-    <div class="w-full flex">
+    <div class="w-full flex flex-col">
 
         <div class="flex flex-col mx-auto rounded-lg" style="background-color: white; margin-top: 3%; width: 95%;">
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -68,6 +68,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="mx-auto mt-8" id="paginate">
         </div>
     </div>
 </div>

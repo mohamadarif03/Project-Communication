@@ -19,6 +19,24 @@ class RoleController extends Controller
         return response()->json($data);
     }
 
+    public function paginate(){
+        $data = Role::where('name','!=','admin')->paginate(2);
+
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
+    }
+
     public function store(RoleRequest $request){
         Role::create([
             'name' => $request->name
@@ -47,4 +65,6 @@ class RoleController extends Controller
             'success' => 'Success Delete Role!'
         ],200);
     }
+
+
 }

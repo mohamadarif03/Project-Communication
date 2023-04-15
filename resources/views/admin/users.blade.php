@@ -32,7 +32,8 @@
             </div>
         </div>
         </div>
-    </div>      
+    </div> 
+    <div class="w-full flex flex-col">
         <div class="grid mx-3 gap-3 grid-cols-3 mt-4" id="Data">
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
@@ -41,6 +42,10 @@
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
         </div> 
+        <div class="mx-auto mt-8" id="paginate">
+            
+        </div>
+    </div>     
     <!--Modal Create-->
     <form action="/insertuser" method="post">
         @csrf
