@@ -53,6 +53,7 @@ Route::delete('/delete-communication-type-task/{id}',[CommunicationTypeControlle
 
 //Communicationn Type Standart
 Route::get('/communication-type-standart',[CommunicationTypeController::class,'viewStandart']);
+Route::get('/data-communication-type-standart',[CommunicationTypeController::class,'dataStandart']);
 Route::post('/store-communication-type-standart',[CommunicationTypeController::class,'insertStandart']);
 Route::put('/update-communication-type-standart/{id}',[CommunicationTypeController::class,'updateStandart']);
 Route::delete('/delete-communication-type-standart/{id}',[CommunicationTypeController::class,'deleteStandart']);

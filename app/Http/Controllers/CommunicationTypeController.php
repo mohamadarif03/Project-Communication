@@ -14,14 +14,12 @@ class CommunicationTypeController extends Controller
 {
     public function view(){
 
-        $data = CommunicationType::where('status', 'task')->paginate(5);
-        // dd($data);
-        return view('admin.communicationsTask', [
-            'data' => $data
-        ]);
+        
+        return view('admin.communicationsTask');
     }
     public function data(){
-        $data = CommunicationType::all();
+        $data = CommunicationType::where('status', 'task')->get();
+
         return response()->json($data);
     }
     public function insert(CommunicationTypeRequestTask $request)
@@ -68,6 +66,10 @@ class CommunicationTypeController extends Controller
         return view('admin.communicationsStandart', [
             'data' => $data
         ]);
+    }
+    public function dataStandart(){
+        $data = CommunicationType::where('status', 'standart')->get();
+        return response()->json($data);
     }
     public function insertStandart(CommunicationTypeRequestStandart $request)
     {

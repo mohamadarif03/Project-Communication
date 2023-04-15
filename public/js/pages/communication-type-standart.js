@@ -24,7 +24,7 @@ GetData()
 function GetData(){
     $.ajax({
         type:'GET',
-        url:'/data-communication-type-task',
+        url:'/data-communication-type-standart',
         success:function(response){
             var html = '<table class="min-w-full text-left text-sm font-light">'+
                             '<thead class="border-b font-medium ">'+
@@ -87,7 +87,7 @@ function create(){
     var description = $('#description').val()
     $.ajax({
         type:'POST',
-        url:'/store-communication-type-task',
+        url:'/store-communication-type-standart',
         data:{
             _token:csrfToken,
             type:type,
@@ -148,7 +148,7 @@ function update(){
     var id = $('#update-id').val()
     $.ajax({
         type:'PUT',
-        url:'/update-communication-type-task/'+id,
+        url:'/updastandart/'+id,
         data:{
             _token:csrfToken,
             type:name,
@@ -197,7 +197,7 @@ function removeModal(id) {
 function remove() {
     var id = $('#delete-id').val()
     $.ajax({
-      url: '/delete-communication-type-task/' +id,
+      url: '/delete-communication-type-standart/' +id,
       method: 'DELETE',
       data:{
         _token:csrfToken
@@ -215,7 +215,8 @@ function remove() {
     error: function(response){
         Swal.fire({
             title: 'Error!',
-            text: JSON.parse(response.responseText).error,
+            html: response.responseJSON.message,
+
             icon: 'error'
         })
     }
