@@ -250,11 +250,13 @@
                                 </Select>
                             </div>
                             <div class="">
-                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">To</label><br>
-                                <input type="text"
-                                    class="peer block min-h-[auto] w-full rounded border-0 bg-gray-200 px-3 py-[0.32rem] leading-[1.6] outline outline-offset-1 outline-gray-300 transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                                    id="exampleFormControlInput1" disabled style="border: 2px solid gray"
-                                    placeholder="Example label" />
+                                <label for="To"
+                                    class="w-36 mb-2 block text-sm font-medium text-gray-900 ">To</label>
+                                <Select multiple id="to" name="to" class="w-full" placeholder="To">
+                                    <option value="tfv">ytcvubh</option>
+                                    <option value="cy">cy</option>
+                                    <option value="">xtrcyvu</option>
+                                </Select>
 
                             </div>
                         </div>
@@ -435,20 +437,13 @@
                         <div>
                             <div class="">
 
-                                <label for="file" class=" mb-2 text-sm font-medium">File</label><br>
-                                <input
-                                    class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
-                                    type="file" id="formFile" />
+                                <label for="file" class=" mb-2 text-sm font-medium">Message</label><br>
+                                
+                                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Message"></textarea>
+
 
                             </div>
-                            <div class="">
-
-                                <label for="url" class=" mb-2 text-sm font-medium">Links</label><br>
-                                <input
-                                    class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
-                                    type="url" id="formFile" placeholder="https://"/>
-
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
