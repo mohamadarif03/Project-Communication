@@ -94,7 +94,7 @@ function create(){
         success:function(response){
             Swal.fire({
                 title: 'success!',
-                text: 'Success Create New Role!',
+                text: 'Success Create New Task!',
                 icon: 'success'
             })
             $('#type').val('')
