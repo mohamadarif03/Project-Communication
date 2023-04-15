@@ -59,6 +59,7 @@
                         </h5>
                         <!--Close button-->
                         <button type="button"
+                            id="btn-close-create"
                             class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
                             data-te-modal-dismiss aria-label="Close">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -154,6 +155,7 @@
                     </h5>
                     <!--Close button-->
                     <button type="button"
+                        id="btn-close-update"
                         class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
                         data-te-modal-dismiss aria-label="Close">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -194,7 +196,7 @@
                                 class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 style="border-radius: 3px" placeholder="Password Confirmation" required>
                         </div>
-                        <div class="mb-1.5 flex items-center gap-3">
+                        <div class="mb-1.5 flex items-center gap-3" id="update-role-form">
                             <label for="role"
                                 class="w-36 mb-2 block text-sm font-medium text-gray-900 ">Role</label>
                             <Select multiple id="update-role" name="role" value="2" class="w-full" placeholder="Role">
@@ -243,6 +245,7 @@
                     </h5>
                     <!--Close button-->
                     <button type="button"
+                        id="btn-close-delete"
                         class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
                         data-te-modal-dismiss aria-label="Close">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

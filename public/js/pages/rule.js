@@ -216,7 +216,6 @@ function edit(id){
         var to_arr = to.split(',')
     }else{
         var to_arr =  to
-        console.log('tes')
     }
     
     update_type.destroy()
