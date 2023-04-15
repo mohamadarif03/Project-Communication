@@ -4,14 +4,14 @@
 <!-- Mirrored from coderthemes.com/ATN News/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 10:30:19 GMT -->
 <head>
         <meta charset="utf-8" />
-        <title>Dashboard | ATN News - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>exp Inc.</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Responsive bootstrap 4 admin template" name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="https://expinc.io/wp-content/uploads/2020/10/cropped-Exp-Inc-vierkant-192x192.png">
         <link rel="stylesheet" href="{{asset('plugin/tw-elements/dist/css/tw-elements.min.css')}}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('plugin/sweetalert2/dist/sweetalert2.min.css')}}">

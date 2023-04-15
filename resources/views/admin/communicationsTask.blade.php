@@ -157,10 +157,9 @@
                     </div>
                     
                     <div class="flex gap-4 items-center mt-2">
-                        <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
-                        <Select multiple id="to" name="role" class="w-full ml-4" value="2" placeholder="Role">
-                            <option value="Test">Test</option>
-                            <option value="Iya">Iya</option>
+                        <label for="to" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
+                        <Select multiple id="to" name="to" class="w-full ml-4" value="2" placeholder="Role">
+                            <option value="">Test</option>
                         </Select>
                     </div>
                 </div>
@@ -231,9 +230,8 @@
                     </div>
                     <div class="flex gap-4 items-center mt-2">
                         <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
-                        <Select multiple id="to2" name="role" class="w-full ml-4" value="2" placeholder="Role">
-                            <option value="Test">Test</option>
-                            <option value="Iya">Iya</option>
+                        <Select multiple id="update-to" name="role" class="w-full ml-4" value="2" placeholder="Role">
+                            <option value=""></option>
                         </Select>
                     </div>
                 </div>
@@ -255,7 +253,7 @@
             </div>
         </div>
     </div>
-    <!--Modal Update-->
+    <!--Modal Detail-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="show" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">

@@ -10,8 +10,13 @@ class CommunicationType extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function rule()
-    {
+    public function rule(){
         return $this->hasMany(rule::class);
+    }
+    public function FromCommunicationType(){
+        return $this->hasMany(FromCommunication::class);
+    }
+    public function ToCommunication(){
+        return $this->hasMany(ToCommunicationType::class);
     }
 }

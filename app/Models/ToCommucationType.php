@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ToCommucationType extends Model
 {
     use HasFactory;
+
+    public function CommunicationType(){
+        return $this->belongsTo(CommunicationType::class);
+    }
+    public function Role(){
+        return $this->belongsTo(Role::class);
+    }
 }

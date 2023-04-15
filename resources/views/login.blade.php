@@ -10,7 +10,7 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="{{ asset('fonts/material-icon/css/material-design-iconic-font.min.css') }}">
-
+    <link rel="shortcut icon" href="https://expinc.io/wp-content/uploads/2020/10/cropped-Exp-Inc-vierkant-192x192.png">
     <link rel="stylesheet" href="{{ asset('login/css/style.css') }}">
     <meta name="robots" content="noindex, follow">
     <script src="https://cdn.tailwindcss.com"></script>
