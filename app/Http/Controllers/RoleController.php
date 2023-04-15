@@ -20,7 +20,7 @@ class RoleController extends Controller
     }
 
     public function paginate(){
-        $data = Role::where('name','!=','admin')->paginate(2);
+        $data = Role::where('name','!=','admin')->paginate(5);
 
         $links = $data->links('layouts.paginate');
         return response()->json([
