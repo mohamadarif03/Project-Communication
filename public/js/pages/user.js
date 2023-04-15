@@ -172,7 +172,7 @@ function edit(id){
                 console.log(data)
                 console.log(role_arr)
                 if(Array.isArray(role_arr)){
-                    if(role_arr.includes(data.id)){
+                    if(role_arr.includes(String(data.id))){
                         selected = 'selected'
                     }
                 }else{
