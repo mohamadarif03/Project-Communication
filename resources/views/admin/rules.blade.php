@@ -2,7 +2,6 @@
 @section('Setting.svg', 'white')
 @section('content')
     <div class="content">
-
         <div class="container-fluid flex justify-between mt-3">
 
             <div class="">
@@ -15,18 +14,15 @@
             </div>
             <div class="flex">
                 <div class="">
-                    <form class="d-flex" action="{{ url('communication-type') }}" method="get">
-
-                        <select placeholder="all" id="search"
-                            class="bg-gray-50 text-gray-900 text-sm rounded-lg block min-w-24 p-2.5 px-4 mr-3 focus:outline-none">
-                            <option value="">All Type</option>
-                        </select>
-                    </form>
+                    <select placeholder="all" id="search"
+                        class="bg-gray-50 text-gray-900 text-sm rounded-lg block min-w-24 p-2.5 px-4 mr-3 focus:outline-none">
+                        <option value="">All Type</option>
+                    </select>
                 </div>
 
                 <div class="">
 
-                    <button type="button" onclick="search()"
+                    <button type="button" onclick="GetData()"
                         class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 flex"><svg
                             style="margin-right: 13px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">

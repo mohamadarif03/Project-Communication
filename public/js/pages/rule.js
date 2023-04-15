@@ -56,10 +56,6 @@ function load(){
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>`
     $('#Data').html(html)
 }
-function search(){
-    load()
-    GetData()
-}
 function GetData(){
     var search = $('#search').val()
     $.ajax({
@@ -123,7 +119,7 @@ function GetData(){
                 var row =   
                 '<div class="mt-16 flex flex-col items-center justify-center" style="width: 1000px">'+
                 '<img '+src+' class="w-1/4 mt-4" alt="">'+
-                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no role found !</p>'+
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no rule found !</p>'+
                 '</div'
                 $('#Data').append(row)
             }

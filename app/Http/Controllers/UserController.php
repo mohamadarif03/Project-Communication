@@ -26,8 +26,23 @@ class UserController extends Controller
         
         return view('admin.users', compact('data', 'role'));
     }
-    public function data(){
-        $data = User::with('userrole')->where('name','!=','admin')->get();
+    public function data(Request $request){
+        if($request->search){
+            $data = User::with([
+                'userrole' => [
+                    'role'
+                ]
+            ])->join('user_roles','users.id','=','user_roles.user_id')
+              ->where('users.name','!=','admin')
+              ->where('user_roles.role_id',$request->search)
+              ->get();
+        }else{
+            $data = User::with([
+                'userrole' => [
+                    'role'
+                ]
+            ])->where('name','!=','admin')->get();
+        }
         return response()->json($data);
     }
     public function insert(UserRequest $request)
