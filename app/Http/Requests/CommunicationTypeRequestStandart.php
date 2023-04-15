@@ -26,7 +26,9 @@ class CommunicationTypeRequestStandart extends FormRequest
         return [
             'type' => 'required',
             'color' => 'required',
-           
+            'to' => 'required',
+            'description' => 'required',
+
         ];
     }
 }
