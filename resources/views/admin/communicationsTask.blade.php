@@ -157,9 +157,10 @@
                     </div>
                     
                     <div class="flex gap-4 items-center mt-2">
-                        <label for="to" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
-                        <Select multiple id="to" name="to" class="w-full ml-4" value="2" placeholder="Role">
-                            <option value="">Test</option>
+                        <label for="to" class="mb-2 text-xs font-medium text-gray-900 ml-6">From</label>
+                        <Select multiple id="from" name="from" class="w-full ml-4" value="2" placeholder="Role">
+                            <option value="1">Test</option>
+                            <option value="2">Iya</option>
                         </Select>
                     </div>
                 </div>

@@ -7,6 +7,7 @@ use App\Http\Requests\CommunicationTypeRequestStandart;
 use App\Http\Requests\CommunicationTypeRequestTask;
 use App\Http\Requests\CommunicationUpdateTypeRequest;
 use App\Models\CommunicationType;
+use App\Models\FromCommunicationType;
 use App\Models\Rule;
 use App\Models\ToCommucationType;
 use Illuminate\Http\Request;
@@ -25,12 +26,21 @@ class CommunicationTypeController extends Controller
     }
     public function insert(CommunicationTypeRequestTask $request)
     {
-        CommunicationType::create([
+        $data = CommunicationType::create([
             'type' => $request ->type,
             'color' => $request ->color,
             'description' => $request ->description,
             'status' => 'task'
         ]);
+        foreach($request->from as $item){
+            FromCommunicationType::create([
+                'communication_type_id' => $data->id,
+                'role_id' => $item
+            ]);
+        }
+        $role = implode(',',$request->from);
+        $data->from = $role;
+        $data->save();
         return response()->json(['message' => 'Success Create New Type!']);
     }
     public function update(CommunicationTypeRequestTask $request, $id)
@@ -87,7 +97,7 @@ class CommunicationTypeController extends Controller
             ]);
         }
         $role = implode(',',$request->to);
-        $data->role = $role;
+        $data->to = $role;
         $data->save();
         return response()->json(['message' => 'Success Create New Type!']);
     }

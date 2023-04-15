@@ -80,7 +80,7 @@ function create(){
     var type = $('#type').val()
     var color = $('#color').val()
     var description = $('#description').val()
-    var to = $('#to').val()
+    var from = $('#from').val()
     $.ajax({
         type:'POST',
         url:'/store-communication-type-task',
@@ -89,7 +89,7 @@ function create(){
             type:type,
             color:color,
             description:description,
-            to:to
+            from:from
         },
         success:function(response){
             Swal.fire({
@@ -127,10 +127,10 @@ function GetRole(){
         success:function(response){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'">'+data.name+'</option>'
-                $('#to').append(row)
+                $('#from').append(row)
                 $('#update-to').append(row)
             })
-            to =  new TomSelect('#to',{
+            from =  new TomSelect('#from',{
                 plugins: ['remove_button'],
             })
             update_to = new TomSelect('#update-to',{

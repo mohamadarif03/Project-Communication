@@ -9,6 +9,8 @@ class FromCommunicationType extends Model
 {
     use HasFactory;
 
+    protected $table = 'from_communication_types';
+    protected $guarded = [];
     public function CommunicationType(){
         return $this->belongsTo(CommunicationType::class);
     }
