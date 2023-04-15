@@ -1,7 +1,5 @@
 new TomSelect('#type')
-new TomSelect('#to',{
-    plugins: ['remove_button'],
-})  
+
 
 $('#btn-next-create-step-2').click(function(){
     $('#btn-close-modal-create-step-1').click()
