@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="{{ asset('login/css/style.css') }}">
     <meta name="robots" content="noindex, follow">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script nonce="e68ff66f-3d81-4045-a581-0715e71a8c06">
         (function(w, d) {
             ! function(bv, bw, bx, by) {
