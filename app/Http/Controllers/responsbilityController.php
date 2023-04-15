@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class responsbilityController extends Controller
+class ResponsbilityController extends Controller
 {
     public function view()
     {
