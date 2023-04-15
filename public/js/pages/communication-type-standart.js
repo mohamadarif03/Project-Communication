@@ -197,7 +197,7 @@ function removeModal(id) {
 function remove() {
     var id = $('#delete-id').val()
     $.ajax({
-      url: '/delestandart/' +id,
+      url: '/delete-communication-type-standart/' +id,
       method: 'DELETE',
       data:{
         _token:csrfToken
@@ -215,7 +215,8 @@ function remove() {
     error: function(response){
         Swal.fire({
             title: 'Error!',
-            text: JSON.parse(response.responseText).error,
+            html: response.responseJSON.message,
+
             icon: 'error'
         })
     }
