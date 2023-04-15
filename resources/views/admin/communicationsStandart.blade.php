@@ -230,9 +230,8 @@
                     </div>
                     <div class="flex gap-4 items-center mt-2">
                         <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
-                        <Select multiple id="to2" name="role" class="w-full ml-4" value="2" placeholder="Role">
-                            <option value="Test">Test</option>
-                            <option value="Iya">Iya</option>
+                        <Select multiple id="update-to" name="role" class="w-full ml-4" value="2" placeholder="Role">
+                           
                         </Select>
                     </div>
                 </div>
