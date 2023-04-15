@@ -1,9 +1,7 @@
 
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-new TomSelect('#to',{
-    plugins: ['remove_button'],
-}) 
+
 new TomSelect('#to2',{
     plugins: ['remove_button'],
 }) 
@@ -18,6 +16,7 @@ function fetch_update() {
     document.getElementById("put2").value = colorupdate;
 }
 
+GetRole()
 
 
 GetData()
@@ -224,4 +223,23 @@ function remove() {
     }
     });
   }
+
+  function GetRole(){
+    $.ajax({
+        type:'GET',
+        url:'/data-role',
+        success:function(response){
+            $.each(response,function(index,data){
+                var row = '<option value="'+data.id+'">'+data.name+'</option>'
+                $('#To').append(row)
+            })
+            to =  new TomSelect('#To',{
+                plugins: ['remove_button'],
+            })
+        },
+        error:function(response){
+            console.log(response)
+        }
+    })
+}
   

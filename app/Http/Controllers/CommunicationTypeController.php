@@ -45,13 +45,14 @@ class CommunicationTypeController extends Controller
     }
     public function update(CommunicationTypeRequestTask $request, $id)
     {
-        $data = CommunicationType::find($id);
+        $data = CommunicationType::findorfail($id);
         $data->update([
             'type' => $request->type,
             'color' => $request->color,
             'description' => $request->description,
             'status' => 'task'
         ]);
+       
         return response()->json(['message' => 'Success Create New Type!']);
     }
     public function delete($id)
