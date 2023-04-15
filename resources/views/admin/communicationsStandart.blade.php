@@ -147,7 +147,7 @@
                         <div class="flex rounded-md border ml-1"
                         style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
                         <input type="text" class="border-r" id="put"
-                        style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
+                        style="background-color: transparent; padding-right: 150px;" placeholder="#000000" disabled>
                         <input type="color" name="" id="color" onchange="fetch()">
                     </div>
                     </div>
@@ -220,7 +220,7 @@
                         <div class="flex rounded-md border"
                             style="box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" value="" id="put2"
-                                style="background-color: transparent; padding-right: 50px;" disabled>
+                                style="background-color: transparent; padding-right: 150px;" disabled>
                             <input type="color" name="" value="" id="update-color" onchange="fetch_update()">
                         </div>
                     </div>

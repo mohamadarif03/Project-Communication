@@ -83,6 +83,7 @@ function create(){
     var color = $('#color').val()
     var description = $('#description').val()
     var to = $('#to').val()
+    var put = $('#put').val()
     $.ajax({
         type:'POST',
         url:'/store-communication-type-standart',
@@ -91,7 +92,8 @@ function create(){
             type:type,
             color:color,
             description:description,
-            to:to
+            to:to,
+            put:put,
         },
         
         success:function(response){
@@ -103,6 +105,7 @@ function create(){
             $('#type').val('')
             $('#color').val('')
             $('#description').val('')
+            $('#put').val('')
             $('#btn-close-modal').click()
             GetData()
         },
