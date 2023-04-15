@@ -80,13 +80,13 @@ class CommunicationTypeController extends Controller
             'description' => $request ->description,
             'status' => 'standart'
         ]);
-        foreach($request->role as $item){
+        foreach($request->to as $item){
             ToCommucationType::create([
-                'user_id' => $data->id,
+                'communication_type_id' => $data->id,
                 'role_id' => $item
             ]);
         }
-        $role = implode(',',$request->role);
+        $role = implode(',',$request->to);
         $data->role = $role;
         $data->save();
         return response()->json(['message' => 'Success Create New Type!']);

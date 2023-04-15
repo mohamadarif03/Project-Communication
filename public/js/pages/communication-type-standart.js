@@ -85,6 +85,7 @@ function create(){
     var type = $('#type').val()
     var color = $('#color').val()
     var description = $('#description').val()
+    var to = $('#to').val()
     $.ajax({
         type:'POST',
         url:'/store-communication-type-standart',
@@ -92,7 +93,8 @@ function create(){
             _token:csrfToken,
             type:type,
             color:color,
-            description:description
+            description:description,
+            to:to
         },
         
         success:function(response){

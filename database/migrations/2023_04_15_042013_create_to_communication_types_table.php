@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('role_id');
             $table->foreign('communication_type_id')
             ->references('id')
-            ->on('roles')
+            ->on('communication_types')
             ->cascadeOnDelete();
             $table->foreign('role_id')
             ->references('id')
