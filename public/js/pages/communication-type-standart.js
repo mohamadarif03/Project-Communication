@@ -183,9 +183,21 @@ function edit(id){
 
 function show(id){
     var description = $('#btn-show-'+id).data('description')
-    $('#update-description').val(description)
-    $('#update-id').val(id)
+    $('#show-description').text(description)
+    $('#show-id').val(id)
     $('#btn-show-modal').click()
+}
+function showDescription(id) {
+    $.ajax({
+        url: '/communication-type/desc/' + id, // ganti URL dengan endpoint yang sesuai
+        type: 'GET',
+        success: function(response) {
+            $('#show-description').text(response.description);
+        },
+        error: function(xhr) {
+            console.log(xhr.responseText);
+        }
+    });
 }
 
 function update(){

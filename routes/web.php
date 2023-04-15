@@ -51,6 +51,7 @@ Route::get('/data-communication-type-task',[CommunicationTypeController::class,'
 Route::post('/store-communication-type-task',[CommunicationTypeController::class,'insert']);
 Route::put('/update-communication-type-task/{id}',[CommunicationTypeController::class,'update']);
 Route::delete('/delete-communication-type-task/{id}',[CommunicationTypeController::class,'delete']);
+Route::get('/communication-type/desc/{id}', [CommunicationTypeController::class, 'desc']);
 
 //Communicationn Type Standart
 Route::get('/communication-type-standart',[CommunicationTypeController::class,'viewStandart']);

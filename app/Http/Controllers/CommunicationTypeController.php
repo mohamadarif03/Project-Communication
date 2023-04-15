@@ -134,4 +134,17 @@ class CommunicationTypeController extends Controller
         ],200);
 
     }
+    public function desc($id)
+{
+    $communicationType = CommunicationType::find($id);
+
+    if (!$communicationType) {
+        return response()->json(['error' => 'Data not found.'], 404);
+    }
+
+    $description = $communicationType->description;
+
+    return response()->json(['description' => $description], 200);
+}
+
 }

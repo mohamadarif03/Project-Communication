@@ -277,11 +277,11 @@
                         </svg>
                     </button>
                 </div>
-                <input type="hidden" id="update-id">
+                <input type="hidden" id="show-id">
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                        <p class="text-xs" id="show-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magni iure repellendus voluptatem officiis obcaecati nulla, neque incidunt tenetur? Soluta modi quibusdam corrupti saepe distinctio aperiam assumenda ut doloribus in?</p>
+                        <p class="text-xs" id="show-description"></p>
                 </div>
 
                 <!--Modal footer-->
@@ -297,7 +297,7 @@
         </div>
     </div>
 
-    <!--Modal Detail-->
+    <!--Modal Delete-->
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="delete" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
