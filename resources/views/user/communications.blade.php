@@ -6,11 +6,11 @@
     <div class="content">
 
         <!-- Start Content-->
-        <div class="container-fluid flex justify-between">
+        <div class="container-fluid flex justify-between mt-3">
 
             <div class="">
-                <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1" data-te-ripple-init
-                    data-te-ripple-color="light"
+                <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
+                    data-te-ripple-init data-te-ripple-color="light"
                     class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
                     Add
                 </button>
@@ -119,15 +119,15 @@
                     </svg>Search</button>
             </div>
 
-        </div> 
+        </div>
         <!-- end container-fluid -->
         <div class="flex" style="margin-top: 70px">
             <div class="block rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"
                 style="background-color: #ECFFF4; border: 2px solid #27AE60;">
 
                 <div class="h-8 p-2 items-center w-full flex justify-between ">
-                    
-                        <input type="checkbox" id="inlineCheckbox2" value="option1" checked>
+
+                    <input type="checkbox" id="inlineCheckbox2" value="option1" checked>
                     {{-- </a> --}}
                     <p class="rounded-md text-xs text-white py-0.5 px-2" style="background-color: #27AE60">13 May 2023</p>
                 </div>
@@ -175,7 +175,7 @@
                     <i class="mdi mdi-account"></i>
                     <p class=" ml-1.5 my-auto text-xs">head finance</p>
                     <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
-                        <a href="" data-te-toggle="modal" data-te-target="#show">
+                        <a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">
                             Show >
                         </a>
                     </div>
@@ -236,8 +236,8 @@
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-xs">attachment files or links</p>
+                                    <h3 class="font-medium leading-tight">Message</h3>
+                                    <p class="text-xs">user message</p>
                                 </li>
                             </ol>
                         </div>
@@ -338,8 +338,8 @@
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-xs">attachment files or links</p>
+                                    <h3 class="font-medium leading-tight">Message</h3>
+                                    <p class="text-xs">user message</p>
                                 </li>
                             </ol>
                         </div>
@@ -362,9 +362,8 @@
                         class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200">
                         Back
                     </button>
-                    <button type="button" id="btn-close-modal-create-step-2"
-                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
-                        class="hidden">
+                    <button type="button" id="btn-close-modal-create-step-2" data-te-modal-dismiss data-te-ripple-init
+                        data-te-ripple-color="light" class="hidden">
                     </button>
                     <button type="button"
                         class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
@@ -431,8 +430,8 @@
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Files / Links</h3>
-                                    <p class="text-xs">attachment files or links</p>
+                                    <h3 class="font-medium leading-tight">Message</h3>
+                                    <p class="text-xs">user message</p>
                                 </li>
                             </ol>
                         </div>
@@ -440,12 +439,14 @@
                             <div class="">
 
                                 <label for="file" class=" mb-2 text-xs font-medium">Message</label><br>
-                                
-                                <textarea id="message" rows="4" class="block p-2.5 w-full text-xs text-gray-900 bg-transparent rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Message"></textarea>
+
+                                <textarea id="message" rows="4"
+                                    class="block p-2.5 w-full text-xs text-gray-900 bg-transparent rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Message"></textarea>
 
 
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -478,28 +479,43 @@
     {{-- Modal Detail --}}
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-        id="show" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
-        role="dialog">
+        id="show" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
         <div data-te-modal-dialog-ref
-            class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
+            class="pointer-events-none relative h-[calc(100%-1rem)] w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
             <div
-                class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
+                class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
                 <div
-                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
                     <!--Modal title-->
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800"
+                        id="exampleModalScrollableLabel">
                         Detail
                     </h5>
-                
+                    <!--Close button-->
+                    <button type="button"
+                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
 
                 <!--Modal body-->
-                <div class="relative p-4">
-                    <h1 class="font-bold">Description</h1>
+                
+                <div class="relative overflow-y-auto p-4">
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        Detail
+                    </h5>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aut, numquam nam reprehenderit labore, accusantium recusandae sunt exercitationem tempora consectetur distinctio sed repudiandae quas illo ab quia consequatur repellendus esse nemo sint. Pariatur, sint officia officiis atque reprehenderit cum corrupti possimus! Voluptate minus deleniti ullam nihil? Commodi quisquam obcaecati excepturi praesentium voluptatibus illo dicta id itaque non mollitia nobis voluptatem vero aliquid incidunt, facere blanditiis nam quas architecto? Voluptatibus, debitis.</p>
-                    <h1 class="font-bold my-3">How</h1>
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        How
+                    </h5>
                     <p>Meeting</p>
-                    <h1 class="font-bold my-3">Message</h1>
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        Message
+                    </h5>
                     <p>meeting at 8 AM</p>
                 </div>
 
@@ -532,7 +548,7 @@
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
                         Confirmation
                     </h5>
-                
+
                 </div>
 
                 <!--Modal body-->

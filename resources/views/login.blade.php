@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="{{ asset('fonts/material-icon/css/material-design-iconic-font.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('login/css/style.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <meta name="robots" content="noindex, follow">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script nonce="e68ff66f-3d81-4045-a581-0715e71a8c06">
         (function(w, d) {
             ! function(bv, bw, bx, by) {
@@ -106,7 +107,7 @@
             <div class="">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Login</h2>
+                        <h2 class="form-title" style="font-weight: bold; font-size:50px">Login</h2>
                         <p class="form-title">please enter your username and password to enter your account</p>
                         @if ($errors->any())
                             <div>
@@ -157,6 +158,8 @@
     <script src="{{ asset('login/js/main.js') }}"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script src="{{asset('assets/js/app.min.js')}}"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
 

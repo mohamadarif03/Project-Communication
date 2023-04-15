@@ -107,9 +107,7 @@ function GetData(){
                             '<div class="h-8 w-full flex items-center">'+
                                 '<i class="mdi mdi-account"></i>'+
                                 '<p class=" ml-1.5 my-auto text-xs">head finance</p>'+
-                                '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
-                                    'Show >'+
-                                '</div>'+
+                                
                             '</div>'+
                         '</div>'
                     $('#Data').append(row)
