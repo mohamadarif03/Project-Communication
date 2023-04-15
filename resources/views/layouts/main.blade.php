@@ -28,7 +28,7 @@
         <div id="wrapper">           
             <!-- Topbar Start -->
             <div class="navbar-custom">
-                <ul class="list-unstyled topnav-menu float-right mb-0">
+                <ul class="list-unstyled flex items-center topnav-menu float-right mb-0">
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="mdi mdi-bell-outline noti-icon"></i>
