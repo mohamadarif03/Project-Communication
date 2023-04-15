@@ -12,11 +12,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
-        <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+        <link rel="stylesheet" href="{{asset('plugin/tw-elements/dist/css/tw-elements.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('plugin/sweetalert2/dist/sweetalert2.min.css')}}">
         <!-- App css -->
@@ -146,9 +143,8 @@
                         <button class="button-menu-mobile waves-effect waves-light">
                             <i class="mdi mdi-menu"></i>
                         </button>
-                        <p class="py-1.5 px-4 font-semibold my-auto role-color rounded-md">Role : Chief</p>
+                        <p class="py-1.5 px-4 font-semibold my-auto role-color rounded-md">Role : <span id="role_user"></span></p>
                     </li>
-
                 </ul>
             </div>
             <!-- end Topbar -->
@@ -236,7 +232,7 @@
         <!-- Dashboard init js-->
         <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
         <!-- App js -->
-        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+        <script src="{{asset('plugin/tw-elemets/dist/js/tw-elements.umd.min.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
         <script src="{{asset('assets/js/app.min.js')}}"></script>
         @yield('javascript')

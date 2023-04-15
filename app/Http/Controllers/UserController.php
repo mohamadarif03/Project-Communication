@@ -15,16 +15,7 @@ class UserController extends Controller
 {
     public function view(Request $request)
     {
-        
-        $katakunci = $request->katakunci;
-        $data = User::whereHas('userrole', function($query) use ($katakunci) {
-            $query->where('role_id', 'LIKE', '%'.$katakunci.'%');
-        })->where('name','!=','admin')->get();
-
-        $role = Role::where('id','!=', 1)->get();
-        
-        
-        return view('admin.users', compact('data', 'role'));
+        return view('admin.users');
     }
     public function data(Request $request){
         if($request->search){
