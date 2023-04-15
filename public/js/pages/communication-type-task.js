@@ -11,8 +11,8 @@ function fetch_update() {
     document.getElementById("put2").value = colorupdate;
 }
 
-var top
-var update_to
+var from
+var update_from = new TomSelect('#update-from')
 
 GetData()
 GetRole()
@@ -50,7 +50,7 @@ function GetData(){
                                     '<path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>'+
                                 '</svg>'+
                                 '</button>'+ 
-                                '<button onclick="edit('+data.id+')" id="btn-edit-'+data.id+'" data-name="'+data.type+'" data-color="'+data.color+'" data-description="'+data.description+'">'+ 
+                                '<button onclick="edit('+data.id+')" id="btn-edit-'+data.id+'" data-from="'+data.from+'" data-name="'+data.type+'" data-color="'+data.color+'" data-description="'+data.description+'">'+ 
                                     '<svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 30px;" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/></svg>'+ 
                                 '</button>'+ 
                                 '<button onclick="removeModal('+data.id+')" id="btn-delete-'+data.id+'" class="btn-delete" data-name="'+data.type+'" data-color="'+data.color+'" data-description="'+data.description+'">'+ 
@@ -147,6 +147,42 @@ function edit(id){
     var name = $('#btn-edit-'+id).data('name')
     var color = $('#btn-edit-'+id).data('color')
     var description = $('#btn-edit-'+id).data('description')
+    var from = $('#btn-edit-'+id).data('from')
+    if (from.length > 1){
+        var from_arr = from.split(',')
+    }else{
+        var from_arr =  from
+    }
+    update_from.destroy()
+    $.ajax({
+        type:'GET',
+        url:'/data-role',
+        success:function(response){
+            $.each(response,function(index,data){
+                var selected = ''
+                if(Array.isArray(from_arr)){
+                    if(from_arr.includes(String(data.id))){
+                        selected = 'selected'
+                    }
+                }else{
+                    if(from_arr == String(data.id)){
+                        selected = 'selected'
+                    }
+                }
+                
+                var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
+                $('#update-from').append(row)
+            })   
+            new tomSelect('#update-from',{
+                plugins: ['remove_button'],
+            })
+            const remove_to = $('#update-from-form').find('.ts-wrapper:not(:first)');
+                remove_to.remove();
+        },
+        error:function(response){
+            console.log(response)
+        }
+    })
     $('#update-name').val(name)
     $('#update-color').val(color)
     $('#update-description').val(description)
@@ -165,6 +201,7 @@ function update(){
     var color = $('#update-color').val()
     var description = $('#update-description').val()
     var id = $('#update-id').val()
+    var from = $('#update-from').val()
     $.ajax({
         type:'PUT',
         url:'/update-communication-type-task/'+id,
@@ -173,6 +210,7 @@ function update(){
             type:name,
             color:color,
             description:description,
+            from:from
         },
         success: function(response){
             Swal.fire({

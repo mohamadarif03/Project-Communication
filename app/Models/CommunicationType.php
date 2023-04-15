@@ -14,7 +14,7 @@ class CommunicationType extends Model
         return $this->hasMany(rule::class);
     }
     public function FromCommunicationType(){
-        return $this->hasMany(FromCommunication::class);
+        return $this->hasMany(FromCommunicationType::class);
     }
     public function ToCommunication(){
         return $this->hasMany(ToCommunicationType::class);

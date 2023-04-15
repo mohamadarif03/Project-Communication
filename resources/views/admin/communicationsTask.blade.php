@@ -228,9 +228,9 @@
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
                         <textarea id="update-description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none" placeholder="Description..."></textarea>
                     </div>
-                    <div class="flex gap-4 items-center mt-2">
+                    <div class="flex gap-4 items-center mt-2" id="update-from-form">
                         <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
-                        <Select multiple id="update-to" name="role" class="w-full ml-4" value="2" placeholder="Role">
+                        <Select multiple id="update-from" name="role" class="w-full ml-4" value="2" placeholder="Role">
                             <option value=""></option>
                         </Select>
                     </div>
