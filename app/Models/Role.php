@@ -17,7 +17,5 @@ class Role extends Model
     public function FromCommunicationType(){
         return $this->hasMany(FromCommunication::class);
     }
-    public function ToCommunication(){
-        return $this->hasMany(ToCommunicationType::class);
-    }
+    
 }
