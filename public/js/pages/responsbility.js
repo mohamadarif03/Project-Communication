@@ -1,4 +1,4 @@
-// new TomSelect('#type')
+new TomSelect('#type')
 $(document).ready(function() {
     // dapatkan elemen select year
     var yearSelect = $('#year');

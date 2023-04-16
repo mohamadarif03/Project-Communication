@@ -27,7 +27,7 @@ class AuthController extends Controller
            
             return redirect()->intended('dashboard');
         }
-        return redirect('/')->withErrors('Name Or Password Undefined');
+        return redirect('/')->withErrors('Username Or Password Does Not Match');
 
     }
     public function logout(Request $request)

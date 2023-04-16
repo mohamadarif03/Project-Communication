@@ -125,6 +125,7 @@ function GetData(page){
                     $('#Data').append(row)
                 })
                 $('#paginate').html(response.links);
+                
                 current_page = response.pagination.current_page
             }else{
                 var src = "src='../img/not-found.svg'";
@@ -134,6 +135,8 @@ function GetData(page){
                             '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no rule found !</p>'+
                 '</div'
                 $('#Data').append(row)
+                $('#paginate').html('');
+
             }
         },
         error:function(response){

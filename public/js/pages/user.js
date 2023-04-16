@@ -91,6 +91,8 @@ function GetData(page){
                             '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no user found !</p>'+
                 '</div'
                 $('#Data').append(row)
+                $('#paginate').html('');
+
             }
         },
         error:function(response){

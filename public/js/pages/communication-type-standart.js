@@ -72,8 +72,9 @@ function GetData(page){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   '<img '+src+' class="w-[20%] mt-4" alt="">'+
-                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no responsbility found !</p>'
+                '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no responsbility found !</p>'
                 $('#table').append(row)
+                $('#paginate').html('');
             }
             
         }
@@ -106,12 +107,14 @@ function create(){
                 text: 'Success Create New Responsbility!',
                 icon: 'success'
             })
+          
             $('#type').val('')
             $('#color').val('')
             $('#description').val('')
             $('#put').val('')
             $('#btn-close-modal').click()
             GetData()
+
         },
         error:function(response){
             var errors = response.responseJSON.errors;
@@ -144,7 +147,7 @@ function edit(id){
     update_to.destroy()
     $.ajax({
         type:'GET',
-        url:'/data-role',
+        url:'/data-user-value',
         success:function(response){
             $.each(response,function(index,data){
                 var selected = ''

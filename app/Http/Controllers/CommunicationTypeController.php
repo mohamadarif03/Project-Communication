@@ -68,7 +68,7 @@ class CommunicationTypeController extends Controller
 
     
     public function paginate(){
-        $data = CommunicationType::where('status', 'task')->paginate(1);
+        $data = CommunicationType::where('status', 'task')->orderBy('created_at', 'desc')->paginate(5);
 
         $links = $data->links('layouts.paginate');
         return response()->json([
@@ -155,7 +155,7 @@ class CommunicationTypeController extends Controller
     return response()->json(['description' => $description], 200);
 }
 public function paginateStandart(){
-    $data = CommunicationType::where('status', 'standart')->paginate(1);
+    $data = CommunicationType::where('status', 'standart')->orderBy('created_at', 'desc')->paginate(5);
 
     $links = $data->links('layouts.paginate');
     return response()->json([

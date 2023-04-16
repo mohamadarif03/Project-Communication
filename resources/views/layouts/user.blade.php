@@ -90,8 +90,12 @@
 
                     <li class="dropdown notification-list flex">
                         <a class="nav-link dropdown-toggle nav-user mr-0 items-center  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="{{asset('profile/'.Auth::user()->profile)}}" alt="user-image" class="rounded-circle">
-                            <span class="d-none d-sm-inline-block ml-1 font-weight-medium">{{Auth::user()->name}}</span>
+                            @if (Auth::user()->profile == 'default.png')
+                            <img src="{{asset('profile/default.png')}}" class="rounded-full" alt="" srcset="">
+                            @else
+                            <img src="{{ asset('storage/' . Auth::user()->profile) }}" class="rounded-full" alt="" srcset="">
+                            @endif
+]                            <span class="d-none d-sm-inline-block ml-1 font-weight-medium">{{Auth::user()->name}}</span>
                             <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">

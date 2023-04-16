@@ -69,6 +69,8 @@ function GetData(page){
                 var row =   '<img '+src+' class="w-[20%] mt-4" alt="">'+
                             '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no task found !</p>'
                 $('#table').append(row)
+                $('#paginate').html('');
+
             }
             
         }
