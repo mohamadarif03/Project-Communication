@@ -85,26 +85,29 @@
             </div>
             <div class="h-full">
                 <div class="">
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="col-span-1 w-[85%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
                             
                                 <h1 class="text-3xl font-bold">Icon</h1>
                                 <p class="text-lg font-bold">Junior gamedesigner</p>
                                 <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+ Add
                                 </button>
                         </div>
-                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                        <div class="col-span-1 w-[85%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
                             
                                 <h1 class="text-3xl font-bold">Icon</h1>
                                 <p class="text-lg font-bold">Junior gamedesigner</p>
-                               
+                                <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+ Add
+                                </button>
                         </div>
-                        <div class="col-span-1 w-[30%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
+                        <div class="col-span-1 w-[85%] h-[200px] flex flex-col items-center justify-center bg-gray-200 rounded-md m-6 border-dashed border-2 border-gray-400">
                             
                                 <h1 class="text-3xl font-bold">Icon</h1>
                                 <p class="text-lg font-bold">Junior gamedesigner</p>
-                               
+                                <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+ Add
+                                </button>
                         </div>
+                        
                        
                        
                     </div>
