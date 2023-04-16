@@ -145,8 +145,8 @@
                     </div>
                     <div class="signup-image">
                         <figure>
-                            <img src="{{ asset('login/images/20230412_165257.png') }}" width="60%"
-                                alt="sing up image">
+                            <img src="{{ asset('login/images/undraw_completed_03xt 1.png') }}" width="60%"
+                                alt="sing up image" style="margin-bottom: 20px">
                         </figure>
 
                     </div>
