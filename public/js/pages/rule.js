@@ -7,9 +7,7 @@ GetRole()
 // new TomSelect('#from',{
 //     plugins: ['remove_button'],
 // })
-new TomSelect('#update-from',{
-    plugins: ['remove_button'],
-})
+
 
 
 var type
@@ -242,7 +240,7 @@ function edit(id){
     $('#update-how').val(how)
     $('#update-to').html('')
     $('#update-id').val(id)
-    update_to.destroy()
+    // update_to.destroy()
     $.ajax({
         type:'GET',
         url:'/data-role',
