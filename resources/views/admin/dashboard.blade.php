@@ -75,7 +75,7 @@
                         <div class="">
                             <div class="my-auto">
                                 <h1 class="text-5xl text-gray-900 font-semibold flex justify-center">{{ $role }}</h1>
-                                <h3 class="text-xs text-gray-900 font-semibold ml-3  flex justify-center">role</h3>
+                                <h3 class="text-xs text-gray-900 font-semibold ml-3  flex justify-center">Role</h3>
                             </div>
                         </div>
                     </div>
