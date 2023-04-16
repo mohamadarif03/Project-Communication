@@ -93,6 +93,8 @@
                         </div>
                     </div>
                 </div>
+                <div class="mx-auto mt-8" id="paginate">
+                </div>
             </div>
         </div>
        

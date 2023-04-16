@@ -6,6 +6,7 @@ use App\Http\Requests\CommunicationTypeRequest;
 use App\Http\Requests\CommunicationTypeRequestStandart;
 use App\Http\Requests\CommunicationTypeRequestTask;
 use App\Http\Requests\CommunicationUpdateTypeRequest;
+use App\Models\Communication;
 use App\Models\CommunicationType;
 use App\Models\FromCommunicationType;
 use App\Models\Rule;
@@ -16,14 +17,14 @@ class CommunicationTypeController extends Controller
 {
     public function view(){
 
-        
         return view('admin.communicationsTask');
     }
     public function data(){
         $data = CommunicationType::where('status', 'task')->get();
         return response()->json($data);
     }
-    public function insert(CommunicationTypeRequestTask $request){
+    public function insert(CommunicationTypeRequestTask $request)
+    {
         $data = CommunicationType::create([
             'type' => $request ->type,
             'color' => $request ->color,
@@ -40,7 +41,8 @@ class CommunicationTypeController extends Controller
         $data->save();
         return response()->json(['message' => 'Success Create New Type!']);
     }
-    public function update(CommunicationTypeRequestTask $request, $id){
+    public function update(CommunicationTypeRequestTask $request, $id)
+    {
         $data = CommunicationType::findorfail($id);
         
         FromCommunicationType::where('communication_type_id',$id)->delete();
@@ -60,7 +62,8 @@ class CommunicationTypeController extends Controller
        
         return response()->json(['message' => 'Success Create New Type!']);
     }
-    public function delete($id){
+    public function delete($id)
+    {
         $rule = Rule::where('communication_type_id',$id)->count();
         if($rule > 0){
             return response()->json([
@@ -72,6 +75,26 @@ class CommunicationTypeController extends Controller
             'success' => 'Success Delete Data!'
         ],200);
 
+    }
+
+
+    
+    public function paginate(){
+        $data = CommunicationType::where('status', 'task')->paginate(1);
+
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
     }
 
 
@@ -87,7 +110,8 @@ class CommunicationTypeController extends Controller
         $data = CommunicationType::where('status', 'standart')->get();
         return response()->json($data);
     }
-    public function insertStandart(CommunicationTypeRequestStandart $request){
+    public function insertStandart(CommunicationTypeRequestStandart $request)
+    {
         $data = CommunicationType::create([
             'type' => $request ->type,
             'color' => $request ->color,
@@ -105,7 +129,8 @@ class CommunicationTypeController extends Controller
         $data->save();
         return response()->json(['message' => 'Success Create New Type!']);
     }
-    public function updateStandart(CommunicationTypeRequestStandart $request, $id) {
+    public function updateStandart(CommunicationTypeRequestStandart $request, $id)
+    {
         $data = CommunicationType::find($id);
         $data->update([
             'type' => $request->type,
@@ -115,7 +140,8 @@ class CommunicationTypeController extends Controller
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
-    public function deleteStandart($id){
+    public function deleteStandart($id)
+    {
         $rule = Rule::where('communication_type_id',$id)->count();
         if($rule > 0){
             return response()->json([
@@ -128,16 +154,34 @@ class CommunicationTypeController extends Controller
         ],200);
 
     }
-    public function desc($id){
-        $communicationType = CommunicationType::find($id);
+    public function desc($id)
+{
+    $communicationType = CommunicationType::find($id);
 
-        if (!$communicationType) {
-            return response()->json(['error' => 'Data not found.'], 404);
-        }
-
-        $description = $communicationType->description;
-
-        return response()->json(['description' => $description], 200);
+    if (!$communicationType) {
+        return response()->json(['error' => 'Data not found.'], 404);
     }
+
+    $description = $communicationType->description;
+
+    return response()->json(['description' => $description], 200);
+}
+public function paginateStandart(){
+    $data = CommunicationType::where('status', 'standart')->paginate(1);
+
+    $links = $data->links('layouts.paginate');
+    return response()->json([
+        'data' => $data,
+        'links' => $links->render(),
+        'pagination' => [
+            'total' => $data->total(),
+            'per_page' => $data->perPage(),
+            'current_page' => $data->currentPage(),
+            'last_page' => $data->lastPage(),
+            'from' => $data->firstItem(),
+            'to' => $data->lastItem()
+        ]
+    ]);
+}
 
 }

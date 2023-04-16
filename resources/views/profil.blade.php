@@ -53,7 +53,7 @@
                     </div>
                     <div class="py-2">
                         <div class="flex justify-center items-center">
-                            <h1 class="text-lg font-bold ml-3 mr-6">New Password</h1>
+                            <h1 class="text-lg font-bold mr-6" style="margin-left: 43px">New Password</h1>
                             <input type="password"
                                 class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
                                 id="exampleFormControlInput1" name="password" placeholder="Name" />

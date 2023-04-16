@@ -14,13 +14,14 @@ function fetch_update() {
 var from
 var update_from = new TomSelect('#update-from')
 
-GetData()
+GetData(1)
 GetRole()
-function GetData(){
+function GetData(page){
     $.ajax({
         type:'GET',
-        url:'/data-communication-type-task',
+        url:'/data-communication-type-task-paginate?page='+page,
         success:function(response){
+            console.log(response)
             var html = '<table class="min-w-full text-left text-sm font-light">'+
                             '<thead class="border-b font-medium ">'+
                                 '<tr>'+
@@ -34,8 +35,8 @@ function GetData(){
                             '</tbody>'+
                         '</table>'
             $('#table').html(html)
-            if(response.length > 0){
-                $.each(response,function(index,data){
+            if(response.data.data.length > 0){
+                $.each(response.data.data,function(index,data){
                     var row = '<tr class="border-b border-dashed ">'+
                                 '<td class="whitespace-nowrap px-6 py-4 font-medium">'+(index+1)+'</td>'+ 
                                 '<td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">'+data.type+'</td>'+ 
@@ -63,6 +64,7 @@ function GetData(){
                             '</tr>'
                     $('#Data').append(row)
                 })
+                $('#paginate').html(response.links);
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   '<img '+src+' class="w-[20%] mt-4" alt="">'+
