@@ -20,6 +20,7 @@ return new class extends Migration
             ->references('id')
             ->on('communication_types');
             $table->date('date');
+            $table->string('to');
             $table->longText('message');
             $table->timestamps();
         });
