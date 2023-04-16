@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('from_rules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('communication_id');
-            $table->foreignId('user_id');
-            $table->foreign('communication_id')
+            $table->foreignId('rule_id');
+            $table->foreignId('role_id');
+            $table->foreign('rule_id')
             ->references('id')
-            ->on('communications')
+            ->on('rules')
             ->cascadeOnDelete();
-            $table->foreign('user_id')
+            $table->foreign('role_id')
             ->references('id')
-            ->on('users')
+            ->on('roles')
             ->cascadeOnDelete();
             $table->timestamps();
         });

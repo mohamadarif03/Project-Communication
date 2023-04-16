@@ -182,7 +182,6 @@ function create(){
     var communication_type_id = $('#type').val()
     var how = $('#how').val()
     var To = $('#To').val()
-    console.log(To)
     var from = $('#from').val()
     $.ajax({
         type:'POST',

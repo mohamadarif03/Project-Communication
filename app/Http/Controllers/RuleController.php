@@ -44,14 +44,14 @@ class RuleController extends Controller
     public function insert(RuleRequest $request)
     {
         $rule = Rule::create([
-            'communication_type_id' => $request ->communication_type,
+            'communication_type_id' => $request->communication_type,
             'how' => $request ->how,
             'from' => implode(',',$request->from),
             'to' => implode(',',$request->to)
         ]);
         foreach($request->from as $item){
             FromRule::create([
-                'communication_type_id' => $rule->id,
+                'rule_id' => $rule->id,
                 'role_id' => $item
             ]);
         }
