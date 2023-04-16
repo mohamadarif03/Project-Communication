@@ -16,6 +16,11 @@ class UserMidlleware
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(in_array('1',explode(',',Auth()->user()->role))){
+            return redirect('dashboard');
+        }else{
+            return $next($request);
+        }
+        
     }
 }
