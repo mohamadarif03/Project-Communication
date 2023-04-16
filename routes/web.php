@@ -91,7 +91,7 @@ Route::get('/responsbility',[responsbilityController::class,'view']);
 
 Route::get('/project',[projectController::class,'view']);
 
-Route::get('/get-communication-type',[CommunicationController::class,'get']);
+Route::get('/data-respons',[CommunicationController::class,'data']);
 
 //Communication
 Route::get('/data-sent-communication',[CommunicationController::class,'sent']);

@@ -95,7 +95,7 @@
                             @else
                             <img src="{{ asset('storage/' . Auth::user()->profile) }}" class="rounded-full" alt="" srcset="">
                             @endif
-]                            <span class="d-none d-sm-inline-block ml-1 font-weight-medium">{{Auth::user()->name}}</span>
+                            <span class="d-none d-sm-inline-block ml-1 font-weight-medium">{{Auth::user()->name}}</span>
                             <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">

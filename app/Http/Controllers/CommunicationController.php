@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CommunicationRequest;
 use App\Models\Communication;
+use App\Models\CommunicationType;
 use App\Models\ToCommucationType;
 use App\Models\ToCommunication;
+use Illuminate\Console\View\Components\Task;
 use Illuminate\Http\Request;
 
 class CommunicationController extends Controller
@@ -75,5 +77,10 @@ class CommunicationController extends Controller
                 'to' => $data->lastItem()
             ]
         ]);
+    }
+
+    public function data(){
+        $data = CommunicationType::where('status','task')->get();
+        return response()->json($data);
     }
 }
