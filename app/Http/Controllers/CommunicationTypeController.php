@@ -6,6 +6,7 @@ use App\Http\Requests\CommunicationTypeRequest;
 use App\Http\Requests\CommunicationTypeRequestStandart;
 use App\Http\Requests\CommunicationTypeRequestTask;
 use App\Http\Requests\CommunicationUpdateTypeRequest;
+use App\Models\Communication;
 use App\Models\CommunicationType;
 use App\Models\FromCommunicationType;
 use App\Models\Rule;
@@ -16,7 +17,6 @@ class CommunicationTypeController extends Controller
 {
     public function view(){
 
-        
         return view('admin.communicationsTask');
     }
     public function data(){
@@ -75,6 +75,26 @@ class CommunicationTypeController extends Controller
             'success' => 'Success Delete Data!'
         ],200);
 
+    }
+
+
+    
+    public function paginate(){
+        $data = CommunicationType::where('status', 'task')->paginate(1);
+
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
     }
 
 
@@ -145,6 +165,23 @@ class CommunicationTypeController extends Controller
     $description = $communicationType->description;
 
     return response()->json(['description' => $description], 200);
+}
+public function paginateStandart(){
+    $data = CommunicationType::where('status', 'standart')->paginate(1);
+
+    $links = $data->links('layouts.paginate');
+    return response()->json([
+        'data' => $data,
+        'links' => $links->render(),
+        'pagination' => [
+            'total' => $data->total(),
+            'per_page' => $data->perPage(),
+            'current_page' => $data->currentPage(),
+            'last_page' => $data->lastPage(),
+            'from' => $data->firstItem(),
+            'to' => $data->lastItem()
+        ]
+    ]);
 }
 
 }

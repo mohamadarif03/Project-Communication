@@ -9,13 +9,10 @@ class CommunicationController extends Controller
 {
    
 
-    public function communication()
-    {
+    public function communication(){
         return view('user.communications');
-
     }
-    public function insert(Request $request)
-    {
+    public function insert(Request $request){
         Communication::create([
             'communication_type_id' => $request->type,
             'date' => $request->date,

@@ -149,40 +149,42 @@
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         1
                                     </span>
-                                    <h3 class="font-medium leading-tight">Detail</h3>
-                                    <p class="text-sm">Detail Project</p>
+                                    <h3 class="font-medium leading-tight">Task</h3>
+                                    <p class="text-sm">type of task</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         2
                                     </span>
-                                    <h3 class="font-medium leading-tight">Project</h3>
-                                    <p class="text-sm">project spesifications</p>
+                                    <h3 class="font-medium leading-tight">date</h3>
+                                    <p class="text-sm">task creation date</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Designer</h3>
-                                    <p class="text-sm">set designer</p>
+                                    <h3 class="font-medium leading-tight">Files / Links</h3>
+                                    <p class="text-sm">attachment files or links</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
-                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Project
-                                    Name</label>
-                                    <input
-                                    class="relative m-0 block w-full text-xs min-w-0 flex-auto rounded border bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
-                                    type="url" id="formFile" placeholder="Project Name"/>
+                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Task
+                                    Type</label>
+                                    <Select id="type" name="type" class="" placeholder="Choose Type">
+                                        <option value=""></option>
+                                        <option value="Monthly Report">Monthly Report</option>
+                                        <option value="Quarter Report">Quarter Report</option>
+                                    </Select>
                             </div>
                             <div class="">
-                                <label for="type" class=" mb-2 mt-4 text-sm font-medium text-gray-900 ">Description</label><br>
-                                <textarea id="description" rows="4"
-                                    class="block p-2.5 w-full text-xs text-gray-900 bg-transparent rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                    placeholder="Description..."></textarea>
+                                <label for="type" class=" mb-2 mt-4 text-sm font-medium text-gray-900 ">To</label><br>
+                                <input type="text"
+                                    class="peer block min-h-[auto] w-full rounded border-2 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear" placeholder="Task"
+                                    id="to" disabled aria-label="" />
 
                             </div>
                         </div>
@@ -246,46 +248,36 @@
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         1
                                     </span>
-                                    <h3 class="font-medium leading-tight">Detail</h3>
-                                    <p class="text-sm">Detail Project</p>
+                                    <h3 class="font-medium leading-tight">Task</h3>
+                                    <p class="text-sm">type of task</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         2
                                     </span>
-                                    <h3 class="font-medium leading-tight">Project</h3>
-                                    <p class="text-sm">project spesifications</p>
+                                    <h3 class="font-medium leading-tight">date</h3>
+                                    <p class="text-sm">task creation date</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Designer</h3>
-                                    <p class="text-sm">set designer</p>
+                                    <h3 class="font-medium leading-tight">Files / Links</h3>
+                                    <p class="text-sm">attachment files or links</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
-                                <label for="project" class=" mb-2 text-sm font-medium">Project Type</label><br>
-                                <Select id="type" name="type" class="" placeholder="Choose Type">
-                                    <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
-                                </Select>
+                                <label for="project" class=" mb-2 text-sm font-medium">Date</label><br>
+                                <input type="date"
+                                class="peer block min-h-[auto] w-full rounded border-2 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear" placeholder="Task"
+                                id="to" disabled aria-label="" />
 
                             </div>
-                            <div class="">
-                                <label for="project" class=" mb-2 mt-4 text-sm font-medium">Project Size</label><br>
-                                <Select id="size" name="size" class="" placeholder="Small">
-                                    <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
-                                </Select>
-
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
@@ -350,56 +342,40 @@
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         1
                                     </span>
-                                    <h3 class="font-medium leading-tight">Detail</h3>
-                                    <p class="text-sm">Detail Project</p>
+                                    <h3 class="font-medium leading-tight">Task</h3>
+                                    <p class="text-sm">type of task</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         2
                                     </span>
-                                    <h3 class="font-medium leading-tight">Project</h3>
-                                    <p class="text-sm">project spesifications</p>
+                                    <h3 class="font-medium leading-tight">date</h3>
+                                    <p class="text-sm">task creation date</p>
                                 </li>
                                 <li class="mb-10 ml-6">
                                     <span
                                         class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                         3
                                     </span>
-                                    <h3 class="font-medium leading-tight">Designer</h3>
-                                    <p class="text-sm">set designer</p>
+                                    <h3 class="font-medium leading-tight">Files / Links</h3>
+                                    <p class="text-sm">attachment files or links</p>
                                 </li>
                             </ol>
                         </div>
                         <div>
                             <div class="">
-
-                                <label for="file" class=" mb-2 text-sm font-medium">Junior</label><br>
-                                <Select id="junior" name="junior" class="" placeholder="Junior">
-                                    <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
-                                </Select>
+                                <label for="project" class=" mb-2 text-sm font-medium">Files</label><br>
+                                <input type="file"
+                                class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear" placeholder="Task"
+                                id="files" aria-label="" />
 
                             </div>
-                            <div class="">
-
-                                <label for="file" class=" mb-2 text-sm font-medium">Medior</label><br>
-                                <Select id="medior" name="medior" class="" placeholder="Medior">
-                                    <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
-                                </Select>
-
-                            </div>
-                            <div class="">
-
-                                <label for="file" class=" mb-2 text-sm font-medium">Senior</label><br>
-                                <Select id="senior" name="senior" class="" placeholder="Senior">
-                                    <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
-                                </Select>
+                            <div class="mt-3">
+                                <label for="project" class=" mb-2 text-sm font-medium">Link</label><br>
+                                <input type="Links"
+                                class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear" placeholder="Http://"
+                                id="link" aria-label="" />
 
                             </div>
                         

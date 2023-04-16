@@ -11,6 +11,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
 use App\Http\Requests\CommunicationTypeRequest;
+use App\Models\CommunicationType;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,12 +49,14 @@ Route::delete('/delete-rule/{id}',[RuleController::class,'delete']);
 Route::get('/data-type',[CommunicationTypeController::class,'data']);
 Route::get('/communication-type-task',[CommunicationTypeController::class,'view']);
 Route::get('/data-communication-type-task',[CommunicationTypeController::class,'data']);
+Route::get('/data-communication-type-task-paginate',[CommunicationTypeController::class,'paginate']);
 Route::post('/store-communication-type-task',[CommunicationTypeController::class,'insert']);
 Route::put('/update-communication-type-task/{id}',[CommunicationTypeController::class,'update']);
 Route::delete('/delete-communication-type-task/{id}',[CommunicationTypeController::class,'delete']);
 Route::get('/communication-type/desc/{id}', [CommunicationTypeController::class, 'desc']);
 
 //Communicationn Type Standart
+Route::get('/data-communication-type-standart-paginate',[CommunicationTypeController::class,'paginate']);
 Route::get('/communication-type-standart',[CommunicationTypeController::class,'viewStandart']);
 Route::get('/data-communication-type-standart',[CommunicationTypeController::class,'dataStandart']);
 Route::post('/store-communication-type-standart',[CommunicationTypeController::class,'insertStandart']);
@@ -86,5 +89,7 @@ Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
 Route::get('/responsbility',[responsbilityController::class,'view']);
 
 Route::get('/project',[projectController::class,'view']);
+
+Route::get('/get-communication-type',[CommunicationController::class,'get']);
 
 });
