@@ -13,7 +13,7 @@ class CommunicationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class CommunicationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'type' => 'required',
+            'to' => 'required',
+            'date' => 'required',
+            'message' => 'required'
         ];
     }
 }

@@ -80,7 +80,7 @@ $('#type').change(function(){
     }
     $.ajax({
         type:'GET',
-        url:'/data-role',
+        url:'/data-user-value',
         success:function(response){
             $.each(response,function(index,data){
                 var selected = ''
@@ -115,6 +115,7 @@ function create(){
     var type = $('#type').val()
     var date = $('#date').val()
     var message = $('#message').val()
+    var to = $('#to').val()
    
     $.ajax({
         type:'POST',
@@ -123,12 +124,13 @@ function create(){
             _token:csrfToken,
             type:type,
             date:date,
+            to:to,
             message:message,
         },
         success:function(response){
             Swal.fire({
                 title: 'success!',
-                text: 'Success Create New User!',
+                text: 'Success Create New Communication!',
                 icon: 'success'
             })
             GetData()

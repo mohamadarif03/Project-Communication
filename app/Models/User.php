@@ -49,5 +49,8 @@ class User extends Authenticatable
     public function ToCommunication(){
         return $this->hasMany(ToCommunicationType::class);
     }
+    public function Communication(){
+        return $this->HasMany(Communication::class);
+    }
     
 }
