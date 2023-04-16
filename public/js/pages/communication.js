@@ -252,8 +252,12 @@ function create(){
                 text: 'Success Create New Communication!',
                 icon: 'success'
             })
+            $('#type').val('')
+            $('#date').val('')
+            $('#message').val('')
+            $('#to').val('')
+            $('#btn-close-modal-create-step-3').click()
             GetData()
-            $('#btn-close-modal-create-step-1').click()
         },
         error:function(response){
             var errors = response.responseJSON.errors;
