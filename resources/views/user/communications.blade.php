@@ -54,7 +54,128 @@
 
         </div>
         <!-- end container-fluid -->
-        <div class="grid grid-cols-3 gap-4" style="margin-top: 70px">
+        <div class="flex flex-col w-full items-center justify-center">
+            <h3 class="text-lg mx-auto font-semibold">Receive</h3>
+        </div>
+        <div class="grid grid-cols-3 gap-4" style="margin-top: 10px" id="Receive">
+            {{-- <div class="block rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"
+                style="background-color: #ECFFF4; border: 2px solid #27AE60;">
+
+                <div class="h-8 p-2 items-center w-full flex justify-between ">
+
+                    <input type="checkbox" id="inlineCheckbox2" value="option1" checked>
+                    <p class="rounded-md text-xs text-white py-0.5 px-2" style="background-color: #27AE60">13 May 2023</p>
+                </div>
+                <div class="h-16 flex p-2 items-center w-full ">
+                    <div class="h-12 flex w-12 bg-cyan-500 rounded-circle">
+                        <p class="text-white m-auto font-semibold">QR</p>
+                    </div>
+                    <div class="ml-2 flex my-auto">
+                        <div class="my-auto">
+                            <h1 class="text-sm my-0 font-semibold">Financial Emergencies</h1>
+                            <h3 class="text-xs my-0">Meeting</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-8 w-full flex items-center">
+                    <i class="mdi mdi-account"></i>
+                    <p class=" ml-1.5 my-auto text-xs">head finance</p>
+                    <div class="ml-auto mr-2 text-xs text-gray-900 font-semibold">
+                        Show >
+                    </div>
+                </div>
+            </div> --}}
+            <div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 mr-3">
+                <div class="h-8 p-2 items-center w-full flex">
+                    <p class="bg-slate-300 ml-auto rounded-md text-xs py-0.5 px-2">13 May 2023</p>
+                </div>
+                <div class="h-16 flex p-2 items-center w-full ">
+                    <div class="h-12 flex w-12 bg-red-400 rounded-circle">
+                        <p class="text-white m-auto font-semibold">FE</p>
+                    </div>
+                    <div class="ml-2 flex my-auto">
+                        <div class="my-auto">
+                            <h1 class="text-sm my-0 font-semibold">Financial Emergencies</h1>
+                            <h3 class="text-xs my-0">Meeting</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-8 w-full flex items-center">
+                    <i class="mdi mdi-account"></i>
+                    <p class=" ml-1.5 my-auto text-xs">head finance</p>
+                    <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
+                        <a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">
+                            Show >
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 mr-3">
+                <div class="h-8 p-2 items-center w-full flex justify-between ">
+                    <a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init
+                        data-te-ripple-color="light">
+                        <input type="checkbox" style="cursor: pointer">
+                    </a>
+                    <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
+                </div>
+                <div class="h-16 flex p-2 items-center w-full ">
+                    <div class="h-12 flex w-12 bg-red-400 rounded-circle">
+                        <p class="text-white m-auto font-semibold">FE</p>
+                    </div>
+                    <div class="ml-2 flex my-auto">
+                        <div class="my-auto">
+                            <h1 class="text-sm my-0 font-semibold">Financial Emergencies</h1>
+                            <h3 class="text-xs my-0">Meeting</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-8 w-full flex items-center">
+                    <i class="mdi mdi-account"></i>
+                    <p class=" ml-1.5 my-auto text-xs">head finance</p>
+                    <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
+                        <a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">
+                            Show >
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 mr-3">
+
+                <div class="h-8 p-2 items-center w-full flex justify-between ">
+                    <a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init
+                        data-te-ripple-color="light">
+                        <input type="checkbox" style="cursor: pointer">
+                    </a>
+                    <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
+                </div>
+                <div class="h-16 flex p-2 items-center w-full ">
+                    <div class="h-12 flex w-12 bg-red-400 rounded-circle">
+                        <p class="text-white m-auto font-semibold">FE</p>
+                    </div>
+                    <div class="ml-2 flex my-auto">
+                        <div class="my-auto">
+                            <h1 class="text-sm my-0 font-semibold">Financial Emergencies</h1>
+                            <h3 class="text-xs my-0">Meeting</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-8 w-full flex items-center">
+                    <i class="mdi mdi-account"></i>
+                    <p class=" ml-1.5 my-auto text-xs">head finance</p>
+                    <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
+                        <a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">
+                            Show >
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto" id="pagination-receive">
+        </div>
+        <div class="flex flex-col mt-12 w-full items-center justify-center">
+            <h3 class="text-lg mx-auto font-semibold">Sent</h3>
+        </div>
+        <div class="grid grid-cols-3 gap-4" style="margin-top: 30px" id="Sent">
             {{-- <div class="block rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"
                 style="background-color: #ECFFF4; border: 2px solid #27AE60;">
 
@@ -168,6 +289,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="mx-auto" id="pagination-sent">
+
         </div>
 
     </div>

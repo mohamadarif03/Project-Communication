@@ -26,8 +26,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('only_guest')->group(function () {
-Route::get('/',[AuthController::class,'view'])->name('/');
-Route::post('/', [AuthController::class, 'authenticating']);
+    Route::get('/',[AuthController::class,'view'])->name('/');
+    Route::post('/', [AuthController::class, 'authenticating']);
 });
 
 
@@ -92,5 +92,9 @@ Route::get('/responsbility',[responsbilityController::class,'view']);
 Route::get('/project',[projectController::class,'view']);
 
 Route::get('/get-communication-type',[CommunicationController::class,'get']);
+
+//Communication
+Route::get('/data-sent-communication',[CommunicationController::class,'sent']);
+Route::get('/data-receive-communication',[CommunicationController::class,'receive']);
 
 });

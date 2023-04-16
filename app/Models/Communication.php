@@ -14,6 +14,10 @@ class Communication extends Model
         return $this->hasMany(ToCommunication::class);
     }
 
+    public function CommunicationType(){
+        return $this->belongsTo(CommunicationType::class);
+    }
+
     public function user(){
         return $this->belongsTo(user::class);
     }
