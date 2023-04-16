@@ -7,14 +7,15 @@ $(document).ready(function() {
     // ambil tahun saat ini
     var currentYear = new Date().getFullYear();
 
-    // buat opsi tahun dari tahun saat ini hingga 10 tahun ke depan
-    for (var i = currentYear; i <= currentYear + 10; i++) {
+    // buat opsi tahun dari 5 tahun ke belakang hingga 5 tahun ke depan
+    for (var i = currentYear - 5; i <= currentYear + 5; i++) {
         yearSelect.append($('<option></option>').val(i).html(i));
     }
 
     // set nilai default menjadi tahun saat ini
     yearSelect.val(currentYear);
 });
+
 $(document).ready(function() {
     // dapatkan elemen select month
     var monthSelect = $('#month');
