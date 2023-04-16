@@ -172,10 +172,10 @@
         </div>
         <div class="mx-auto" id="pagination-receive">
         </div>
-        <div class="flex flex-col mt-12 w-full items-center justify-center">
+        <div class="flex flex-col mt-2 w-full items-center justify-center">
             <h3 class="text-lg mx-auto font-semibold">Sent</h3>
         </div>
-        <div class="grid grid-cols-3 gap-4" style="margin-top: 30px" id="Sent">
+        <div class="grid grid-cols-3 gap-4" style="margin-top: 10px" id="Sent">
             {{-- <div class="block rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"
                 style="background-color: #ECFFF4; border: 2px solid #27AE60;">
 

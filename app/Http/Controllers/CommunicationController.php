@@ -36,7 +36,12 @@ class CommunicationController extends Controller
     }
 
     public function sent(){
-        $data = Communication::where('user_id',Auth()->user()->id)->paginate(6);
+        $data = Communication::with([
+            'CommunicationType',
+            'ToCommunication' => [
+                'user'
+            ]
+            ])->where('user_id',Auth()->user()->id)->paginate(6);
         $links = $data->links('layouts.paginate');
         return response()->json([
             'data' => $data,
@@ -57,7 +62,6 @@ class CommunicationController extends Controller
                             ->join('users','users.id','=','Communications.user_id')
                             ->where('communications.user_id',Auth()->user()->id)
                             ->paginate(6);
-        return response()->json($data);
         $links = $data->links('layouts.paginate');
         return response()->json([
             'data' => $data,

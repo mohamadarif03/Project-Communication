@@ -14,4 +14,7 @@ class ToCommunication extends Model
     public function Communication(){
         return $this->belongsTo(Communication::class);
     }
+    public function user(){
+        return $this->belongsTo(user::class);
+    }
 }
