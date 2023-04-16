@@ -94,13 +94,19 @@
                                 </ol>
                             </div>
                             <div>
+                                
                                 <div class="">
+                                    <label for="from class=" mb-2 text-sm font-medium text-gray-900 ">From</label>
+                                    <Select multiple id="from" name="To2" class="" placeholder="Role">
+                                        <option value=""></option>
+                                    </Select>
+                                </div>
+                                <div class="mt-1.5">
                                     <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Communication
                                         Type</label>
                                     <select id="type" class="" placeholder="Choose type">
                                         <option></option>
                                     </select>
-
                                 </div>
                                 <div class="mt-1.5">
                                     <label for="type" class=" mb-2 block text-sm font-medium text-gray-900 ">How</label>
@@ -266,6 +272,14 @@
                                 <div class="" id="update-type-form">
                                     <input type="hidden" class="w-0 h-0 hidden" id="update-id" value="">
                                     <label for="update-type"
+                                        class=" mb-2 text-sm font-medium text-gray-900 ">From</label>
+                                    <Select id="update-from" name="from" class="" placeholder="Role">
+                                        <option value=""></option>
+                                    </Select>
+                                </div>
+                                <div class="mt-1.5" id="update-type-form">
+                                    <input type="hidden" class="w-0 h-0 hidden" id="update-id" value="">
+                                    <label for="update-type"
                                         class=" mb-2 text-sm font-medium text-gray-900 ">Communication Type</label>
                                     <Select id="update-type" name="type" class="" placeholder="Choose Type">
                                         <option value=""></option>
@@ -349,7 +363,7 @@
                                     </li>
                                 </ol>
                             </div>
-                            <div>
+        from
                                 <div class="" id="update-to-form">
                                     <label for="update-to" class=" mb-2 text-sm font-medium text-gray-900 ">To</label>
                                     <Select multiple id="update-to" name="To2" class="" placeholder="To Who">

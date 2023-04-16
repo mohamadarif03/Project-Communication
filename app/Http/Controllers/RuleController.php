@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RuleRequest;
 use App\Http\Requests\UpdateRuleRequest;
 use App\Models\CommunicationType;
+use App\Models\FromCommunicationType;
 use App\Models\Rule;
 use App\Models\ToRule;
 use Illuminate\Http\Request;
@@ -46,6 +47,14 @@ class RuleController extends Controller
             'how' => $request ->how,
             'to' => implode(',',$request->to)
         ]);
+        foreach($request->from as $item){
+            FromCommunicationType::create([
+                'communication_type_id' => $rule->id,
+                'role_id' => $item
+            ]);
+        }
+        $rule->from = implode(',',$request->from);
+        $rule->save();
         foreach($request->to as $item){
             ToRule::create([
                 'rule_id' => $rule->id,

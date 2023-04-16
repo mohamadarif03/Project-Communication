@@ -14,6 +14,9 @@ class FromCommunicationType extends Model
     public function CommunicationType(){
         return $this->belongsTo(CommunicationType::class);
     }
+    public function Rule(){
+        return $this->belongsTo(Rule::class);
+    }
     public function Role(){
         return $this->belongsTo(Role::class);
     }

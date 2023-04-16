@@ -14,6 +14,9 @@ class Rule extends Model
     {
         return $this->BelongsTo(CommunicationType::class, 'communication_type_id', 'id');
     }
+    public function FromCommunicationType(){
+        return $this->hasMany(FromCommunicationType::class);
+    }
     public function torule(){
         return $this->hasMany(ToRule::class);
     }

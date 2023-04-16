@@ -21,6 +21,7 @@ return new class extends Migration
             ->on('communication_types')
             ->restrictOnDelete();
             $table->string('how');
+            $table->string('from');
             $table->string('to');
             $table->timestamps();
         });

@@ -1,10 +1,16 @@
-
-
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 load()
 GetData(1)
 GetType()
 GetRole()
+
+// new TomSelect('#from',{
+//     plugins: ['remove_button'],
+// })
+new TomSelect('#update-from',{
+    plugins: ['remove_button'],
+})
+
 
 var type
 var to
@@ -38,8 +44,12 @@ function GetRole(){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'">'+data.name+'</option>'
                 $('#To').append(row)
+                $('#from').append(row)
             })
             to =  new TomSelect('#To',{
+                plugins: ['remove_button'],
+            })
+            from =  new TomSelect('#from',{
                 plugins: ['remove_button'],
             })
         },
@@ -48,6 +58,7 @@ function GetRole(){
         }
     })
 }
+
 function load(){
     var html = `<div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
@@ -168,8 +179,6 @@ function create(){
     var communication_type_id = $('#type').val()
     var how = $('#how').val()
     var To = $('#To').val()
-    var select = $('#type').selectize()[0].selectize;
-    select.removeItem('value-to-remove');
     $.ajax({
         type:'POST',
         url:'/store-rule',
@@ -186,7 +195,6 @@ function create(){
                 text: 'Success Create New Type!',
                 icon: 'success'
             })
-            select.clear();
             $('#how').val('')
             $('#to').val('')
             $('#btn-close-create').click()
@@ -204,7 +212,7 @@ function create(){
             Swal.fire({
                 title: 'Error!',
                 // html: errorMessage,
-                html: errorMessage,
+                html: response.responseJSON.message,
                 icon: 'error',
             })
         }
