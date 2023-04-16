@@ -61,8 +61,7 @@ class CommunicationController extends Controller
 
     public function receive(){
         $data = Communication::with(['CommunicationType','user'])
-                            ->join('users','users.id','=','Communications.user_id')
-                            ->where('communications.user_id',Auth()->user()->id)
+                            ->where('to',Auth()->user()->id)
                             ->paginate(6);
         $links = $data->links('layouts.paginate');
         return response()->json([
