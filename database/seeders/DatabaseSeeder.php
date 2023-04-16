@@ -20,7 +20,33 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert([
             'name' => 'Admin',
         ]);
-
+        $roles = array(
+            "Chief",
+            "Head Finance",
+            "Head Marketing",
+            "Head Production",
+            "Sales Manager",
+            "Marketing Manager",
+            "Product Manager",
+            "Service Manager",
+            "Facilities Manager",
+            "Writer",
+            "Senior Gamedesigner",
+            "Medior Gamedesigner",
+            "Junior Gamedesigner",
+            "Senior Productdesigner",
+            "Medior Productdesigner",
+            "Junior Productdesigner",
+            "Senior Experience Designer",
+            "Medior Experience Designer",
+            "Junior Experience Designer"
+        );
+        foreach($roles as $role){
+            DB::table('roles')->insert([
+                'name' => $role,
+            ]);
+        }
+        
         DB::table('users')->insert([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
