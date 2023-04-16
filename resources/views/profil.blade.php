@@ -7,8 +7,13 @@
                 <div class="h-full">
                     <div class="mt-[20%]">
                         <div class="flex justify-center">
-                            <img src="profile/default.png" class="rounded-full w-20 h-20" alt="" srcset="">
+                            @if (Auth::user()->profile == 'default.png')
+                            <img src="{{asset('profile/default.png')}}" class="rounded-full w-20 h-20" alt="" srcset="">
+                            @else
+                            <img src="{{ asset('storage/' . Auth::user()->profile) }}" class="rounded-full w-20 h-20" alt="" srcset="">
+                            @endif
                         </div>
+                            
                         <h1 class="flex justify-center font-bold text-2xl">{{ Auth::user()->name }}</h1>
                         <h1 class="flex justify-center text-sm">{{ Auth::user()->email }}</h1>
                         <p class="py-1.5 mx-[95px] flex justify-center font-semibold role-color rounded-md">Role : Chief</p>
@@ -19,10 +24,10 @@
 
             
             <div class="col-span-2">
-              <form method="post" action="/profilUpdate/{{ Auth()->user()->id }}">
+              <form method="post" action="/profilUpdate/{{ Auth()->user()->id }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
-                <div class="rounded-md bg-white mt-6 h-[220px] w-full">
+                <div class="rounded-md bg-white mt-6 h-[260px] w-full">
                     <div class="flex items-center border-solid border-b-2 border-gray-200">
                         <h1 class="font-bold text-xl ml-3">Update Profile</h1>
                     </div>
@@ -39,6 +44,12 @@
                                 class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
                                 id="exampleFormControlInput1" name="email" value="{{ Auth::user()->email }}" />
                         </div>
+                        <div class="flex justify-center items-center">
+                            <h1 class="text-lg font-bold ml-2 mr-6">Profile</h1>
+                            <input type="file"
+                                class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
+                                id="exampleFormControlInput1" name="profile"/>
+                        </div>
                     </div>
                     <div class="flex items-center border-solid border-t-2 border-gray-200 my-2">
                         <button type="submit"
@@ -46,7 +57,8 @@
                             Update</button>
                     </div>
                 </div>
-             
+              </form>
+                
                 <div class="rounded-md bg-white mt-6 h-[220px] w-full">
                     <div class="flex items-center border-solid border-b-2 border-gray-200">
                         <h1 class="font-bold text-xl ml-3">Reset Password</h1>
@@ -71,7 +83,6 @@
                             Update</button>
                     </div>
                 </div>
-              </form>
             </div>
         </div>
     </div>

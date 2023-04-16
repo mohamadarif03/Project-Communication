@@ -72,7 +72,7 @@ function GetData(page){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   '<img '+src+' class="w-[20%] mt-4" alt="">'+
-                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no role found !</p>'
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no responsbility found !</p>'
                 $('#table').append(row)
             }
             
@@ -103,7 +103,7 @@ function create(){
         success:function(response){
             Swal.fire({
                 title: 'success!',
-                text: 'Success Create New Role!',
+                text: 'Success Create New Responsbility!',
                 icon: 'success'
             })
             $('#type').val('')
@@ -214,7 +214,7 @@ function update(){
         success: function(response){
             Swal.fire({
                 title: 'Success!',
-                text: 'Success Update Role!',
+                text: 'Success Update Resoonsbility!',
                 icon: 'success',
                 timer: 4000
             })
@@ -261,7 +261,7 @@ function remove() {
       success: function(response){
         Swal.fire({
             title: 'Success!',
-            text: 'Success Delete Role!',
+            text: 'Success Delete Responsbility!',
             icon: 'success',
             timer: 4000
         })

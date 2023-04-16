@@ -290,7 +290,7 @@ function update(){
         success:function(response){
             Swal.fire({
                 title: 'Success!',
-                text: 'Success Update Role!',
+                text: 'Success Update Rule!',
                 icon: 'success',
                 timer: 4000
             })
@@ -333,7 +333,7 @@ function remove(){
         success:function(response){
             Swal.fire({
                 title: 'Success!',
-                text: 'Success Delete Role!',
+                text: 'Success Delete Rule!',
                 icon: 'success',
                 timer: 4000
             })

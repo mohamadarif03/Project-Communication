@@ -12,7 +12,6 @@ function fetch_update() {
 }
 
 var from
-var update_from = new TomSelect('#update-from')
 
 GetData(1)
 GetRole()
@@ -68,7 +67,7 @@ function GetData(page){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   '<img '+src+' class="w-[20%] mt-4" alt="">'+
-                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no role found !</p>'
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no task found !</p>'
                 $('#table').append(row)
             }
             
@@ -81,7 +80,6 @@ function create(){
     var type = $('#type').val()
     var color = $('#color').val()
     var description = $('#description').val()
-    var from = $('#from').val()
     var put = $('#put').val()
     $.ajax({
         type:'POST',
@@ -91,9 +89,9 @@ function create(){
             type:type,
             color:color,
             description:description,
-            from:from,
-            put:put
+            put:put,
         },
+        
         success:function(response){
             Swal.fire({
                 title: 'success!',
@@ -103,12 +101,24 @@ function create(){
             $('#type').val('')
             $('#color').val('')
             $('#description').val('')
-            $('#from').val('')
             $('#put').val('')
             $('#btn-close-modal').click()
             GetData()
-            $('#from').val('') // tambahkan perintah untuk menghapus nilai dari input "from"
         },
+        error:function(response){
+            var errors = response.responseJSON.errors;
+            var errorMessage = '';
+
+            $.each(errors, function(key, value) {
+                errorMessage += '<p class="text-red-500">' + value + '</p>';
+            });
+
+            Swal.fire({
+                title: 'Gagal!',
+                html: response.responseJSON.message,
+                icon: 'error',
+            })
+        }
     })
 }
 
@@ -119,12 +129,9 @@ function GetRole(){
         success:function(response){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'">'+data.name+'</option>'
-                $('#from').append(row)
                 $('#update-to').append(row)
             })
-            from =  new TomSelect('#from',{
-                plugins: ['remove_button'],
-            })
+           
             update_to = new TomSelect('#update-to',{
                 plugins:['remove_button']
             })
@@ -139,12 +146,6 @@ function edit(id){
     var name = $('#btn-edit-'+id).data('name')
     var color = $('#btn-edit-'+id).data('color')
     var description = $('#btn-edit-'+id).data('description')
-    var from = $('#btn-edit-'+id).data('from')
-    if (from.length > 1){
-        var from_arr = from.split(',')
-    }else{
-        var from_arr =  from
-    }
     update_from.destroy()
     $.ajax({
         type:'GET',
@@ -152,24 +153,10 @@ function edit(id){
         success:function(response){
             $.each(response,function(index,data){
                 var selected = ''
-                if(Array.isArray(from_arr)){
-                    if(from_arr.includes(String(data.id))){
-                        selected = 'selected'
-                    }
-                }else{
-                    if(from_arr == String(data.id)){
-                        selected = 'selected'
-                    }
-                }
-                
+            
                 var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
-                $('#update-from').append(row)
             })   
-            new tomSelect('#update-from',{
-                plugins: ['remove_button'],
-            })
-            const remove_to = $('#update-from-form').find('.ts-wrapper:not(:first)');
-                remove_to.remove();
+           
         },
         error:function(response){
             console.log(response)
@@ -207,7 +194,6 @@ function update(){
     var color = $('#update-color').val()
     var description = $('#update-description').val()
     var id = $('#update-id').val()
-    var from = $('#update-from').val()
     $.ajax({
         type:'PUT',
         url:'/update-communication-type-task/'+id,
@@ -221,7 +207,7 @@ function update(){
         success: function(response){
             Swal.fire({
                 title: 'Success!',
-                text: 'Success Update Role!',
+                text: 'Success Update Task!',
                 icon: 'success',
                 timer: 4000
             })
@@ -268,7 +254,7 @@ function remove() {
       success: function(response){
         Swal.fire({
             title: 'Success!',
-            text: 'Success Delete Role!',
+            text: 'Success Delete Task!',
             icon: 'success',
             timer: 4000
         })

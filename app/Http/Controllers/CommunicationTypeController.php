@@ -32,33 +32,20 @@ class CommunicationTypeController extends Controller
             'description' => $request ->description,
             'status' => 'task'
         ]);
-        foreach($request->from as $item){
-            FromRule::create([
-                'communication_type_id' => $data->id,
-                'role_id' => $item
-            ]);
-        }
-        $data->from = implode(',',$request->from);
-        $data->save();
+       
         return response()->json(['message' => 'Success Create New Type!']);
     }
     public function update(CommunicationTypeRequestTask $request, $id)
     {
         $data = CommunicationType::findorfail($id);
         
-        FromRule::where('communication_type_id',$id)->delete();
-        foreach($request->from as $item){
-            FromRule::create([
-                'communication_type_id' => $data->id,
-                'role_id' => $item
-            ]);
-        }
+      
         $data->update([
             'type' => $request->type,
             'color' => $request->color,
             'description' => $request->description,
             'status' => 'task',
-            'from' => implode(',',$request->from)
+           
         ]);
        
         return response()->json(['message' => 'Success Create New Type!']);

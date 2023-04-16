@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('color');
             $table->longText('description')->nullable();
             $table->string('status');
-            $table->string('from')->nullable();
             $table->string('to')->nullable();
             $table->timestamps();
         });
