@@ -303,15 +303,12 @@
                                     <option value=""></option>
                                 </Select>
                             </div>
-                            <div class="">
-                                <label for="To"
+                            <div class="mt-3" id="to-form">
+                                <label for="to"
                                     class="w-36 mb-2 block text-xs font-medium text-gray-900 ">To</label>
-                                <Select multiple id="to" name="to" class="w-full" placeholder="To">
-                                    <option value="tfv">ytcvubh</option>
-                                    <option value="cy">cy</option>
-                                    
+                                <Select multiple id="to" disabled name="to" class="w-full" placeholder="To">
+                                    <option value=""></option>                       
                                 </Select>
-
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     
-<!-- Mirrored from coderthemes.com/ATN News/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 10:30:19 GMT -->
 <head>
         <meta charset="utf-8" />
         <title>exp Inc.</title>
@@ -245,7 +244,7 @@
         <script src="{{asset('plugin/tom-select/dist/js/tom-select.complete.min.js')}}"></script>
         <script src="{{asset('plugin/sweetalert2/dist/sweetalert2.min.js')}}"></script>
         <!--Morris Chart-->
-        <script src="{{asset('assets/libs/morris-js/morris.min.js')}}"></script>
+
         <script src="{{asset('assets/libs/raphael/raphael.min.js')}}"></script>
         <!-- Dashboard init js-->
         <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
