@@ -18,7 +18,7 @@ class RoleController extends Controller
         $data = Role::where('name','!=','Admin')->get();
         return response()->json($data);
     }
-
+    
     public function paginate(){
         $data = Role::where('name','!=','Admin')->paginate(5);
 
