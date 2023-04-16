@@ -19,9 +19,10 @@ class RuleController extends Controller
         if($request->search){
             $data = Rule::with(['communicationType','torule'])
                     ->where('communication_type_id',$request->search)
+                    ->orderBy('created_at','desc')
                     ->paginate(9);
         }else{
-            $data = Rule::with(['communicationType','torule'])->paginate(9);    
+            $data = Rule::with(['communicationType','torule'])->orderBy('created_at','desc')->paginate(9);    
         }
         $links = $data->links('layouts.paginate');
         return response()->json([

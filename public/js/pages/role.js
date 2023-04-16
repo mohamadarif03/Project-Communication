@@ -3,6 +3,7 @@ var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
 
 GetData(1)
+var current_page = 1
 function GetData(page){
     $.ajax({
         type:'GET',
@@ -41,6 +42,7 @@ function GetData(page){
                     $('#Data').append(row)
                 })
                 $('#paginate').html(response.links);
+                current_page = response.pagination.current_page
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   '<img '+src+' class="w-[20%] mt-4" alt="">'+
@@ -122,7 +124,7 @@ function update(){
             $('#update-name').val('')
             $('#update-id').val('')
             $('#btn-close-update').click()
-            GetData(1)
+            GetData(current_page)
         },
         error:function(response){
             var errors = response.responseJSON.errors;
