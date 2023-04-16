@@ -6,6 +6,7 @@ use App\Http\Requests\RuleRequest;
 use App\Http\Requests\UpdateRuleRequest;
 use App\Models\CommunicationType;
 use App\Models\FromCommunicationType;
+use App\Models\FromRule;
 use App\Models\Rule;
 use App\Models\ToRule;
 use Illuminate\Http\Request;
@@ -45,23 +46,23 @@ class RuleController extends Controller
         $rule = Rule::create([
             'communication_type_id' => $request ->communication_type,
             'how' => $request ->how,
+            'from' => implode(',',$request->from),
             'to' => implode(',',$request->to)
         ]);
         foreach($request->from as $item){
-            FromCommunicationType::create([
+            FromRule::create([
                 'communication_type_id' => $rule->id,
                 'role_id' => $item
             ]);
         }
-        $rule->from = implode(',',$request->from);
-        $rule->save();
+        
+
         foreach($request->to as $item){
             ToRule::create([
                 'rule_id' => $rule->id,
                 'role_id' => $item
             ]);
         }
-        
 
         return response()->json([
             'success' => 'Success Create New Rule!'

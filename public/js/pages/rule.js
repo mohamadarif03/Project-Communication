@@ -179,6 +179,8 @@ function create(){
     var communication_type_id = $('#type').val()
     var how = $('#how').val()
     var To = $('#To').val()
+    console.log(To)
+    var from = $('#from').val()
     $.ajax({
         type:'POST',
         url:'/store-rule',
@@ -186,7 +188,8 @@ function create(){
             _token:csrfToken,
             communication_type:communication_type_id,
             how:how,
-            to:To
+            to:To,
+            from:from,
         },
         
         success:function(response){
@@ -196,7 +199,7 @@ function create(){
                 icon: 'success'
             })
             $('#how').val('')
-            $('#to').val('')
+            $('#To').val('')
             $('#btn-close-create').click()
             GetData(1)
         },

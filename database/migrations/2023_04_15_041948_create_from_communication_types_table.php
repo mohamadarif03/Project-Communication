@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('from_communication_types', function (Blueprint $table) {
+        Schema::create('from_rules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('communication_type_id');
             $table->foreignId('role_id');
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('from_communication_types');
+        Schema::dropIfExists('from_rules');
     }
 };

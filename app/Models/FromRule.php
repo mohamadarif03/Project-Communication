@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FromCommunicationType extends Model
+class FromRule extends Model
 {
     use HasFactory;
 
-    protected $table = 'from_communication_types';
+    protected $table = 'from_rules';
     protected $guarded = [];
     public function CommunicationType(){
         return $this->belongsTo(CommunicationType::class);

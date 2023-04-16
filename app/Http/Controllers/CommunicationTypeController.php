@@ -9,6 +9,7 @@ use App\Http\Requests\CommunicationUpdateTypeRequest;
 use App\Models\Communication;
 use App\Models\CommunicationType;
 use App\Models\FromCommunicationType;
+use App\Models\FromRule;
 use App\Models\Rule;
 use App\Models\ToCommucationType;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class CommunicationTypeController extends Controller
             'status' => 'task'
         ]);
         foreach($request->from as $item){
-            FromCommunicationType::create([
+            FromRule::create([
                 'communication_type_id' => $data->id,
                 'role_id' => $item
             ]);
@@ -45,9 +46,9 @@ class CommunicationTypeController extends Controller
     {
         $data = CommunicationType::findorfail($id);
         
-        FromCommunicationType::where('communication_type_id',$id)->delete();
+        FromRule::where('communication_type_id',$id)->delete();
         foreach($request->from as $item){
-            FromCommunicationType::create([
+            FromRule::create([
                 'communication_type_id' => $data->id,
                 'role_id' => $item
             ]);
