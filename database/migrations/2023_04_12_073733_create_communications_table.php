@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('communications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('communication_type_id');
+            $table->foreignId('communication_id');
             $table->foreignId('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users')
             ->cascadeOnDelete();
-            $table->foreign('communication_type_id')
+            $table->foreign('communication_id')
             ->references('id')
-            ->on('communication_types');
+            ->on('communications');
             $table->date('date');
             $table->string('to');
             $table->longText('message');
