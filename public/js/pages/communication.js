@@ -26,8 +26,67 @@ $(document).ready(function() {
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());
   });
-  
+GetDataReceive(1)
+function GetDataReceive(page){
+    $.ajax({
+        type:'GET',
+        url:'/data-receive-communication?page='+page,
+        success:function(response){
+            $('#Receive').html('')
+            console.log(response)
+            if(response.data.length > 0){
+                $.each(response.data,function(index,data){
+                    var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
+                                '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
+                                    '<a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
+                                        '<input type="checkbox" style="cursor: pointer">'+
+                                    '</a>'+
+                                    '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>'+
+                                '</div>'+
+                                '<div class="h-16 flex p-2 items-center w-full ">'+
+                                    '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
+                                        '<p class="text-white m-auto font-semibold">FE</p>'+
+                                    '</div>'+
+                                    '<div class="ml-2 flex my-auto">'+
+                                        '<div class="my-auto">'+
+                                            '<h1 class="text-sm my-0 font-semibold">'+data.communication_type.type+'</h1>'+
+                                            '<h3 class="text-xs my-0">Meeting</h3>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="h-8 w-full flex items-center">'+
+                                    '<i class="mdi mdi-account"></i>'+
+                                    '<p class=" ml-1.5 my-auto text-xs">'+data.user.name+'</p>'+
+                                    '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
+                                        '<a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
+                                            'Show >'+
+                                        '</a>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'
+                    $('#Receive').append(row)
+                    $('#paginate-receive').html(response.links)
+                })
+            }else{
 
+            }
+        },
+        error:function(response){
+
+        }
+    })
+}
+function GetDataSent(page){
+    $.ajax({
+        type:'GET',
+        url:'/data-sent-communication?page='+page,
+        success:function(response){
+        },
+        error:function(response){
+
+        }
+    })
+}
 
 
 GetCommunication()
@@ -50,6 +109,13 @@ function GetCommunication(){
     })
 }
 
+function getInitials(name) {
+    var words = name.split(' ');
+    var initials = words.map(function(word) {
+      return word.charAt(0);
+    });
+    return initials.join('');
+}
 
 $('#btn-next-create-step-2').click(function(){
     $('#btn-close-modal-create-step-1').click()
