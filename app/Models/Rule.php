@@ -20,4 +20,7 @@ class Rule extends Model
     public function torule(){
         return $this->hasMany(ToRule::class);
     }
+    public function fromrule(){
+        return $this->hasMany(FromRule::class);
+    }
 }
