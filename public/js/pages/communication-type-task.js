@@ -148,7 +148,7 @@ function edit(id){
     var name = $('#btn-edit-'+id).data('name')
     var color = $('#btn-edit-'+id).data('color')
     var description = $('#btn-edit-'+id).data('description')
-    update_from.destroy()
+    // update_from.destroy()
     $.ajax({
         type:'GET',
         url:'/data-role',

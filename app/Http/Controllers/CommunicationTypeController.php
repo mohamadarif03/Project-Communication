@@ -119,12 +119,21 @@ class CommunicationTypeController extends Controller
     }
     public function updateStandart(CommunicationTypeRequestStandart $request, $id)
     {
-        $data = CommunicationType::find($id);
+        $data = CommunicationType::findorfail($id);
+        ToCommucationType::where('user_id',$id)->delete();
+        foreach($request->to as $item){
+            ToCommucationType::create([
+                'communication_type_id' => $data->id,
+                'user_id' => $item
+            ]);
+        }
+        $role = implode(',',$request->to);
+        $data->to = $role;
         $data->update([
             'type' => $request->type,
             'color' => $request->color,
             'description' => $request->description,
-            'status' => 'status',
+            'status' => 'standart',
         ]);
         return response()->json(['message' => 'Success Create New Type!']);
     }
