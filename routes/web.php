@@ -97,4 +97,7 @@ Route::get('/data-respons',[CommunicationController::class,'data']);
 Route::get('/data-sent-communication',[CommunicationController::class,'sent']);
 Route::get('/data-receive-communication',[CommunicationController::class,'receive']);
 
+//Responbilities
+Route::get('/data-task-type',[ResponsbilityController::class,'task_type']);
+
 });

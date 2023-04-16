@@ -1,6 +1,6 @@
 // new TomSelect('#type')
 
-GetRole()
+GetType()
 
 $(document).ready(function() {
     // dapatkan elemen select year
@@ -48,19 +48,17 @@ $('#btn-back-create-step-2').click(function(){
     $('#btn-open-modal-create-step-2').click()
 })
 
-
-function GetRole(){
+function GetType(){
     $.ajax({
         type:'GET',
-        url:'/data-respons',
+        url:'/data-task-type',
         success:function(response){
+            console.log(response)
             $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'">'+data.type+'</option>'
+                var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
                 $('#type').append(row)
             })
-            type =  new TomSelect('#type',{
-                plugins: ['remove_button'],
-            })
+            type =  new TomSelect('#type')
             
         },
         error:function(response){
@@ -68,30 +66,11 @@ function GetRole(){
         }
     })
 }
-
-GetCommunication()
 var type
 var to_create = new TomSelect('#to')
-function GetCommunication(){
-    $.ajax({
-        type:'GET',
-        url:'/data-communication-type-standart',
-        success:function(response){
-            $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'" data-to="'+data.to+'" id="type-select-'+data.id+'">'+data.type+'</option>'
-                $('#type').append(row)
-            })
-            new TomSelect('#type')  
-        },
-        error:function(response){
-            console.log(response)
-        }
-    })
-}
 
 $('#type').change(function(){
     to_create.destroy()
-    $('#to').removeAttr('disabled')
     var id = $(this).val()
     var to = $('#type-select-'+id).data('to')
     if (to.length > 1){
@@ -101,7 +80,7 @@ $('#type').change(function(){
     }
     $.ajax({
         type:'GET',
-        url:'/data-user-value',
+        url:'/data-role',
         success:function(response){
             $.each(response,function(index,data){
                 var selected = ''

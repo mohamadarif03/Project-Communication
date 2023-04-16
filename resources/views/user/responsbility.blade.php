@@ -1,7 +1,7 @@
 @extends('layouts.user')
-@section('responsbility.li', 'mm-active')
-@section('responsbility.b', 'active')
-@section('responsbility.svg', 'white')
+@section('Responsbility.li', 'mm-active')
+@section('Responsbility.b', 'active')
+@section('Responsbility.svg', 'white')
 @section('content')
 
 <div class="content">
@@ -212,7 +212,7 @@ id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                 2
                             </span>
-                            <h3 class="font-medium leading-tight">date</h3>
+                            <h3 class="font-medium leading-tight">Date</h3>
                             <p class="text-sm">task creation date</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -310,7 +310,7 @@ id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 2
                             </span>
-                            <h3 class="font-medium leading-tight">date</h3>
+                            <h3 class="font-medium leading-tight">Date</h3>
                             <p class="text-sm">task creation date</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -404,7 +404,7 @@ id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 2
                             </span>
-                            <h3 class="font-medium leading-tight">date</h3>
+                            <h3 class="font-medium leading-tight">Date</h3>
                             <p class="text-sm">task creation date</p>
                         </li>
                         <li class="mb-10 ml-6">
