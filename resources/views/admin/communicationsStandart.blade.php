@@ -149,7 +149,7 @@
                         <div class="flex rounded-md border ml-1"
                         style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
                         <input type="text" class="border-r" id="put"
-                        style="background-color: transparent; padding-right: 50px;" placeholder="#000000" disabled>
+                        style="background-color: transparent; padding-right: 150px;" placeholder="#000000" disabled>
                         <input type="color" name="" id="color" onchange="fetch()">
                     </div>
                     </div>
@@ -159,9 +159,9 @@
                     </div>
                     
                     <div class="flex gap-4 items-center mt-2">
-                        <label for="to" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
-                        <Select multiple id="to" name="to" class="w-full ml-4" value="2" placeholder="Role">
-                            <option value=""></option>
+                        <label for="to" class="mb-2 text-xs font-medium text-gray-900">To</label>
+                        <Select multiple id="to" name="to" class="w-full ml-2" value="2" placeholder="Role">
+                            
                         </Select>
                     </div>
                 </div>
@@ -222,8 +222,8 @@
                         <div class="flex rounded-md border"
                             style="box-sizing: border-box; padding: 0; padding-left: 9px;">
                             <input type="text" class="border-r" value="" id="put2"
-                                style="background-color: transparent; padding-right: 50px;" disabled>
-                            <input type="color" name="" value="" id="update-color" onchange="fetch_update()">
+                                style="background-color: transparent; padding-right: 150px;" disabled>
+                            <input type="color" name="" value="" id="update-color" onchange="fetch()">
                         </div>
                     </div>
                     <div class="flex gap-4 mt-2 items-center">
@@ -233,7 +233,7 @@
                     <div class="flex gap-4 items-center mt-2" id="update-to-form">
                         <label for="name" class="mb-2 text-xs font-medium text-gray-900 ml-6">To</label>
                         <Select multiple id="update-to" name="role" class="w-full ml-4" value="2" placeholder="Role">
-                           
+                            <option value=""></option>
                         </Select>
                     </div>
                 </div>
