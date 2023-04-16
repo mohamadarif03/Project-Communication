@@ -14,6 +14,7 @@ var type
 var to
 var update_type
 var update_to = new TomSelect('#update-to')
+var update_from = new TomSelect('#update-from')
 var current_page = 1
 function GetType(){
     $.ajax({
@@ -170,6 +171,9 @@ $('#btn-back').click(function(){
 $('#btn-back-update').click(function(){
     $('#btn-update-modal').click()
 })
+$('#btn-back2').click(function(){
+    $('#btn-update-modal').click()
+})
 
 $('#btn-next2').click(function(){
     $('#btn-close-modal2').click()
@@ -222,6 +226,7 @@ function create(){
     })
 }
 
+
 function edit(id){
     var type = $('#btn-edit-'+id).data('type')
     var how = $('#btn-edit-'+id).data('how')
@@ -239,8 +244,10 @@ function edit(id){
     remove.remove();
     $('#update-how').val(how)
     $('#update-to').html('')
+    $('#update-from').html('')
     $('#update-id').val(id)
-    // update_to.destroy()
+    update_to.destroy()
+    update_from.destroy()
     $.ajax({
         type:'GET',
         url:'/data-role',
@@ -259,8 +266,12 @@ function edit(id){
                 
                 var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
                 $('#update-to').append(row)
+                $('#update-from').append(row)
             })   
             new TomSelect('#update-to',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#update-from',{
                 plugins: ['remove_button'],
             })
             const remove_to = $('#update-to-form').find('.ts-wrapper:not(:first)');
@@ -277,6 +288,7 @@ function update(){
     var type = $('#update-type').val()
     var how = $('#update-how').val()
     var to = $('#update-to').val()
+    var to = $('#update-from').val()
     var id = $('#update-id').val()
     $.ajax({
         type:'PUT',
@@ -294,7 +306,7 @@ function update(){
                 icon: 'success',
                 timer: 4000
             })
-            $('#update-type').val('')
+            // $('#update-type').val('')
             $('#update-how').val('')
             $('#btn-close-update').click()
             GetData(current_page)
