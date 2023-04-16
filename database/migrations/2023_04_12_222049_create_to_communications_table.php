@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('to_communications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('communication_id');
-            $table->foreignId('role_id');
+            $table->foreignId('user_id');
             $table->foreign('communication_id')
             ->references('id')
             ->on('communications')
             ->cascadeOnDelete();
-            $table->foreign('role_id')
+            $table->foreign('user_id')
             ->references('id')
-            ->on('roles')
+            ->on('users')
             ->cascadeOnDelete();
             $table->timestamps();
         });
