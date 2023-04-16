@@ -168,6 +168,8 @@ function create(){
     var communication_type_id = $('#type').val()
     var how = $('#how').val()
     var To = $('#To').val()
+    var select = $('#type').selectize()[0].selectize;
+    select.removeItem('value-to-remove');
     $.ajax({
         type:'POST',
         url:'/store-rule',
@@ -184,7 +186,7 @@ function create(){
                 text: 'Success Create New Type!',
                 icon: 'success'
             })
-            $('#type').val('')
+            select.clear();
             $('#how').val('')
             $('#to').val('')
             $('#btn-close-create').click()

@@ -9,56 +9,49 @@
         <div class="container-fluid flex justify-between mt-3">
 
             <div class="">
-                <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1" data-te-ripple-init
-                    data-te-ripple-color="light"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">+
+                <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
+                    data-te-ripple-init data-te-ripple-color="light"
+                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
                     Add
                 </button>
 
             </div>
-            <form class="d-flex" action="{{ url('users') }}" method="get">
-
-                <div class="flex">
-                    <div class="mr-3">
-                        <select id="countries" name="katakunci"
-                            class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 focus:outline-none"
-                            aria-placeholder="email">
-                            <option value="1">vgh</option>
-                            <option value="1">Email</option>
-                            <option value="1">Email</option>
-                        </select>
-                    </div>
-                    <div class="mr-3">
-                        <select id="countries" name="katakunci"
-                            class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 focus:outline-none"
-                            aria-placeholder="email">
-                            <option value="1">vgh</option>
-                            <option value="1">Email</option>
-                            <option value="1">Email</option>
-                        </select>
-                    </div>
-                    <div class="mr-3">
-                        <select id="countries" name="katakunci"
-                            class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 focus:outline-none"
-                            aria-placeholder="email">
-                            <option value="1">vgh</option>
-                            <option value="1">Email</option>
-                            <option value="1">Email</option>
-                        </select>
-                    </div>
-
-                    <div class="">
-
-                        <button type="submit"
-                            class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 flex"><svg
-                                style="margin-right: 13px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>Search</button>
-                    </div>
+            <div class="grid grid-cols-4 gap-2">
+                <div class="relative mr-2">
+                    <select id="year" name="year" class="block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                    </select>
                 </div>
-            </form>
+                <div class="relative mr-2">
+                    <select id="month" name="month" class="block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="relative mr-2">
+                    <select id="comtype" name="comtype" class="block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                        <option value="Monthly Report">Monthly Report</option>
+                        <option value="Quarterly Report">Quarterly Report</option>
+                        <option value="Annual Report">Annual Report</option>
+                    </select>
+                </div>
+                <button type="button" class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search mr-2" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>Search
+                </button>
+            </div>
+            
+
         </div>
     </div>
 

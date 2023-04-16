@@ -135,6 +135,11 @@ function create(){
                 icon: 'success'
             })
             GetData(1)
+            $('#name').val('')
+            $('#email').val('')
+            $('#password').val('')
+            $('#role').val('')
+            $('#password_confirmation').val('')
             $('#btn-close-create').click()
         },
         error:function(response){
