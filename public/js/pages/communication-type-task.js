@@ -38,7 +38,7 @@ function GetData(page){
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
                     var row = '<tr class="border-b border-dashed ">'+
-                                '<td class="whitespace-nowrap px-6 py-4 font-medium">'+(index+1)+'</td>'+ 
+                                '<td class="whitespace-nowrap px-6 py-4 font-medium">'+((response.pagination.from+index))+'</td>'+ 
                                 '<td class="whitespace-nowrap px-6 py-4" style="color: rgb(24, 24, 24); font-weight: 400;">'+data.type+'</td>'+ 
                                 '<td class="whitespace-nowrap px-6 py-4">'+
                                 '<div class="rounded-circle w-8 h-8"'+

@@ -15,7 +15,7 @@ class ToCommucationType extends Model
     public function CommunicationType(){
         return $this->belongsTo(CommunicationType::class);
     }
-    public function Role(){
-        return $this->belongsTo(Role::class);
+    public function User(){
+        return $this->belongsTo(User::class);
     }
 }

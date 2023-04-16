@@ -46,5 +46,8 @@ class User extends Authenticatable
     public function userrole(){
         return $this->hasMany(UserRole::class);
     }
+    public function ToCommunication(){
+        return $this->hasMany(ToCommunicationType::class);
+    }
     
 }
