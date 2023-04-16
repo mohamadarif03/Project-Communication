@@ -65,6 +65,7 @@ Route::delete('/delete-communication-type-standart/{id}',[CommunicationTypeContr
 
 //User
 Route::get('/data-user',[UserController::class,'data']);
+Route::get('/data-user-value',[UserController::class,'dataUser']);
 Route::get('/users',[UserController::class,'view']);
 Route::post('/store-user',[UserController::class,'insert'])->name('store-user');
 Route::put('/update-user/{id}',[UserController::class,'update']);

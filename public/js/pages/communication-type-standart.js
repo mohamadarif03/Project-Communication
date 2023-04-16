@@ -282,7 +282,7 @@ function remove() {
   function GetRole(){
     $.ajax({
         type:'GET',
-        url:'/data-role',
+        url:'/data-user-value',
         success:function(response){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'">'+data.name+'</option>'

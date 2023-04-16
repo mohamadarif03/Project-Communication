@@ -97,4 +97,12 @@ class UserController extends Controller
             'success' => 'Success Delete User'
         ]);
     }
+    public function dataUser(){
+        $data = User::with([
+            'userrole' => [
+                'role'
+            ]
+        ])->where('name','!=','admin')->get();
+        return response()->json($data);
+    }
 }

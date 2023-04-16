@@ -121,7 +121,7 @@ class CommunicationTypeController extends Controller
         foreach($request->to as $item){
             ToCommucationType::create([
                 'communication_type_id' => $data->id,
-                'role_id' => $item
+                'user_id' => $item
             ]);
         }
         $role = implode(',',$request->to);
