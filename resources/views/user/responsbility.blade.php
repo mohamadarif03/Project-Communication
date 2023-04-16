@@ -168,19 +168,18 @@
                         </div>
                         <div>
                             <div class="">
-                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 ">Task
+                                <label for="type" class=" mb-2 text-sm font-medium text-gray-900 bg-gray-500">Task
                                     Type</label>
                                     <Select id="type" name="type" class="" placeholder="Choose Type">
                                         <option value=""></option>
-                                        <option value="Monthly Report">Monthly Report</option>
-                                        <option value="Quarter Report">Quarter Report</option>
                                     </Select>
                             </div>
                             <div class="">
-                                <label for="type" class=" mb-2 mt-4 text-sm font-medium text-gray-900 ">To</label><br>
-                                <input type="text"
-                                    class="peer block min-h-[auto] w-full rounded border-2 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear" placeholder="Task"
-                                    id="to" disabled aria-label="" />
+                                <label for="to"
+                                    class="w-36 mb-2 block text-xs font-medium text-gray-900 ">To</label>
+                                <Select multiple id="to" disabled name="to" class="w-full" placeholder="To">
+                                    <option value=""></option>                       
+                                </Select>
 
                             </div>
                         </div>
