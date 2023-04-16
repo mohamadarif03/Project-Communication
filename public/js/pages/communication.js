@@ -88,6 +88,7 @@ function GetDataSent(page){
         success:function(response){
             $('#Sent').html('')
             if(response.data.data.length > 0){
+                console.log(response)
                 $.each(response.data.data,function(index,data){
                     var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
                                 '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
@@ -108,7 +109,7 @@ function GetDataSent(page){
                                 '</div>'+
                                 '<div class="h-8 w-full flex items-center">'+
                                     '<i class="mdi mdi-account"></i>'+
-                                    '<p class=" ml-1.5 my-auto text-xs">'+data.user+'</p>'+
+                                    '<p class=" ml-1.5 my-auto text-xs">'+data.to_communication[0].user.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
                                         '<a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
                                             'Show >'+

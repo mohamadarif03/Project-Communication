@@ -63,6 +63,7 @@ class CommunicationController extends Controller
         $data = Communication::with(['CommunicationType','user'])
                             ->join('to_communications','to_communications.communication_id','=','communications.id')
                             ->where('to_communications.user_id',Auth()->user()->id)
+                            ->select('communications.*')
                             ->paginate(6);
         $links = $data->links('layouts.paginate');
         return response()->json([
