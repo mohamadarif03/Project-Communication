@@ -109,7 +109,7 @@ function GetDataSent(page){
                                 '</div>'+
                                 '<div class="h-8 w-full flex items-center">'+
                                     '<i class="mdi mdi-account"></i>'+
-                                    '<p class=" ml-1.5 my-auto text-xs">'+data.to_communication[0].user.name+'</p>'+
+                                    '<p class=" ml-1.5 my-auto text-xs">Head Finance</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
                                         '<a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
                                             'Show >'+
