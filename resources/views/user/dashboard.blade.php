@@ -164,7 +164,7 @@
                 <div class="rounded-md my-auto bg-white" style="height: 32%;">
                     <div class="flex flex-col h-full w-full items-center justify-center">
                         <div class="">
-                            <h1 class="text-5xl font-bold">29</h1>
+                            <h1 class="text-5xl font-bold">{{$communicationCount}}</h1>
                         </div>
                         <div class="">
                             <p class="text-xs font-bold">Total Communication</p>
@@ -174,7 +174,7 @@
                 <div class="rounded-md my-auto bg-white" style="height: 32%;">
                     <div class="flex flex-col h-full w-full items-center justify-center">
                         <div class="">
-                            <h1 class="text-5xl font-bold">20</h1>
+                            <h1 class="text-5xl font-bold">{{$complete}}</h1>
                         </div>
                         <div class="">
                             <p class="text-xs font-bold">Complete Communication</p>
@@ -184,7 +184,7 @@
                 <div class="rounded-md my-auto bg-white" style="height: 32%;">
                     <div class="flex flex-col h-full w-full items-center justify-center">
                         <div class="">
-                            <h1 class="text-5xl font-bold">9</h1>
+                            <h1 class="text-5xl font-bold">{{$uncomplete}}</h1>
                         </div>
                         <div class="">
                             <p class="text-xs font-bold">Uncomplete Communication</p>
