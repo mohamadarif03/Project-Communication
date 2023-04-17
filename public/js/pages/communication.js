@@ -112,7 +112,7 @@ function GetDataSent(page){
                                     '<p class=" ml-1.5 my-auto text-xs">Head Finance</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
                                         '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-message="'+data.message+'" data-detail="'+data.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
-                                            'Show1 >'+
+                                            'Show >'+
                                         '</a>'+
                                     '</div>'+
                                 '</div>'+
