@@ -260,14 +260,15 @@ function create(){
                 title: 'success!',
                 text: 'Success Create New Communication!',
                 icon: 'success'
-            })
+            }).then(function() {
+                location.reload();
+            });
             $('#type').val('')
             $('#date').val('')
             $('#message').val('')
             $('#to').val('')
             $('#btn-close-modal-create-step-3').click()
-            // location.reload()
-            GetData()
+           
         },
         error:function(response){
             var errors = response.responseJSON.errors;

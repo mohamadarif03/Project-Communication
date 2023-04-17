@@ -40,7 +40,7 @@ class ResponsbilityController extends Controller
     }
 
     public function sent(){
-        $data = Responbility::with('')
+        $data = Responbility::with('');
     }
 
     public function receive(){

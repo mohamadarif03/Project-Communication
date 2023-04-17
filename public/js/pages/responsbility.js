@@ -180,11 +180,11 @@ function GetDataSent(page){
                                     '<a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
                                         '<input type="checkbox" style="cursor: pointer">'+
                                     '</a>'+
-                                    '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
+                                    // '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
                                     '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
-                                        '<p class="text-white m-auto font-semibold">'+getInitials(data.communication_type.type)+'</p>'+
+                                        // '<p class="text-white m-auto font-semibold">'+getInitials(data.communication_type.type)+'</p>'+
                                     '</div>'+
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+

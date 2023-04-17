@@ -27,7 +27,7 @@ class CommunicationController extends Controller
             'user_id' => Auth()->user()->id
         ]);
         foreach($request->to as $item){
-            ToCommunication::created([
+            ToCommunication::create([
                 'communication_id' => $Communication->id,
                 'user_id' => $item
             ]);
