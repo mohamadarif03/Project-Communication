@@ -10,4 +10,14 @@ class Responbility extends Model
     use HasFactory;
     protected $table = 'responsbilities';
     protected $guarded = [];
+
+    public function user(){
+        return $this->belongsTo(user::class);
+    }
+
+    public function rule(){
+        return $this->belongsTo(rule::class);
+    }
+
+    
 }

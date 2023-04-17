@@ -116,7 +116,7 @@ $('#type').change(function(){
 function GetDataReceive(page){
     $.ajax({
         type:'GET',
-        url:'/data-receive-communication?page='+page,
+        url:'/data-receive-task?page='+page,
         success:function(response){
             $('#Receive').html('')
             if(response.data.data.length > 0){
@@ -126,15 +126,15 @@ function GetDataReceive(page){
                                     '<a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
                                         '<input type="checkbox" style="cursor: pointer">'+
                                     '</a>'+
-                                    // '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
+                                    '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
-                                    '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
-                                        // '<p class="text-white m-auto font-semibold">'+getInitials(data.communication_type.type)+'</p>'+
+                                    '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.rule.communication_type.color+'">'+
+                                        '<p class="text-white m-auto font-semibold">'+getInitials(data.rule.communication_type.type)+'</p>'+
                                     '</div>'+
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
-                                            '<h1 class="text-sm my-0 font-semibold">'+data.communication_type.type+'</h1>'+
+                                            '<h1 class="text-sm my-0 font-semibold">'+data.rule.communication_type.type+'</h1>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
@@ -166,10 +166,22 @@ function GetDataReceive(page){
         }
     })
 }
+function getInitials(name) {
+    var words = name.split(' ');
+    var initials = words.map(function(word) {
+      return word.charAt(0);
+    });
+    return initials.join('');
+}
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
 function GetDataSent(page){
     $.ajax({
         type:'GET',
-        url:'/data-sent-responsbility?page='+page,
+        url:'/data-sent-task?page='+page,
         success:function(response){
             $('#Sent').html('')
             if(response.data.data.length > 0){
@@ -180,15 +192,15 @@ function GetDataSent(page){
                                     '<a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
                                         '<input type="checkbox" style="cursor: pointer">'+
                                     '</a>'+
-                                    // '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
+                                    '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
-                                    '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
-                                        // '<p class="text-white m-auto font-semibold">'+getInitials(data.communication_type.type)+'</p>'+
+                                    '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.rule.communication_type.color+'">'+
+                                        '<p class="text-white m-auto font-semibold">'+getInitials(data.rule.communication_type.type)+'</p>'+
                                     '</div>'+
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
-                                            '<h1 class="text-sm my-0 font-semibold">'+data.communication_type.type+'</h1>'+
+                                            '<h1 class="text-sm my-0 font-semibold">'+data.rule.communication_type.type+'</h1>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+

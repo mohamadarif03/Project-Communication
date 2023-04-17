@@ -90,7 +90,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/store-responsbility',[responsbilityController::class,'insert']);
         Route::get('/data-task-type',[ResponsbilityController::class,'task_type']);
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);
-        Route::get('/data-receive-task',[ResponsbilityController::class,'task']);
+        Route::get('/data-receive-task',[ResponsbilityController::class,'receive']);
         Route::get('/profil1',[ProfileController::class,'view1']);
 
     });

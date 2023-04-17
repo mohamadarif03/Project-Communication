@@ -25,7 +25,10 @@ class ResponsbilityController extends Controller
 
     public function insert(Request $request)
     {
-        $upload = Storage::disk('public')->put('file',  $request ->file('file'));
+        $upload = '';
+        if($request->file('')){
+            $upload = Storage::disk('public')->put('file',  $request ->file('file'));
+        }
 
         $data = Responbility::create([
             'rule_id' => $request ->type,
@@ -33,17 +36,60 @@ class ResponsbilityController extends Controller
             'date' => $request ->date,
             'link' => $request ->link,
             'file' => $upload,
-
         ]);
        
         return response()->json(['message' => 'Success Create New Type!']);
     }
 
     public function sent(){
-        $data = Responbility::with('');
+        $data = Responbility::with([
+            'user',
+            'rule' => [
+                'communicationType'
+            ]
+            ])
+                             ->where('user_id',Auth()->user()->id)
+                             ->paginate(6);
+
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
     }
 
     public function receive(){
-
+        $data = Responbility::with([
+            'user',
+            'rule' => [
+                'CommunicationType'
+            ]
+            ])
+                              ->join('rules','rules.id','=','responsbilities.rule_id')
+                              ->join('to_rules','to_rules.rule_id','=','rules.id')
+                              ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
+                              ->select('responsbilities.*')
+                              ->paginate(6);
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
     }
 }

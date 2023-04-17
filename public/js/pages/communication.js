@@ -197,7 +197,7 @@ function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
-  }
+}
 
 $('#btn-next-create-step-2').click(function(){
     $('#btn-close-modal-create-step-1').click()

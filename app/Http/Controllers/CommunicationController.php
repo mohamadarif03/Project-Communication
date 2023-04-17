@@ -60,6 +60,10 @@ class CommunicationController extends Controller
     }
 
     public function receive(){
+        // Communication::whereRelation('to_communications', function($q){
+        //     $q->where('user_id', auth()->id());
+        // })
+        // ->paaginate()
         $data = Communication::with(['CommunicationType','user'])
                             ->join('to_communications','to_communications.communication_id','=','communications.id')
                             ->where('to_communications.user_id',Auth()->user()->id)

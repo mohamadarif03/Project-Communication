@@ -49,5 +49,11 @@ class User extends Authenticatable
     public function Communication(){
         return $this->HasMany(Communication::class);
     }
+    public function user(){
+        return $this->hasMany(user::class);
+    }
+    public function rule(){
+        return $this->hasMany(rule::class);
+    }
     
 }
