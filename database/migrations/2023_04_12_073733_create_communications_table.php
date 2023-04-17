@@ -27,6 +27,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('to');
             $table->longText('message');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

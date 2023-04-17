@@ -204,53 +204,7 @@ function showDescription(id) {
     });
 }
 
-// function update(){
-//     var name = $('#update-name').val()
-//     var color = $('#update-color').val()
-//     var description = $('#update-description').val()
-//     var to = $('#update-to').val()
-//     var id = $('#update-id').val()
-//     $.ajax({
-//         type:'PUT',
-//         url:'/update-communication-type-standart/'+id,
-//         data:{
-//             _token:csrfToken,
-//             type:name,
-//             color:color,
-//             description:description,
-//             to:to,
-//         },
-//         success: function(response){
-//             Swal.fire({
-//                 title: 'Success!',
-//                 text: 'Success Update Resoonsbility!',
-//                 icon: 'success',
-//                 timer: 4000
-//             })
-//             $('#update-name').val('')
-//             $('#update-color').val('')
-//             $('#update-description').val('')
-//             $('#update-id').val('')
-//             $('#btn-close-update').click()
-//             GetData()
-//         },
-//         error:function(response){
-//             var errors = response.responseJSON.errors;
-//             var errorMessage = '';
 
-//             $.each(errors, function(key, value) {
-//                 errorMessage += '<p class="text-red-500">' + value + '</p>';
-//             });
-
-//             Swal.fire({
-//                 title: 'Gagal!',
-//                 // html: errorMessage,
-//                 html: response.responseJSON.message,
-//                 icon: 'error',
-//             })
-//         }
-//     })
-// }
 
 function update(){
     var name = $('#update-name').val()

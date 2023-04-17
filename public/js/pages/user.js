@@ -80,7 +80,7 @@ function GetData(page){
                                         '</div>'+
                                     '</div>'+
                                     '</div>'+
-                                    '<div class="rounded-md p-1 absolute mt-1" style="background-color: #D9D9D9;">'+data.userrole[0].role.name+'</div>'+
+                                    // '<div class="rounded-md p-1 absolute mt-1" style="background-color: #D9D9D9;">'+data.userrole[0].role.name+'</div>'+
                             '</div>'
                     $('#Data').append(row)
                 })
@@ -283,6 +283,8 @@ function remove(){
             Swal.fire({
                 title: 'error!',
                 text: 'fail to delete user!',
+                // html: errorMessage,
+                // html: response.responseJSON.message,
                 icon: 'error'
             })
         }

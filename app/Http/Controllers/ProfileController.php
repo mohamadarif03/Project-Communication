@@ -15,6 +15,10 @@ class ProfileController extends Controller
     {
         return view('profil');
     }
+    public function view1()
+    {
+        return view('profil1');
+    }
     public function update(ProfilRequest $request, $id)
     {
         $data = User::find($id);

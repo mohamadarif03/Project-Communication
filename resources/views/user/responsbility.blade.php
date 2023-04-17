@@ -135,7 +135,7 @@ id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                 </div>
                 <div>
                     <div class="">
-                        <label for="type" class=" mb-2 text-sm font-medium text-gray-900 bg-gray-500">Task
+                        <label for="type" class=" mb-2 text-sm font-medium text-gray-900">Task
                             Type</label>
                             <Select id="type" name="type" class="" placeholder="Choose Type">
                                 <option value=""></option>

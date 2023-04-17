@@ -84,4 +84,14 @@ class CommunicationController extends Controller
         $data = CommunicationType::where('status','task')->get();
         return response()->json($data);
     }
+
+    
+    public function check($id)
+    {
+        $data = Communication::findorfail($id);
+        $data->update([
+            'status' => 1,
+        ]);
+        return response()->json($data);
+    }
 }

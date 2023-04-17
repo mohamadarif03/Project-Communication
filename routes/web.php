@@ -11,6 +11,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
 use App\Http\Requests\CommunicationTypeRequest;
+use App\Models\Communication;
 use App\Models\CommunicationType;
 use Illuminate\Support\Facades\Route;
 
@@ -71,6 +72,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/store-user',[UserController::class,'insert'])->name('store-user');
         Route::put('/update-user/{id}',[UserController::class,'update']);
         Route::delete('/delete-user/{id}',[UserController::class,'delete']);
+    Route::get('/profil',[ProfileController::class,'view']);
+
     });
     
     Route::middleware('auth:sanctum','verified','user')->group(function(){
@@ -88,6 +91,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/data-task-type',[ResponsbilityController::class,'task_type']);
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);
         Route::get('/data-receive-task',[ResponsbilityController::class,'task']);
+        Route::get('/profil1',[ProfileController::class,'view1']);
+
     });
     Route::get('logout', [AuthController::class, 'logout']);
     Route::get('/dashboard',[Controller::class,'index']);
@@ -96,11 +101,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/data-role',[RoleController::class,'data']);
     Route::get('/data-user-value',[UserController::class,'dataUser']);
     //Profil
-    Route::get('/profil',[ProfileController::class,'view']);
     Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
     Route::get('/project',[projectController::class,'view']);
 
     Route::get('/data-respons',[CommunicationController::class,'data']);
 
+    
 });
+Route::put('/check/{id}',[CommunicationController::class,'check'])->name('check');
 
