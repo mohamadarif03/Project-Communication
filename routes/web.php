@@ -76,7 +76,6 @@ Route::middleware('auth')->group(function () {
     Route::middleware('auth:sanctum','verified','user')->group(function(){
 
         //Communication
-        Route::get('/data-user-value',[UserController::class,'dataUser']);
         Route::get('/data-communication-type-standart',[CommunicationTypeController::class,'dataStandart']);
         Route::get('/communication',[CommunicationController::class,'communication']);
         Route::post('/store-communication',[CommunicationController::class,'insert']);
@@ -95,6 +94,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/role',[RoleController::class,'view']);
     //Data
     Route::get('/data-role',[RoleController::class,'data']);
+    Route::get('/data-user-value',[UserController::class,'dataUser']);
     //Profil
     Route::get('/profil',[ProfileController::class,'view']);
     Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
