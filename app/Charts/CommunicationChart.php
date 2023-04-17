@@ -38,6 +38,6 @@ class CommunicationChart
             ->setTitle('Communication')
             ->addData('Total', $data)
             ->setLabels($labels)
-            ->setColors($colors);
+            ->setColors(['#4AE64F', '#ff6384']);
     }
 }
