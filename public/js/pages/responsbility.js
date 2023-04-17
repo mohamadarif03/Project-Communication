@@ -119,6 +119,7 @@ function GetDataReceive(page){
         url:'/data-receive-task?page='+page,
         success:function(response){
             $('#Receive').html('')
+            console.log(1)
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
                     var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+

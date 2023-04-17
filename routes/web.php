@@ -112,25 +112,3 @@ Route::middleware('auth')->group(function () {
 });
 Route::put('/check/{id}',[CommunicationController::class,'check'])->name('check');
 
-Route::get('/get-communication-data/{month}', function($month) {
-    $userId = Auth::user()->id;
-    $userIdString = strval($userId);
-    $data = [];
-    $grafik = DB::table('communications')
-        ->select(DB::raw('status, COUNT(*) as total'))
-        ->groupBy('status')
-        ->whereRaw("FIND_IN_SET('$userIdString', `to`)")
-        ->whereRaw("MONTH(created_at) = '$month'")
-        ->get();
-
-    $labels = $grafik->pluck('status')->map(function ($status) {
-        return $status == 0 ? 'Uncomplete' : 'Complete';
-    })->toArray();
-
-    $data = $grafik->pluck('total')->toArray();
-
-    return response()->json([
-        'labels' => $labels,
-        'data' => $data
-    ]);
-});
