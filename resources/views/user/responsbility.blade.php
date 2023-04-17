@@ -112,7 +112,7 @@ id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 1
                             </span>
-                            <h3 class="font-medium leading-tight">Task</h3>
+                            <h3 class="font-medium text-xl leading-tight">Task</h3>
                             <p class="text-sm">type of task</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -120,7 +120,7 @@ id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                 2
                             </span>
-                            <h3 class="font-medium leading-tight">Date</h3>
+                            <h3 class="font-medium text-xl leading-tight">Date</h3>
                             <p class="text-sm">task creation date</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -128,7 +128,7 @@ id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                 3
                             </span>
-                            <h3 class="font-medium leading-tight">Files / Links</h3>
+                            <h3 class="font-medium text-xl leading-tight">Files / Links</h3>
                             <p class="text-sm">attachment files or links</p>
                         </li>
                     </ol>
@@ -141,7 +141,7 @@ id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 <option value=""></option>
                             </Select>
                     </div>
-                    <div class="">
+                    <div class="" id="to-form">
                         <label for="to"
                             class="w-36 mb-2 block text-xs font-medium text-gray-900 ">To</label>
                         <Select multiple id="to" disabled name="to" class="w-full" placeholder="To">
@@ -210,7 +210,7 @@ id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 1
                             </span>
-                            <h3 class="font-medium leading-tight">Task</h3>
+                            <h3 class="font-medium text-xl leading-tight">Task</h3>
                             <p class="text-sm">type of task</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -218,7 +218,7 @@ id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 2
                             </span>
-                            <h3 class="font-medium leading-tight">Date</h3>
+                            <h3 class="font-medium text-xl leading-tight">Date</h3>
                             <p class="text-sm">task creation date</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -226,7 +226,7 @@ id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-yellow-500 border-yellow-500 border items-center justify-center w-8 h-8 bg-yellow-50 rounded-lg -left-4 ring-4 ring-white ">
                                 3
                             </span>
-                            <h3 class="font-medium leading-tight">Files / Links</h3>
+                            <h3 class="font-medium text-xl leading-tight">Files / Links</h3>
                             <p class="text-sm">attachment files or links</p>
                         </li>
                     </ol>
@@ -304,7 +304,7 @@ id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 1
                             </span>
-                            <h3 class="font-medium leading-tight">Task</h3>
+                            <h3 class="font-medium text-xl leading-tight">Task</h3>
                             <p class="text-sm">type of task</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -312,7 +312,7 @@ id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 2
                             </span>
-                            <h3 class="font-medium leading-tight">Date</h3>
+                            <h3 class="font-medium text-xl leading-tight">Date</h3>
                             <p class="text-sm">task creation date</p>
                         </li>
                         <li class="mb-10 ml-6">
@@ -320,7 +320,7 @@ id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                                 class="absolute flex text-white items-center justify-center w-8 h-8 bg-yellow-500 rounded-lg -left-4 ring-4 ring-white">
                                 3
                             </span>
-                            <h3 class="font-medium leading-tight">Files / Links</h3>
+                            <h3 class="font-medium text-xl leading-tight">Files / Links</h3>
                             <p class="text-sm">attachment files or links</p>
                         </li>
                     </ol>

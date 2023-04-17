@@ -113,6 +113,10 @@ function create(){
             $('#description').val('')
             $('#put').val('')
             $('#btn-close-modal').click()
+            $('#to').val('')
+            $("#to-form").on('click', '.ts-wrapper .ts-control .item .remove', function(){
+                $(this).trigger('click');
+            });              
             GetData()
 
         },

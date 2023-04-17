@@ -38,4 +38,12 @@ class ResponsbilityController extends Controller
        
         return response()->json(['message' => 'Success Create New Type!']);
     }
+
+    public function sent(){
+        $data = Responbility::with('')
+    }
+
+    public function receive(){
+
+    }
 }
