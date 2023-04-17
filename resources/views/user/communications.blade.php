@@ -396,15 +396,12 @@
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
                         Detail
                     </h5>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aut, numquam nam reprehenderit labore, accusantium recusandae sunt exercitationem tempora consectetur distinctio sed repudiandae quas illo ab quia consequatur repellendus esse nemo sint. Pariatur, sint officia officiis atque reprehenderit cum corrupti possimus! Voluptate minus deleniti ullam nihil? Commodi quisquam obcaecati excepturi praesentium voluptatibus illo dicta id itaque non mollitia nobis voluptatem vero aliquid incidunt, facere blanditiis nam quas architecto? Voluptatibus, debitis.</p>
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        How
-                    </h5>
-                    <p>Meeting</p>
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                    <p id="show-detail">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam aut, numquam nam reprehenderit labore, accusantium recusandae sunt exercitationem tempora consectetur distinctio sed repudiandae quas illo ab quia consequatur repellendus esse nemo sint. Pariatur, sint officia officiis atque reprehenderit cum corrupti possimus! Voluptate minus deleniti ullam nihil? Commodi quisquam obcaecati excepturi praesentium voluptatibus illo dicta id itaque non mollitia nobis voluptatem vero aliquid incidunt, facere blanditiis nam quas architecto? Voluptatibus, debitis.</p>
+                    
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 ">
                         Message
                     </h5>
-                    <p>meeting at 8 AM</p>
+                    <p id="show-message"></p>
                 </div>
 
                 <!--Modal footer-->
