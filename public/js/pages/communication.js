@@ -176,8 +176,10 @@ function GetCommunication(){
         success:function(response){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'" data-to="'+data.to+'" id="type-select-'+data.id+'">'+data.type+'</option>'
+                $('#comtype').append(row)
                 $('#type').append(row)
             })
+            // new TomSelect('#comtype')  
             new TomSelect('#type')  
         },
         error:function(response){
