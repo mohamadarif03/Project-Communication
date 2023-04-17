@@ -276,10 +276,11 @@
                             </div>
                             <div class="">
                                 <label for="project" class=" mb-2 mt-4 text-sm font-medium">Project Size</label><br>
-                                <Select id="size" name="size" class="" placeholder="Small">
+                                <Select id="size" name="size" class="" placeholder="Project Size">
                                     <option value=""></option>
-                                    <option value="Monthly Report">Monthly Report</option>
-                                    <option value="Quarter Report">Quarter Report</option>
+                                    <option value="Small">Small</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Big">Big</option>
                                 </Select>
 
                             </div>
