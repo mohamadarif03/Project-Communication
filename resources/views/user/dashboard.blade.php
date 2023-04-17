@@ -193,6 +193,20 @@
                 </div>
             </div>
             <div class="rounded-md bg-white col-span-12 md:col-span-8 lg:col-span-4">
+                <select id="month" name="month" class="border border-gray-500 block w-[30%] m-3 ml-auto px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500 bg-white ">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
                 {!! $CommunicationChart->container() !!} 
             </div>
         </div>
@@ -202,4 +216,7 @@
 <script src="{{ $CommunicationChart->cdn() }}"></script>
 
 {{ $CommunicationChart->script() }}
+@endsection
+@section('javascript')
+    <script src="{{ asset('js/pages/dashboard.js') }}"></script>
 @endsection

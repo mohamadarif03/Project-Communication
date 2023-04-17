@@ -26,7 +26,6 @@ class Controller extends BaseController
         }else{
             $userId = Auth::user()->id;
             $userIdString = strval($userId); 
-            $delimiter = ',';
             $communicationCount = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->count();
             $complete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 1)->count();
             $uncomplete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 0)->count();
