@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Responbility extends Model
 {
     use HasFactory;
+    protected $table = 'responsbilities';
+    protected $guarded = [];
 }

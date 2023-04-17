@@ -88,6 +88,7 @@ Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
 
 
 Route::get('/responsbility',[responsbilityController::class,'view']);
+Route::post('/store-responsbility',[responsbilityController::class,'insert']);
 
 Route::get('/project',[projectController::class,'view']);
 

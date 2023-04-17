@@ -1,4 +1,5 @@
 // new TomSelect('#type')
+var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
 GetType()
 
@@ -110,3 +111,55 @@ $('#type').change(function(){
         }
     })
 })
+
+function create(){
+    var type = $('#type').val()
+    var date = $('#date').val()
+    var link = $('#link').val()
+    var fileInput = $('#file')[0];
+    var file = fileInput.files[0];
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('_token', csrfToken);
+    formData.append('type', type);
+    formData.append('date', date);
+    formData.append('link', link);
+
+    $.ajax({
+        type:'POST',
+        url:'/store-responsbility',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success:function(response){
+            Swal.fire({
+                title: 'success!',
+                text: 'Success Create New User!',
+                icon: 'success'
+            })
+            $('#type').val('')
+            $('#date').val('')
+            $('#link').val('')
+            $('#file').val('')
+            $('#btn-close-modal-create-step-3').click()
+            GetData(1)
+        },
+        error:function(response){
+            var errors = response.responseJSON.errors;
+            var errorMessage = '';
+
+            $.each(errors, function(key, value) {
+                errorMessage += '<p class="text-red-500">' + value + '</p>';
+            });
+
+            Swal.fire({
+                title: 'Error!',
+                // html: errorMessage,
+                html: response.responseJSON.message,
+                icon: 'error',
+            })
+        }
+    })
+}
