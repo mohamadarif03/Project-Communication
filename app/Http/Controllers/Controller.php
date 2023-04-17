@@ -24,9 +24,13 @@ class Controller extends BaseController
             $role = Role::count();
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
-            $communicationCount = Communication::where('to', Auth::user()->id)->count();
-            $complete = Communication::where('to', Auth::user()->id)->where('status', 1)->count();
-            $uncomplete = Communication::where('to', Auth::user()->id)->where('status', 0)->count();
+            $userId = Auth::user()->id;
+            $userIdString = strval($userId); 
+            $delimiter = ',';
+            $communicationCount = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->count();
+            $complete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 1)->count();
+            $uncomplete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 0)->count();
+            
             return view('user.dashboard', [
                 'CommunicationChart' => $CommunicationChart->build(),
                 'communicationCount' => $communicationCount,
