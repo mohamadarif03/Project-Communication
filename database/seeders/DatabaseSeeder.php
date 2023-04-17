@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             "Medior Experience Designer",
             "Junior Experience Designer"
         );
+        
         foreach($roles as $role){
             DB::table('roles')->insert([
                 'name' => $role,

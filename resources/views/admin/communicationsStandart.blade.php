@@ -4,7 +4,6 @@
 @section('Communication.svg', 'white')
 @section('content')
     <div class="content">
-
         <!-- Start Content-->
         <div class="container-fluid flex justify-between mt-3">
 
