@@ -36,12 +36,26 @@ function GetDataReceive(page){
             $('#Receive').html('')
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
-                    var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
+                    var border = 'style="border: 2px solid green"'
+                    var bg = 'bg-green-200'
+                    var check = 'checked'
+                    var bgdate = 'style="background-color: green; color: white;"'
+                    var show = 'text-black'
+                    var disabled = 'disabled'
+                    if (data.status == 0) {
+                        border = ''
+                        bg = 'bg-white'
+                        check = ''
+                        bgdate = 'style="background-color: #E0E0E0; color: black;"'
+                        show = 'text-yellow-400'
+                        disabled = ''
+                    }
+                    var row = '<div class="block '+bg+' rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"'+border+'>'+
                                 '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
                                     '<a href="" onclick="checkget('+data.id+')" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
-                                        '<input type="checkbox" style="cursor: pointer">'+
+                                        '<input type="checkbox" '+check+' '+disabled+' style="cursor: pointer;">'+
                                     '</a>'+
-                                    '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
+                                    '<p class="rounded-md text-xs py-0.5 px-2" '+bgdate+'>'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
                                     '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
@@ -57,7 +71,7 @@ function GetDataReceive(page){
                                     '<i class="mdi mdi-account"></i>'+
                                     '<p class=" ml-1.5 my-auto text-xs">'+data.user.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
-                                        '<a href="" onclick="show1('+data.id+')" id="btn-show1-'+data.id+'" data-message="'+data.message+'" data-detail="'+data.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show1">'+
+                                        '<a href="" onclick="show1('+data.id+')" id="btn-show1-'+data.id+'" data-message="'+data.message+'" data-detail="'+data.communication_type.description+'" class="'+show+'" data-te-toggle="modal" data-te-target="#show1">'+
                                             'Show >'+
                                         '</a>'+
                                     '</div>'+
@@ -314,7 +328,9 @@ function check() {
             text: 'Success Delete Responsbility!',
             icon: 'success',
             timer: 4000
-        })
+        }).then(function() {
+            location.reload();
+        });
         $('#btn-close').click()
         GetData()
     },
