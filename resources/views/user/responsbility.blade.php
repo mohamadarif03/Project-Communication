@@ -328,7 +328,7 @@ id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                         <label for="project" class=" mb-2 text-sm font-medium">Date</label><br>
                         <input type="date"
                         class="peer block min-h-[auto] w-full rounded border-2 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear" placeholder="Task"
-                        id="to" disabled aria-label="" />
+                        id="date" aria-label="" />
 
                     </div>
                   
@@ -422,7 +422,7 @@ id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                         <label for="project" class=" mb-2 text-sm font-medium">Files</label><br>
                         <input type="file"
                         class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear" placeholder="Task"
-                        id="files" aria-label="" />
+                        id="file" aria-label="" />
 
                     </div>
                     <div class="mt-3">
@@ -449,10 +449,10 @@ id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-
                 data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                 Back
             </button>
-            <button type="button"
+            <button type="button" onclick="create()"
                 class="ml-1 inline-block rounded bg-yellow-400 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] "
                 data-te-ripple-init data-te-ripple-color="light">
-                Save
+                Save1
             </button>
         </div>
     </div>

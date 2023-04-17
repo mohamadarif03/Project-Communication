@@ -258,6 +258,7 @@ function create(){
             $('#message').val('')
             $('#to').val('')
             $('#btn-close-modal-create-step-3').click()
+            // location.reload()
             GetData()
         },
         error:function(response){

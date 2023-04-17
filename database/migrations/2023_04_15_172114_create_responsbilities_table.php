@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('responsbilities_types', function (Blueprint $table) {
+        Schema::create('responsbilities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rule_id');
             $table->foreign('rule_id')
@@ -26,8 +26,8 @@ return new class extends Migration
             ->on('users')
             ->cascadeOnDelete();
             $table->date('date');
-            $table->longText('file');
-            $table->longText('link');
+            $table->longText('file')->nullable();
+            $table->longText('link')->nullable();
             $table->timestamps();
         });
     }
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('responsbility_types');
+        Schema::dropIfExists('responsbilities');
     }
 };
