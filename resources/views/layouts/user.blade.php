@@ -32,7 +32,7 @@
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="mdi mdi-bell-outline noti-icon"></i>
-                            <span class="noti-icon-badge"></span>
+                            <span class="noti-icon-badge" id="not-icon"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-lg">
                             <!-- item-->

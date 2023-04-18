@@ -104,7 +104,7 @@
     <div class="main">
 
         <section class="" style="">
-            <div class="">
+            <div class="w-screen h-screen flex items-center justify-center">
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title" style="font-weight: bold; font-size:50px">Login</h2>

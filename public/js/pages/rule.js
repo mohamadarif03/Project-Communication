@@ -77,6 +77,7 @@ function GetData(page){
         },
         success:function(response){
             $('#Data').html('')
+            console.log(response)
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
                     var row = '<div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">'+
@@ -117,7 +118,7 @@ function GetData(page){
                             '</div>'+
                             '<div class="h-8 w-full flex items-center">'+
                                 '<i class="mdi mdi-account"></i>'+
-                                '<p class=" ml-1.5 my-auto text-xs">head finance</p>'+
+                                '<p class=" ml-1.5 my-auto text-xs">'+data.fromrule[0].role.name+'</p>'+
                                 
                             '</div>'+
                         '</div>'

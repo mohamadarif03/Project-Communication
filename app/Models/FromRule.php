@@ -11,9 +11,9 @@ class FromRule extends Model
 
     protected $table = 'from_rules';
     protected $guarded = [];
-    public function CommunicationType(){
-        return $this->belongsTo(CommunicationType::class);
-    }
+    // public function CommunicationType(){
+    //     return $this->belongsTo(CommunicationType::class);
+    // }
     public function Rule(){
         return $this->belongsTo(Rule::class);
     }
