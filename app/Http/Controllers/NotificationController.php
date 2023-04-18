@@ -3,38 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notification;
+use App\Models\ToNotification;
 use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
     public function data(){
-        $data = Notification::with([
-            'user',
-            'responbility' => [
-                'rule' => [
+        $data = ToNotification::with([
+            'notification' => [
+                'responbility' => [
+                    'rule' => [
+                        'communicationType'
+                    ]
+                ],
+                'communication' => [
                     'communicationType'
-                ]
+                ],
+                'user'
             ],
-            'communication' => [
-                'communicationType'
-            ],
-            'ToNotification'
-            ])->join('to_notifications','to_notifications.notification_id','=','notifications.id')
-              ->where('to_notifications.user_id',Auth()->user()->id)
-              ->select('notifications.*')
-              ->get();
-
+        ])->where('user_id',Auth()->user()->id)->get();
         return response()->json($data);
     }
 
     public function delete($id){
-        $data = Notification::findorfail($id);
+        $data = ToNotification::findorfail($id);
         if($data->communication == null){
             $type = 'responsbility';
         }else{
             $type = 'communication';
         }
+        $notif = ToNotification::where('notification_id',$data->notification_id)->count();
+        $id = $data->notification_id;
         $data->delete();
+        if($notif == 0){
+            Notification::find($id)->delete();
+        }
         return response()->json($type);
     }
 }
