@@ -1,7 +1,5 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
-
-$(document).ready(function() {
-    // dapatkan elemen select year
+function getyear(){
     var yearSelect = $('#year');
 
     // ambil tahun saat ini
@@ -14,10 +12,8 @@ $(document).ready(function() {
 
     // set nilai default menjadi tahun saat ini
     yearSelect.val(currentYear);
-});
-
-$(document).ready(function() {
-    // dapatkan elemen select month
+}
+function getmonth(){
     var monthSelect = $('#month');
   
     // ambil bulan saat ini
@@ -25,13 +21,23 @@ $(document).ready(function() {
   
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());
-  });
+}
+getmonth()
+getyear()
 GetDataReceive(1)
 GetDataSent(1)
 function GetDataReceive(page){
+    var year = $('#year').val()
+    var month = $('#month').val()
+    var type = $('#comtype').val()
     $.ajax({
         type:'GET',
         url:'/data-receive-communication?page='+page,
+        data:{
+            year:year,
+            month:month,
+            type:type
+        },
         success:function(response){
             $('#Receive').html('')
             if(response.data.data.length > 0){
@@ -96,18 +102,24 @@ function GetDataReceive(page){
     })
 }
 function GetDataSent(page){
+    var year = $('#year').val()
+    var month = $('#month').val()
+    var type = $('#comtype').val()
     $.ajax({
         type:'GET',
         url:'/data-sent-communication?page='+page,
+        data:{
+            year:year,
+            month:month,
+            type:type
+        },
         success:function(response){
             $('#Sent').html('')
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
                     var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
                                 '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
-                                    // '<a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
-                                    //     '<input type="checkbox" style="cursor: pointer">'+
-                                    // '</a>'+
+                                   
                                     '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
