@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RuleRequest;
-use App\Http\Requests\UpdateRuleRequest;
 use App\Models\CommunicationType;
-use App\Models\FromCommunicationType;
 use App\Models\FromRule;
 use App\Models\Rule;
 use App\Models\ToRule;
@@ -19,12 +17,23 @@ class RuleController extends Controller
     }
     public function data(Request $request){
         if($request->search){
-            $data = Rule::with(['communicationType','torule'])
-                    ->where('communication_type_id',$request->search)
-                    ->orderBy('created_at','desc')
-                    ->paginate(9);
+            $data = Rule::with([
+                'CommunicationType',
+                'torule',
+                'fromrule' => [
+                    'role'
+                ]
+            ])->where('communication_type_id',$request->search)
+              ->orderBy('created_at','desc')
+              ->paginate(9);
         }else{
-            $data = Rule::with(['communicationType','torule'])->orderBy('created_at','desc')->paginate(9);    
+            $data = Rule::with([
+                'CommunicationType',
+                'torule',
+                'fromrule' => [
+                    'role'
+                ]
+            ])->orderBy('created_at','desc')->paginate(9);    
         }
         $links = $data->links('layouts.paginate');
         return response()->json([

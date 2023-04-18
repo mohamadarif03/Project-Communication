@@ -38,7 +38,11 @@ function GetData(page){
                
                 $.each(response.data.data,function(index,data){
                     var src = 'src="../profile/'+data.profile+'"'
-                    var row = '<div class="col-span-1 w-full h-full px-2 py-2 pb-5 mt-1 rounded-md bg-white">'+
+                    var role = ''
+                    $.each(data.userrole,function(index,item){
+                        role += '<div class="rounded-md inline-block m-1 px-1 py-0 mt-1" style="background-color: #D9D9D9;">'+item.role.name+'</div>'
+                    })
+                    var row = '<div class="col-span-1 w-full h-full px-2 py-2 pb-1 mt-1 rounded-md bg-white">'+
                                 '<div class="h-8 p-2 items-center relative w-full flex">'+
                                     '<button onclick="showdropdown('+index+')" class="ml-auto h-5 w-5 rounded-circle bg-transparent"'+
                                         'aria-expanded="false">'+
@@ -80,7 +84,7 @@ function GetData(page){
                                         '</div>'+
                                     '</div>'+
                                     '</div>'+
-                                    // '<div class="rounded-md p-1 absolute mt-1" style="background-color: #D9D9D9;">'+data.userrole[0].role.name+'</div>'+
+                                    role+
                             '</div>'
                     $('#Data').append(row)
                 })

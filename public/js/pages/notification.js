@@ -32,6 +32,7 @@ function notification(){
                                 '</div>'+
                             '</a>'
                 $('#notification').append(row)
+                $('#not-icon').remove()
             }
         },
         error:function(response){

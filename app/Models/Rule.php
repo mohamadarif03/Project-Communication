@@ -10,9 +10,8 @@ class Rule extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function communicationType()
-    {
-        return $this->BelongsTo(CommunicationType::class, 'communication_type_id', 'id');
+    public function communicationType(){
+        return $this->BelongsTo(CommunicationType::class);
     }
     public function FromCommunicationType(){
         return $this->hasMany(FromCommunicationType::class);
