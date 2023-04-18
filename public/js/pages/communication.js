@@ -215,6 +215,8 @@ function formatDate(dateString) {
     return date.toLocaleDateString('en-US', options);
 }
 
+
+
 $('#btn-next-create-step-2').click(function(){
     $('#btn-close-modal-create-step-1').click()
     $('#btn-open-modal-create-step-2').click()
@@ -223,6 +225,11 @@ $('#btn-next-create-step-3').click(function(){
     $('#btn-close-modal-create-step-2').click()
     $('#btn-open-modal-create-step-3').click()
 })
+
+function search(){
+    GetDataReceive(1)
+    GetDataSent(1)
+}
 
 $('#btn-back-create-step-1').click(function(){
     $('#btn-close-modal-create-step-2').click()
