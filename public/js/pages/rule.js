@@ -203,7 +203,6 @@ function create(){
                 icon: 'success'
             })
             $('#how').val('')
-            $('#To').val('')
             $('#btn-close-create').click()
             GetData(1)
         },
@@ -248,6 +247,8 @@ function edit(id){
     $('#update-id').val(id)
     update_to.destroy()
     update_from.destroy()
+    const remove_type = $('#update-type-form').find('.ts-wrapper:not(:first)');
+    remove_type.remove();
     $.ajax({
         type:'GET',
         url:'/data-role',
@@ -275,7 +276,9 @@ function edit(id){
                 plugins: ['remove_button'],
             })
             const remove_to = $('#update-to-form').find('.ts-wrapper:not(:first)');
-                remove_to.remove();
+            remove_to.remove();
+            const remove_from = $('#update-from-form').find('.ts-wrapper:not(:first)');
+            remove_from.remove();
         },
         error:function(response){
             console.log(response)
