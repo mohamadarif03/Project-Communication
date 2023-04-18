@@ -28,6 +28,7 @@ return new class extends Migration
             $table->date('date');
             $table->longText('file')->nullable();
             $table->longText('link')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

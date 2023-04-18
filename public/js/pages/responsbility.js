@@ -189,9 +189,6 @@ function GetDataSent(page){
                 $.each(response.data.data,function(index,data){
                     var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
                                 '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
-                                    '<a href="" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
-                                        '<input type="checkbox" style="cursor: pointer">'+
-                                    '</a>'+
                                     '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
@@ -208,9 +205,9 @@ function GetDataSent(page){
                                     '<i class="mdi mdi-account"></i>'+
                                     '<p class=" ml-1.5 my-auto text-xs">Head Finance</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
-                                        '<a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
-                                            'Show >'+
-                                        '</a>'+
+                                    '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
+                                    'Show >'+
+                                '</a>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'
@@ -233,10 +230,14 @@ function GetDataSent(page){
     })
 }
 
-function filter(){
-
+function show(id){
+    var link = $('#btn-show-'+id).data('link')
+    var detail = $('#btn-show-'+id).data('detail')
+    $('#show-link').text(link)
+    $('#show-link').attr('href', link)
+    $('#show-detail').text(detail)
+    $('#show-id').val(id)
 }
-
 
 function create(){
     var type = $('#type').val()
@@ -264,7 +265,9 @@ function create(){
                 title: 'success!',
                 text: 'Success Create New User!',
                 icon: 'success'
-            })
+            }).then(function() {
+                location.reload();
+            });
             $('#type').val('')
             $('#date').val('')
             $('#link').val('')
