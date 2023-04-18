@@ -26,7 +26,14 @@ class NotificationController extends Controller
         return response()->json($data);
     }
 
-    public function delete(){
-
+    public function delete($id){
+        $data = Notification::findorfail($id);
+        if($data->communication == null){
+            $type = 'responsbility';
+        }else{
+            $type = 'communication';
+        }
+        $data->delete();
+        return response()->json($type);
     }
 }
