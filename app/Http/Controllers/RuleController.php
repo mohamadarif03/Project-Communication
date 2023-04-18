@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RuleRequest;
-use App\Http\Requests\UpdateRuleRequest;
 use App\Models\CommunicationType;
-use App\Models\FromCommunicationType;
 use App\Models\FromRule;
 use App\Models\Rule;
 use App\Models\ToRule;
