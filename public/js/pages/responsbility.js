@@ -247,8 +247,7 @@ function show1(id){
     var detail = $('#btn-show-'+id).data('detail')
     $('#show-link1').text(link)
     $('#show-link1').attr('href', link)
-    $('#show-file1').text(file)
-    $('#show-file1').attr('href', file)
+    $('#show-file1').attr('href', '../storage/' + file);
     $('#show-detail1').text(detail)
     $('#show-id').val(id)
 }

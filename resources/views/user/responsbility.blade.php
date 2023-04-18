@@ -468,7 +468,7 @@
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 ">
                         File
                     </h5>
-                    <a href="" id="show-file1" target="_blank"></a>
+                    <a href="" id="show-file1" target="_blank">Lihat</a>
                     {{-- <a href="" id="show-file" target="_blank"><button class="btn btn-success">Lihat CV</button></a> --}}
                 </div>
 
