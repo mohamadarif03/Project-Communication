@@ -7,6 +7,8 @@ use App\Models\Communication;
 use App\Models\CommunicationType;
 use App\Models\ToCommucationType;
 use App\Models\ToCommunication;
+use App\Models\Notification;
+use App\Models\ToNotification;
 use Illuminate\Console\View\Components\Task;
 use Illuminate\Http\Request;
 
@@ -26,9 +28,17 @@ class CommunicationController extends Controller
             'to' => implode(',',$request->to),
             'user_id' => Auth()->user()->id
         ]);
+        $notification = Notification::create([
+            'user_id' => Auth()->user()->id,
+            'communication_id' => $Communication->id,
+        ]);
         foreach($request->to as $item){
             ToCommunication::create([
                 'communication_id' => $Communication->id,
+                'user_id' => $item
+            ]);
+            ToNotification::create([
+                'notification_id' => $notification->id,
                 'user_id' => $item
             ]);
         }
