@@ -233,6 +233,10 @@ function GetDataSent(page){
     })
 }
 
+function filter(){
+
+}
+
 
 function create(){
     var type = $('#type').val()

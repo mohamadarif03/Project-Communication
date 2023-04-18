@@ -1,7 +1,5 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
-
-$(document).ready(function() {
-    // dapatkan elemen select year
+function getyear(){
     var yearSelect = $('#year');
 
     // ambil tahun saat ini
@@ -14,10 +12,8 @@ $(document).ready(function() {
 
     // set nilai default menjadi tahun saat ini
     yearSelect.val(currentYear);
-});
-
-$(document).ready(function() {
-    // dapatkan elemen select month
+}
+function getmonth(){
     var monthSelect = $('#month');
   
     // ambil bulan saat ini
@@ -25,13 +21,23 @@ $(document).ready(function() {
   
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());
-  });
+}
+getmonth()
+getyear()
 GetDataReceive(1)
 GetDataSent(1)
 function GetDataReceive(page){
+    var year = $('#year').val()
+    var month = $('#month').val()
+    var type = $('#comtype').val()
     $.ajax({
         type:'GET',
         url:'/data-receive-communication?page='+page,
+        data:{
+            year:year,
+            month:month,
+            type:type
+        },
         success:function(response){
             $('#Receive').html('')
             if(response.data.data.length > 0){
@@ -96,9 +102,17 @@ function GetDataReceive(page){
     })
 }
 function GetDataSent(page){
+    var year = $('#year').val()
+    var month = $('#month').val()
+    var type = $('#comtype').val()
     $.ajax({
         type:'GET',
         url:'/data-sent-communication?page='+page,
+        data:{
+            year:year,
+            month:month,
+            type:type
+        },
         success:function(response){
             $('#Sent').html('')
             if(response.data.data.length > 0){

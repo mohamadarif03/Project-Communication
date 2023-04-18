@@ -37,14 +37,32 @@ class CommunicationController extends Controller
         ],200);
     }
 
-    public function sent(){
-        $data = Communication::with([
-            'CommunicationType',
-            'ToCommunication' => [
-                'user'
-            ]
-            ])->where('user_id',Auth()->user()->id)->paginate(6);
-        $links = $data->links('layouts.paginate');
+    public function sent(Request $request){
+        if($request->type != null){
+            $data = Communication::with([
+                'CommunicationType',
+                'ToCommunication' => [
+                    'user'
+                ]
+                ])->where('user_id',Auth()->user()->id)
+                ->where('communication_type_id',$request->type)
+                ->whereYear('date',$request->year)
+                ->whereMonth('date',$request->month)
+                ->paginate(6);
+            $links = $data->links('layouts.paginate');
+        }else{
+            $data = Communication::with([
+                'CommunicationType',
+                'ToCommunication' => [
+                    'user'
+                ]
+                ])->where('user_id',Auth()->user()->id)
+                ->whereYear('date',$request->year)
+                ->whereMonth('date',$request->month)
+                ->paginate(6);
+            $links = $data->links('layouts.paginate');
+        }
+        
         return response()->json([
             'data' => $data,
             'links' => $links->render(),
@@ -59,17 +77,27 @@ class CommunicationController extends Controller
         ]);
     }
 
-    public function receive(){
-        // Communication::whereRelation('to_communications', function($q){
-        //     $q->where('user_id', auth()->id());
-        // })
-        // ->paaginate()
-        $data = Communication::with(['CommunicationType','user'])
+    public function receive(Request $request){
+        if($request->type != null){
+            $data = Communication::with(['CommunicationType','user'])
                             ->join('to_communications','to_communications.communication_id','=','communications.id')
                             ->where('to_communications.user_id',Auth()->user()->id)
+                            ->where('communications.communication_type_id',$request->type)
+                            ->whereYear('communications.date',$request->year)
+                            ->whereMonth('communications.date',$request->month)
                             ->select('communications.*')
                             ->paginate(6);
         $links = $data->links('layouts.paginate');
+        }else{
+            $data = Communication::with(['CommunicationType','user'])
+                            ->join('to_communications','to_communications.communication_id','=','communications.id')
+                            ->where('to_communications.user_id',Auth()->user()->id)
+                            ->whereYear('communications.date',$request->year)
+                            ->whereMonth('communications.date',$request->month)
+                            ->select('communications.*')
+                            ->paginate(6);
+        $links = $data->links('layouts.paginate');
+        }
         return response()->json([
             'data' => $data,
             'links' => $links->render(),
