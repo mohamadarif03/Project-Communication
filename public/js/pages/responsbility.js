@@ -143,9 +143,9 @@ function GetDataReceive(page){
                                     '<i class="mdi mdi-account"></i>'+
                                     '<p class=" ml-1.5 my-auto text-xs">'+data.user.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
-                                        '<a href="" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
-                                            'Show >'+
-                                        '</a>'+
+                                    '<a href="" onclick="show1 ('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show1">'+
+                                    'Show >'+
+                                '</a>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'
@@ -205,7 +205,7 @@ function GetDataSent(page){
                                     '<i class="mdi mdi-account"></i>'+
                                     '<p class=" ml-1.5 my-auto text-xs">Head Finance</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
-                                    '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
+                                    '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
                                     'Show >'+
                                 '</a>'+
                                     '</div>'+
@@ -232,10 +232,24 @@ function GetDataSent(page){
 
 function show(id){
     var link = $('#btn-show-'+id).data('link')
+    var file = $('#btn-show-'+id).data('file')
     var detail = $('#btn-show-'+id).data('detail')
     $('#show-link').text(link)
     $('#show-link').attr('href', link)
+    $('#show-file').text(file)
+    $('#show-file').attr('href', file)
     $('#show-detail').text(detail)
+    $('#show-id').val(id)
+}
+function show1(id){
+    var link = $('#btn-show-'+id).data('link')
+    var file = $('#btn-show-'+id).data('file')
+    var detail = $('#btn-show-'+id).data('detail')
+    $('#show-link1').text(link)
+    $('#show-link1').attr('href', link)
+    $('#show-file1').text(file)
+    $('#show-file1').attr('href', file)
+    $('#show-detail1').text(detail)
     $('#show-id').val(id)
 }
 
