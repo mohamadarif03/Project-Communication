@@ -21,7 +21,7 @@ return new class extends Migration
             ->on('users')
             ->cascadeOnDelete();
             $table->foreignId('responsbility_id')->nullable();
-            $table->foreign('responbility_id')
+            $table->foreign('responsbility_id')
             ->references('id')
             ->on('responsbilities')
             ->cascadeOnDelete();
