@@ -82,6 +82,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/store-communication',[CommunicationController::class,'insert']);
         Route::get('/data-sent-communication',[CommunicationController::class,'sent']);
         Route::get('/data-receive-communication',[CommunicationController::class,'receive']);
+        Route::get('/data-receive-communication-dashboard-uncomplete',[CommunicationController::class,'receiveUncomplete']);
+        Route::get('/data-receive-communication-dashboard-complete',[CommunicationController::class,'receiveUncomplete']);
 
         //Responbilities
         Route::get('/responsbility',[responsbilityController::class,'view']);

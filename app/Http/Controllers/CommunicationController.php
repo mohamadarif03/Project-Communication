@@ -122,6 +122,30 @@ class CommunicationController extends Controller
             ]
         ]);
     }
+    public function receiveUncomplete(Request $request){
+        
+            $data = Communication::with(['CommunicationType','user'])
+                            ->join('to_communications','to_communications.communication_id','=','communications.id')
+                            ->where('to_communications.user_id',Auth()->user()->id)
+                            ->where('status', 0)
+                            ->select('communications.*')
+                            ->limit(3)
+                            ->get();
+       
+        return response()->json($data);
+    }
+    public function receiveComplete(Request $request){
+        
+            $data = Communication::with(['CommunicationType','user'])
+                            ->join('to_communications','to_communications.communication_id','=','communications.id')
+                            ->where('to_communications.user_id',Auth()->user()->id)
+                            ->where('status', 0)
+                            ->select('communications.*')
+                            ->limit(3)
+                            ->get();
+       
+        return response()->json($data);
+    }
 
     public function data(){
         $data = CommunicationType::where('status','task')->get();

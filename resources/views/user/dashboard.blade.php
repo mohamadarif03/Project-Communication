@@ -6,158 +6,21 @@
     <div class="container-fluid">
         <h1 class="text-xl font-bold mb-2">Hi, {{Auth()->user()->name}}</h1>
         <div class="grid grid-cols-12 gap-2">
-            <div class=" rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
+            
+            <div class="rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
                 <div class="border-b-2 pb-2">
-                    <h1 class="ml-2 mt-2 text-sm font-bold ">Uncomplete Communication</h1>
+                    <h1 class="ml-2 mt-2 text-sm font-bold ">Complete Communication</h1>
                 </div>
-                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md">
-                    <div class="h-8 p-2 items-center w-full flex justify-between ">
-                        <input type="checkbox">
-                        <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
-                    </div>
-                    <div class="h-16 flex p-2 items-center w-full ">
-                        <div class="h-12 flex w-12 bg-red-400 rounded-circle">
-                            <p class="text-white m-auto font-semibold">FE</p>
-                        </div>
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-0">
-                                <h1 class="text-sm font-semibold my-0">Financial Emergencies</h1>
-                                <h3 class="text-xs my-0">Meeting</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-8 w-full flex items-center">
-                        <i class="mdi mdi-account"></i>
-                        <p class="my-auto ml-1.5 text-xs">head finance</p>
-                        <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
-                            Show >
-                        </div>
-                    </div>
-                </div>
-                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md">
-                    <div class="h-8 p-2 items-center w-full flex justify-between ">
-                        <input type="checkbox">
-                        <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
-                    </div>
-                    <div class="h-16 flex p-2 items-center w-full ">
-                        <div class="h-12 flex w-12 bg-red-400 rounded-circle">
-                            <p class="text-white m-auto font-semibold">FE</p>
-                        </div>
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-auto">
-                                <h1 class="text-sm font-semibold my-0">Financial Emergencies</h1>
-                                <h3 class="text-xs my-0">Meeting</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-8 w-full flex items-center">
-                        <i class="mdi mdi-account"></i>
-                        <p class="my-auto ml-1.5 text-xs">head finance</p>
-                        <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
-                            Show >
-                        </div>
-                    </div>
-                </div>
-                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md">
-                    <div class="h-8 p-2 items-center w-full flex justify-between ">
-                        <input type="checkbox">
-                        <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
-                    </div>
-                    <div class="h-16 flex p-2 items-center w-full ">
-                        <div class="h-12 flex w-12 bg-red-400 rounded-circle">
-                            <p class="text-white m-auto font-semibold">FE</p>
-                        </div>
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-auto">
-                                <h1 class="text-sm font-semibold my-0">Financial Emergencies</h1>
-                                <h3 class="text-xs my-0">Meeting</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-8 w-full flex items-center">
-                        <i class="mdi mdi-account"></i>
-                        <p class="my-auto ml-1.5 text-xs">head finance</p>
-                        <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
-                            Show >
-                        </div>
-                    </div>
+                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md" id="Complete">
+                    
                 </div>
             </div>
             <div class="rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
                 <div class="border-b-2 pb-2">
                     <h1 class="ml-2 mt-2 text-sm font-bold ">Uncomplete Communication</h1>
                 </div>
-                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md">
-                    <div class="h-8 p-2 items-center w-full flex justify-between ">
-                        <input type="checkbox">
-                        <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
-                    </div>
-                    <div class="h-16 flex p-2 items-center w-full ">
-                        <div class="h-12 flex w-12 bg-red-400 rounded-circle">
-                            <p class="text-white m-auto font-semibold">FE</p>
-                        </div>
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-auto">
-                                <h1 class="text-sm font-semibold my-0">Financial Emergencies</h1>
-                                <h3 class="text-xs my-0">Meeting</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-8 w-full flex items-center">
-                        <i class="mdi mdi-account"></i>
-                        <p class="my-auto ml-1.5 text-xs">head finance</p>
-                        <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
-                            Show >
-                        </div>
-                    </div>
-                </div>
-                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md">
-                    <div class="h-8 p-2 items-center w-full flex justify-between ">
-                        <input type="checkbox">
-                        <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
-                    </div>
-                    <div class="h-16 flex p-2 items-center w-full ">
-                        <div class="h-12 flex w-12 bg-red-400 rounded-circle">
-                            <p class="text-white m-auto font-semibold">FE</p>
-                        </div>
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-auto">
-                                <h1 class="text-sm font-semibold my-0">Financial Emergencies</h1>
-                                <h3 class="text-xs my-0">Meeting</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-8 w-full flex items-center">
-                        <i class="mdi mdi-account"></i>
-                        <p class="my-auto ml-1.5 text-xs">head finance</p>
-                        <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
-                            Show >
-                        </div>
-                    </div>
-                </div>
-                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md">
-                    <div class="h-8 p-2 items-center w-full flex justify-between ">
-                        <input type="checkbox">
-                        <p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">13 May 2023</p>
-                    </div>
-                    <div class="h-16 flex p-2 items-center w-full ">
-                        <div class="h-12 flex w-12 bg-red-400 rounded-circle">
-                            <p class="text-white m-auto font-semibold">FE</p>
-                        </div>
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-auto">
-                                <h1 class="text-sm font-semibold my-0">Financial Emergencies</h1>
-                                <h3 class="text-xs my-0">Meeting</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-8 w-full flex items-center">
-                        <i class="mdi mdi-account"></i>
-                        <p class="my-auto ml-1.5 text-xs">head finance</p>
-                        <div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">
-                            Show >
-                        </div>
-                    </div>
+                <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md" id="Uncomplete">
+                    
                 </div>
             </div>
             <div class="rounded-md bg-white flex col-span-12 md:col-span-4 flex-col lg:col-span-2 text-center bg-transparent">
@@ -211,6 +74,60 @@
             </div>
         </div>
     </div> <!-- end container-fluid -->
+
+    <div data-te-modal-init
+    class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="show1" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
+    <div data-te-modal-dialog-ref
+        class="pointer-events-none relative h-[calc(100%-1rem)] w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
+        <div
+            class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+            <div
+                class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                <!--Modal title-->
+                <h5 class="text-xl font-medium leading-normal text-neutral-800"
+                    id="exampleModalScrollableLabel">
+                    Detail
+                </h5>
+                <!--Close button-->
+                <button type="button"
+                    class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                    data-te-modal-dismiss aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!--Modal body-->
+            
+            <div class="relative overflow-y-auto p-4">
+                <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                    Detail
+                </h5>
+                <p id="show-detail1"></p>
+                
+                <h5 class="text-xl font-medium leading-normal text-neutral-800 ">
+                    Message
+                </h5>
+                <p id="show-message1"></p>
+            </div>
+
+            <!--Modal footer-->
+            <div
+                class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                <button type="button"
+                    class="inline-block rounded bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                    data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
+                    style="border: 2px solid black">
+                    Close
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 </div>
 <script src="{{ $CommunicationChart->cdn() }}"></script>

@@ -30,6 +30,7 @@ class Controller extends BaseController
             $complete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 1)->count();
             $uncomplete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 0)->count();
             
+            
             return view('user.dashboard', [
                 'CommunicationChart' => $CommunicationChart->build(),
                 'communicationCount' => $communicationCount,
