@@ -40,7 +40,7 @@
 
                             <div class="slimscroll noti-scroll">
 
-                                <div class="inbox-widget">
+                                <div class="inbox-widget" id="notification">
                                     <a href="#">
                                         <div class="inbox-item">
                                             <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg" class="rounded-lg" alt=""></div>
@@ -244,6 +244,7 @@
         <script src="{{asset('plugin/tw-elements/dist/js/tw-elements.umd.min.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
         <script src="{{asset('assets/js/app.min.js')}}"></script>
+        <script src="{{asset('js/pages/notification.js')}}"></script>
         @yield('javascript')
     </body>
 </html>

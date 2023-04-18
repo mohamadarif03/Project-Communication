@@ -19,8 +19,8 @@ class Notification extends Model
         return $this->belongsTo(user::class);
     }
 
-    public function responsbility(){
-        return $this->belongsTo(Responsbility::class);
+    public function responbility(){
+        return $this->belongsTo(Responbility::class);
     }
 
     public function communication(){
