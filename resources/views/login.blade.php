@@ -143,7 +143,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="signup-image">
+                    <div class="signup-image hidden md:block">
                         <figure>
                             <img src="{{ asset('login/images/undraw_completed_03xt 1.png') }}" width="60%"
                                 alt="sing up image" style="margin-bottom: 20px">

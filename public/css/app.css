@@ -3675,6 +3675,10 @@ video {
     grid-column: span 8 / span 8;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:inline-block {
     display: inline-block;
   }
