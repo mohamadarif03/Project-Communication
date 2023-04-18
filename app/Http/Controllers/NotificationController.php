@@ -13,7 +13,10 @@ class NotificationController extends Controller
             'responbility',
             'communication',
             ])->join('to_notifications','to_notifications.notification_id','=','notifications.id')
-              ->where('');
+              ->where('to_notifications.user_id',Auth()->user()->id)
+              ->select('notifications.*');
+
+        return response()->json($data);
     }
 
     public function delete(){

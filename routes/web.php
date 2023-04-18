@@ -4,17 +4,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\CommunicationTypeController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\projectController;
 use App\Http\Controllers\responsbilityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
-use App\Http\Requests\CommunicationTypeRequest;
-use App\Models\Communication;
-use App\Models\CommunicationType;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -94,6 +90,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);
         Route::get('/data-receive-task',[ResponsbilityController::class,'receive']);
         Route::get('/profil1',[ProfileController::class,'view1']);
+
+        //Notification
+        Route::get('/data-notification',[NotificationController::class,'data']);
 
     });
     Route::get('logout', [AuthController::class, 'logout']);
