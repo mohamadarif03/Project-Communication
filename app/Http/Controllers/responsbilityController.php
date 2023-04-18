@@ -49,7 +49,7 @@ class ResponsbilityController extends Controller
         foreach($user as $item){
             ToNotification::create([
                 'user_id' => $item,
-                'responsbility_id' => $data->id
+                'notification_id' => $data->id
             ]);
         }
         return response()->json(['message' => 'Success Create New Type!']);

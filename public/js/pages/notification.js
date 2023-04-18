@@ -13,7 +13,7 @@ function notification(){
                 }else if(data.responsbility_id != null){
                     type = data.responsbility.rule.communication_type.type
                 }
-                var row = '<a href="#">'+
+                var row = '<a onclick="readNotification('+data.id+')">'+
                             '<div class="inbox-item">'+
                                 '<div class="inbox-item-img"><img '+src+' class="rounded-lg" alt=""></div>'+
                                 '<p class="inbox-item-author">'+type+'</p>'+
@@ -26,6 +26,23 @@ function notification(){
         },
         error:function(response){
 
+        }
+    })
+}
+
+function readNotification(id){
+    $.ajax({
+        type:'DELETE',
+        url:'/read-notification/'+id,
+        success:function(response){
+            if(response == 'communication'){
+                window.location.href = '../communication'
+            }else if(response == 'responsbility'){
+                window.location.href = '../responsbility'
+            }
+        },
+        error:function(response){
+            console.log(response)
         }
     })
 }

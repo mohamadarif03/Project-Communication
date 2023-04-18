@@ -563,6 +563,7 @@ body.enlarged {
   display: none;
 }
 .noti-scroll {
+  min-height:50px;
   max-height: 230px;
 }
 .notification-list {

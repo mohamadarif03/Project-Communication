@@ -93,6 +93,7 @@ Route::middleware('auth')->group(function () {
 
         //Notification
         Route::get('/data-notification',[NotificationController::class,'data']);
+        Route::delete('/read-notification/{id}',[NotificationController::class,'delete']);
 
     });
     Route::get('logout', [AuthController::class, 'logout']);

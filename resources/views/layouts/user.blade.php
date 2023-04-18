@@ -41,43 +41,8 @@
                             <div class="slimscroll noti-scroll">
 
                                 <div class="inbox-widget" id="notification">
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Chadengle</p>
-                                            <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Tomaslau</p>
-                                            <p class="inbox-item-text text-truncate">I've finished it! See you so...</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Stillnotdavid</p>
-                                            <p class="inbox-item-text text-truncate">This theme is awesome!</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Kurafire</p>
-                                            <p class="inbox-item-text text-truncate">Nice to meet you</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Shahedk</p>
-                                            <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
-
-                                        </div>
-                                    </a>
-                                </div> <!-- end inbox-widget -->
+                                </div> 
+                                <!-- end inbox-widget -->
 
                             </div>
                             <!-- All-->
