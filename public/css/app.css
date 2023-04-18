@@ -1070,6 +1070,9 @@ video {
 .w-\[2px\] {
   width: 2px;
 }
+.w-\[30\%\] {
+  width: 30%;
+}
 .w-\[304px\] {
   width: 304px;
 }
