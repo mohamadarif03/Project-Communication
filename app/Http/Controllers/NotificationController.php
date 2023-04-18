@@ -17,7 +17,8 @@ class NotificationController extends Controller
             ],
             'communication' => [
                 'communicationType'
-            ]
+            ],
+            'ToNotification'
             ])->join('to_notifications','to_notifications.notification_id','=','notifications.id')
               ->where('to_notifications.user_id',Auth()->user()->id)
               ->select('notifications.*')

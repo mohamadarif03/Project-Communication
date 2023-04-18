@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notification;
 use App\Models\Responbility;
 use Illuminate\Http\Request;
 use App\Models\Rule;
@@ -46,10 +47,14 @@ class ResponsbilityController extends Controller
                       ->whereIn('users.id',$to)
                       ->pluck('users.id')
                       ->toarray();
+        $notif = Notification::create([
+            'responsbility_id'=> $data->id,
+            'user_id' => Auth()->user()->id
+        ]);
         foreach($user as $item){
             ToNotification::create([
                 'user_id' => $item,
-                'notification_id' => $data->id
+                'notification_id' => $notif->id
             ]);
         }
         return response()->json(['message' => 'Success Create New Type!']);
