@@ -28,7 +28,7 @@ class ResponsbilityController extends Controller
 
     public function insert(Request $request)
     {
-        $upload = '';
+        $upload = null;
         if($request->file('file')){
             $upload = Storage::disk('public')->put('file',  $request ->file('file'));
         }

@@ -8,6 +8,7 @@ use App\Models\CommunicationType;
 use App\Models\ToCommucationType;
 use App\Models\ToCommunication;
 use App\Models\Notification;
+use App\Models\Responbility;
 use App\Models\ToNotification;
 use Illuminate\Console\View\Components\Task;
 use Illuminate\Http\Request;
@@ -131,6 +132,14 @@ class CommunicationController extends Controller
     public function check($id)
     {
         $data = Communication::findorfail($id);
+        $data->update([
+            'status' => 1,
+        ]);
+        return response()->json($data);
+    }
+    public function done($id)
+    {
+        $data = Responbility::findorfail($id);
         $data->update([
             'status' => 1,
         ]);

@@ -111,4 +111,5 @@ Route::middleware('auth')->group(function () {
     
 });
 Route::put('/check/{id}',[CommunicationController::class,'check'])->name('check');
+Route::put('/done/{id}',[CommunicationController::class,'done'])->name('done');
 
