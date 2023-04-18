@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Responbility;
 use Illuminate\Http\Request;
 use App\Models\Rule;
+use App\Models\ToNotification;
+use App\Models\ToRule;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -37,7 +40,18 @@ class ResponsbilityController extends Controller
             'link' => $request ->link,
             'file' => $upload,
         ]);
-       
+
+        $to = ToRule::where('rule_id',$request->type)->pluck('role_id')->toarray();
+        $user = User::join('user_roles','user_roles.user_id','=','users.id')
+                      ->whereIn('users.id',$to)
+                      ->pluck('users.id')
+                      ->toarray();
+        foreach($user as $item){
+            ToNotification::create([
+                'user_id' => $item,
+                'responsbility_id' => $data->id
+            ]);
+        }
         return response()->json(['message' => 'Success Create New Type!']);
     }
 
