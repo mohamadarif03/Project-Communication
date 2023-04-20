@@ -34,7 +34,7 @@ GetDataComplete()
         success:function(response){
                 $.each(response,function(index,data){
                   console.log(index)
-                  var row = '<div class="block bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] rounded-lg p-3">'+
+                  var row = '<div class="block bg-white mb-2 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] rounded-lg p-3">'+
                   '<div class="h-2 p-2 items-center w-full flex justify-between ">'+
                       '<a href="" onclick="checkget('+data.id+')" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
                           '<input type="checkbox" style="cursor: pointer;">'+
@@ -55,7 +55,7 @@ GetDataComplete()
                       '<i class="mdi mdi-account"></i>'+
                       '<p class=" ml-1.5 my-auto text-xs">'+data.user.name+'</p>'+
                       '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
-                          '<a href="" id="btn-show1-'+data.id+'" data-message="'+data.message+'" data-detail="'+data.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show1">'+
+                          '<a href="" data-te-toggle="modal" data-te-target="#show1">'+
                               'Show >'+
                           '</a>'+
                       '</div>'+
@@ -77,7 +77,7 @@ GetDataComplete()
         success:function(response){
                 $.each(response,function(index,data){
                   console.log(index)
-                  var row = '<div class="block bg-green-200 rounded-lg p-3" style="border: 2px solid green">'+
+                  var row = '<div class="block bg-green-200 rounded-lg p-3 mb-2" style="border: 2px solid green">'+
                   '<div class="h-2 p-2 items-center w-full flex justify-between ">'+
                       '<a href="" onclick="checkget('+data.id+')" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
                           '<input type="checkbox" checked disabled style="cursor: pointer;">'+
@@ -111,4 +111,12 @@ GetDataComplete()
             console.log(response)
         }
     })
+}
+function show1(id){
+    var message = $('#btn-show1-'+id).data('message')
+    var detail = $('#btn-show1-'+id).data('detail')
+    $('#show-message1').text(message)
+    $('#show-detail1').text(detail)
+    $('#show-id1').val(id)
+    // $('#btn-show-modal1').click()
 }

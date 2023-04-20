@@ -83,7 +83,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/data-sent-communication',[CommunicationController::class,'sent']);
         Route::get('/data-receive-communication',[CommunicationController::class,'receive']);
         Route::get('/data-receive-communication-dashboard-uncomplete',[CommunicationController::class,'receiveUncomplete']);
-        Route::get('/data-receive-communication-dashboard-complete',[CommunicationController::class,'receiveUncomplete']);
+        Route::get('/data-receive-communication-dashboard-complete',[CommunicationController::class,'receiveComplete']);
 
         //Responbilities
         Route::get('/responsbility',[responsbilityController::class,'view']);

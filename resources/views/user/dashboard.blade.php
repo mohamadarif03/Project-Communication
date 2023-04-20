@@ -75,6 +75,49 @@
         </div>
     </div> <!-- end container-fluid -->
 
+    {{-- Modal Konfirmasi Check --}}
+    <div data-te-modal-init
+        class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true"
+        role="dialog">
+        <div data-te-modal-dialog-ref
+            class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
+            <div
+                class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
+                <div
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                    <!--Modal title-->
+                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
+                        Confirmation
+                    </h5>
+
+                </div>
+
+                <!--Modal body-->
+                <div class="relative p-4">
+                    <input type="hidden" class="hidden w-0 h-0" value="" id="check-id">
+                    <p>are you sure that you have done ?</p>
+                </div>
+
+                <!--Modal footer-->
+                <div
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                    <button type="button" id="btn-close"
+                        class="inline-block rounded bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
+                        style="border: 2px solid black">
+                        Close
+                    </button>
+                    <button type="button" onclick="check()"
+                        class="ml-1 inline-block rounded bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white"
+                        data-te-ripple-init data-te-ripple-color="light">
+                        i'm sure
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div data-te-modal-init
     class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
     id="show1" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
@@ -130,6 +173,8 @@
 </div>
 
 </div>
+
+
 <script src="{{ $CommunicationChart->cdn() }}"></script>
 
 {{ $CommunicationChart->script() }}

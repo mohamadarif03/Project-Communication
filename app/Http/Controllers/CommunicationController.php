@@ -139,7 +139,7 @@ class CommunicationController extends Controller
             $data = Communication::with(['CommunicationType','user'])
                             ->join('to_communications','to_communications.communication_id','=','communications.id')
                             ->where('to_communications.user_id',Auth()->user()->id)
-                            ->where('status', 0)
+                            ->where('status', 1)
                             ->select('communications.*')
                             ->limit(3)
                             ->get();
