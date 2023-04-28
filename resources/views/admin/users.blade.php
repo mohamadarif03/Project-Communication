@@ -84,9 +84,6 @@
                                 <input type="text" id="name" name="name"
                                     class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     style="border-radius: 3px" placeholder="Name" required>
-                                <input type="hidden" id="profile" name="profile"
-                                    class="bg-gray-50 border border-gray-500 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    style="border-radius: 3px" value="default.png">
                             </div>
                             <div class="mb-1.5 flex items-center gap-3">
                                 <label for="email"

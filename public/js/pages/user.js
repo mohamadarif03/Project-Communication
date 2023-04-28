@@ -37,7 +37,7 @@ function GetData(page){
             if(response.data.data.length > 0){
                
                 $.each(response.data.data,function(index,data){
-                    var src = 'src="../profile/'+data.profile+'"'
+                    var src = 'src="../storage/'+data.profile+'"'
                     var role = ''
                     $.each(data.userrole,function(index,item){
                         role += '<div class="rounded-md inline-block m-1 px-1 py-0 mt-1" style="background-color: #D9D9D9;">'+item.role.name+'</div>'
@@ -123,7 +123,6 @@ function create(){
     var password = $('#password').val()
     var role = $('#role').val()
     var password_confirmation = $('#password_confirmation').val()
-    var profile = $('#profile').val()
     $.ajax({
         type:'POST',
         url:'/store-user',
@@ -134,7 +133,6 @@ function create(){
             password:password,
             role:role,
             password_confirmation:password_confirmation,
-            profile:profile
         },
         success:function(response){
             Swal.fire({

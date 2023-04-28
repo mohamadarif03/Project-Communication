@@ -54,7 +54,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'profile' => $request->profile,
+            'profile' => '/profile/default.png',
         ]);
 
         foreach($request->role as $item){
