@@ -1,11 +1,7 @@
 // new TomSelect('#type')
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-GetType()
-GetDataReceive(1)
-GetDataSent(1)
-$(document).ready(function() {
-    // dapatkan elemen select year
+function getyear(){
     var yearSelect = $('#year');
 
     // ambil tahun saat ini
@@ -18,10 +14,8 @@ $(document).ready(function() {
 
     // set nilai default menjadi tahun saat ini
     yearSelect.val(currentYear);
-});
-
-$(document).ready(function() {
-    // dapatkan elemen select month
+}
+function getmonth(){
     var monthSelect = $('#month');
   
     // ambil bulan saat ini
@@ -29,8 +23,13 @@ $(document).ready(function() {
   
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());
-  });
-  
+}
+getmonth()
+getyear()
+GetType()
+GetDataReceive(1)
+GetDataSent(1)
+
 
 $('#btn-next-create-step-2').click(function(){
     $('#btn-close-modal-create-step-1').click()
@@ -59,8 +58,11 @@ function GetType(){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
                 $('#type').append(row)
+                $('#comtype').append(row)
+
             })
             type =  new TomSelect('#type')
+            // type =  new TomSelect('#comtype')
             
         },
         error:function(response){
@@ -114,9 +116,17 @@ $('#type').change(function(){
 })
 
 function GetDataReceive(page){
+    var year = $('#year').val()
+    var month = $('#month').val()
+    var type = $('#comtype').val()
     $.ajax({
         type:'GET',
         url:'/data-receive-task?page='+page,
+        data:{
+            year:year,
+            month:month,
+            type:type
+        },
         success:function(response){
             $('#Receive').html('')
             console.log(1)
@@ -194,9 +204,17 @@ function formatDate(dateString) {
     return date.toLocaleDateString('en-US', options);
 }
 function GetDataSent(page){
+    var year = $('#year').val()
+    var month = $('#month').val()
+    var type = $('#comtype').val()
     $.ajax({
         type:'GET',
         url:'/data-sent-task?page='+page,
+        data:{
+            year:year,
+            month:month,
+            type:type
+        },
         success:function(response){
             $('#Sent').html('')
             if(response.data.data.length > 0){
@@ -369,3 +387,8 @@ function check() {
     }
     });
   }
+
+  function search(){
+    GetDataReceive(1)
+    GetDataSent(1)
+}
