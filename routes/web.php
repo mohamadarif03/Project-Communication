@@ -78,7 +78,8 @@ Route::middleware('auth')->group(function () {
 
         //Communication
         Route::get('/data-communication-type-standart',[CommunicationTypeController::class,'dataStandart']);
-        Route::get('/communication',[CommunicationController::class,'communication']);
+        Route::get('/communication-send',[CommunicationController::class,'communicationSend']);
+        Route::get('/communication-receive',[CommunicationController::class,'communicationReceive']);
         Route::post('/store-communication',[CommunicationController::class,'insert']);
         Route::get('/data-sent-communication',[CommunicationController::class,'sent']);
         Route::get('/data-receive-communication',[CommunicationController::class,'receive']);
@@ -86,7 +87,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/data-receive-communication-dashboard-complete',[CommunicationController::class,'receiveComplete']);
 
         //Responbilities
-        Route::get('/responsbility',[responsbilityController::class,'view']);
+        Route::get('/responsbility-send',[responsbilityController::class,'view']);
+        Route::get('/responsbility-receive',[responsbilityController::class,'viewReceive']);
         Route::post('/store-responsbility',[responsbilityController::class,'insert']);
         Route::get('/data-task-type',[ResponsbilityController::class,'task_type']);
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);

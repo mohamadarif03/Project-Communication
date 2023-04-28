@@ -17,8 +17,11 @@ class CommunicationController extends Controller
 {
    
 
-    public function communication(){
-        return view('user.communications');
+    public function communicationSend(){
+        return view('user.communicationsSend');
+    }
+    public function communicationReceive(){
+        return view('user.communicationsReceive');
     }
 
     public function insert(CommunicationRequest $request){

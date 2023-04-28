@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Storage;
 class ResponsbilityController extends Controller
 {
     public function view(){
-        return view('user.responsbility');
+        return view('user.responsbilitySend');
+    }
+    public function viewReceive(){
+        return view('user.responsbilityReceive');
     }
 
     public function task_type(){
