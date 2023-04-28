@@ -69,9 +69,8 @@ class ResponsbilityController extends Controller
             'rule' => [
                 'communicationType'
             ]
-            ])
-                             ->where('user_id',Auth()->user()->id)
-                             ->paginate(6);
+            ])->where('user_id',Auth()->user()->id)
+              ->paginate(6);
 
         $links = $data->links('layouts.paginate');
         return response()->json([
@@ -94,12 +93,11 @@ class ResponsbilityController extends Controller
             'rule' => [
                 'CommunicationType'
             ]
-            ])
-                              ->join('rules','rules.id','=','responsbilities.rule_id')
-                              ->join('to_rules','to_rules.rule_id','=','rules.id')
-                              ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
-                              ->select('responsbilities.*')
-                              ->paginate(6);
+            ])->join('rules','rules.id','=','responsbilities.rule_id')
+              ->join('to_rules','to_rules.rule_id','=','rules.id')
+              ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
+              ->select('responsbilities.*')
+              ->paginate(6);
         $links = $data->links('layouts.paginate');
         return response()->json([
             'data' => $data,
