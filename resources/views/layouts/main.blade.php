@@ -28,65 +28,6 @@
             <!-- Topbar Start -->
             <div class="navbar-custom">
                 <ul class="list-unstyled flex items-center topnav-menu float-right mb-0">
-                    <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="mdi mdi-bell-outline noti-icon"></i>
-                            <span class="noti-icon-badge"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-                            <!-- item-->
-                           
-
-                            <div class="slimscroll noti-scroll">
-
-                                <div class="inbox-widget">
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Chadengle</p>
-                                            <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Tomaslau</p>
-                                            <p class="inbox-item-text text-truncate">I've finished it! See you so...</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Stillnotdavid</p>
-                                            <p class="inbox-item-text text-truncate">This theme is awesome!</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Kurafire</p>
-                                            <p class="inbox-item-text text-truncate">Nice to meet you</p>
-                                        </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="inbox-item">
-                                            <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg" class="rounded-lg" alt=""></div>
-                                            <p class="inbox-item-author">Shahedk</p>
-                                            <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
-
-                                        </div>
-                                    </a>
-                                </div> <!-- end inbox-widget -->
-
-                            </div>
-                            <!-- All-->
-                            <div class="dropdown-item text-primary notify-item notify-all" style="text-align: center">
-                                Read all
-                                <i class="fi-arrow-right"></i>
-                            </div>
-                        </div>
-                    </li>
-
                     <li class="dropdown notification-list flex">
                         <a class="nav-link dropdown-toggle nav-user mr-0 items-center  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             @if (Auth::user()->profile == 'default.png')
