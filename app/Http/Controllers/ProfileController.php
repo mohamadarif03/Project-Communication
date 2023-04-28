@@ -25,7 +25,7 @@ class ProfileController extends Controller
         if($request->hasFile('profile')) {
             $foto = $data->profile;
             Storage::delete('public/'.$foto);
-            $foto = Storage::disk('public')->put('fotouser',$request->file('profile'));
+            $foto = Storage::disk('public')->put('profile',$request->file('profile'));
             $data->profile = $foto;
         }
         
