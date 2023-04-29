@@ -53,7 +53,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
             'role' => 1,
-            'profile' => 'profile/default.png',
         ]);
         DB::table('user_roles')->insert([
             'user_id' => '1',

@@ -55,8 +55,8 @@
 
                     <li class="dropdown notification-list flex">
                         <a class="nav-link dropdown-toggle nav-user mr-0 items-center  waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            @if (Auth::user()->profile == 'default.png')
-                            <img src="{{asset('profile/default.png')}}" class="rounded-full" alt="" srcset="">
+                            @if (Auth::user()->profile == 'default.jpg')
+                            <img src="{{asset('profile/default.jpg')}}" class="rounded-full" alt="" srcset="">
                             @else
                             <img src="{{ asset('storage/' . Auth::user()->profile) }}" class="rounded-full" alt="" srcset="">
                             @endif

@@ -37,7 +37,11 @@ function GetData(page){
             if(response.data.data.length > 0){
                
                 $.each(response.data.data,function(index,data){
-                    var src = 'src="../storage/'+data.profile+'"'
+                    if(data.profile == 'default.jpg'){
+                        var src = 'src="../default.jpg"'
+                    }else{                 
+                        var src = 'src="../storage/'+data.profile+'"'
+                    }
                     var role = ''
                     $.each(data.userrole,function(index,item){
                         role += '<div class="rounded-md inline-block m-1 px-1 py-0 mt-1" style="background-color: #D9D9D9;">'+item.role.name+'</div>'
