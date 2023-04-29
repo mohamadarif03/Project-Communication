@@ -63,13 +63,15 @@ class ResponsbilityController extends Controller
         return response()->json(['message' => 'Success Create New Type!']);
     }
 
-    public function sent(){
+    public function sent(Request $request){
         $data = Responbility::with([
             'user',
             'rule' => [
                 'communicationType'
             ]
             ])->where('user_id',Auth()->user()->id)
+            ->whereYear('date',$request->year)
+            ->whereMonth('date',$request->month)
               ->paginate(6);
 
         $links = $data->links('layouts.paginate');
@@ -87,13 +89,16 @@ class ResponsbilityController extends Controller
         ]);
     }
 
-    public function receive(){
+    public function receive(Request $request){
         $data = Responbility::with([
             'user',
             'rule' => [
                 'CommunicationType'
             ]
-            ])->join('rules','rules.id','=','responsbilities.rule_id')
+            ])
+            ->whereYear('date',$request->year)
+            ->whereMonth('date',$request->month)
+            ->join('rules','rules.id','=','responsbilities.rule_id')
               ->join('to_rules','to_rules.rule_id','=','rules.id')
               ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
               ->select('responsbilities.*')
