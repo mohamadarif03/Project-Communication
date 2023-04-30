@@ -91,6 +91,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/responsbility-receive',[responsbilityController::class,'viewReceive']);
         Route::post('/store-responsbility',[responsbilityController::class,'insert']);
         Route::get('/data-task-type',[ResponsbilityController::class,'task_type']);
+        Route::get('/data-task-type-filter',[ResponsbilityController::class,'task_type_filter']);
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);
         Route::get('/data-receive-task',[ResponsbilityController::class,'receive']);
         Route::get('/profil1',[ProfileController::class,'view1']);

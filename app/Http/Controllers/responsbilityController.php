@@ -29,6 +29,13 @@ class ResponsbilityController extends Controller
                     ->get();
         return response()->json($data);
     }
+    public function task_type_filter(){
+        $data = Rule::with('fromrule','torule','communicationtype')
+                    ->join('from_rules','from_rules.rule_id','=','rules.id')
+                    ->select('rules.*')
+                    ->get();
+        return response()->json($data);
+    }
 
     public function insert(Request $request)
     {

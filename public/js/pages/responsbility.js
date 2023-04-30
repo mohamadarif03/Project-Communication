@@ -27,6 +27,7 @@ function getmonth(){
 getmonth()
 getyear()
 GetType()
+GetTypeFilter()
 GetDataReceive(1)
 GetDataSent(1)
 
@@ -58,11 +59,27 @@ function GetType(){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
                 $('#type').append(row)
-                $('#comtype').append(row)
 
             })
             type =  new TomSelect('#type')
-            // type =  new TomSelect('#comtype')
+            
+        },
+        error:function(response){
+            console.log(response)
+        }
+    })
+}
+function GetTypeFilter(){
+    $.ajax({
+        type:'GET',
+        url:'/data-task-type-filter',
+        success:function(response){
+            console.log(response)
+            $.each(response,function(index,data){
+                var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
+                $('#comtype').append(row)
+
+            })
             
         },
         error:function(response){
