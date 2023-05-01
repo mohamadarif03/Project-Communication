@@ -109,6 +109,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/data-user-value',[UserController::class,'dataUser']);
     //Profil
     Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
+    Route::put('/resetPassword/{id}',[ProfileController::class,'reset']);
     Route::get('/project',[projectController::class,'view']);
 
     Route::get('/data-respons',[CommunicationController::class,'data']);

@@ -60,6 +60,9 @@
                 </div>
               </form>
                 
+              <form method="post" action="/resetPassword/{{ Auth()->user()->id }}" enctype="multipart/form-data">
+                @method('put')
+                @csrf
                 <div class="rounded-md bg-white mt-6 h-[220px] w-full">
                     <div class="flex items-center border-solid border-b-2 border-gray-200">
                         <h1 class="font-bold text-xl ml-3">Reset Password</h1>
@@ -84,6 +87,7 @@
                             Update</button>
                     </div>
                 </div>
+              </form>
             </div>
         </div>
     </div>
