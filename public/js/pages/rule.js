@@ -77,7 +77,6 @@ function GetData(page){
         },
         success:function(response){
             $('#Data').html('')
-            console.log(response)
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
                     var row = '<div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">'+
@@ -87,7 +86,7 @@ function GetData(page){
                                 '</button>'+
                                 '<ul id="dropdownlist-'+index+'" class="absolute dropdown-edit hidden z-[1000] float-left right-9 top-3 border-2 m-0 min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg" >'+
                                     '<li>'+
-                                            '<button id="btn-edit-'+data.id+'" data-type="'+data.communication_type_id+'" data-how="'+data.how+'" data-to="'+data.to+'" onclick="edit('+data.id+')" class="btn-edit flex items-center">'+
+                                            '<button id="btn-edit-'+data.id+'" data-type="'+data.communication_type_id+'" data-how="'+data.how+'" data-to="'+data.to+'" data-from="'+data.from+'" onclick="edit('+data.id+')" class="btn-edit flex items-center">'+
                                                 '<svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'+
                                                     '<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>'+
                                                 '</svg>'+
@@ -231,10 +230,21 @@ function edit(id){
     var type = $('#btn-edit-'+id).data('type')
     var how = $('#btn-edit-'+id).data('how')
     var to = $('#btn-edit-'+id).data('to')
-    if (to.length > 1){
+    var from = $('#btn-edit-'+id).data('from')
+    to = to.toString()
+    from = from.toString()
+    if(to.includes(',')){
         var to_arr = to.split(',')
     }else{
-        var to_arr =  to
+        var to_arr = []
+        to_arr[1] = to
+    }
+
+    if(from.includes(',')){    
+        var from_arr = from.split(',')
+    }else{
+        var from_arr = []
+        from_arr[1] = from
     }
     
     update_type.destroy()
@@ -255,20 +265,31 @@ function edit(id){
         url:'/data-role',
         success:function(response){
             $.each(response,function(index,data){
-                var selected = ''
+                var selectedto = ''
                 if(Array.isArray(to_arr)){
                     if(to_arr.includes(String(data.id))){
-                        selected = 'selected'
+                        selectedto = 'selected'
                     }
                 }else{
                     if(to_arr == String(data.id)){
-                        selected = 'selected'
+                        selectedto = 'selected'
+                    }
+                }
+                var selectedfrom = ''
+                if(Array.isArray(from_arr)){
+                    if(from_arr.includes(String(data.id))){
+                        selectedfrom = 'selected'
+                    }
+                }else{
+                    if(from_arr == String(data.id)){
+                        selectedfrom = 'selected'
                     }
                 }
                 
-                var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
-                $('#update-to').append(row)
-                $('#update-from').append(row)
+                var rowto = '<option '+ selectedto +' value="'+data.id+'">'+data.name+'<option>'
+                var rowfrom = '<option '+ selectedfrom +' value="'+data.id+'">'+data.name+'<option>'
+                $('#update-to').append(rowto)
+                $('#update-from').append(rowfrom)
             })   
             new TomSelect('#update-to',{
                 plugins: ['remove_button'],
