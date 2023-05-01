@@ -11,7 +11,7 @@ class NotificationController extends Controller
     public function data(){
         $data = ToNotification::with([
             'notification' => [
-                'responbility' => [
+                'responsbility' => [
                     'rule' => [
                         'communicationType'
                     ]
