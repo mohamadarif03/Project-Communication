@@ -184,7 +184,7 @@ function GetDataReceive(page){
                                     '<i class="mdi mdi-account"></i>'+
                                     '<p class=" ml-1.5 my-auto text-xs">'+data.user.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs font-semibold">'+
-                                    '<a href="" onclick="show1('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-how="'+data.rule.how+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show1">'+
+                                    '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-how="'+data.rule.how+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
                                     'Show >'+
                                 '</a>'+
                                     '</div>'+
@@ -236,9 +236,23 @@ function GetDataSent(page){
             $('#Sent').html('')
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
-                    var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
-                                '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
-                                    '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
+                    var border = 'style="border: 2px solid green"'
+                    var bg = 'bg-green-200'
+                    var check = 'checked'
+                    var bgdate = 'style="background-color: green; color: white;"'
+                    var show = 'text-black'
+                    var disabled = 'disabled'
+                    if (data.status == 0) {
+                        border = ''
+                        bg = 'bg-white'
+                        check = ''
+                        bgdate = 'style="background-color: #E0E0E0; color: black;"'
+                        show = 'text-yellow-400'
+                        disabled = ''
+                    }
+                    var row = '<div class="block '+bg+' rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"'+border+'>'+
+                                '<div class="h-8 p-2 items-center w-full flex justify-between">'+
+                                    '<p class="rounded-md text-xs py-0.5 px-2" '+bgdate+'>'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
                                     '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.rule.communication_type.color+'">'+
@@ -286,34 +300,23 @@ function show(id){
     var detail = $('#btn-show-'+id).data('detail');
     console.log(file)
     if (link == null) {
-        $('#show-link').toggleClass('hidden');
-    }
-    if (file == null) {
-        $('#show-file').toggleClass('hidden');
-    }
+        $('#show-link').addClass('hidden');
+      } else {
+        $('#show-link').removeClass('hidden');
+      }
+    
+      if (file == null) {
+        $('#show-file').addClass('hidden');
+      } else {
+        $('#show-file').removeClass('hidden');
+      }
     $('#show-how').text(how)
     $('#show-link').attr('href', link)
     $('#show-file').attr('href', '../storage/' + file);
     $('#show-detail').text(detail)
     $('#show-id').val(id)
 }
-function show1(id){
-    var link = $('#btn-show-'+id).data('link')
-    var how = $('#btn-show-'+id).data('how')
-    var file = $('#btn-show-'+id).data('file')
-    var detail = $('#btn-show-'+id).data('detail')
-    if (link == null) {
-        $('#show-link1').toggleClass('hidden');
-    }
-    if (file == null) {
-        $('#show-file1').toggleClass('hidden');
-    }
-    $('#show-how1').text(how)
-    $('#show-link1').attr('href', link)
-    $('#show-file1').attr('href', '../storage/' + file);
-    $('#show-detail1').text(detail)
-    $('#show-id').val(id)
-}
+
 
 function create(){
     var type = $('#type').val()
