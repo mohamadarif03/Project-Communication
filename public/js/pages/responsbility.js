@@ -7,6 +7,10 @@ function getyear(){
     // ambil tahun saat ini
     var currentYear = new Date().getFullYear();
 
+    var allYearsOption = document.createElement("option");
+    allYearsOption.text = "All Years";
+    allYearsOption.value = "0";
+
     // buat opsi tahun dari 5 tahun ke belakang hingga 5 tahun ke depan
     for (var i = currentYear - 5; i <= currentYear + 5; i++) {
         yearSelect.append($('<option></option>').val(i).html(i));
@@ -19,7 +23,7 @@ function getmonth(){
     var monthSelect = $('#month');
   
     // ambil bulan saat ini
-    var currentMonth = new Date().getMonth();
+    var currentMonth = new Date().getMonth() + 1;
   
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());

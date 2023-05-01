@@ -8,7 +8,12 @@ function notification(){
             console.log(response)
             if(response.length > 0){
                 $.each(response,function(index,data){
-                    var src = 'src="../profile/'+data.notification.user.profile+'"'
+                    if (data.notification.user.profile == 'default.jpg') {
+                        var src = 'src="../default.jpg"'
+                    }
+                    else{
+                        var src = 'src="../storage/'+data.notification.user.profile+'"'
+                    }
                     var type = ''
                     if(data.notification.communication_id != null){
                         type = data.notification.communication.communication_type.type
@@ -17,9 +22,9 @@ function notification(){
                     }
                     var row = '<a onclick="readNotification('+data.id+')">'+
                                 '<div class="inbox-item">'+
-                                    '<div class="inbox-item-img"><img '+src+' class="rounded-lg" alt=""></div>'+
-                                    '<p class="inbox-item-author">'+type+'</p>'+
-                                    '<p class="inbox-item-text text-truncate">'+data.notification.user.name+'</p>'+
+                                    '<div class="inbox-item-img"><img '+src+' class="rounded-full" style="width:40px; height:40px;" alt=""></div>'+
+                                    '<p class="inbox-item-author">'+data.notification.user.name+'</p>'+
+                                    '<p class="inbox-item-text text-truncate">'+type+'</p>'+
                                 '</div>'+
                             '</a>'
                     $('#notification').append(row)

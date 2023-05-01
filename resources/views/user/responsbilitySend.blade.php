@@ -20,10 +20,12 @@
             <div class="grid grid-cols-4 gap-2">
                 <div class="relative mr-2">
                     <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                        <option value="0">All Years</option>
                     </select>
                 </div>
                 <div class="relative mr-2">
                     <select id="month" name="month" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                        <option value="0">All Month</option>
                         <option value="1">January</option>
                         <option value="2">February</option>
                         <option value="3">March</option>
