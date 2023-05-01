@@ -37,8 +37,7 @@ class ResponsbilityController extends Controller
         return response()->json($data);
     }
 
-    public function insert(Request $request)
-    {
+    public function insert(Request $request){
         $upload = null;
         if($request->file('file')){
             $upload = Storage::disk('public')->put('file',  $request ->file('file'));
