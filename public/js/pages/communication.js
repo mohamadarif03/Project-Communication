@@ -58,9 +58,6 @@ function GetDataReceive(page){
                     }
                     var row = '<div class="block '+bg+' rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"'+border+'>'+
                                 '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
-                                    '<a href="" onclick="checkget('+data.id+')" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
-                                        '<input type="checkbox" '+check+' '+disabled+' style="cursor: pointer;">'+
-                                    '</a>'+
                                     '<p class="rounded-md text-xs py-0.5 px-2" '+bgdate+'>'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+

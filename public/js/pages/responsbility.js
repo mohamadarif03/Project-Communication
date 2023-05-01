@@ -291,7 +291,6 @@ function show(id){
     if (file == null) {
         $('#show-file').toggleClass('hidden');
     }
-
     $('#show-how').text(how)
     $('#show-link').attr('href', link)
     $('#show-file').attr('href', '../storage/' + file);

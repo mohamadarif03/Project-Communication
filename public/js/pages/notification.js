@@ -49,7 +49,7 @@ function readNotification(id){
             if(response == 'communication'){
                 window.location.href = '../communication'
             }else if(response == 'responsbility'){
-                window.location.href = '../responsbility'
+                window.location.href = '../communication-receive'
             }
         },
         error:function(response){
