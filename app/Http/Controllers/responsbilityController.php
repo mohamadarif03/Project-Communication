@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ResponsbilityRequest;
 use App\Models\Notification;
 use App\Models\Responbility;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class ResponsbilityController extends Controller
         return response()->json($data);
     }
 
-    public function insert(Request $request){
+    public function insert(ResponsbilityRequest $request){
         $upload = null;
         if($request->file('file')){
             $upload = Storage::disk('public')->put('file',  $request ->file('file'));

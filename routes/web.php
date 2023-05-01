@@ -111,6 +111,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
     Route::put('/resetPassword/{id}',[ProfileController::class,'reset']);
     Route::get('/project',[projectController::class,'view']);
+    Route::get('/project1',[projectController::class,'view1']);
 
     Route::get('/data-respons',[CommunicationController::class,'data']);
 
