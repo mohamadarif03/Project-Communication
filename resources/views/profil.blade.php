@@ -7,8 +7,8 @@
                 <div class="h-full">
                     <div class="mt-[20%]">
                         <div class="flex justify-center">
-                            @if (Auth::user()->profile == 'default.png')
-                            <img src="{{asset('profile/default.png')}}" class="rounded-full w-20 h-20" alt="" srcset="">
+                            @if (Auth::user()->profile == 'default.jpg')
+                            <img src="{{asset('default.jpg')}}" class="rounded-full w-20 h-20" alt="" srcset="">
                             @else
                             <img src="{{ asset('storage/' . Auth::user()->profile) }}" class="rounded-full w-20 h-20" alt="" srcset="">
                             @endif
