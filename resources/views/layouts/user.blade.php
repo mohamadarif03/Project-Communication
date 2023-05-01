@@ -202,6 +202,7 @@
             <!-- ============================================================== -->
 
         </div>
+        @include('sweetalert::alert')
         <!-- END wrapper -->
         <!-- Jquery -->
         <script src="{{asset('plugin/jquery/dist/jquery.min.js')}}"></script>

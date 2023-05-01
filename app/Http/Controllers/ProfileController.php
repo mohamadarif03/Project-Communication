@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\profilRequest;
+use App\Models\Rule;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+
 
 class ProfileController extends Controller
 {
@@ -21,6 +23,8 @@ class ProfileController extends Controller
     }
     public function update(ProfilRequest $request, $id)
     {
+        
+
         $data = User::find($id);
         if($request->hasFile('profile')) {
             $foto = $data->profile;
@@ -33,7 +37,8 @@ class ProfileController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ])->save();
-        return redirect()->back();
+      
+        return redirect()->back()->withSuccess('Profile Has Been Update');
     }
     
 }
