@@ -26,7 +26,7 @@ class ResponsbilityRequest extends FormRequest
         return [
             'type' => 'required',
             'date' => 'required',
-            'link' => 'nullable|required_with:file|url',
+            'link' => 'nullable|required_with:file',
             'file' => 'nullable|required_with:link'
         ];
         
