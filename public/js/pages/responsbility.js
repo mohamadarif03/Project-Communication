@@ -62,7 +62,7 @@ function GetTypeReceive(){
         url:'/data-task-type-filter',
         success:function(response){
             $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'"">'+data.communicationtype.type+'</option>'
+                var row = '<option value="'+data.id+'">'+data.communicationtype.type+'</option>'
                 $('#comtype').append(row)
 
             })
@@ -79,7 +79,7 @@ function GetType(){
         url:'/data-task-type',
         success:function(response){
             $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'">'+data.communicationtype.type+'</option>'
+                var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
                 $('#type').append(row)
                 if(check == 'sent'){
                     $('#comtype').append(row)
@@ -100,10 +100,12 @@ $('#type').change(function(){
     to_create.destroy()
     var id = $(this).val()
     var to = $('#type-select-'+id).data('to')
-    if (to.length > 1){
+    to = to.toString()
+    if (to.includes(',')){
         var to_arr = to.split(',')
     }else{
-        var to_arr =  to
+        var to_arr =  []
+        to_arr[0] = to
     }
     $.ajax({
         type:'GET',
@@ -111,8 +113,6 @@ $('#type').change(function(){
         success:function(response){
             $.each(response,function(index,data){
                 var selected = ''
-                console.log(to_arr)
-                console.log(data.id)
                 if(Array.isArray(to_arr)){
                     if(to_arr.includes(String(data.id))){
                         selected = 'selected'
