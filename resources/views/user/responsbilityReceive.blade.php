@@ -17,7 +17,7 @@
                 </button>
 
             </div>
-            <div class="grid grid-cols-4 gap-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
                 <div class="relative mr-2">
                     <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                     </select>
@@ -58,7 +58,7 @@
     <div class="flex flex-col w-full items-center justify-center">
         <h3 class="text-lg mx-auto font-semibold">Receive</h3>
     </div>
-    <div class="grid grid-cols-3 gap-4" style="margin-top: 10px" id="Receive">
+    <div class="grid grid-cols-1 md:grid-cols-2 ld:grid-cols-3 gap-4" style="margin-top: 10px" id="Receive">
         <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
         <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
         <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
@@ -74,8 +74,8 @@
         id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
-            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
-                style="width: 60%">
+            <div class="pointer-events-auto w-full md:w-[60%] relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
@@ -95,7 +95,7 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
                             <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
                                 <li class="mb-10 ml-6">
@@ -172,8 +172,8 @@
         id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
-            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
-                style="width: 60%">
+            <div class="pointer-events-auto w-full md:w-[60%] relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
@@ -193,7 +193,7 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
                             <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
                                 <li class="mb-10 ml-6">
@@ -265,8 +265,8 @@
         id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
-            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
-                style="width: 60%">
+            <div class="pointer-events-auto w-full md:w-[60%] relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
@@ -286,7 +286,7 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
                             <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
                                 <li class="mb-10 ml-6">
