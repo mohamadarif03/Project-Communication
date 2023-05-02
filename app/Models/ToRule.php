@@ -12,6 +12,6 @@ class ToRule extends Model
     protected $guarded = [];
 
     public function rule(){
-        return $this->belongsTo(rule::class);
+        return $this->belongsTo(Rule::class);
     }
 }
