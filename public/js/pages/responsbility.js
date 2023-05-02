@@ -273,7 +273,7 @@ function GetDataSent(page){
                                 '</div>'+
                                 '<div class="h-8 w-full flex items-center">'+
                                     '<i class="mdi mdi-account"></i>'+
-                                    '<p class=" ml-1.5 my-auto text-xs">Head Finance</p>'+
+                                    '<p class=" ml-1.5 my-auto text-xs">'+data.user.userrole[0].role.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
                                     '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-how="'+data.rule.how+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
                                     'Show >'+

@@ -72,7 +72,11 @@ class ResponsbilityController extends Controller
 
     public function sent(Request $request){
         $data = Responbility::with([
-            'user',
+            'user' =>[
+                'userrole' => [
+                    'role'
+                ]
+            ],
             'rule' => [
                 'communicationType'
             ]
