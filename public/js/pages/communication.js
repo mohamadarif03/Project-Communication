@@ -28,6 +28,10 @@ function getmonth(){
 }
 getmonth()
 getyear()
+function GetData(page){
+    GetDataReceive(page)
+    GetDataSent(page)
+}
 GetDataReceive(1)
 GetDataSent(1)
 function GetDataReceive(page){

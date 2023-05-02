@@ -135,7 +135,10 @@ $('#type').change(function(){
         }
     })
 })
-
+function GetData(page){
+    GetDataReceive(page)
+    GetDataSent(page)
+}
 function GetDataReceive(page){
     var year = $('#year').val()
     var month = $('#month').val()
