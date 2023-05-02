@@ -138,10 +138,12 @@ function edit(id){
     var color = $('#btn-edit-'+id).data('color')
     var description = $('#btn-edit-'+id).data('description')
     var to = $('#btn-edit-'+id).data('to')
-    if (to.length > 1){
+    to = to.toString()
+    if (to.includes(',')){
         var to_arr = to.split(',')
     }else{
-        var to_arr =  to
+        var to_arr =  []
+        to_arr[1] = to
     }
    
     update_to.destroy()

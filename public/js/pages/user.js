@@ -174,10 +174,12 @@ function edit(id){
     var name = $('#btn-edit-'+id).data('name')
     var email = $('#btn-edit-'+id).data('email')
     var role = $('#btn-edit-'+id).data('role')
-    if (role.length > 1){
+    role = role.toSTring()
+    if (role.includes(',')){
         var role_arr = role.split(',')
     }else{
-        var role_arr =  role
+        var role_arr =  []
+        role_arr[1] = role
     }
     $('#update-role').html('')
     $.ajax({
