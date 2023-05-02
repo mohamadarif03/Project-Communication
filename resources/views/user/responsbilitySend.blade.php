@@ -365,9 +365,9 @@
             <div
                 class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
                 <div
-                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-2 dark:border-opacity-50">
                     <!--Modal title-->
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800" id="exampleModalScrollableLabel">
+                    <h5 class="text-lg font-bold leading-normal text-neutral-800" id="exampleModalScrollableLabel">
                         Detail
                     </h5>
                     <!--Close button-->
@@ -384,14 +384,14 @@
                 <!--Modal body-->
 
                 <div class="relative overflow-y-auto p-4">
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Detail
-                    </h5>
+                    <p class="font-bold leading-normal" id="exampleModalScrollableLabel">
+                        Description
+                    </p>
                     <p id="show-detail"></p>
 
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800 ">
+                    <p class="font-bold leading-normal" id="exampleModalScrollableLabel">
                         How
-                    </h5>
+                    </p>
                     <p id="show-how"></p>
                     {{-- <a href="" id="show-file" target="_blank"></a> --}}
                     
@@ -400,21 +400,23 @@
                 <!--Modal footer-->
                 
                 <div
-                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-1">
                     <a href="" id="show-link" target="_blank">
-                    <button type="button" class="col-span-1 focus:outline-none text-white px-6 py-2 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs mr-2 mt-2 mb-2 flex items-center">
+                    <button type="button"  class="inline-block rounded bg-yellow-400 hover:bg-yellow-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white" style="margin: 7px"
+                    data-te-ripple-init data-te-ripple-color="light">
                         Link
                     </button>
                     </a>
                     <a href="" id="show-file" target="_blank">
-                    <button type="button" class="col-span-1 focus:outline-none text-white px-6 py-2 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs mr-2 mt-2 mb-2 flex items-center">
-                        Download File
-                    </button>
+                        <button type="button"  class="inline-block rounded bg-yellow-400 hover:bg-yellow-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white" style="margin: 7px"
+                        data-te-ripple-init data-te-ripple-color="light">
+                            Download File
+                        </button>
                     </a>
                     <button type="button"
                         class="inline-block rounded bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
-                        style="border: 2px solid black">
+                        style="border: 2px solid #4F4F4F; margin:7px">
                         Close
                     </button>
 
@@ -422,74 +424,7 @@
             </div>
         </div>
     </div>
-    <div data-te-modal-init
-        class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-        id="show1" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
-        <div data-te-modal-dialog-ref
-            class="pointer-events-none relative h-[calc(100%-1rem)] w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
-            <div
-                class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
-                <div
-                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
-                    <!--Modal title-->
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800" id="exampleModalScrollableLabel">
-                        Detail
-                    </h5>
-                    <!--Close button-->
-                    <button type="button"
-                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-                        data-te-modal-dismiss aria-label="Close">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="h-6 w-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-
-                <!--Modal body-->
-
-                <div class="relative overflow-y-auto p-4">
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Detail
-                    </h5>
-                    <p id="show-detail1"></p>
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        How
-                    </h5>
-                    <p id="show-how1"></p>
-
-                    
-                    <h5 class="text-xl font-medium leading-normal text-neutral-800" id="test-file">
-                        File
-                    </h5>
-                    
-                    {{-- <a href="" id="show-file" target="_blank"><button class="btn btn-success">Lihat CV</button></a> --}}
-                </div>
-
-                <!--Modal footer-->
-                <div class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
-                    
-                        <a href="" id="show-link1" target="_blank">
-                        <button type="button" class="col-span-1 focus:outline-none text-white px-6 py-2 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs mr-2 mt-2 mb-2 flex items-center">
-                             Link
-                        </button>
-                        </a>
-                        <a href="" id="show-file1" target="_blank">
-                        <button type="button" class="col-span-1 focus:outline-none text-white px-6 py-2 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs mr-2 mt-2 mb-2 flex items-center">
-                            Download File
-                        </button>
-                        </a>
-                    <button type="button"
-                        class="inline-block rounded bg-white px-6 py-1 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
-                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
-                        style="border: 2px solid black">
-                        Close
-                    </button>
-
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
