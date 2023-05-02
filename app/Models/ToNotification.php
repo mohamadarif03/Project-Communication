@@ -12,9 +12,9 @@ class ToNotification extends Model
     protected $guarded = [];
 
     public function user(){
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
     public function notification(){
-        return $this->belongsTo(notification::class);
+        return $this->belongsTo(Notification::class);
     }
 }

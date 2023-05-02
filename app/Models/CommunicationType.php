@@ -11,7 +11,7 @@ class CommunicationType extends Model
     protected $guarded = [];
 
     public function rule(){
-        return $this->hasMany(rule::class);
+        return $this->hasMany(Rule::class);
     }
     public function FromCommunicationType(){
         return $this->hasMany(FromCommunicationType::class);

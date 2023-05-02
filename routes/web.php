@@ -6,9 +6,8 @@ use App\Http\Controllers\CommunicationTypeController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\projectController;
-use App\Http\Controllers\responsbilityController;
-use App\Http\Controllers\ResponsbilityController as ControllersResponsbilityController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ResponsbilityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
@@ -87,9 +86,9 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/data-receive-communication-dashboard-complete',[CommunicationController::class,'receiveComplete']);
 
         //Responbilities
-        Route::get('/responsbility-sent',[responsbilityController::class,'view']);
-        Route::get('/responsbility-receive',[responsbilityController::class,'viewReceive']);
-        Route::post('/store-responsbility',[responsbilityController::class,'insert']);
+        Route::get('/responsbility-sent',[ResponsbilityController::class,'view']);
+        Route::get('/responsbility-receive',[ResponsbilityController::class,'viewReceive']);
+        Route::post('/store-responsbility',[ResponsbilityController::class,'insert']);
         Route::get('/data-task-type',[ResponsbilityController::class,'task_type']);
         Route::get('/data-task-type-filter',[ResponsbilityController::class,'task_type_filter']);
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);
@@ -112,8 +111,8 @@ Route::middleware('auth', 'verified')->group(function () {
     //Profil
     Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
     Route::put('/resetPassword/{id}',[ProfileController::class,'reset']);
-    Route::get('/project',[projectController::class,'view']);
-    Route::get('/project1',[projectController::class,'view1']);
+    Route::get('/project',[ProjectController::class,'view']);
+    Route::get('/project1',[ProjectController::class,'view1']);
     Route::get('/read-all',[NotificationController::class,'readall']);
     Route::get('/data-respons',[CommunicationController::class,'data']);
 

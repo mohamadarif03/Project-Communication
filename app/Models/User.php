@@ -50,10 +50,10 @@ class User extends Authenticatable
         return $this->HasMany(Communication::class);
     }
     public function user(){
-        return $this->hasMany(user::class);
+        return $this->hasMany(User::class);
     }
     public function rule(){
-        return $this->hasMany(rule::class);
+        return $this->hasMany(Rule::class);
     }
     
 }

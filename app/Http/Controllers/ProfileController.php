@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\profilRequest;
+use App\Http\Requests\ProfilRequest;
 use App\Http\Requests\ResetRequest;
 use App\Models\Rule;
 use App\Models\User;
