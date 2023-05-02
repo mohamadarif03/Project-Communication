@@ -60,8 +60,12 @@ class CommunicationController extends Controller
                 ]
                 ])->where('user_id',Auth()->user()->id)
                 ->where('communication_type_id',$request->type)
-                ->whereYear('date',$request->year)
-                ->whereMonth('date',$request->month)
+                ->when($request->year !== '-1', function($query) use ($request) {
+                    return $query->whereYear('date', $request->year);
+                })
+                ->when($request->month !== '-1', function($query) use ($request) {
+                    return $query->whereMonth('date', $request->month);
+                })
                 ->paginate(6);
             $links = $data->links('layouts.paginate');
         }else{
@@ -71,8 +75,12 @@ class CommunicationController extends Controller
                     'user'
                 ]
                 ])->where('user_id',Auth()->user()->id)
-                ->whereYear('date',$request->year)
-                ->whereMonth('date',$request->month)
+                ->when($request->year !== '-1', function($query) use ($request) {
+                    return $query->whereYear('date', $request->year);
+                })
+                ->when($request->month !== '-1', function($query) use ($request) {
+                    return $query->whereMonth('date', $request->month);
+                })
                 ->paginate(6);
             $links = $data->links('layouts.paginate');
         }
