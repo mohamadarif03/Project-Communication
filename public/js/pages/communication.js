@@ -29,8 +29,11 @@ function getmonth(){
 getmonth()
 getyear()
 function GetData(page){
-    GetDataReceive(page)
-    GetDataSent(page)
+    if($('#Receive')){
+        GetDataReceive(page)
+    }else{
+        GetDataSent(page)     
+    }
 }
 GetDataReceive(1)
 GetDataSent(1)
