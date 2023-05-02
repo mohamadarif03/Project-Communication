@@ -998,6 +998,12 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
+.min-h-\[220px\] {
+  min-height: 220px;
+}
+.min-h-\[260px\] {
+  min-height: 260px;
+}
 .w-0 {
   width: 0px;
 }
@@ -3600,6 +3606,10 @@ video {
 
   .md\:inline-block {
     display: inline-block;
+  }
+
+  .md\:h-\[220px\] {
+    height: 220px;
   }
 
   .md\:w-\[60\%\] {
