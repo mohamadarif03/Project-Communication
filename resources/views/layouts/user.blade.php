@@ -46,10 +46,11 @@
 
                             </div>
                             <!-- All-->
-                            <div class="dropdown-item text-primary notify-item notify-all" style="text-align: center">
-                                Read all
-                                <i class="fi-arrow-right"></i>
-                            </div>
+                            
+                                <a onclick="readall()" class="dropdown-item text-primary notify-item notify-all" style="text-align: center; cursor: pointer;">
+                                    Read all
+                                </a>
+                            
                         </div>
                     </li>
 
