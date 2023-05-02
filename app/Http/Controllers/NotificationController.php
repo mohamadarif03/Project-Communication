@@ -27,19 +27,11 @@ class NotificationController extends Controller
 
     
     public function readall(){
-        $data = ToNotification::all();
-        if($data->communication == null){
-            $type = 'responsbility';
-        }else{
-            $type = 'communication';
-        }
-        $notif = ToNotification::where('notification_id',$data->notification_id)->count();
-        $id = $data->notification_id;
-        $data->delete();
-        if($notif == 0){
-            Notification::find($id)->delete();
-        }
-        return response()->json($type);
+        ToNotification::where('user_id',Auth()->user()->id)->delete();
+        Notification::whereNotIn('id', function($query){
+            $query->select('notification_id')->from('to_notifications');
+        })->delete();
+        return response()->json(['message' => 'read all notification']);
     }
     public function delete($id){
         $data = ToNotification::findorfail($id);

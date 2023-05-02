@@ -64,6 +64,13 @@ function readNotification(id){
 function readall(){
     $.ajax({
         type:'GET',
-        url:'/read-all/',
+        url:'/read-all',
+        success:function(response){
+            $('#notification').html('')
+            $('#not-icon').remove()
+        },
+        error:function(response){
+            console.log(response)
+        }
     })
 }
