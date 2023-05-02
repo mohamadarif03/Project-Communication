@@ -110,6 +110,7 @@ function GetDataSent(page){
     var year = $('#year').val()
     var month = $('#month').val()
     var type = $('#comtype').val()
+    console.log(year)
     $.ajax({
         type:'GET',
         url:'/data-sent-communication?page='+page,
