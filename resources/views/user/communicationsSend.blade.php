@@ -6,17 +6,15 @@
     <div class="content">
 
         <!-- Start Content-->
-        <div class="container-fluid flex justify-between mt-3">
-
+        <div class="container-fluid flex flex-col md:flex-row justify-evenly md:justify-between mt-3">
             <div class="">
                 <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
                     data-te-ripple-init data-te-ripple-color="light"
                     class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
                     Add
                 </button>
-
             </div>
-            <div class="grid grid-cols-4 gap-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
                 <div class="relative mr-2">
                     <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                     </select>
@@ -44,7 +42,7 @@
                 </div>
                 
                 <button type="button" onclick="search()" class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search mr-2" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search md:mr-2" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>Search
                 </button>
@@ -56,7 +54,7 @@
         <div class="flex flex-col mt-2 w-full items-center justify-center">
             <h3 class="text-lg mx-auto font-semibold">Sent</h3>
         </div>
-        <div class="grid grid-cols-3 gap-4" style="margin-top: 10px" id="Sent">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" style="margin-top: 10px" id="Sent">
             <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
             <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
             <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
@@ -69,7 +67,7 @@
     <div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
-            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none " style="width: 60%">
+            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none w-full md:w-[60%] bg-white bg-clip-padding text-current shadow-lg outline-none ">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
@@ -89,7 +87,7 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
                             <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
                                 <li class="mb-10 ml-6">
@@ -165,8 +163,8 @@
         id="create-step-2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
-            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
-                style="width: 60%">
+            <div class="pointer-events-auto md:w-[60%] w-full relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
@@ -186,7 +184,7 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
                             <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
                                 <li class="mb-10 ml-6">
@@ -257,8 +255,8 @@
         id="create-step-3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
-            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
-                style="width: 60%">
+            <div class="pointer-events-auto w-full md:w-[60%] relative flex mx-auto flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none "
+                style="">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
@@ -278,7 +276,7 @@
 
                 <!--Modal body-->
                 <div class="relative p-4">
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
                             <ol class="relative ml-4 pb-0 mb-0 text-gray-500 border-l border-gray-200">
                                 <li class="mb-10 ml-6">
@@ -355,7 +353,7 @@
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative h-[calc(100%-1rem)] w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
             <div
-                class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
                     <!--Modal title-->

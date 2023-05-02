@@ -146,8 +146,8 @@ function GetDataSent(page){
                 var src = "src='../img/not-found.svg'";
                 var row =   
                 '<div class="col-span-3 flex flex-col mt-6 items-center justify-center">'+
-                '<img '+src+' class="w-[20%] mt-4" alt="">'+
-                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no sent communication found !</p>'+
+                '<img '+src+' class="md:w-2/12 w-1/2 mt-4" alt="">'+
+                            '<p class="fotnt-semibold mx-auto text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no sent communication found !</p>'+
                 '</div'
                 $('#Sent').append(row)
             }
