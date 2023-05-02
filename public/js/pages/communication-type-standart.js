@@ -106,15 +106,15 @@ function create(){
                 title: 'success!',
                 text: 'Success Create New Responsbility!',
                 icon: 'success'
-            })
+            }).then(function() {
+                location.reload();
+            });
           
             $('#type').val('')
             $('#color').val('')
             $('#description').val('')
             $('#put').val('')
             $('#btn-close-modal').click()        
-            GetData()
-
         },
         error:function(response){
             var errors = response.responseJSON.errors;

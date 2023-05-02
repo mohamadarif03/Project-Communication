@@ -201,10 +201,11 @@ function create(){
                 title: 'success!',
                 text: 'Success Create New Type!',
                 icon: 'success'
-            })
+            }).then(function() {
+                location.reload();
+            });
             $('#how').val('')
             $('#btn-close-create').click()
-            GetData(1)
         },
 
         error:function(response){

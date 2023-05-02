@@ -143,8 +143,9 @@ function create(){
                 title: 'success!',
                 text: 'Success Create New User!',
                 icon: 'success'
-            })
-            GetData(1)
+            }).then(function() {
+                location.reload();
+            });
             $('#name').val('')
             $('#email').val('')
             $('#password').val('')
