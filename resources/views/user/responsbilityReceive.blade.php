@@ -66,9 +66,6 @@
     </div>
 </div>
    
-
-
-
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
@@ -532,7 +529,7 @@
             </div>
         </div>
     </div>
-
+<input type="hidden" value="receive" id="check">
 
 @endsection
 

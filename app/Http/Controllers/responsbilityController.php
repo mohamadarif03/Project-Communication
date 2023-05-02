@@ -32,7 +32,8 @@ class ResponsbilityController extends Controller
     }
     public function task_type_filter(){
         $data = Rule::with('fromrule','torule','communicationtype')
-                    ->join('from_rules','from_rules.rule_id','=','rules.id')
+                    ->join('to_rules','to_rules.rule_id','=','rules.id')
+                    ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
                     ->select('rules.*')
                     ->get();
         return response()->json($data);

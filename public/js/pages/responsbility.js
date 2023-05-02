@@ -31,9 +31,6 @@ function getmonth(){
 getmonth()
 getyear()
 GetType()
-GetDataReceive(1)
-GetDataSent(1)
-
 
 $('#btn-next-create-step-2').click(function(){
     $('#btn-close-modal-create-step-1').click()
@@ -52,8 +49,12 @@ $('#btn-back-create-step-2').click(function(){
     $('#btn-close-modal-create-step-3').click()
     $('#btn-open-modal-create-step-2').click()
 })
-if($('#Receive')){
+var check = $('#check').val()
+if(check == 'sent'){
+    GetDataSent(1)
+}else{
     GetTypeReceive()
+    GetDataReceive(1)
 }
 function GetTypeReceive(){
     $.ajax({
@@ -80,7 +81,7 @@ function GetType(){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'">'+data.communicationtype.type+'</option>'
                 $('#type').append(row)
-                if($('#Sent')){
+                if(check == 'sent'){
                     $('#comtype').append(row)
                 }
             })

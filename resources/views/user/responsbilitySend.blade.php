@@ -532,7 +532,7 @@
             </div>
         </div>
     </div>
-
+    <input type="hidden" value="sent" id="check">
 
 @endsection
 

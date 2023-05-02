@@ -497,6 +497,7 @@
             </div>
         </div>
     </div>
+    <input type="hidden" value="sent" id="check">
 @endsection
 @section('javascript')
     <script src="{{ asset('js/pages/communication.js') }}"></script>
