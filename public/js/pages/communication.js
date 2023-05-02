@@ -94,8 +94,8 @@ function GetDataReceive(page){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   
-                '<div class="col-span-3 flex flex-col mt-6 items-center justify-center">'+
-                '<img '+src+' class="w-[20%] mt-4" alt="">'+
+                '<div class="lg:col-span-3 md:col-span-2 col-span-1 flex flex-col mt-6 items-center justify-center">'+
+                '<img '+src+' class="w-[30%] mt-4" alt="">'+
                             '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no receive communication found !</p>'+
                 '</div'
                 $('#Receive').append(row)
@@ -154,7 +154,7 @@ function GetDataSent(page){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   
-                '<div class="col-span-3 flex flex-col mt-6 items-center justify-center">'+
+                '<div class="md:col-span-2 col-span-1 lg:col-span-3 flex flex-col mt-6 items-center justify-center">'+
                 '<img '+src+' class="md:w-2/12 w-1/2 mt-4" alt="">'+
                             '<p class="fotnt-semibold mx-auto text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no sent communication found !</p>'+
                 '</div'

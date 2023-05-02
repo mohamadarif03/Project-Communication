@@ -26,6 +26,7 @@ class ResponsbilityRequest extends FormRequest
         return [
             'type' => 'required',
             'date' => 'required',
+            'link' => 'url'
         ];
         
     }
