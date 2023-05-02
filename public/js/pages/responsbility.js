@@ -339,44 +339,52 @@ function create(){
     formData.append('type', type);
     formData.append('date', date);
     formData.append('link', link);
-
-    $.ajax({
-        type:'POST',
-        url:'/store-responsbility',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success:function(response){
-            Swal.fire({
-                title: 'success!',
-                text: 'Success Create New User!',
-                icon: 'success'
-            }).then(function() {
-                location.reload();
-            });
-            $('#type').val('')
-            $('#date').val('')
-            $('#link').val('')
-            $('#file').val('')
-            $('#btn-close-modal-create-step-3').click()
-            GetData(1)
-        },
-        error:function(response){
-            var errors = response.responseJSON.errors;
-            var errorMessage = '';
-
-            $.each(errors, function(key, value) {
-                errorMessage += '<p class="text-red-500">' + value + '</p>';
-            });
-
-            Swal.fire({
-                title: 'Error!',
-                // html: errorMessage,
-                html: response.responseJSON.message,
-                icon: 'error',
-            })
-        }
-    })
+    if (file || link) {
+        $.ajax({
+            type:'POST',
+            url:'/store-responsbility',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success:function(response){
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Success Create New User!',
+                    icon: 'success'
+                }).then(function() {
+                    location.reload();
+                });
+                $('#type').val('')
+                $('#date').val('')
+                $('#link').val('')
+                $('#file').val('')
+                $('#btn-close-modal-create-step-3').click()
+                GetData(1)
+            },
+            error:function(response){
+                var errors = response.responseJSON.errors;
+                var errorMessage = '';
+    
+                $.each(errors, function(key, value) {
+                    errorMessage += '<p class="text-red-500">' + value + '</p>';
+                });
+    
+                Swal.fire({
+                    title: 'Error!',
+                    // html: errorMessage,
+                    html: response.responseJSON.message,
+                    icon: 'error',
+                })
+            }
+        })
+    } else {
+        Swal.fire({
+            title: 'Error!',
+            html: 'Link Or File Must Be Filled',
+            icon: 'error'
+        })
+    }
+   
 }
 function checkget(id) {
     $('#check-id').val(id)
