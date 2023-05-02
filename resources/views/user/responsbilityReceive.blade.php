@@ -54,9 +54,7 @@
 
     </div>
     <!-- end container-fluid -->
-    <div class="flex flex-col w-full items-center justify-center">
-        <h3 class="text-lg mx-auto font-semibold">Receive</h3>
-    </div>
+    
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" style="margin-top: 10px" id="Receive">
         <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
         <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
@@ -131,7 +129,7 @@
                             </div>
                             <div class="" id="to-form">
                                 <label for="to"
-                                    class="w-36 mb-2 block text-xs font-medium text-gray-900 ">To</label>
+                                    class="w-36 mb-2 block text-xs font-medium text-gray-900 mt-3">To</label>
                                 <Select multiple id="to" disabled name="to" class="w-full" placeholder="To">
                                     <option value=""></option>
                                 </Select>

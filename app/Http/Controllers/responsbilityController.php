@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 class ResponsbilityController extends Controller
 {
     public function view(){
-        return view('user.responsbilitySend');
+        return view('user.responsbilitySent');
     }
     public function viewReceive(){
         return view('user.responsbilityReceive');
@@ -88,7 +88,9 @@ class ResponsbilityController extends Controller
                 return $query->whereYear('date', $request->year);
             })->when($request->month !== '-1', function($query) use ($request) {
                 return $query->whereMonth('date', $request->month);
-            })->paginate(6);
+            })
+            ->orderBy('created_at', 'desc')
+            ->paginate(6);
 
         $links = $data->links('layouts.paginate');
         return response()->json([

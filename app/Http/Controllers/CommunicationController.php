@@ -17,8 +17,8 @@ class CommunicationController extends Controller
 {
    
 
-    public function communicationSend(){
-        return view('user.communicationsSend');
+    public function communicationSent(){
+        return view('user.communicationsSent');
     }
     public function communicationReceive(){
         return view('user.communicationsReceive');
@@ -66,6 +66,7 @@ class CommunicationController extends Controller
                 ->when($request->month !== '-1', function($query) use ($request) {
                     return $query->whereMonth('date', $request->month);
                 })
+                ->orderBy('created_at', 'desc')
                 ->paginate(6);
             $links = $data->links('layouts.paginate');
         }else{
@@ -81,6 +82,7 @@ class CommunicationController extends Controller
                 ->when($request->month !== '-1', function($query) use ($request) {
                     return $query->whereMonth('date', $request->month);
                 })
+                ->orderBy('created_at', 'desc')
                 ->paginate(6);
             $links = $data->links('layouts.paginate');
         }

@@ -31,10 +31,9 @@ Route::middleware('only_guest')->group(function () {
 });
 
 
-
-
-Route::middleware('auth')->group(function () {
-    Route::middleware('auth:sanctum','verified','admin')->group(function(){
+Route::middleware('auth', 'verified')->group(function () {
+    Route::middleware('admin')->group(function(){
+        
         //Rule
         Route::get('/data-rule',[RuleController::class,'data']);
         Route::get('/rule',[RuleController::class,'view']);
@@ -71,15 +70,15 @@ Route::middleware('auth')->group(function () {
         Route::post('/store-user',[UserController::class,'insert'])->name('store-user');
         Route::put('/update-user/{id}',[UserController::class,'update']);
         Route::delete('/delete-user/{id}',[UserController::class,'delete']);
-    Route::get('/profil',[ProfileController::class,'view']);
+        Route::get('/profil',[ProfileController::class,'view']);
+        
+        });
 
-    });
-    
-    Route::middleware('auth:sanctum','verified','user')->group(function(){
-
+        Route::middleware('user')->group(function(){
+            
         //Communication
         Route::get('/data-communication-type-standart',[CommunicationTypeController::class,'dataStandart']);
-        Route::get('/communication-send',[CommunicationController::class,'communicationSend']);
+        Route::get('/communication-sent',[CommunicationController::class,'communicationSent']);
         Route::get('/communication-receive',[CommunicationController::class,'communicationReceive']);
         Route::post('/store-communication',[CommunicationController::class,'insert']);
         Route::get('/data-sent-communication',[CommunicationController::class,'sent']);
@@ -88,7 +87,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/data-receive-communication-dashboard-complete',[CommunicationController::class,'receiveComplete']);
 
         //Responbilities
-        Route::get('/responsbility-send',[responsbilityController::class,'view']);
+        Route::get('/responsbility-sent',[responsbilityController::class,'view']);
         Route::get('/responsbility-receive',[responsbilityController::class,'viewReceive']);
         Route::post('/store-responsbility',[responsbilityController::class,'insert']);
         Route::get('/data-task-type',[ResponsbilityController::class,'task_type']);
@@ -102,7 +101,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/read-notification/{id}',[NotificationController::class,'delete']);
         Route::get('/read-all',[NotificationController::class,'readall']);
 
-    });
+        });
+
     Route::get('logout', [AuthController::class, 'logout']);
     Route::get('/dashboard',[Controller::class,'index']);
     Route::get('/role',[RoleController::class,'view']);

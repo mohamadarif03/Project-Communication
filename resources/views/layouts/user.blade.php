@@ -143,7 +143,7 @@
                                     <span>Communication</span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="communication-send">Send</a></li>
+                                    <li><a href="communication-sent">Sent</a></li>
                                     <li><a href="communication-receive">Receive</a></li>
                                 </ul>
                             </li>
@@ -156,7 +156,7 @@
                                     <span>Responsbility</span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="responsbility-send">Send</a></li>
+                                    <li><a href="responsbility-sent">Sent</a></li>
                                     <li><a href="responsbility-receive">Receive</a></li>
                                 </ul>
                             </li>

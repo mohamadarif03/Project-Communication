@@ -28,25 +28,25 @@
           <form method="post" action="/profilUpdate/{{ Auth()->user()->id }}" enctype="multipart/form-data">
             @method('put')
             @csrf
-            <div class="rounded-md bg-white mt-6 h-[260px] w-full">
+            <div class="rounded-md bg-white mt-6 w-full" style="height: 283px">
                 <div class="flex items-center border-solid border-b-2 border-gray-200">
-                    <h1 class="font-bold text-xl ml-3">Update Profile</h1>
+                    <h1 class="font-bold text-base ml-3">Update Profile</h1>
                 </div>
                 <div class="py-2">
                     <div class="flex justify-center items-center">
-                        <h1 class="text-lg font-bold ml-3 mr-6">Name</h1>
+                        <h1 class="text-sm font-bold ml-3 mr-6 m-3">Name</h1>
                         <input type="text"
                             class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
                             id="exampleFormControlInput1" name="name" value="{{ Auth::user()->name }}" />
                     </div>
                     <div class="flex justify-center items-center">
-                        <h1 class="text-lg font-bold ml-3 mr-6">Email</h1>
+                        <h1 class="text-sm font-bold ml-3 mr-6 m-3">Email</h1>
                         <input type="email"
                             class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
                             id="exampleFormControlInput1" name="email" value="{{ Auth::user()->email }}" />
                     </div>
                     <div class="flex justify-center items-center">
-                        <h1 class="text-lg font-bold ml-2 mr-6">Profile</h1>
+                        <h1 class="text-sm font-bold ml-2 mr-6 m-3">Photo</h1>
                         <input type="file"
                             class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
                             id="exampleFormControlInput1" name="profile"/>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="flex items-center border-solid border-t-2 border-gray-200 my-2">
                     <button type="submit"
-                        class="ml-auto inline-block rounded bg-yellow-400 px-3 pb-2 pt-2.5 py-2 mt-1 mx-3 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">+
+                        class="ml-auto inline-block rounded bg-yellow-400 px-3 pb-2 pt-2.5 py-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" style="margin-top: 8px; margin-right:8px;">+
                         Update</button>
                 </div>
             </div>
@@ -63,27 +63,27 @@
           <form method="post" action="/resetPassword/{{ Auth()->user()->id }}" enctype="multipart/form-data">
             @method('put')
             @csrf
-            <div class="rounded-md bg-white mt-6 w-full">
+            <div class="rounded-md bg-white mt-6 w-full" style="height: 225px">
                 <div class="flex items-center border-solid border-b-2 border-gray-200">
-                    <h1 class="font-bold text-xl ml-3">Reset Password</h1>
+                    <h1 class="font-bold text-base ml-3">Reset Password</h1>
                 </div>
                 <div class="py-2">
                     <div class="flex justify-center items-center">
-                        <h1 class="text-lg font-bold mr-6" style="margin-left: 43px">New Password</h1>
+                        <h1 class="text-sm font-bold ml-2 mr-6 m-3">New Password</h1>
                         <input type="password"
                             class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
-                            id="exampleFormControlInput1" name="password" placeholder="" />
+                            id="exampleFormControlInput1" name="password" placeholder="New Password" style="margin-left: 20px"/>
                     </div>
                     <div class="flex justify-center items-center">
-                        <h1 class="text-lg font-bold ml-3 mr-6">Confirm Password</h1>
+                        <h1 class="text-sm font-bold ml-2 mr-6 m-3">Confirm Password</h1>
                         <input type="password"
                             class="block min-h-[auto] w-6/12 rounded border-2 bg-transparent px-3 py-[0.32rem]"
-                            id="exampleFormControlInput1" name="confirmPassword" placeholder="" />
+                            id="exampleFormControlInput1" name="confirmPassword" placeholder="Confirm Password" />
                     </div>
                 </div>
                 <div class="flex items-center border-solid border-t-2 border-gray-200 my-2">
                     <button
-                        class="ml-auto inline-block rounded bg-yellow-400 px-3 pb-2 pt-2.5 py-2 mt-1 mx-3 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">+
+                        class="ml-auto inline-block rounded bg-yellow-400 px-3 pb-2 pt-2.5 py-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#B9AF25] transition duration-150 ease-in-out hover:bg-yellow-500 focus:bg-yellow-500 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-yellow-500 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" style="margin-top: 6px; margin-right:6px">+
                         Update</button>
                 </div>
             </div>
