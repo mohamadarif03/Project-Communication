@@ -136,8 +136,11 @@ $('#type').change(function(){
     })
 })
 function GetData(page){
-    GetDataReceive(page)
-    GetDataSent(page)
+    if($('#Receive')){
+        GetDataReceive(page)
+    }else{
+        GetDataSent(page)     
+    }
 }
 function GetDataReceive(page){
     var year = $('#year').val()
