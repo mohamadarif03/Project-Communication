@@ -3,67 +3,65 @@
 @section('Communication.a', 'active')
 @section('Communication.svg', 'white')
 @section('content')
-    <div class="content">
+<div class="content">
 
-        <!-- Start Content-->
-        <div class="container-fluid flex justify-between mt-3">
-
-            <div class="">
-                <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
-                    data-te-ripple-init data-te-ripple-color="light"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
-                    Add
-                </button>
-
+    <!-- Start Content-->
+    <div class="container-fluid flex flex-col md:flex-row justify-evenly md:justify-between mt-3">
+        <div class="">
+            <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
+                data-te-ripple-init data-te-ripple-color="light"
+                class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
+                Add
+            </button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <div class="relative mr-2">
+                <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                </select>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <div class="relative mr-2">
-                    <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
-                    </select>
-                </div>
-                <div class="relative mr-2">
-                    <select id="month" name="month" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                    </select>
-                </div>
-                <div class="relative mr-2">
-                    <select id="comtype" name="comtype" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
-                       <option value="">All Type</option>
-                    </select>
-                </div>
-                
-                <button type="button" onclick="search()" class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search mr-2" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>Search
-                </button>
+            <div class="relative mr-2">
+                <select id="month" name="month" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="relative mr-2">
+                <select id="comtype" name="comtype" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                   <option value="">All Type</option>
+                </select>
             </div>
             
+            <button type="button" onclick="search()" class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search md:mr-2" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>Search
+            </button>
+        </div>
+        
 
-        </div>
-        <!-- end container-fluid -->
-        <div class="flex flex-col w-full items-center justify-center">
-            <h3 class="text-lg mx-auto font-semibold">Receive</h3>
-        </div>
-        <div class="grid grid-cols-3 gap-4" style="margin-top: 10px" id="Receive">
-            <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
-            <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
-            <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
-        </div>
-        <div class="mx-auto" id="pagination-receive">
-        </div>
     </div>
+    <!-- end container-fluid -->
+    <div class="flex flex-col mt-2 w-full items-center justify-center">
+        <h3 class="text-lg mx-auto font-semibold">Receive</h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" style="margin-top: 10px" id="Receive">
+        <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
+        <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
+        <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
+    </div>
+    <div class="mx-auto" id="pagination-receive">
+    </div>
+</div>
 
     <!--Modal 1-->
     <div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
