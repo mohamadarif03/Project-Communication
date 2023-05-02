@@ -5,7 +5,6 @@ function notification(){
         type:'GET',
         url:'/data-notification',
         success:function(response){
-            console.log(response)
             if(response.length > 0){
                 $.each(response,function(index,data){
                     if (data.notification.user.profile == 'default.jpg') {
