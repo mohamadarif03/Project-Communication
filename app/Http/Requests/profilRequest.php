@@ -31,7 +31,7 @@ class profilRequest extends FormRequest
             ],
             'email' => [
                 Rule::unique('users')->ignore($this->user()->id),
-            ],
+            ],'email',
             'password' => 'same:confirmPassword',
         ];
         
