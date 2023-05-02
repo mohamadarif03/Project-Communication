@@ -321,14 +321,14 @@
                                 <label for="project" class=" mb-2 text-sm font-medium">Files</label><br>
                                 <input type="file"
                                     class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
-                                    placeholder="Task" id="file" aria-label="" />
+                                    placeholder="Task" id="file" name="file" aria-label="" />
 
                             </div>
                             <div class="mt-3">
                                 <label for="project" class=" mb-2 text-sm font-medium">Link</label><br>
                                 <input type="Links"
                                     class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
-                                    placeholder="Http://" id="link" aria-label="" />
+                                    placeholder="Http://" id="link" name="link" aria-label="" />
 
                             </div>
 

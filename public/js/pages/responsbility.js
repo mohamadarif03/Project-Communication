@@ -401,7 +401,7 @@ function check() {
             location.reload();
         });
         $('#btn-close').click()
-        GetData()
+        GetData(1)
     },
     error: function(response){
         Swal.fire({
