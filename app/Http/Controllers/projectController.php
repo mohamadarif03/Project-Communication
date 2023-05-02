@@ -10,4 +10,8 @@ class projectController extends Controller
     {
         return view('user.project');
     }
+    public function view1()
+    {
+        return view('user.project1');
+    }
 }
