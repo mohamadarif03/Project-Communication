@@ -77,9 +77,13 @@ class ResponsbilityController extends Controller
                 'communicationType'
             ]
             ])->where('user_id',Auth()->user()->id)
-            ->whereYear('date',$request->year)
-            ->whereMonth('date',$request->month)
-              ->paginate(6);
+            ->when($request->year !== '-1', function($query) use ($request) {
+                return $query->whereYear('date', $request->year);
+            })
+            ->when($request->month !== '-1', function($query) use ($request) {
+                return $query->whereMonth('date', $request->month);
+            })
+            ->paginate(6);
 
         $links = $data->links('layouts.paginate');
         return response()->json([
@@ -103,8 +107,12 @@ class ResponsbilityController extends Controller
                 'CommunicationType'
             ]
             ])
-            ->whereYear('date',$request->year)
-            ->whereMonth('date',$request->month)
+            ->when($request->year !== '-1', function($query) use ($request) {
+                return $query->whereYear('date', $request->year);
+            })
+            ->when($request->month !== '-1', function($query) use ($request) {
+                return $query->whereMonth('date', $request->month);
+            })
             ->join('rules','rules.id','=','responsbilities.rule_id')
               ->join('to_rules','to_rules.rule_id','=','rules.id')
               ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())

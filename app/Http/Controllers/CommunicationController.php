@@ -97,8 +97,12 @@ class CommunicationController extends Controller
                             ->join('to_communications','to_communications.communication_id','=','communications.id')
                             ->where('to_communications.user_id',Auth()->user()->id)
                             ->where('communications.communication_type_id',$request->type)
-                            ->whereYear('communications.date',$request->year)
-                            ->whereMonth('communications.date',$request->month)
+                            ->when($request->month !== '-1', function($query) use ($request) {
+                                return $query->whereMonth('date', $request->month);
+                            })
+                            ->when($request->year !== '-1', function($query) use ($request) {
+                                return $query->whereYear('date', $request->year);
+                            })
                             ->select('communications.*')
                             ->paginate(6);
         $links = $data->links('layouts.paginate');
@@ -106,8 +110,12 @@ class CommunicationController extends Controller
             $data = Communication::with(['CommunicationType','user'])
                             ->join('to_communications','to_communications.communication_id','=','communications.id')
                             ->where('to_communications.user_id',Auth()->user()->id)
-                            ->whereYear('communications.date',$request->year)
-                            ->whereMonth('communications.date',$request->month)
+                            ->when($request->year !== '-1', function($query) use ($request) {
+                                return $query->whereYear('date', $request->year);
+                            })
+                            ->when($request->month !== '-1', function($query) use ($request) {
+                                return $query->whereMonth('date', $request->month);
+                            })
                             ->select('communications.*')
                             ->paginate(6);
         $links = $data->links('layouts.paginate');

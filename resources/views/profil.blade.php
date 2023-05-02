@@ -1,8 +1,7 @@
 @extends('layouts.main')
 @section('content')
-
     <div class="content">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="h-80 rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="mt-[20%]">
@@ -17,7 +16,7 @@
                         <h1 class="flex justify-center font-bold text-2xl">{{ Auth::user()->name }}</h1>
                         <h1 class="flex justify-center text-sm">{{ Auth::user()->email }}</h1>
                         <center>
-                            <p class="flex justify-center md:py-1.5 px-4 hidden md:inline-block text-xs md:text-sm p-0.5 py-0.5 font-semibold my-auto role-color rounded-md">{{implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray())}}</p>
+                            <p class="flex justify-center md:py-1.5 px-4 md:inline-block text-xs md:text-sm p-0.5 py-0.5 font-semibold my-auto role-color rounded-md">{{implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray())}}</p>
                         </center>
                     </div>
                 </div>
