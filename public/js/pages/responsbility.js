@@ -31,7 +31,6 @@ function getmonth(){
 getmonth()
 getyear()
 GetType()
-GetTypeFilter()
 GetDataReceive(1)
 GetDataSent(1)
 
@@ -53,18 +52,19 @@ $('#btn-back-create-step-2').click(function(){
     $('#btn-close-modal-create-step-3').click()
     $('#btn-open-modal-create-step-2').click()
 })
-
-function GetType(){
+if($('#Receive')){
+    GetTypeReceive()
+}
+function GetTypeReceive(){
     $.ajax({
         type:'GET',
-        url:'/data-task-type',
+        url:'/data-task-type-filter',
         success:function(response){
             $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
-                $('#type').append(row)
+                var row = '<option value="'+data.id+'"">'+data.communicationtype.type+'</option>'
+                $('#comtype').append(row)
 
             })
-            type =  new TomSelect('#type')
             
         },
         error:function(response){
@@ -72,16 +72,19 @@ function GetType(){
         }
     })
 }
-function GetTypeFilter(){
+function GetType(){
     $.ajax({
         type:'GET',
-        url:'/data-task-type-filter',
+        url:'/data-task-type',
         success:function(response){
             $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
-                $('#comtype').append(row)
-
+                var row = '<option value="'+data.id+'">'+data.communicationtype.type+'</option>'
+                $('#type').append(row)
+                if($('#Sent')){
+                    $('#comtype').append(row)
+                }
             })
+            type =  new TomSelect('#type')
             
         },
         error:function(response){

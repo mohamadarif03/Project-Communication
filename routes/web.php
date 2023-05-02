@@ -8,6 +8,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\projectController;
 use App\Http\Controllers\responsbilityController;
+use App\Http\Controllers\ResponsbilityController as ControllersResponsbilityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\UserController;
