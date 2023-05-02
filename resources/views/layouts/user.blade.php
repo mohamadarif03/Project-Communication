@@ -46,10 +46,11 @@
 
                             </div>
                             <!-- All-->
-                            <div class="dropdown-item text-primary notify-item notify-all" style="text-align: center">
-                                Read all
-                                <i class="fi-arrow-right"></i>
-                            </div>
+                            
+                                <a onclick="readall()" class="dropdown-item text-primary notify-item notify-all" style="text-align: center; cursor: pointer;">
+                                    Read all
+                                </a>
+                            
                         </div>
                     </li>
 
@@ -148,7 +149,10 @@
                             </li>
                             <li class="@yield('Responsbility.li')">
                                 <a class="@yield('Responsbility.a')">
-                                    <svg fill="@yield('Responsbility.svg')" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M204 906q-57-55-90.5-129.5T80 616q0-83 31.5-156T197 333q54-54 127-85.5T480 216q83 0 156 31.5T763 333q54 54 85.5 127T880 616q0 86-33.5 160.5T756 906l-43-43q50-47 78.5-110T820 616q0-142-99-241t-241-99q-142 0-241 99t-99 241q0 74 28.5 137T247 863l-43 43Zm113-113q-35-33-56-78.5T240 616q0-100 70-170t170-70q100 0 170 70t70 170q0 53-21 98.5T643 793l-43-43q28-25 44-59t16-75q0-75-52.5-127.5T480 436q-75 0-127.5 52.5T300 616q0 41 16 75t44 59l-43 43Zm163-97q-33 0-56.5-23.5T400 616q0-33 23.5-56.5T480 536q33 0 56.5 23.5T560 616q0 33-23.5 56.5T480 696Z"/></svg>                                
+                                    <svg  fill="@yield('Responsbility.svg')" xmlns="http://www.w3.org/2000/svg" height="24" width="48" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                                        <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
+                                      </svg>                                
                                     <span>Responsbility</span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">

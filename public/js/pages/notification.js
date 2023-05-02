@@ -61,3 +61,9 @@ function readNotification(id){
         }
     })
 }
+function readall(){
+    $.ajax({
+        type:'GET',
+        url:'/read-all/',
+    })
+}
