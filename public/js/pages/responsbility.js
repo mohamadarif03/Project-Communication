@@ -49,8 +49,8 @@ $('#btn-back-create-step-2').click(function(){
     $('#btn-close-modal-create-step-3').click()
     $('#btn-open-modal-create-step-2').click()
 })
-var check = $('#check').val()
-if(check == 'sent'){
+var checks = $('#check').val()
+if(checks == 'sent'){
     GetDataSent(1)
 }else{
     GetTypeReceive()
@@ -81,7 +81,7 @@ function GetType(){
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
                 $('#type').append(row)
-                if(check == 'sent'){
+                if(checks == 'sent'){
                     $('#comtype').append(row)
                 }
             })
@@ -207,7 +207,7 @@ function GetDataReceive(page){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   
-                '<div class="col-span-3 flex flex-col mt-6 items-center justify-center">'+
+                '<div class="lg:col-span-3 md:col-span-2 col-span-1 flex flex-col mt-6 items-center justify-center">'+
                 '<img '+src+' class="w-[20%] mt-4" alt="">'+
                             '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no receive communication found !</p>'+
                 '</div'
@@ -291,7 +291,7 @@ function GetDataSent(page){
             }else{
                 var src = "src='../img/not-found.svg'";
                 var row =   
-                '<div class="col-span-3 flex flex-col mt-6 items-center justify-center">'+
+                '<div class="md:col-span-2 col-span-1 lg:col-span-3 flex flex-col mt-6 items-center justify-center">'+
                 '<img '+src+' class="w-[20%] mt-4" alt="">'+
                             '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no sent communication found !</p>'+
                 '</div'
@@ -394,7 +394,7 @@ function checkget(id) {
     $('#check-id').val(id)
 }
 
-function check() {
+function check(){
     var id = $('#check-id').val()
     // console.log(id)
     $.ajax({
