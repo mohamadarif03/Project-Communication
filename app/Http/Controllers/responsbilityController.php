@@ -102,18 +102,19 @@ class ResponsbilityController extends Controller
 
     public function receive(Request $request){
         $data = Responbility::with([
-            'user',
+            'user' => [
+                'userrole' =>[
+                    'role'
+                ]
+            ],
             'rule' => [
                 'CommunicationType'
             ]
-            ])
-            ->when($request->year !== '-1', function($query) use ($request) {
+            ])->when($request->year !== '-1', function($query) use ($request) {
                 return $query->whereYear('date', $request->year);
-            })
-            ->when($request->month !== '-1', function($query) use ($request) {
+            })->when($request->month !== '-1', function($query) use ($request) {
                 return $query->whereMonth('date', $request->month);
-            })
-            ->join('rules','rules.id','=','responsbilities.rule_id')
+            })->join('rules','rules.id','=','responsbilities.rule_id')
               ->join('to_rules','to_rules.rule_id','=','rules.id')
               ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
               ->select('responsbilities.*')

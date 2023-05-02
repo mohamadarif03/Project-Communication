@@ -59,7 +59,6 @@ function GetType(){
         type:'GET',
         url:'/data-task-type',
         success:function(response){
-            console.log(response)
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
                 $('#type').append(row)
@@ -78,7 +77,6 @@ function GetTypeFilter(){
         type:'GET',
         url:'/data-task-type-filter',
         success:function(response){
-            console.log(response)
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'" id="type-select-'+data.id+'" data-to="'+data.to+'">'+data.communicationtype.type+'</option>'
                 $('#comtype').append(row)
@@ -156,7 +154,6 @@ function GetDataReceive(page){
         },
         success:function(response){
             $('#Receive').html('')
-            console.log(1)
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
                     var border = 'style="border: 2px solid green"'
@@ -192,7 +189,7 @@ function GetDataReceive(page){
                                 '</div>'+
                                 '<div class="h-8 w-full flex items-center">'+
                                     '<i class="mdi mdi-account"></i>'+
-                                    '<p class=" ml-1.5 my-auto text-xs">'+data.user.name+'</p>'+
+                                    '<p class=" ml-1.5 my-auto text-xs">'+data.user.userrole[0].role.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs font-semibold">'+
                                     '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-how="'+data.rule.how+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
                                     'Show >'+
