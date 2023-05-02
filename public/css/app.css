@@ -3732,6 +3732,10 @@ video {
     display: flex;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:w-\[\] {
     width: ;
   }
