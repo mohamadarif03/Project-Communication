@@ -9,7 +9,7 @@ function getyear(){
 
     var allYearsOption = document.createElement("option");
     allYearsOption.text = "All Years";
-    allYearsOption.value = "0";
+    allYearsOption.value = "-1";
 
     // buat opsi tahun dari 5 tahun ke belakang hingga 5 tahun ke depan
     for (var i = currentYear - 5; i <= currentYear + 5; i++) {
