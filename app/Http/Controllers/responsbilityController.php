@@ -80,14 +80,13 @@ class ResponsbilityController extends Controller
             'rule' => [
                 'communicationType'
             ]
-            ])->where('user_id',Auth()->user()->id)
-            ->when($request->year !== '-1', function($query) use ($request) {
+            ])->where('user_id',Auth()->user()->id)->when($request->type !== '-1',function($query) use ($request){
+                return $query->where('rule_id',$request->type);
+            })->when($request->year !== '-1', function($query) use ($request) {
                 return $query->whereYear('date', $request->year);
-            })
-            ->when($request->month !== '-1', function($query) use ($request) {
+            })->when($request->month !== '-1', function($query) use ($request) {
                 return $query->whereMonth('date', $request->month);
-            })
-            ->paginate(6);
+            })->paginate(6);
 
         $links = $data->links('layouts.paginate');
         return response()->json([
@@ -116,6 +115,8 @@ class ResponsbilityController extends Controller
             ]
             ])->when($request->year !== '-1', function($query) use ($request) {
                 return $query->whereYear('date', $request->year);
+            })->when($request->type !== '-1',function($query) use ($request){
+                return $query->where('rule_id',$request->type);
             })->when($request->month !== '-1', function($query) use ($request) {
                 return $query->whereMonth('date', $request->month);
             })->join('rules','rules.id','=','responsbilities.rule_id')
