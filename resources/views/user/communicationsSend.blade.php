@@ -6,7 +6,7 @@
     <div class="content">
 
         <!-- Start Content-->
-        <div class="container-fluid flex flex-col md:flex-row justify-evenly md:justify-between mt-3">
+        <div class=" container-fluid flex flex-col md:flex-row justify-evenly md:justify-between mt-3">
             <div class="">
                 <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
                     data-te-ripple-init data-te-ripple-color="light"

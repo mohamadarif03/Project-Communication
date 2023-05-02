@@ -87,10 +87,27 @@ class RuleController extends Controller
                 'role_id' => $item
             ]);
         }
+
+        FromRule::where('rule_id',$rule->id)->delete();
+        foreach($request->from as $item){
+            FromRule::create([
+                'rule_id' => $rule->id,
+                'role_id' => $item
+            ]);
+        }
+        $to = implode(',',$request->to);
+        $from = implode(',',$request->from);
+        $rule->to = $to;
         $rule->update([
             'communication_type_id' => $request->communication_type,
             'how' => $request->how,
             'to' => implode(',',$request->to)
+        ]);
+        $rule->from = $from;
+        $rule->update([
+            'communication_type_id' => $request->communication_type,
+            'how' => $request->how,
+            'from' => implode(',',$request->from)
         ]);
         return response()->json([
             'success' => 'Success Update Rule!'

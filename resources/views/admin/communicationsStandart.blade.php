@@ -14,31 +14,7 @@
                     Add
                 </button>
             </div>
-            <div class="flex">
-                <div class="">
-                    <form class="d-flex" action="{{ url('communication-type') }}" method="get">
-                        
-                        <select id="countries" class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 mr-3 focus:outline-none">
-                            {{-- <option selected>Choose a country</option> --}}
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="FR">France</option>
-                            <option value="DE">Germany</option>
-                          </select>
-                    </form>
-                </div>
-
-                <div class="">
-
-                    <button type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 flex"><svg
-                            style="margin-right: 13px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>Search</button>
-                </div>
-            </div>
+            
 
         </div>
         

@@ -175,7 +175,7 @@ function edit(id){
     var name = $('#btn-edit-'+id).data('name')
     var email = $('#btn-edit-'+id).data('email')
     var role = $('#btn-edit-'+id).data('role')
-    role = role.toSTring()
+    role = role.toString()
     if (role.includes(',')){
         var role_arr = role.split(',')
     }else{

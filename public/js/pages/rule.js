@@ -314,7 +314,7 @@ function update(){
     var type = $('#update-type').val()
     var how = $('#update-how').val()
     var to = $('#update-to').val()
-    var to = $('#update-from').val()
+    var from = $('#update-from').val()
     var id = $('#update-id').val()
     $.ajax({
         type:'PUT',
@@ -323,7 +323,8 @@ function update(){
             _token:csrfToken,
             communication_type: type,
             how:how,
-            to:to
+            to:to,
+            from:from
         },
         success:function(response){
             Swal.fire({
