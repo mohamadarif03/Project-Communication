@@ -408,9 +408,7 @@ function check() {
             text: 'Success Delete Responsbility!',
             icon: 'success',
             timer: 4000
-        }).then(function() {
-            location.reload();
-        });
+        })
         $('#btn-close').click()
         GetData(1)
     },
