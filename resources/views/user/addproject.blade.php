@@ -39,7 +39,7 @@
                 <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
-                            <span  style="color: #FFD93D">3</span>
+                            <span  style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
                     </a>
@@ -134,7 +134,7 @@
                 <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
-                            <span  style="color: #FFD93D">3</span>
+                            <span  style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
                     </a>
@@ -331,7 +331,7 @@
                 <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
-                            <span  style="color: #FFD93D">3</span>
+                            <span  style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
                     </a>
