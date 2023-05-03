@@ -35,7 +35,7 @@ class UpdateUserRequest extends FormRequest
                 'required','email',
                 Rule::unique(User::class)->ignore($this->route('id'))
             ],
-            'password' => 'required|same:password_confirmation',
+            'password' => 'same:password_confirmation',
         ];
     }
 }

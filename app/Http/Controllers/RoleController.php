@@ -19,8 +19,14 @@ class RoleController extends Controller
         return response()->json($data);
     }
     
-    public function paginate(){
-        $data = Role::where('name','!=','Admin')->orderBy('created_at', 'desc')->paginate(5);
+    public function paginate(Request $request){
+        if($request->search){
+            $data = Role::where('name','!=','Admin')->where('name', 'LIKE', '%'.$request->search.'%')->orderBy('created_at', 'desc')->paginate(5);
+
+        }else{
+            $data = Role::where('name','!=','Admin')->orderBy('created_at', 'desc')->paginate(5);
+
+        }
 
         $links = $data->links('layouts.paginate');
         return response()->json([

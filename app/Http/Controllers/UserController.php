@@ -32,7 +32,8 @@ class UserController extends Controller
                 'userrole' => [
                     'role'
                 ]
-            ])->where('name','!=','admin')->paginate(9);
+            ])->where('name','!=','admin')
+            ->paginate(9);
         }
         $links = $data->links('layouts.paginate');
         return response()->json([

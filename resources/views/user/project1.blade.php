@@ -71,15 +71,16 @@
                         <div class="h-12 flex w-12 rounded-circle" style="background-color: red">
                             <p class="text-white m-auto font-semibold"> MA </p>
                         </div>
-                        <div class="ml-2 flex my-auto">
+                        <div class="ml-2 my-auto">
                             <div class="my-auto">
                                 <h3 class="text-xs font-bold text-slate-900 my-0">Mohamad Arif</h3>
-                                <h3 class="text-xs text-slate-500 my-0">mohamadarif@gmail.com</h3>
+                                <h3 id="ini" class="text-xs text-slate-500 my-0">emailyangsangatpanjang@gmail.com</h3>
                                 <h3 class="text-xs text-black rounded-lg font-bold text-slate-500 my-0 absolute" style="background-color: #D9D9D9; color:black; padding:2px">service manager</h3>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
                     <div class="h-16 flex p-2 pt-0 w-full" style="margin-top: 30px">
                         <div class="h-12 flex w-12 rounded-circle" style="background-color: red">

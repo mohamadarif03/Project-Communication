@@ -21,9 +21,14 @@ var update_to
 
 GetData(1)
 function GetData(page){
+    var search = $('#search').val()
+    console.log(search)
     $.ajax({
         type:'GET',
         url:'/data-communication-type-standart-paginate?page='+page,
+        data:{
+            search:search
+        },
         success:function(response){
             console.log(response)
             var html = '<table class="min-w-full text-left text-sm font-light">'+

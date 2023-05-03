@@ -5,9 +5,14 @@ var csrfToken = $('meta[name="csrf-token"]').attr('content');
 GetData(1)
 var current_page = 1
 function GetData(page){
+    var search = $('#search').val()
+    console.log(search)
     $.ajax({
         type:'GET',
         url:'/data-role-paginate?page='+page,
+        data:{
+            search:search
+        },
         success:function(response){
             console.log(response)
             var html = '<table class="min-w-full text-left text-sm font-light">'+

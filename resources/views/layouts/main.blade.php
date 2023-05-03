@@ -20,6 +20,14 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="{{asset('css/inputcolor.css')}}">
         <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css"  id="app-stylesheet" />
+        <style>
+            .btn-close{
+                background-color: rgb(255 247 237);
+            }
+            .btn-close:hover {
+                background-color: rgb(244 233 215);
+            }
+        </style>
     </head>
     <body>
 

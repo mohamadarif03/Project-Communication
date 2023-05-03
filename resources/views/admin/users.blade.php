@@ -32,7 +32,7 @@
         </div>
     </div> 
     <div class="w-full flex flex-col">
-        <div class="grid mx-3 gap-3 grid-cols-3 mt-4" id="Data">
+        <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-3 mt-4" id="Data">
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
@@ -122,7 +122,7 @@
                     <div
                         class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
                         <button type="button" id="btn-close-modal"
-                            class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                            class="btn-close inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                             data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                             Cancel
                         </button>
@@ -211,7 +211,7 @@
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
                     <button type="button" id="btn-close-modal1"
-                        class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        class="btn-close inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Cancel
                     </button>
