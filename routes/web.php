@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommunicationController;
 use App\Http\Controllers\CommunicationTypeController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\GoogleSheetController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -122,4 +123,5 @@ Route::middleware('auth', 'verified')->group(function () {
 });
 Route::put('/check/{id}',[CommunicationController::class,'check'])->name('check');
 Route::put('/done/{id}',[CommunicationController::class,'done'])->name('done');
+Route::get('/sheet',[GoogleSheetController::class,'auth']);
 
