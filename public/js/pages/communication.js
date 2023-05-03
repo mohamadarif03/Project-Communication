@@ -25,6 +25,7 @@ function getmonth(){
 }
 getmonth()
 getyear()
+console.log(1)
 function GetData(page){
     if($('#Receive')){
         GetDataReceive(page)
