@@ -4,13 +4,11 @@
 @section('content')
 
     <div class="content">
-        <div class="flex" style="margin-top: 70px">      
-            <div class="flex items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
-                style="width: 200px; height:150px; margin-right:20px">
+        <div class="flex md:flex-row flex-col" style="margin-top: 70px">      
+            <div class="flex mx-auto md:mx-4 my-2 items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+                style="width: 200px; height:150px">
                 <div class="">
-
                     <div class="">
-
                         <div class="w-full justify-between ">
                             <svg fill="@yield('Users.svg')" xmlns="http://www.w3.org/2000/svg" height="24"
                                 viewBox="0 96 960 960" width="48">
@@ -32,8 +30,8 @@
                 </div>
 
             </div>
-            <div class=" flex items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
-                style="width: 200px; height:150px; margin-right:20px">
+            <div class=" flex mx-auto md:mx-4 my-2 items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+                style="width: 200px; height:150px;">
                 <div class="">
 
                     <div class="">
@@ -55,8 +53,8 @@
                 </div>
 
             </div>
-            <div class="flex items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
-                style="width: 200px; height:150px; margin-right:20px">
+            <div class="flex mx-auto md:mx-4 my-2 items-center rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+                style="width: 200px; height:150px;">
                 <div class="">
 
                     <div class="">

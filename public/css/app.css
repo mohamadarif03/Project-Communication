@@ -1097,6 +1097,9 @@ video {
 .w-screen {
   width: 100vw;
 }
+.w-\[60\%\] {
+  width: 60%;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -3581,6 +3584,16 @@ video {
 
   .md\:col-span-8 {
     grid-column: span 8 / span 8;
+  }
+
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .md\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .md\:mr-2 {
