@@ -22,4 +22,7 @@ class ProjectController extends Controller
     {
         return view('user.addproject');
     }
+    public function tes(){
+        
+    }
 }
