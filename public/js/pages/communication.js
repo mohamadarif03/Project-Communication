@@ -25,8 +25,9 @@ function getmonth(){
 }
 getmonth()
 getyear()
+var checks = $('#check').val()
 function GetData(page){
-    if($('#Receive')){
+    if(checks !== 'sent'){
         GetDataReceive(page)
     }else{
         GetDataSent(page)     
