@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('communication_type_id')
             ->references('id')
             ->on('communication_types')
-            ->restrictOnDelete();
+            ->cascadeOnDelete();
             $table->string('how');
             $table->string('from');
             $table->string('to');
