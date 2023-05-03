@@ -54,21 +54,19 @@
                             Name</label>
                         <input type="text"
                             class="peer block min-h-[auto] w-full rounded border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
-                            placeholder="Project Name" id="date" aria-label="" />
+                            placeholder="Project Name" id="project-name" aria-label="" />
                     </div>
                     <div class="grid grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Service
                                 Manager</label>
                             <Select multiple id="service" name="service" class="w-full" placeholder="Service Manager">
-                                <option value="Test">Test</option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Office
                                 Manager</label>
                             <Select multiple id="office" name="office" class="w-full" placeholder="Office Manager">
-                                <option value="Test">Test</option>
                             </Select>
                         </div>
                     </div>
@@ -77,14 +75,12 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Service
                                 Manager</label>
                             <Select multiple id="service2" name="service2" class="w-full" placeholder="Service Manager">
-                                <option value="Test">Test</option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Office
                                 Manager</label>
                             <Select multiple id="office2" name="office2" class="w-full" placeholder="Office Manager">
-                                <option value="Test">Test</option>
                             </Select>
                         </div>
                     </div>

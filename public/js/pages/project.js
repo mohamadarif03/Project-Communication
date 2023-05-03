@@ -1,7 +1,4 @@
-new TomSelect('#service')
-new TomSelect('#office')
-new TomSelect('#service2')
-new TomSelect('#office2')
+
 new TomSelect('#game_senior')
 new TomSelect('#game_medior')
 new TomSelect('#game_junior')
@@ -24,6 +21,7 @@ new TomSelect('#muziek')
 new TomSelect('#props')
 new TomSelect('#project_size')
 
+GetUser()
 
 
 $('#stepper1-step2').click(function(){
@@ -135,3 +133,35 @@ $('#back4').click(function(){
     $('#form3').removeClass('hidden');
 })
 
+function GetUser(){
+    $.ajax({
+        type:'GET',
+        url:'/data-user-value',
+        success:function(response){
+            $.each(response,function(index,data){
+                var row = '<option value="'+data.id+'">'+data.name+'</option>'
+                $('#service').append(row)
+                $('#service2').append(row)
+                $('#office').append(row)
+                $('#office2').append(row)
+               
+            })
+            service =  new TomSelect('#service',{
+                plugins: ['remove_button'],
+            })
+            service =  new TomSelect('#office',{
+                plugins: ['remove_button'],
+            })
+            service =  new TomSelect('#service2',{
+                plugins: ['remove_button'],
+            })
+            service =  new TomSelect('#office2',{
+                plugins: ['remove_button'],
+            })
+           
+        },
+        error:function(response){
+            console.log(response)
+        }
+    })
+}
