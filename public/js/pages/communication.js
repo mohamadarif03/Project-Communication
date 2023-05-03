@@ -23,15 +23,17 @@ function getmonth(){
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());
 }
+var checks = $('#check').val()
 getmonth()
 getyear()
 function GetData(page){
-    if($('#Receive')){
+    if($(check === 'sent')){
         GetDataReceive(page)
     }else{
         GetDataSent(page)     
     }
 }
+
 GetDataReceive(1)
 GetDataSent(1)
 function GetDataReceive(page){
