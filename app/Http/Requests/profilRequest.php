@@ -33,6 +33,7 @@ class profilRequest extends FormRequest
                 Rule::unique('users')->ignore($this->user()->id),
             ],
             'password' => 'same:confirmPassword',
+            'profile' => 'mimes:jpg,jpeg,png'
         ];
         
     }

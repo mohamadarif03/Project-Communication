@@ -125,7 +125,7 @@
                     </button>
                     <p
                         class="md:py-1.5 px-4 hidden md:inline-block text-xs md:text-sm p-0.5 py-0.5 font-semibold my-auto role-color rounded-md">
-                        Role :{{ implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray()) }}</p>
+                        Role : {{ implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray()) }}</p>
                 </li>
             </ul>
         </div>
