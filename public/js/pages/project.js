@@ -1,8 +1,15 @@
-new TomSelect('#type')
-new TomSelect('#size')
-new TomSelect('#junior')
-new TomSelect('#medior')
-new TomSelect('#senior')
+
+new TomSelect('#service')
+new TomSelect('#office')
+new TomSelect('#service2')
+new TomSelect('#office2')
+new TomSelect('#game_senior')
+new TomSelect('#game_medior')
+new TomSelect('#game_junior')
+new TomSelect('#experience_senior')
+new TomSelect('#experience_medior')
+new TomSelect('#experience_junior')
+new TomSelect('#ui_ux')
 
 
 $('#btn-next-create-step-2').click(function(){
