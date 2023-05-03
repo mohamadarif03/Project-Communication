@@ -11,7 +11,7 @@
                 <!-- Step 1 -->
                 <li id="stepper1-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">1</span>
                         </span>
                         <div class="label font-bold">Project Team</div>
@@ -20,7 +20,7 @@
                 <!-- Step 2 -->
                 <li id="stepper1-step2" class="form-stepper-unfinished text-center form-stepper-list" step="2">
                     <a class="mx-2">
-                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
+                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE; cursor:pointer;">
                             <span style="color: #FFD93D">2</span>
                         </span>
                         <div class="label text-muted font-bold">Creatives</div>
@@ -29,7 +29,7 @@
                 <!-- Step 3 -->
                 <li id="stepper1-step3" class="form-stepper-unfinished text-center form-stepper-list" step="2">
                     <a class="mx-2">
-                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
+                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE; cursor:pointer;">
                             <span style="color: #FFD93D">3</span>
                         </span>
                         <div class="label text-muted font-bold">Chaperones</div>
@@ -38,7 +38,7 @@
                 <!-- Step 4 -->
                 <li id="stepper1-step4" class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
-                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
+                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE; cursor:pointer;">
                             <span style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
@@ -46,7 +46,7 @@
                 </li>
             </ul>
         </div>
-        <div id="form1" class="grid grid-cols-1 gap-4">
+        <div id="form1" class="grid grid-cols-1">
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="mt-6 mr-6 ml-6">
@@ -102,7 +102,7 @@
                 <!-- Step 1 -->
                 <li id="stepper2-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">✓</span>
                         </span>
                         <div class="label font-bold">Project Team</div>
@@ -111,7 +111,7 @@
                 <!-- Step 2 -->
                 <li class="form-stepper-active text-center form-stepper-list" step="2">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">2</span>
                         </span>
                         <div class="label font-bold">Creatives</div>
@@ -120,7 +120,7 @@
                 <!-- Step 3 -->
                 <li id="stepper2-step3" class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
-                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
+                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE; cursor:pointer;">
                             <span style="color: #FFD93D">3</span>
                         </span>
                         <div class="label text-muted font-bold">Chaperones</div>
@@ -129,7 +129,7 @@
                 <!-- Step 4 -->
                 <li id="stepper2-step4" class="form-stepper-unfinished text-center form-stepper-list" step="4">
                     <a class="mx-2">
-                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
+                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE; cursor:pointer;">
                             <span style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
@@ -140,7 +140,7 @@
         <div id="form2" class="grid grid-cols-1 gap-4 w-full hidden">
             <div class="rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
-                    <div class="grid grid-cols-3 mx-6 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner
                                 Senior</label>
@@ -167,7 +167,7 @@
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-3 mx-6 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-4">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Experience Designer
                                 Senior</label>
@@ -194,7 +194,7 @@
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-3 mx-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 mx-2 gap-6 ml-3 mr-4">
 
                         <div class="ml-2 mt-4">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">UI/UX Junior</label>
@@ -204,7 +204,7 @@
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-3 mx-6 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Productontwerp
                                 Senior</label>
@@ -231,7 +231,7 @@
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-3 mx-6 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-4">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Programmer Senior</label>
                             <Select multiple id="programmer_senior" name="programmer_senior" class="w-full"
@@ -255,7 +255,7 @@
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-3 mx-6 mt-3 gap-6">
+                    <div class="grid grid-cols-2 md:grid-cols-3 mx-6 mt-3 gap-6">
                         <div class="mr-2 mt-4">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Story Senior</label>
                             <Select multiple id="story_senior" name="story_senior" class="w-full"
@@ -303,7 +303,7 @@
                 <!-- Step 1 -->
                 <li id="stepper3-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">✓</span>
                         </span>
                         <div class="label font-bold">Project Team</div>
@@ -312,7 +312,7 @@
                 <!-- Step 2 -->
                 <li id="stepper3-step2" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">✓</span>
                         </span>
                         <div class="label font-bold">Creatives</div>
@@ -321,7 +321,7 @@
                 <!-- Step 3 -->
                 <li class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">3</span>
                         </span>
                         <div class="label font-bold">Chaperones</div>
@@ -330,7 +330,7 @@
                 <!-- Step 4 -->
                 <li id="stepper3-step4" class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
-                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
+                        <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE; cursor:pointer;">
                             <span style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
@@ -396,7 +396,7 @@
                 <!-- Step 1 -->
                 <li id="stepper4-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">✓</span>
                         </span>
                         <div class="label font-bold">Project Team</div>
@@ -405,7 +405,7 @@
                 <!-- Step 2 -->
                 <li id="stepper4-step2" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">✓</span>
                         </span>
                         <div class="label font-bold">Creatives</div>
@@ -414,7 +414,7 @@
                 <!-- Step 3 -->
                 <li id="stepper4-step3" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">✓</span>
                         </span>
                         <div class="label font-bold">Chaperones</div>
@@ -423,7 +423,7 @@
                 <!-- Step 4 -->
                 <li class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
-                        <span class="form-stepper-circle" style="background-color: #FFD93D">
+                        <span class="form-stepper-circle" style="background-color: #FFD93D; cursor:pointer;">
                             <span class="text-white">4</span>
                         </span>
                         <div class="label font-bold">Project SIze</div>
@@ -451,7 +451,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 mx-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
                             <label for="type" class="mb-2 text-sm font-bold text-gray-900">Project Size
                             </label>
@@ -473,7 +473,7 @@
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-2 gap-4 mx-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Link
                             </label>
