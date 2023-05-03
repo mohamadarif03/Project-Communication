@@ -26,8 +26,11 @@ class ResponsbilityRequest extends FormRequest
         return [
             'type' => 'required',
             'date' => 'required',
+            'date' => 'required',
             'link' => 'nullable|url',
-            'file' => 'nullable|mimes:docx,pdf,xlsx'
+            'file' => 'nullable',
+
+
         ];
         
     }
