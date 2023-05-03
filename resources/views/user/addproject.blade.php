@@ -5,11 +5,11 @@
 @section('content')
 
     <div class="content">
-        <div id="multi-step-form-container">
+        <div id="stepper1" class="mt-6">
             <!-- Form Steps / Progress Bar -->
             <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
                 <!-- Step 1 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <li id="stepper1-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">1</span>
@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <!-- Step 2 -->
-                <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                <li id="stepper1-step2" class="form-stepper-unfinished text-center form-stepper-list" step="2">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
                             <span style="color: #FFD93D">2</span>
@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <!-- Step 3 -->
-                <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                <li id="stepper1-step3" class="form-stepper-unfinished text-center form-stepper-list" step="2">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
                             <span style="color: #FFD93D">3</span>
@@ -36,17 +36,17 @@
                     </a>
                 </li>
                 <!-- Step 4 -->
-                <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                <li id="stepper1-step4" class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
-                            <span  style="color: #FFD93D">4</span>
+                            <span style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="grid grid-cols-1 gap-4">
+        <div id="form1" class="grid grid-cols-1 gap-4">
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="mt-6 mr-6 ml-6">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                     <div class="" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
-                        <button type="button"
+                        <button id="next1" type="button"
                             class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                             Next
                         </button>
@@ -100,11 +100,11 @@
 
 
         </div>
-        <div id="multi-step-form-container">
+        <div id="stepper2" class="mt-6 hidden">
             <!-- Form Steps / Progress Bar -->
             <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
                 <!-- Step 1 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <li id="stepper2-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">✓</span>
@@ -112,8 +112,8 @@
                         <div class="label font-bold">Project Team</div>
                     </a>
                 </li>
-                <!-- Step 1 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <!-- Step 2 -->
+                <li class="form-stepper-active text-center form-stepper-list" step="2">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">2</span>
@@ -122,7 +122,7 @@
                     </a>
                 </li>
                 <!-- Step 3 -->
-                <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                <li id="stepper2-step3" class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
                             <span style="color: #FFD93D">3</span>
@@ -131,36 +131,39 @@
                     </a>
                 </li>
                 <!-- Step 4 -->
-                <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                <li id="stepper2-step4" class="form-stepper-unfinished text-center form-stepper-list" step="4">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
-                            <span  style="color: #FFD93D">4</span>
+                            <span style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="grid grid-cols-1 gap-4 w-full">
+        <div id="form2" class="grid grid-cols-1 gap-4 w-full hidden">
             <div class="rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="grid grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner Senior</label>
+                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner
+                                Senior</label>
                             <Select multiple id="game_senior" name="game_senior" class="w-full"
                                 placeholder="Gamedesigner Senior">
                                 <option value="Test">Test</option>
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner Medior</label>
+                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner
+                                Medior</label>
                             <Select multiple id="game_medior" name="game_medior" class="w-full"
                                 placeholder="Gamedesigner Medior">
                                 <option value="Test">Test</option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner Junior</label>
+                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner
+                                Junior</label>
                             <Select multiple id="game_junior" name="game_junior" class="w-full"
                                 placeholder="Gamedesigner Junior">
                                 <option value="Test">Test</option>
@@ -282,11 +285,12 @@
                     </div>
 
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
-                        <button type="button"
-                            class="col-span-1 text-black hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center" style="border: 2px solid #828282; color:#828282">
+                        <button id="back2" type="button"
+                            class="col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
-                        <button type="button"
+                        <button id="next2" type="button"
                             class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                             Next
                         </button>
@@ -297,11 +301,11 @@
 
 
         </div>
-        <div id="multi-step-form-container">
+        <div id="stepper3" class="mt-6 hidden">
             <!-- Form Steps / Progress Bar -->
             <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
                 <!-- Step 1 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <li id="stepper3-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">✓</span>
@@ -310,7 +314,7 @@
                     </a>
                 </li>
                 <!-- Step 2 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <li id="stepper3-step2" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">✓</span>
@@ -328,17 +332,17 @@
                     </a>
                 </li>
                 <!-- Step 4 -->
-                <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                <li id="stepper3-step4" class="form-stepper-unfinished text-center form-stepper-list" step="3">
                     <a class="mx-2">
                         <span class="form-stepper-circle text-muted" style="background-color: #FBF5DE">
-                            <span  style="color: #FFD93D">4</span>
+                            <span style="color: #FFD93D">4</span>
                         </span>
                         <div class="label text-muted font-bold">Project Size</div>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="grid grid-cols-1 gap-4 w-full">
+        <div id="form3" class="grid grid-cols-1 gap-4 w-full hidden">
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="grid grid-cols-2 gap-4 mx-6">
@@ -374,11 +378,12 @@
                         </div>
                     </div>
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
-                        <button type="button"
-                            class="col-span-1 text-black hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center" style="border: 2px solid #828282; color:#828282">
+                        <button id="back3" type="button"
+                            class="col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
-                        <button type="button"
+                        <button id="next3" type="button"
                             class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                             Next
                         </button>
@@ -389,11 +394,11 @@
 
 
         </div>
-        <div id="multi-step-form-container">
+        <div id="stepper4" class="mt-6 hidden">
             <!-- Form Steps / Progress Bar -->
             <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
                 <!-- Step 1 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <li id="stepper4-step1" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">✓</span>
@@ -402,7 +407,7 @@
                     </a>
                 </li>
                 <!-- Step 2 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <li id="stepper4-step2" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">✓</span>
@@ -411,7 +416,7 @@
                     </a>
                 </li>
                 <!-- Step 3 -->
-                <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <li id="stepper4-step3" class="form-stepper-active text-center form-stepper-list" step="1">
                     <a class="mx-2">
                         <span class="form-stepper-circle" style="background-color: #FFD93D">
                             <span class="text-white">✓</span>
@@ -428,19 +433,26 @@
                         <div class="label font-bold">Project SIze</div>
                     </a>
                 </li>
-                
+
             </ul>
         </div>
-        <div class="grid grid-cols-1 gap-4 w-full">
+        <div id="form4" class="grid grid-cols-1 gap-4 w-full hidden">
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="grid grid-cols-1 mx-6">
                         <div class="mr-2 mt-6 rounded-lg" style="background-color: #FBF5DE">
-                            <h1 class="font-bold text-sm ml-6">Information</h1>
-                            <ul class="list-disc">
-                                <li class="ml-16">Download excel template & upload into google spreadsheet</li>
-                                <li class="ml-16">Copy link & paste into <b class="text-black">Link</b> field</li>
-                            </ul>
+                            <div class="">
+                                <ul class="list-disc">
+                                    <li class="mt-3 font-bold" style="list-style-type: none; margin-left:30px">Information
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="">
+                                <ul class="list-disc">
+                                    <li class="ml-16">Download excel template & upload into google spreadsheet</li>
+                                    <li class="ml-16">Copy link & paste into <b class="text-black">Link</b> field</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4 mx-6">
@@ -476,13 +488,14 @@
 
                     </div>
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
-                        <button type="button"
-                            class="col-span-1 text-black hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center" style="border: 2px solid #828282; color:#828282">
+                        <button id="back4" type="button"
+                            class="col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
                         <button type="button"
                             class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
-                            Next
+                            Submit
                         </button>
                     </div>
                 </div>

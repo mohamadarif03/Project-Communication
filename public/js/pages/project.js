@@ -26,20 +26,112 @@ new TomSelect('#project_size')
 
 
 
-$('#btn-next-create-step-2').click(function(){
-    $('#btn-close-modal-create-step-1').click()
-    $('#btn-open-modal-create-step-2').click()
+$('#stepper1-step2').click(function(){
+    $('#stepper1').addClass('hidden');
+    $('#form1').addClass('hidden');
+    $('#stepper2').removeClass('hidden');
+    $('#form2').removeClass('hidden');
 })
-$('#btn-next-create-step-3').click(function(){
-    $('#btn-close-modal-create-step-2').click()
-    $('#btn-open-modal-create-step-3').click()
+$('#next1').click(function(){
+    $('#stepper1').addClass('hidden');
+    $('#form1').addClass('hidden');
+    $('#stepper2').removeClass('hidden');
+    $('#form2').removeClass('hidden');
+})
+$('#stepper1-step3').click(function(){
+    $('#stepper1').addClass('hidden');
+    $('#form1').addClass('hidden');
+    $('#stepper3').removeClass('hidden');
+    $('#form3').removeClass('hidden');
+})
+$('#stepper1-step4').click(function(){
+    $('#stepper1').addClass('hidden');
+    $('#form1').addClass('hidden');
+    $('#stepper4').removeClass('hidden');
+    $('#form4').removeClass('hidden');
+})
+$('#stepper2-step1').click(function(){
+    $('#stepper2').addClass('hidden');
+    $('#form2').addClass('hidden');
+    $('#stepper1').removeClass('hidden');
+    $('#form1').removeClass('hidden');
+})
+$('#stepper2-step3').click(function(){
+    $('#stepper2').addClass('hidden');
+    $('#form2').addClass('hidden');
+    $('#stepper3').removeClass('hidden');
+    $('#form3').removeClass('hidden');
+})
+$('#next2').click(function(){
+    $('#stepper2').addClass('hidden');
+    $('#form2').addClass('hidden');
+    $('#stepper3').removeClass('hidden');
+    $('#form3').removeClass('hidden');
+})
+$('#back2').click(function(){
+    $('#stepper2').addClass('hidden');
+    $('#form2').addClass('hidden');
+    $('#stepper1').removeClass('hidden');
+    $('#form1').removeClass('hidden');
+})
+$('#stepper2-step4').click(function(){
+    $('#stepper2').addClass('hidden');
+    $('#form2').addClass('hidden');
+    $('#stepper4').removeClass('hidden');
+    $('#form4').removeClass('hidden');
+})
+$('#stepper3-step1').click(function(){
+    $('#stepper3').addClass('hidden');
+    $('#form3').addClass('hidden');
+    $('#stepper1').removeClass('hidden');
+    $('#form1').removeClass('hidden');
+})
+$('#stepper3-step2').click(function(){
+    $('#stepper3').addClass('hidden');
+    $('#form3').addClass('hidden');
+    $('#stepper2').removeClass('hidden');
+    $('#form2').removeClass('hidden');
+})
+$('#stepper3-step4').click(function(){
+    $('#stepper3').addClass('hidden');
+    $('#form3').addClass('hidden');
+    $('#stepper4').removeClass('hidden');
+    $('#form4').removeClass('hidden');
+})
+$('#next3').click(function(){
+    $('#stepper3').addClass('hidden');
+    $('#form3').addClass('hidden');
+    $('#stepper4').removeClass('hidden');
+    $('#form4').removeClass('hidden');
+})
+$('#back3').click(function(){
+    $('#stepper3').addClass('hidden');
+    $('#form3').addClass('hidden');
+    $('#stepper2').removeClass('hidden');
+    $('#form2').removeClass('hidden');
+})
+$('#stepper4-step1').click(function(){
+    $('#stepper4').addClass('hidden');
+    $('#form4').addClass('hidden');
+    $('#stepper1').removeClass('hidden');
+    $('#form1').removeClass('hidden');
+})
+$('#stepper4-step2').click(function(){
+    $('#stepper4').addClass('hidden');
+    $('#form4').addClass('hidden');
+    $('#stepper2').removeClass('hidden');
+    $('#form2').removeClass('hidden');
+})
+$('#stepper4-step3').click(function(){
+    $('#stepper4').addClass('hidden');
+    $('#form4').addClass('hidden');
+    $('#stepper3').removeClass('hidden');
+    $('#form3').removeClass('hidden');
+})
+$('#back4').click(function(){
+    $('#stepper4').addClass('hidden');
+    $('#form4').addClass('hidden');
+    $('#stepper3').removeClass('hidden');
+    $('#form3').removeClass('hidden');
 })
 
-$('#btn-back-create-step-1').click(function(){
-    $('#btn-close-modal-create-step-2').click()
-    $('#btn-open-crate-step-1').click()
-})
-$('#btn-back-create-step-2').click(function(){
-    $('#btn-close-modal-create-step-3').click()
-    $('#btn-open-modal-create-step-2').click()
-})
