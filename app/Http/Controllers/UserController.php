@@ -68,7 +68,7 @@ class UserController extends Controller
         return response()->json(['message' => 'Success Create New User!']);
     }
 
-    public function update(Request $request,$id){
+    public function update(UpdateUserRequest $request,$id){
         $user = user::findorfail($id);
         UserRole::where('user_id',$id)->delete();
         foreach($request->role as $data){

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,14 +26,14 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' =>  [
+            'name' => [
                 'required',
-                Rule::unique(user::class)->ignore($this->route('id'))
+                Rule::unique(User::class)->ignore($this->route('id'))
             ],
             'role' => 'required',
             'email' => [
-                'required',
-                Rule::unique(user::class)->ignore($this->route('id'))
+                'required','email',
+                Rule::unique(User::class)->ignore($this->route('id'))
             ],
             'password' => 'required|same:password_confirmation',
         ];

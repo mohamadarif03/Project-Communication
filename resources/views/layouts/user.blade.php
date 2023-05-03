@@ -125,7 +125,7 @@
                     </button>
                     <p
                         class="md:py-1.5 px-4 hidden md:inline-block text-xs md:text-sm p-0.5 py-0.5 font-semibold my-auto role-color rounded-md">
-                        Role :{{ implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray()) }}</p>
+                        Role : {{ implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray()) }}</p>
                 </li>
             </ul>
         </div>
@@ -151,7 +151,7 @@
                             </a>
                         </li>
                         <li class="@yield('Communication.li')">
-                            <a class="@yield('Communication.a')">
+                            <a class="@yield('Communication.a')" style="cursor: pointer;">
                                 <svg fill="@yield('Communication.svg', '#6e768e')" xmlns="http://www.w3.org/2000/svg" height="24"
                                     viewBox="0 96 960 960" width="48">
                                     <path
@@ -165,7 +165,7 @@
                             </ul>
                         </li>
                         <li class="@yield('Responsbility.li')">
-                            <a class="@yield('Responsbility.a')">
+                            <a class="@yield('Responsbility.a')" style="cursor: pointer;">
                                 <svg class="" fill="@yield('Responsbility.svg', '#6e768e')" xmlns="http://www.w3.org/2000/svg"
                                     height="24" width="48" fill="currentColor" class="bi bi-person-badge"
                                     viewBox="0 0 16 16">

@@ -204,7 +204,9 @@ function edit(id){
                 var row = '<option '+ selected +' value="'+data.id+'">'+data.name+'<option>'
                 $('#update-role').append(row)
             })
-            new TomSelect('#update-role')
+            new TomSelect('#update-role',{
+                plugins: ['remove_button'],
+            })
             const remove = $('#update-role-form').find('.ts-wrapper:not(:first)');
                 remove.remove();
         },
@@ -242,6 +244,8 @@ function update(){
                 text: 'Success Update User!',
                 icon: 'success',
             })
+            $('#update-password_confirmation').val('')
+            $('#update-password').val('')
             GetData(1)
             $('#btn-close-update').click()
         },

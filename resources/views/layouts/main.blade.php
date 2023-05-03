@@ -87,7 +87,7 @@
                         <button class="button-menu-mobile waves-effect waves-light">
                             <i class="mdi mdi-menu"></i>
                         </button>
-                        <p class="py-1.5 px-4 font-semibold my-auto role-color rounded-md">Role :{{implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray())}}</p>
+                        <p class="py-1.5 px-4 font-semibold my-auto role-color rounded-md">Role : {{implode(' | ',Auth()->user()->userrole->pluck('role.name')->toarray())}}</p>
                     </li>
 
                 </ul>
