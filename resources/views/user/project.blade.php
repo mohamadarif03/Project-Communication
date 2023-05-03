@@ -8,14 +8,13 @@
 
         <div class="container-fluid flex justify-between mt-3">
 
-            <div class="">
+            <a href="/addproject">
                 <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
-                    data-te-ripple-init data-te-ripple-color="light"
-                    class=" hidden focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">
-                    Add
-                </button>
-
-            </div>
+                data-te-ripple-init data-te-ripple-color="light"
+                class=" focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
+                Add
+            </button>
+        </a>
             <div class="grid grid-cols-4 gap-2">
                 <div class="relative mr-2">
                     <select id="year" name="year" class="block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
