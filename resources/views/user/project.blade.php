@@ -88,7 +88,7 @@
                         <div class="ml-2 flex my-auto">
                             <div class="my-auto">
                                 <h1 class="text-sm my-0 font-semibold">Mohamad Arif</h1>
-                                <h3 class="text-xs text-slate-500 my-0">small</h3>
+                                <h3 class="text-xs text-slate-500 my-0 rounded-full" style="background-color: #D6F7E4; color: #27AE60; position:absolute; padding:2px 5px ">small</h3>
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,8 @@
                         <div class="ml-2 flex my-auto">
                             <div class="my-auto">
                                 <h1 class="text-sm my-0 font-semibold">Mohamad Arif</h1>
-                                <h3 class="text-xs text-slate-500 my-0">small</h3>
+                                <h3 class="text-xs text-slate-500 my-0 rounded-full" style="background-color: #27AE60;; color: white; position:absolute; padding:2px 5px ">small</h3>
+
                             </div>
                         </div>
                     </div>
