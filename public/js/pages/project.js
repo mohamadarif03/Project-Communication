@@ -1,4 +1,3 @@
-
 new TomSelect('#service')
 new TomSelect('#office')
 new TomSelect('#service2')
@@ -10,6 +9,21 @@ new TomSelect('#experience_senior')
 new TomSelect('#experience_medior')
 new TomSelect('#experience_junior')
 new TomSelect('#ui_ux')
+new TomSelect('#productonwerp_senior')
+new TomSelect('#productonwerp_medior')
+new TomSelect('#productonwerp_junior')
+new TomSelect('#programmer_senior')
+new TomSelect('#programmer_medior')
+new TomSelect('#programmer_junior')
+new TomSelect('#story_senior')
+new TomSelect('#story_medior')
+new TomSelect('#story_junior')
+new TomSelect('#host')
+new TomSelect('#techniek')
+new TomSelect('#muziek')
+new TomSelect('#props')
+new TomSelect('#project_size')
+
 
 
 $('#btn-next-create-step-2').click(function(){
