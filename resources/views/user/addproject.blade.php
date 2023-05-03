@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="content">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 w-full">
+        <div class="grid grid-cols-1 gap-4">
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="mt-6 mr-6 ml-6">
@@ -58,7 +58,7 @@
 
 
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 w-full">
+        <div class="grid grid-cols-1 gap-4 w-full">
             <div class="rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="grid grid-cols-3 mx-6 gap-6">
@@ -188,7 +188,7 @@
 
 
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 w-full">
+        <div class="grid grid-cols-1 gap-4 w-full">
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="grid grid-cols-2 gap-4 mx-6">
@@ -234,7 +234,7 @@
 
 
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 w-full">
+        <div class="grid grid-cols-1 gap-4 w-full">
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="grid grid-cols-1 mx-6">
@@ -288,8 +288,9 @@
 
 
 
-@endsection
 
-@section('javascript')
-    <script src="{{ asset('js/pages/project.js') }}"></script>
-@endsection
+    @endsection
+
+    @section('javascript')
+        <script src="{{ asset('js/pages/project.js') }}"></script>
+    @endsection
