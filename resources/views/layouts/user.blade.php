@@ -154,7 +154,7 @@
                         <li class="@yield('Dashboard.li')">
                             <a href="dashboard" class="@yield('Dashboard.a')">
                                 <i class="mdi mdi-view-dashboard"></i>
-                                <span> Dashboard <span class="bg-green-500 ml-2 rounded-sm px-2 text-xs text-white">Ongoing</span> </span>
+                                <span> Dashboard <span class="bg-red-500 ml-2 rounded-sm px-2 text-xs text-white">Ongoing</span> </span>
                             </a>
                         </li>
                         <li class="@yield('Communication.li')">
@@ -197,7 +197,7 @@
                                     <path
                                         d="M6.5 3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm-4 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm8 0a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3z" />
                                 </svg>
-                                <span>Project <span class="bg-green-500 ml-2 rounded-sm px-2 text-xs text-white">Ongoing</span> </span>
+                                <span>Project <span class="bg-red-500 ml-2 rounded-sm px-2 text-xs text-white">Ongoing</span> </span>
                             </a>
                         </li>
                     </ul>
