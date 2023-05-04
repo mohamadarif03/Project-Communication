@@ -1,5 +1,6 @@
 <div class="flex justify-center mt-8">
     <ul class="pagination">
+       
         @if ($paginator->onFirstPage())
             <li class="disabled">
                 <span class="relative block py-2 px-3 leading-tight text-gray-900 mr-2 cursor-not-allowed"
@@ -23,6 +24,14 @@
                 </li>
             @endif
 
+            @if ($paginator->lastPage() > 1)
+            @if ($paginator->currentPage() != 1)
+                <li>
+                    <a class="relative block py-2 px-3 leading-tight cursor-pointer bg-white border rounded-md border-gray-300 text-yellow-500 hover:bg-gray-200 mr-2"
+                        onclick="GetData(1)">First Page</a>
+                </li>
+            @endif
+        @endif
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
@@ -36,6 +45,13 @@
                 @endforeach
             @endif
         @endforeach
+        @if ($paginator->lastPage() > 1)
+        @if ($paginator->currentPage() != $paginator->lastPage())
+            <li><a class="relative block py-2 px-3 leading-tight cursor-pointer bg-white border rounded-md border-gray-300 text-yellow-500 hover:bg-gray-200 mr-2"
+                    onclick="GetData({{ $paginator->lastPage() }})">Last Page</a></li>
+        @endif
+    @endif
+
 
         @if ($paginator->hasMorePages())
             <li>
@@ -52,12 +68,7 @@
                 </span>
             </li>
         @endif
-        @if ($paginator->lastPage() > 1)
-            @if ($paginator->currentPage() != $paginator->lastPage())
-                <li><a class="relative block py-2 px-3 leading-tight cursor-pointer bg-white border rounded-md border-gray-300 text-yellow-500 hover:bg-gray-200 mr-2"
-                        onclick="GetData({{ $paginator->lastPage() }})">Last Page</a></li>
-            @endif
-        @endif
+       
 
     </ul>
 </div>

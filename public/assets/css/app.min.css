@@ -289,9 +289,6 @@ body {
 .enlarged .user-box {
   display: none;
 }
-body.enlarged {
-  min-height: 1200px;
-}
 @media (max-width: 767.98px) {
   body {
     overflow-x: hidden;
