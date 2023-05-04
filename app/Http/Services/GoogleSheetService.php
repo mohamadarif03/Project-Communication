@@ -6,7 +6,9 @@ use Google\Client;
 use Google\Service\Sheets;
 use Google\Service\Sheets\Sheet;
 use Google\Service\Sheets\ValueRange;
-
+use Google\Service\Sheets\Spreadsheet;
+use Google\Service\Drive;
+use Google\Service\Drive\Permission;
 class GoogleSheetService
 {
     public $client, $service, $documentId, $range;
@@ -62,4 +64,23 @@ class GoogleSheetService
         ];
         $result = $this->service->spreadsheets_values->append($this->documentId, $this->range, $body, $params);
     }
+
+    public function createSheet($title)
+    {
+        $spreadsheet = new Spreadsheet([
+            'properties' => [
+                'title' => $title
+            ],
+
+        ]);
+        $spreadsheet = $this->service->spreadsheets->create($spreadsheet);
+        
+        $spreadsheetId = $spreadsheet->getSpreadsheetId();
+        $url = "https://docs.google.com/spreadsheets/d/" . $spreadsheetId;
+    
+        return $spreadsheetId;
+    }
+
+
+
 }

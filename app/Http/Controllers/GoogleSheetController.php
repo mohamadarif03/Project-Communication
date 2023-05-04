@@ -15,4 +15,10 @@ class GoogleSheetController extends Controller
         $sheet->writeSheet($value);
         dd($sheet->readSheet());
     }
+
+    public function new(){
+        $sheet = new GoogleSheetService('A1:A10');
+        $tes = $sheet->createSheet('Sheet Baru aja 2');
+        return response()->json($tes);
+    }
 }

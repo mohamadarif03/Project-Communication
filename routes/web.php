@@ -72,9 +72,9 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::delete('/delete-user/{id}',[UserController::class,'delete']);
         Route::get('/profil',[ProfileController::class,'view']);
         
-        });
+    });
 
-        Route::middleware('user')->group(function(){
+    Route::middleware('user')->group(function(){
             
         //Communication
         Route::get('/data-communication-type-standart',[CommunicationTypeController::class,'dataStandart']);
@@ -101,7 +101,9 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/read-notification/{id}',[NotificationController::class,'delete']);
         Route::get('/read-all',[NotificationController::class,'readall']);
 
-        });
+        Route::get('/download-template',[ProjectController::class,'download']);
+
+    });
 
     Route::get('logout', [AuthController::class, 'logout']);
     Route::get('/dashboard',[Controller::class,'index']);
@@ -124,4 +126,5 @@ Route::middleware('auth', 'verified')->group(function () {
 Route::put('/check/{id}',[CommunicationController::class,'check'])->name('check');
 Route::put('/done/{id}',[CommunicationController::class,'done'])->name('done');
 Route::get('/sheet',[GoogleSheetController::class,'auth']);
+Route::get('/newsheet',[GoogleSheetController::class,'new']);
 
