@@ -133,7 +133,7 @@ function GetData(page){
                 '<img '+src+' class="w-[20%] mt-4" alt="">'+
                             '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no rule found !</p>'+
                 '</div'
-                $('#paginate').append(row)
+                $('#paginate').html(row)
                 // $('#paginate').html('');
 
             }

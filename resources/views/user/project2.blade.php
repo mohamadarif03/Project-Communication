@@ -32,6 +32,31 @@
             
 
         </div>
+
+        
+        <div class="row">
+            <div class="grid mx-3 gap-3 grid-cols-4">
+                <div class="card p-1">
+                    <div class="ml-auto">
+                       30-1-2003
+                    </div>
+                    <div class="row no-gutters align-items-center">
+                      
+                        <div class="col-md-2 h-10 flex w-12 rounded-circle" style="background-color: red;">
+                            <p class="text-white m-auto font-semibold"> MA </p>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title">Mohamad Arif</h5>
+                                <p class="card-text">mohamadarif@gmail.com</p>
+                            </div>
+                        </div>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
        
         <div class="flex mt-2 items-center justify-center">
             <a href="/project-team">
@@ -55,6 +80,7 @@
         </div>
         <div class="w-full flex flex-col">
             <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-4 lg:grid-cols-4 mt-4" id="Data">
+             
                 <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
                     <div class="h-8 p-2 items-center w-full relative flex">
                         <button class="ml-auto h-5 w-5 rounded-circle bg-transparent">
@@ -127,68 +153,13 @@
                     <div class="h-8 p-2 items-center w-full relative flex">
                         <button class="ml-auto h-5 w-5 rounded-circle bg-transparent">
                             <svg  class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>
-                        </button>
-                        <ul id="dropdownlist-index" class="absolute dropdown-edit hidden z-[1000] float-left right-9 top-3 border-2 m-0 min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg" >
-                            <li>
-                                    <button id="btn-edit-data.id" data-type="data.communication_type_id" data-how="data.how" data-to="data.to" onclick="edit(data.id)" class="btn-edit flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                        </svg>
-                                        <p class="my-auto">Edit</p>
-                                    </button>       
-                                </li>
-                                <li>
-                                    <button onclick="removeModal(data.id)" class="btn-delete flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                                        </svg>
-                                        <p class="my-auto">Delete</p>
-                                    </button>
-                                </li>
-                        </ul>           
+                        </button>         
                     </div>
                     <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                        
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-auto">
-                                <h1 class="text-sm my-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, modi!</h1>
-                            </div>
+                        <div id="bulat" class="h-12 flex w-12 rounded-circle" style="background-color: red;">
+                            <p class="text-white m-auto font-semibold"> MA </p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
-                    <div class="h-8 p-2 items-center w-full relative flex">
-                        <button class="ml-auto h-5 w-5 rounded-circle bg-transparent">
-                            <svg  class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>
-                        </button>
-                        <ul id="dropdownlist-index" class="absolute dropdown-edit hidden z-[1000] float-left right-9 top-3 border-2 m-0 min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg" >
-                            <li>
-                                    <button id="btn-edit-data.id" data-type="data.communication_type_id" data-how="data.how" data-to="data.to" onclick="edit(data.id)" class="btn-edit flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                                        </svg>
-                                        <p class="my-auto">Edit</p>
-                                    </button>       
-                                </li>
-                                <li>
-                                    <button onclick="removeModal(data.id)" class="btn-delete flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                                        </svg>
-                                        <p class="my-auto">Delete</p>
-                                    </button>
-                                </li>
-                        </ul>           
-                    </div>
-                    <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                        
-                        <div class="ml-2 flex my-auto">
-                            <div class="my-auto">
-                                <h1 class="text-sm my-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, modi!</h1>
-                            </div>
-                        </div>
+                        <div> content overflows an</div>
                     </div>
                 </div>
                 <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-green-200" style="border: 2px solid green">

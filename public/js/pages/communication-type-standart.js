@@ -302,14 +302,14 @@ function remove() {
             $.each(response,function(index,data){
                 var row = '<option value="'+data.id+'">'+data.name+'</option>'
                 $('#to').append(row)
-                $('#update-to').append(row)
+                // $('#update-to').append(row)
             })
             to =  new TomSelect('#to',{
                 plugins: ['remove_button'],
             })
-            update_to =  new TomSelect('#update-to',{
-                plugins: ['remove_button'],
-            })
+            // update_to =  new TomSelect('#update-to',{
+            //     plugins: ['remove_button'],
+            // })
         },
         error:function(response){
             console.log(response)

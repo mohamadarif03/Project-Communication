@@ -14,11 +14,15 @@ function fetch_update() {
 var from
 
 GetData(1)
-GetRole()
+
 function GetData(page){
+    var search = $('#search').val()
     $.ajax({
         type:'GET',
         url:'/data-communication-type-task-paginate?page='+page,
+        data:{
+            search:search
+        },
         success:function(response){
             console.log(response)
             var html = '<table class="min-w-full text-left text-sm font-light">'+
@@ -124,25 +128,7 @@ function create(){
     })
 }
 
-function GetRole(){
-    $.ajax({
-        type:'GET',
-        url:'/data-role',
-        success:function(response){
-            $.each(response,function(index,data){
-                var row = '<option value="'+data.id+'">'+data.name+'</option>'
-                $('#update-to').append(row)
-            })
-           
-            update_to = new TomSelect('#update-to',{
-                plugins:['remove_button']
-            })
-        },
-        error:function(response){
-            console.log(response)
-        }
-    })
-}
+
 
 function edit(id){
     var name = $('#btn-edit-'+id).data('name')
