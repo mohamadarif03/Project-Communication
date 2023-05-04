@@ -42,9 +42,20 @@ function GetData(page){
                     }else{                 
                         var src = 'src="../storage/'+data.profile+'"'
                     }
+                    if (data.email.length > 18) {
+                        var sizeTextEmail = 'style="font-size:8px;"'
+                        var size_role = 'font-size:10px;'
+                        var fontWeightEmail = 'font-bold'
+                    } else {
+                        var sizeTextEmail = 'style="font-size:14px;"'
+                        var size_role = 'font-size:16px;'
+                        var fontWeightEmail = 'font-medium'
+                    }
+                    
+                    
                     var role = ''
                     $.each(data.userrole,function(index,item){
-                        role += '<div class="rounded-md inline-block m-1 px-1 py-0 mt-1" style="background-color: #D9D9D9;">'+item.role.name+'</div>'
+                        role += '<div class="rounded-md inline-block m-1 px-1 py-0 mt-1" style="background-color: #D9D9D9; '+size_role+'">'+item.role.name+'</div>'
                     })
                     var row = '<div class="col-span-1 w-full h-full px-2 py-2 pb-1 mt-1 rounded-md bg-white">'+
                                 '<div class="h-8 p-2 items-center relative w-full flex">'+
@@ -84,7 +95,7 @@ function GetData(page){
                                     '<div class="ml-2 flex my-auto" id="get-data-users">'+
                                         '<div class="my-auto">'+
                                             '<h1 class="text-sm my-0 font-semibold">'+data.name+'</h1>'+
-                                            '<h3 class="text-sm my-0">'+data.email+'</h3>'+
+                                            '<h3 class="'+fontWeightEmail+' my-0"'+sizeTextEmail+' >'+data.email+'</h3>'+
                                         '</div>'+
                                     '</div>'+
                                     '</div>'+

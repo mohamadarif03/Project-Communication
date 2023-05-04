@@ -1,20 +1,6 @@
 
-new TomSelect('#game_senior')
-new TomSelect('#game_medior')
-new TomSelect('#game_junior')
-new TomSelect('#experience_senior')
-new TomSelect('#experience_medior')
-new TomSelect('#experience_junior')
-new TomSelect('#ui_ux')
-new TomSelect('#productonwerp_senior')
-new TomSelect('#productonwerp_medior')
-new TomSelect('#productonwerp_junior')
-new TomSelect('#programmer_senior')
-new TomSelect('#programmer_medior')
-new TomSelect('#programmer_junior')
-new TomSelect('#story_senior')
-new TomSelect('#story_medior')
-new TomSelect('#story_junior')
+
+
 new TomSelect('#host')
 new TomSelect('#techniek')
 new TomSelect('#muziek')
@@ -144,18 +130,82 @@ function GetUser(){
                 $('#service2').append(row)
                 $('#office').append(row)
                 $('#office2').append(row)
+                $('#game_senior').append(row)
+                $('#game_medior').append(row)
+                $('#game_junior').append(row)
+                $('#experience_senior').append(row)
+                $('#experience_medior').append(row)
+                $('#experience_junior').append(row)
+                $('#ui_ux').append(row)
+                $('#productonwerp_senior').append(row)
+                $('#productonwerp_medior').append(row)
+                $('#productonwerp_junior').append(row)
+                $('#programmer_senior').append(row)
+                $('#programmer_medior').append(row)
+                $('#programmer_junior').append(row)
+                $('#story_senior').append(row)
+                $('#story_medior').append(row)
+                $('#story_junior').append(row)
                
             })
-            service =  new TomSelect('#service',{
+            new TomSelect('#service',{
                 plugins: ['remove_button'],
             })
-            service =  new TomSelect('#office',{
+            new TomSelect('#office',{
                 plugins: ['remove_button'],
             })
-            service =  new TomSelect('#service2',{
+            new TomSelect('#service2',{
                 plugins: ['remove_button'],
             })
-            service =  new TomSelect('#office2',{
+            new TomSelect('#office2',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#game_senior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#game_medior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#game_junior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#experience_senior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#experience_medior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#experience_junior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#ui_ux',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#productonwerp_senior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#productonwerp_medior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#productonwerp_junior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#programmer_senior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#programmer_medior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#programmer_junior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#story_senior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#story_medior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#story_junior',{
                 plugins: ['remove_button'],
             })
            

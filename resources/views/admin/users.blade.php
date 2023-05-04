@@ -17,9 +17,9 @@
             <div class="flex">
                 <div class="flex">
                     <div class="mr-3">
-                        <select id="search" name="search" class="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 px-4 focus:outline-none">
+                        <select id="search" name="search" class="bg-white block w-full px-4 py-2.5 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                             <option value="">All Role</option>
-                        </select>
+                         </select>
                     </div>
                     <div class="">
                         <button onclick="GetData()" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 flex">
@@ -32,7 +32,7 @@
         </div>
     </div> 
     <div class="w-full flex flex-col">
-        <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-3 mt-4" id="Data">
+        <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4" id="Data">
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
