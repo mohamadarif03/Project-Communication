@@ -35,7 +35,8 @@ class NotificationController extends Controller
     }
     public function delete($id){
         $data = ToNotification::findorfail($id);
-        if($data->communication == null){
+        $main = Notification::find($data->notification_id);
+        if($main->communication_id === null){
             $type = 'responsbility';
         }else{
             $type = 'communication';

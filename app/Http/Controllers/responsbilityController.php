@@ -10,6 +10,7 @@ use App\Models\Rule;
 use App\Models\ToNotification;
 use App\Models\ToRule;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -48,14 +49,14 @@ class ResponsbilityController extends Controller
         $data = Responbility::create([
             'rule_id' => $request ->type,
             'user_id' => Auth::user()->id,
-            'date' => $request ->date,
+            'date' => Carbon::now(),
             'link' => $request ->link,
             'file' => $upload,
         ]);
 
         $to = ToRule::where('rule_id',$request->type)->pluck('role_id')->toarray();
         $user = User::join('user_roles','user_roles.user_id','=','users.id')
-                      ->whereIn('users.id',$to)
+                      ->whereIn('user_roles.role_id',$to)
                       ->pluck('users.id')
                       ->toarray();
         $notif = Notification::create([

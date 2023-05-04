@@ -153,7 +153,7 @@
                 </li>
             </ul>
         </div>
-        <div id="form2" style="margin-bottom: 500px" class="grid grid-cols-1 gap-4 w-full hidden">
+        <div id="form2" class="grid grid-cols-1 gap-4 w-full hidden">
             
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">

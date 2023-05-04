@@ -129,12 +129,16 @@
                     
                     <div class="flex mt-2 gap-4 items-center">
                         <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
-                        <div class="flex rounded-md border ml-1"
+                        <div class="rounded-md grid grid-cols-6 border ml-1"
                         style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
-                        <input type="text" class="border-r" id="put"
-                        style="background-color: transparent; padding-right: 150px;" placeholder="#000000" disabled>
-                        <input type="color" name="" id="color" onchange="fetch()">
-                    </div>
+                            <input type="text" class="" id="put"
+                            style="background-color: transparent;" placeholder="#000000" disabled>
+                            <div class="col-span-1"></div>
+                            <div class="col-span-1"></div>
+                            <div class="col-span-1"></div>
+                            <div class="col-span-1"></div>
+                            <input type="color" name="" class="w-full" id="color" onchange="fetch()">
+                        </div>
                     </div>
                     <div class="flex gap-4 mt-2 items-center">
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
