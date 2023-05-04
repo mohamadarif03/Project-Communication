@@ -1,5 +1,4 @@
-
-
+var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
 new TomSelect('#host')
 new TomSelect('#techniek')
