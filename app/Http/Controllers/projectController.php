@@ -12,11 +12,11 @@ class ProjectController extends Controller
     }
     public function view1()
     {
-        return view('user.project1');
+        return view('user.projectTeam');
     }
     public function view2()
     {
-        return view('user.project2');
+        return view('user.projectResponsbility');
     }
     public function view3()
     {
