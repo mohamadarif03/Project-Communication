@@ -33,7 +33,7 @@
 
         </div>
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="grid grid-cols-4 gap-3 mx-3">
                 <div id="sebelah" class="card px-4 bg-white">
                   <div class="pt-2">
@@ -118,7 +118,7 @@
                 
                 
             </div>
-        </div>
+        </div> --}}
        
         <div class="flex mt-2 items-center justify-center">
             <a href="/project-team">
@@ -211,19 +211,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">
-                    <div class="h-8 p-2 items-center w-full relative flex">
-                        <button class="ml-auto h-5 w-5 rounded-circle bg-transparent">
-                            <svg  class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>
-                        </button>         
-                    </div>
-                    <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                        <div id="bulat" class="h-12 flex w-12 rounded-circle" style="background-color: red;">
-                            <p class="text-white m-auto font-semibold"> MA </p>
-                        </div>
-                        <div> content overflows an</div>
-                    </div>
-                </div>
+                
                 <div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-green-200" style="border: 2px solid green">
                     <div class="h-8 p-2 items-center w-full relative flex">
                         <button class="ml-auto h-5 w-5 rounded-circle bg-transparent">
