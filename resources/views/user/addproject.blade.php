@@ -70,13 +70,15 @@
                         <div class="mr-2 mt-6">
                             <label for="type" class="mb-2 text-sm font-bold text-gray-900">Project Size
                             </label>
-                            <Select multiple id="project_size" name="project_size" class="w-full"
-                                placeholder="Project Size">
-                                
+                            <Select multiple id="project_size" name="project_size" class="w-full" placeholder="Project Size">
+                                <option value="">Project Size</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
                             </Select>
                         </div>
                         <div class="mr-2 mt-6">
-                            <button type="button" style="margin-top: 27px; background-color: #27AE60;"
+                            <button type="button" onclick="download()" style="margin-top: 27px; background-color: #27AE60;"
                                 class="col-span-1 focus:outline-none text-white font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     style="margin-right: 7px" fill="currentColor" class="bi bi-file-earmark-excel-fill"

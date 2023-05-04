@@ -215,7 +215,20 @@ function GetUser(){
     })
 }
 function download(){
-    
+    var type = $('#project_size').val()
+    $.ajax({
+        type:'GET',
+        url:'/download-template',
+        data:{
+            type:type
+        },
+        success:function(response){
+            console.log(response)
+        },
+        error:function(response){
+            console.log(response)
+        }
+    })
 }
 function create(){
 
