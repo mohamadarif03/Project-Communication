@@ -153,7 +153,7 @@
                 </li>
             </ul>
         </div>
-        <div id="form2" class="grid grid-cols-1 gap-4 w-full hidden">
+        <div id="form2" style="margin-bottom: 500px" class="grid grid-cols-1 gap-4 w-full hidden">
             
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
@@ -169,12 +169,14 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Service
                                 Manager</label>
                             <Select multiple id="service" name="service" class="w-full" placeholder="Service Manager">
+                                <Option value="">Service Manager</Option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Office
                                 Manager</label>
                             <Select multiple id="office" name="office" class="w-full" placeholder="Office Manager">
+                                <Option value="">Office Manager</Option>
                             </Select>
                         </div>
                     </div>
@@ -183,21 +185,18 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Service
                                 Manager</label>
                             <Select multiple id="service2" name="service2" class="w-full" placeholder="Service Manager">
+                                <Option value="">Service Manager</Option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Office
                                 Manager</label>
                             <Select multiple id="office2" name="office2" class="w-full" placeholder="Office Manager">
+                                <Option value="">Office Manager</Option>
                             </Select>
                         </div>
                     </div>
-                    {{-- <div class="" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
-                        <button id="next1" type="button"
-                            class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
-                            Next
-                        </button>
-                    </div> --}}
+                   
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
                         <button id="back2" type="button"
                             class="col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
@@ -261,11 +260,11 @@
                 <div class="h-full">
                     <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner
+                            <label for="type" class="mb-2 text-sm font-bold text-gray-900">Gamedesigner
                                 Senior</label>
                             <Select multiple id="game_senior" name="game_senior" class="w-full"
                                 placeholder="Gamedesigner Senior">
-                                
+                                <Option value="">Gamedesigner Senior</Option>
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-6">
@@ -273,6 +272,7 @@
                                 Medior</label>
                             <Select multiple id="game_medior" name="game_medior" class="w-full"
                                 placeholder="Gamedesigner Medior">
+                                <Option value="">Gamedesigner Medior</Option>
                                 
                             </Select>
                         </div>
@@ -281,6 +281,7 @@
                                 Junior</label>
                             <Select multiple id="game_junior" name="game_junior" class="w-full"
                                 placeholder="Gamedesigner Junior">
+                                <Option value="">Gamedesigner Junior</Option>
                                 
                             </Select>
                         </div>
@@ -292,6 +293,7 @@
                                 Senior</label>
                             <Select multiple id="experience_senior" name="experience_senior" class="w-full"
                                 placeholder="Experience Designer Senior">
+                                <Option value="">Experience Designer Senior</Option>
                                 
                             </Select>
                         </div>
@@ -300,6 +302,7 @@
                                 Medior</label>
                             <Select multiple id="experience_medior" name="experience_medior" class="w-full"
                                 placeholder="Experience Designer Medior">
+                                <Option value="">Experience Designer Medior</Option>
                                 
                             </Select>
                         </div>
@@ -308,6 +311,7 @@
                                 Junior</label>
                             <Select multiple id="experience_junior" name="experience_junior" class="w-full"
                                 placeholder="Experience Designer Junior">
+                                <Option value="">Experience Designer Junior</Option>
                                 
                             </Select>
                         </div>
@@ -318,6 +322,7 @@
                         <div class="ml-2 mt-4">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">UI/UX Junior</label>
                             <Select multiple id="ui_ux" name="ui_ux" class="w-full" placeholder="UI/UX Junior">
+                                <Option value="">UI/UX Junior</Option>
                                 
                             </Select>
                         </div>
@@ -329,7 +334,7 @@
                                 Senior</label>
                             <Select multiple id="productonwerp_senior" name="productonwerp_senior" class="w-full"
                                 placeholder="Productontwerp Senior">
-                                
+                                <Option value="">Productontwerp Senior</Option>
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-6">
@@ -337,6 +342,7 @@
                                 Medior</label>
                             <Select multiple id="productonwerp_medior" name="productonwerp_medior" class="w-full"
                                 placeholder="Productontwerp Medior">
+                                <Option value="">Productontwerp Medior</Option>
                                 
                             </Select>
                         </div>
@@ -345,6 +351,7 @@
                                 Junior</label>
                             <Select multiple id="productonwerp_junior" name="productonwerp_junior" class="w-full"
                                 placeholder="Productontwerp Junior">
+                                <Option value="">Productontwerp Junior</Option>
                                 
                             </Select>
                         </div>
@@ -355,6 +362,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Programmer Senior</label>
                             <Select multiple id="programmer_senior" name="programmer_senior" class="w-full"
                                 placeholder="Programmer Senior">
+                                <Option value="">Programmer Senior</Option>
                                 
                             </Select>
                         </div>
@@ -362,6 +370,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Programmer Medior</label>
                             <Select multiple id="programmer_medior" name="programmer_medior" class="w-full"
                                 placeholder="Programmer Medior">
+                                <Option value="">Programmer Medior</Option>
                                 
                             </Select>
                         </div>
@@ -369,6 +378,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Programmer Junior</label>
                             <Select multiple id="programmer_junior" name="programmer_junior" class="w-full"
                                 placeholder="Programmer Junior">
+                                <Option value="">Programmer Junior</Option>
                                 
                             </Select>
                         </div>
@@ -379,6 +389,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Story Senior</label>
                             <Select multiple id="story_senior" name="story_senior" class="w-full"
                                 placeholder="Story Senior">
+                                <Option value="">Story Senior</Option>
                                 
                             </Select>
                         </div>
@@ -386,6 +397,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Story Medior</label>
                             <Select multiple id="story_medior" name="story_medior" class="w-full"
                                 placeholder="Story Medior">
+                                <Option value="">Story Medior</Option>
                                 
                             </Select>
                         </div>
@@ -393,6 +405,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Story Junior</label>
                             <Select multiple id="story_junior" name="story_junior" class="w-full"
                                 placeholder="Story Junior">
+                                <Option value="">Story Junior</Option>
                                 
                             </Select>
                         </div>
@@ -476,6 +489,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Host
                             </label>
                             <Select multiple id="host" name="host" class="w-full" placeholder="Host">
+                                <Option value="">Host</Option>
                                 
                             </Select>
                         </div>
@@ -483,6 +497,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Techniek
                             </label>
                             <Select multiple id="techniek" name="techniek" class="w-full" placeholder="Techniek">
+                                <Option value="">Techniek</Option>
                                 
                             </Select>
                         </div>
@@ -492,6 +507,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Muziek
                             </label>
                             <Select multiple id="muziek" name="muziek" class="w-full" placeholder="Muziek">
+                                <Option value="">Muziek</Option>
                                 
                             </Select>
                         </div>
@@ -499,6 +515,7 @@
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Props
                             </label>
                             <Select multiple id="props" name="props" class="w-full" placeholder="Props">
+                                <Option value="">Props</Option>
                                 
                             </Select>
                         </div>

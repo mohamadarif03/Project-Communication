@@ -1,10 +1,8 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-new TomSelect('#host')
-new TomSelect('#techniek')
-new TomSelect('#muziek')
-new TomSelect('#props')
+
 new TomSelect('#project_size')
+
 
 GetUser()
 
@@ -145,7 +143,10 @@ function GetUser(){
                 $('#story_senior').append(row)
                 $('#story_medior').append(row)
                 $('#story_junior').append(row)
-               
+                $('#host').append(row)
+                $('#techniek').append(row)
+                $('#muziek').append(row)
+                $('#props').append(row)
             })
             new TomSelect('#service',{
                 plugins: ['remove_button'],
@@ -205,6 +206,18 @@ function GetUser(){
                 plugins: ['remove_button'],
             })
             new TomSelect('#story_junior',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#host',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#techniek',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#muziek',{
+                plugins: ['remove_button'],
+            })
+            new TomSelect('#props',{
                 plugins: ['remove_button'],
             })
            
