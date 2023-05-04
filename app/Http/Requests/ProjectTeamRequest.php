@@ -49,7 +49,9 @@ class ProjectTeamRequest extends FormRequest
             'host' => 'required',
             'techniek' => 'required',
             'muziek' => 'required',
-            'props' => 'required'
+            'props' => 'required',
+            'link' => 'required',
+            'size' => 'required'
         ];
     }
 }
