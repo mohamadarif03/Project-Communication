@@ -216,20 +216,48 @@ function GetUser(){
 }
 function download(){
     var type = $('#project_size').val()
-    $.ajax({
-        type:'GET',
-        url:'/download-template',
-        data:{
-            type:type
-        },
-        success:function(response){
-            console.log(response)
-        },
-        error:function(response){
-            console.log(response)
-        }
-    })
+    if(type === null){
+        Swal.fire({
+            title:'Error!',
+            icon:'error',
+            html:'<p class="text-red-500"> Choose Project Size! </p>'
+        })
+    }else{
+        $.ajax({
+            type:'GET',
+            url:'/download-template',
+            data:{
+                type:type
+            },
+            success:function(response){
+                console.log(response)
+            },
+            error:function(response){
+                console.log(response)
+            }
+        })
+    }
+ 
 }
 function create(){
-
+   var service = $('#service').val()
+   var service2 = $('#service2').val()
+   var office = $('#office').val()
+   var office2 = $('#office2').val()
+   var game_senior= $('#game_senior').val()
+   var game_medior = $('#game_medior').val()
+   var game_junior = $('#game_junior').val()
+   var experience_senior = $('#experience_senior').val()
+   var experience_medior = $('#experience_medior').val()
+   var experience_junior = $('#experience_junior').val()
+   var ui_ux = $('#ui_ux').val()
+   var productonwerp_senior = $('#productonwerp_senior').val()
+   var productonwerp_medior = $('#productonwerp_medior').val()
+   var productonwerp_junior = $('#productonwerp_junior').val()
+   var programmer_senior = $('#programmer_senior').val()
+   var programmer_medior = $('#programmer_medior').val()
+   var programmer_junior = $('#programmer_junior').val()
+   var stpry_senior = $('#story_senior').val()
+   var story_medior = $('#story_medior').val()
+   var story_junior = $('#story_junior').val()
 }
