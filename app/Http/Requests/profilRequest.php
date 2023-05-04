@@ -6,7 +6,7 @@ use Illuminate\Validation\Rule;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
-class profilRequest extends FormRequest
+class ProfilRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
