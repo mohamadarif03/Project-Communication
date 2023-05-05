@@ -101,7 +101,8 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/read-notification/{id}',[NotificationController::class,'delete']);
         Route::get('/read-all',[NotificationController::class,'readall']);
 
-        Route::get('/download-template',[ProjectController::class,'download']);
+        Route::get('/download-template/{type}',[ProjectController::class,'download']);
+        Route::post('/create-project',[ProjectController::class,'createProjectTeam']);
 
     });
 

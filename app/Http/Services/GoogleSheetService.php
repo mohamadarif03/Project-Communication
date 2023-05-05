@@ -81,6 +81,20 @@ class GoogleSheetService
         return $spreadsheetId;
     }
 
+    public function checkSheetExist($sheetName)
+    {
+        $spreadsheet = $this->service->spreadsheets->get($this->documentId);
+        $sheets = $spreadsheet->getSheets();
+
+        foreach ($sheets as $sheet) {
+            if ($sheet->getProperties()->getTitle() === $sheetName) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
 
 }
