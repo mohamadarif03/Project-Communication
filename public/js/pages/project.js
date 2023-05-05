@@ -350,3 +350,11 @@ function create(){
         }
     })
 }
+function showdropdown(){
+    $('.dropdown-edit').each(function() {
+        if (!$(this).hasClass('hidden')  && $(this).attr('id') !== ('dropdownlist-detail')) {
+          $(this).addClass('hidden');
+        }
+    });
+    $('#dropdownlist-detail').toggleClass('hidden');
+}
