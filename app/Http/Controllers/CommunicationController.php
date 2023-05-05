@@ -10,6 +10,7 @@ use App\Models\ToCommunication;
 use App\Models\Notification;
 use App\Models\Responbility;
 use App\Models\ToNotification;
+use Carbon\Carbon;
 use Illuminate\Console\View\Components\Task;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class CommunicationController extends Controller
     public function insert(CommunicationRequest $request){
         $Communication = Communication::create([
             'communication_type_id' => $request->type,
-            'date' => $request->date,
+            'date' => Carbon::now(),
             'message' => $request->message,
             'to' => implode(',',$request->to),
             'user_id' => Auth()->user()->id

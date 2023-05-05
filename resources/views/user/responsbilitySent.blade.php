@@ -225,7 +225,7 @@
                                 <label for="project" class=" mb-2 text-sm font-medium">Date</label><br>
                                 <input type="date"
                                     class="peer block min-h-[auto] w-full rounded border-2 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
-                                    placeholder="Task" id="date" aria-label="" />
+                                    placeholder="Task" id="date" aria-label="" disabled/>
 
                             </div>
 

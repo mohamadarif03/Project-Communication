@@ -50,10 +50,11 @@ function readNotification(id){
         type:'GET',
         url:'/read-notification/'+id,
         success:function(response){
+            console.log(response)
             if(response == 'communication'){
-                window.location.href = '../communication'
-            }else if(response == 'responsbility'){
                 window.location.href = '../communication-receive'
+            }else if(response == 'responsbility'){
+                window.location.href = '../responsbility-receive'
             }
         },
         error:function(response){

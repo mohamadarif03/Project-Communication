@@ -28,6 +28,14 @@ function getmonth(){
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());
 }
+const inputDate = document.getElementById('date');
+
+const today = new Date();
+const day = today.getDate();
+const month = today.getMonth() + 1;
+const year = today.getFullYear();
+
+inputDate.value = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 getmonth()
 getyear()
 GetType()
@@ -137,12 +145,26 @@ $('#type').change(function(){
         }
     })
 })
+var checks = $('#check').val()
 function GetData(page){
-    if($('#Receive')){
+    if(checks !== 'sent'){
         GetDataReceive(page)
     }else{
         GetDataSent(page)     
     }
+}
+
+function getInitials(name) {
+    var words = name.split(' ');
+    var initials = words.map(function(word) {
+      return word.charAt(0);
+    });
+    return initials.join('');
+}
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
 }
 function GetDataReceive(page){
     var year = $('#year').val()
@@ -218,18 +240,6 @@ function GetDataReceive(page){
             
         }
     })
-}
-function getInitials(name) {
-    var words = name.split(' ');
-    var initials = words.map(function(word) {
-      return word.charAt(0);
-    });
-    return initials.join('');
-}
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
 }
 function GetDataSent(page){
     var year = $('#year').val()
@@ -344,6 +354,15 @@ function create(){
     formData.append('date', date);
     formData.append('link', link);
     if (file || link) {
+        // Menambahkan validasi untuk tipe file
+        if (file && !file.name.match(/\.(docx|xlsx|pdf)$/i)) {
+        Swal.fire({
+        title: 'Error!',
+        html: 'File must be in docx,xlsx,pdf format.',
+        icon: 'error'
+        });
+        return;
+        }
         $.ajax({
             type:'POST',
             url:'/store-responsbility',
