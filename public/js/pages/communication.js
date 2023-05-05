@@ -75,12 +75,12 @@ function GetDataReceive(page){
                                     '<p class="rounded-md text-xs py-0.5 px-2" '+bgdate+'>'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
-                                    '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
+                                    '<div class="h-11 flex w-11 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
                                         '<p class="text-white m-auto font-semibold">'+getInitials(data.communication_type.type)+'</p>'+
                                     '</div>'+
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
-                                            '<h1 class="text-sm my-0 font-semibold">'+data.communication_type.type+'</h1>'+
+                                            '<h1 class="text-xs my-0 font-semibold">'+data.communication_type.type+'</h1>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
@@ -130,17 +130,17 @@ function GetDataSent(page){
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
                     var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
-                                '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
+                                '<div class="h-6 p-2 items-center w-full flex justify-between ">'+
                                    
                                     '<p class="bg-slate-300 rounded-md text-xs py-0.5 px-2">'+formatDate(data.date)+'</p>'+
                                 '</div>'+
                                 '<div class="h-16 flex p-2 items-center w-full ">'+
-                                    '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
+                                    '<div class="h-11 flex w-11 rounded-circle" style="background-color:'+data.communication_type.color+'">'+
                                         '<p class="text-white m-auto font-semibold">'+getInitials(data.communication_type.type)+'</p>'+
                                     '</div>'+
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
-                                            '<h1 class="text-sm my-0 font-semibold">'+data.communication_type.type+'</h1>'+
+                                            '<h1 class="text-xs my-0 font-bold">'+data.communication_type.type+'</h1>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
