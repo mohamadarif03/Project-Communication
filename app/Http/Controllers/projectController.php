@@ -26,13 +26,13 @@ class ProjectController extends Controller
     }
     public function download($type){
         if($type == 'small'){
-            $filePath = storage_path('app\public\template\small.xlsx');
+            $filePath = public_path('template\small.xlsx');
             return response()->download($filePath, 'SmallProject.xlsx');
         }else if($type == 'medium'){
-            $filePath = storage_path('app\public\template\medium.xlsx');
+            $filePath = public_path('template\medium.xlsx');
             return response()->download($filePath, 'MediumProject.xlsx');
         }else if($type == 'large'){
-            $filePath = storage_path('app\public\template\large.xlsx');
+            $filePath = public_path('template\large.xlsx');
             return response()->download($filePath, 'LargeProject.xlsx');
         }
     }
