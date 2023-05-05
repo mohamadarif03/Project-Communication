@@ -37,7 +37,7 @@
             <button type="button" class=" focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium text-xs px-5 py-2.5 mb-2 dark:focus:ring-yellow-900">
                 Team
             </button>
-            <a href="/project-responsbility">
+            <a href="/project-responsbility/{{$data->id}}">
                 <button type="button" class="focus:outline-none text-black font-medium text-xs px-5 py-2.5 mb-2 dark:focus:ring-yellow-900" style="background-color: #D9D9D9;">
                     Responsbility
                 </button>

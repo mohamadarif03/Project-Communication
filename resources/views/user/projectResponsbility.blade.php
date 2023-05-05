@@ -121,7 +121,7 @@
         </div> --}}
        
         <div class="flex mt-2 items-center justify-center">
-            <a href="/project-team">
+            <a href="/project-team/{{$data->id}}">
                 <button type="button" class="focus:outline-none text-black font-medium text-xs px-5 py-2.5 mb-2 dark:focus:ring-yellow-900" style="background-color: #D9D9D9;">
                     Team
                 </button>
