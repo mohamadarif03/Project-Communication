@@ -70,11 +70,11 @@
                         <div class="mr-2 mt-6">
                             <label for="type" class="mb-2 text-sm font-bold text-gray-900">Project Size
                             </label>
-                            <Select multiple id="project_size" name="project_size" class="w-full" placeholder="Project Size">
+                            <Select id="project_size" name="project_size" class="w-full" placeholder="Project Size">
                                 <option value="">Project Size</option>
-                                <option value="small">Small</option>
-                                <option value="medium">Medium</option>
-                                <option value="large">Large</option>
+                                <option value="Small">Small</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Large">Large</option>
                             </Select>
                         </div>
                         <div class="mr-2 mt-6">
@@ -168,7 +168,7 @@
                         <div class="mr-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Service
                                 Manager</label>
-                            <Select multiple id="service" name="service" class="w-full" placeholder="Service Manager">
+                            <Select multiple id="service_manager" name="service_manager" class="w-full" placeholder="Service Manager">
                                 <Option value="">Service Manager</Option>
                             </Select>
                         </div>
@@ -182,17 +182,15 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Service
-                                Manager</label>
-                            <Select multiple id="service2" name="service2" class="w-full" placeholder="Service Manager">
-                                <Option value="">Service Manager</Option>
+                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Senior</label>
+                            <Select multiple id="senior" name="senior" class="w-full" placeholder="Senior">
+                                <Option value="">Senior</Option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Office
-                                Manager</label>
-                            <Select multiple id="office2" name="office2" class="w-full" placeholder="Office Manager">
-                                <Option value="">Office Manager</Option>
+                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Product Manager</label>
+                            <Select multiple id="product_manager" name="product_manager" class="w-full" placeholder="Product Manager">
+                                <Option value="">Product Manager</Option>
                             </Select>
                         </div>
                     </div>
@@ -527,6 +525,7 @@
                             Back
                         </button>
                         <button type="button"
+                            onclick="create()"
                             class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                             Submit
                         </button>
