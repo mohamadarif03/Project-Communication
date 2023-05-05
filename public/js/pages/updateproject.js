@@ -243,7 +243,7 @@ function download(){
     }
  
 }
-function create(){
+function update(){
     var service_manager = $('#service_manager').val()
     var product_manager = $('#product_manager').val()
     var office = $('#office').val()
@@ -272,8 +272,8 @@ function create(){
     var type = $('#project_size').val()
     var title = $('#project-name').val()
     $.ajax({
-        type:'POST',
-        url:'/create-project',
+        type:'PUT',
+        url:'/Update-project',
         data:{
             _token:csrfToken,
             service_manager:service_manager,

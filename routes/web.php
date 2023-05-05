@@ -103,6 +103,7 @@ Route::middleware('auth', 'verified')->group(function () {
 
         Route::get('/download-template/{type}',[ProjectController::class,'download']);
         Route::post('/create-project',[GoogleSheetController::class,'createProjectTeam']);
+        Route::put('/update-project',[GoogleSheetController::class,'updateProjectTeam']);
         Route::get('/data-project',[ProjectController::class,'data']);
 
     });

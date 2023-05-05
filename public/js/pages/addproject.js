@@ -1,5 +1,19 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
+const icon = document.querySelector('.bi-clipboard');
+const email = document.querySelector('#email');
+
+icon.addEventListener('click', () => {
+  const textarea = document.createElement('textarea');
+  textarea.value = email.innerText;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+  alert('Email copied to clipboard!');
+});
+
+
 new TomSelect('#project_size')
 
 GetUser()
