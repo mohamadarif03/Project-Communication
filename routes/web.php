@@ -120,6 +120,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/project-team/{id}',[ProjectController::class,'view1']);
     Route::get('/project-responsbility/{id}',[ProjectController::class,'view2']);
     Route::get('/addproject',[ProjectController::class,'view3']);
+    Route::get('/updateproject',[ProjectController::class,'viewupdate']);
     Route::get('/read-all',[NotificationController::class,'readall']);
     Route::get('/data-respons',[CommunicationController::class,'data']);
     Route::get('/data-project-team',[GoogleSheetController::class,'team']);
