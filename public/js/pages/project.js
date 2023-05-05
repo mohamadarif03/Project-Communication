@@ -1,360 +1,68 @@
-var csrfToken = $('meta[name="csrf-token"]').attr('content');
-
-
-new TomSelect('#project_size')
-
-
-GetUser()
-
-
-$('#stepper1-step2').click(function(){
-    $('#stepper1').addClass('hidden');
-    $('#form1').addClass('hidden');
-    $('#stepper2').removeClass('hidden');
-    $('#form2').removeClass('hidden');
-})
-$('#next1').click(function(){
-    $('#stepper1').addClass('hidden');
-    $('#form1').addClass('hidden');
-    $('#stepper2').removeClass('hidden');
-    $('#form2').removeClass('hidden');
-})
-$('#stepper1-step3').click(function(){
-    $('#stepper1').addClass('hidden');
-    $('#form1').addClass('hidden');
-    $('#stepper3').removeClass('hidden');
-    $('#form3').removeClass('hidden');
-})
-$('#stepper1-step4').click(function(){
-    $('#stepper1').addClass('hidden');
-    $('#form1').addClass('hidden');
-    $('#stepper4').removeClass('hidden');
-    $('#form4').removeClass('hidden');
-})
-$('#stepper2-step1').click(function(){
-    $('#stepper2').addClass('hidden');
-    $('#form2').addClass('hidden');
-    $('#stepper1').removeClass('hidden');
-    $('#form1').removeClass('hidden');
-})
-$('#stepper2-step3').click(function(){
-    $('#stepper2').addClass('hidden');
-    $('#form2').addClass('hidden');
-    $('#stepper3').removeClass('hidden');
-    $('#form3').removeClass('hidden');
-})
-$('#next2').click(function(){
-    $('#stepper2').addClass('hidden');
-    $('#form2').addClass('hidden');
-    $('#stepper3').removeClass('hidden');
-    $('#form3').removeClass('hidden');
-})
-$('#back2').click(function(){
-    $('#stepper2').addClass('hidden');
-    $('#form2').addClass('hidden');
-    $('#stepper1').removeClass('hidden');
-    $('#form1').removeClass('hidden');
-})
-$('#stepper2-step4').click(function(){
-    $('#stepper2').addClass('hidden');
-    $('#form2').addClass('hidden');
-    $('#stepper4').removeClass('hidden');
-    $('#form4').removeClass('hidden');
-})
-$('#stepper3-step1').click(function(){
-    $('#stepper3').addClass('hidden');
-    $('#form3').addClass('hidden');
-    $('#stepper1').removeClass('hidden');
-    $('#form1').removeClass('hidden');
-})
-$('#stepper3-step2').click(function(){
-    $('#stepper3').addClass('hidden');
-    $('#form3').addClass('hidden');
-    $('#stepper2').removeClass('hidden');
-    $('#form2').removeClass('hidden');
-})
-$('#stepper3-step4').click(function(){
-    $('#stepper3').addClass('hidden');
-    $('#form3').addClass('hidden');
-    $('#stepper4').removeClass('hidden');
-    $('#form4').removeClass('hidden');
-})
-$('#next3').click(function(){
-    $('#stepper3').addClass('hidden');
-    $('#form3').addClass('hidden');
-    $('#stepper4').removeClass('hidden');
-    $('#form4').removeClass('hidden');
-})
-$('#back3').click(function(){
-    $('#stepper3').addClass('hidden');
-    $('#form3').addClass('hidden');
-    $('#stepper2').removeClass('hidden');
-    $('#form2').removeClass('hidden');
-})
-$('#stepper4-step1').click(function(){
-    $('#stepper4').addClass('hidden');
-    $('#form4').addClass('hidden');
-    $('#stepper1').removeClass('hidden');
-    $('#form1').removeClass('hidden');
-})
-$('#stepper4-step2').click(function(){
-    $('#stepper4').addClass('hidden');
-    $('#form4').addClass('hidden');
-    $('#stepper2').removeClass('hidden');
-    $('#form2').removeClass('hidden');
-})
-$('#stepper4-step3').click(function(){
-    $('#stepper4').addClass('hidden');
-    $('#form4').addClass('hidden');
-    $('#stepper3').removeClass('hidden');
-    $('#form3').removeClass('hidden');
-})
-$('#back4').click(function(){
-    $('#stepper4').addClass('hidden');
-    $('#form4').addClass('hidden');
-    $('#stepper3').removeClass('hidden');
-    $('#form3').removeClass('hidden');
-})
-
-function GetUser(){
+function showdropdown(index){
+    $('.dropdown-edit').each(function() {
+        if (!$(this).hasClass('hidden')  && $(this).attr('id') !== ('dropdownlist-'+index)) {
+          $(this).addClass('hidden');
+        }
+    });
+    $('#dropdownlist-'+index).toggleClass('hidden');
+}
+GetData()
+function GetData(){
     $.ajax({
         type:'GET',
-        url:'/data-user-value',
+        url:'/data-project',
         success:function(response){
-            $.each(response,function(index,data){
-                var row = '<option value="'+data.name+'">'+data.name+'</option>'
-                $('#service_manager').append(row)
-                $('#product_manager').append(row)
-                $('#office').append(row)
-                $('#senior').append(row)
-                $('#game_senior').append(row)
-                $('#game_medior').append(row)
-                $('#game_junior').append(row)
-                $('#experience_senior').append(row)
-                $('#experience_medior').append(row)
-                $('#experience_junior').append(row)
-                $('#ui_ux').append(row)
-                $('#productonwerp_senior').append(row)
-                $('#productonwerp_medior').append(row)
-                $('#productonwerp_junior').append(row)
-                $('#programmer_senior').append(row)
-                $('#programmer_medior').append(row)
-                $('#programmer_junior').append(row)
-                $('#story_senior').append(row)
-                $('#story_medior').append(row)
-                $('#story_junior').append(row)
-                $('#host').append(row)
-                $('#techniek').append(row)
-                $('#muziek').append(row)
-                $('#props').append(row)
-            })
-            new TomSelect('#service_manager',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#office',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#product_manager',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#game_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#game_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#game_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#experience_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#experience_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#experience_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#ui_ux',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#productonwerp_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#productonwerp_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#productonwerp_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#programmer_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#programmer_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#programmer_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#story_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#story_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#story_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#host',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#techniek',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#muziek',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#props',{
-                plugins: ['remove_button'],
-            })
-           
+            if(response.data.data.length > 0){
+                $('#Data').html('')
+                $.each(response.data.data,function(index,data){
+                    var row =     '<div class="col-span-1 w-full h-36 px-2 py-1 mt-1 rounded-md bg-white">'+
+                                    '<div class="h-8 p-2 items-center w-full relative flex">'+
+                                        '<button onclick="showdropdown('+index+')" class="ml-auto h-5 w-5 rounded-circle bg-transparent">'+
+                                            '<svg  class="h-5 w-5 font-bold" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="48"><path d="M479.858 896Q460 896 446 881.858q-14-14.141-14-34Q432 828 446.142 814q14.141-14 34-14Q500 800 514 814.142q14 14.141 14 34Q528 868 513.858 882q-14.141 14-34 14Zm0-272Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm0-272Q460 352 446 337.858q-14-14.141-14-34Q432 284 446.142 270q14.141-14 34-14Q500 256 514 270.142q14 14.141 14 34Q528 324 513.858 338q-14.141 14-34 14Z"/></svg>'+
+                                        '</button>'+
+                                        '<ul id="dropdownlist-'+index+'" class="absolute dropdown-edit hidden z-[1000] float-left right-9 top-3 border-2 m-0 min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg" >'+
+                                                '<li>'+
+                                                    '<button onclick="detail('+data.id+')" class="btn-edit flex items-center">'+
+                                                        '<svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'+
+                                                            '<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>'+
+                                                        '</svg>'+
+                                                        '<p class="my-auto">Detail</p>'+
+                                                    '</button>'+
+                                                '</li>'+
+                                        '</ul>'+           
+                                    '</div>'+
+                                    '<div class="h-16 flex p-2 pt-0 items-center w-full ">'+
+                                        '<div class="h-12 flex w-12 rounded-circle" style="background-color: red">'+
+                                            '<p class="text-white m-auto font-semibold"> '+getInitials(data.name)+' </p>'+
+                                        '</div>'+
+                                        '<div class="ml-2 flex my-auto">'+
+                                            '<div class="my-auto">'+
+                                                '<h1 class="text-sm my-0 font-semibold">'+data.name+'</h1>'+
+                                                '<h3 class="text-xs text-slate-500 my-0 rounded-full" style="background-color: #D6F7E4; color: #27AE60; position:absolute; padding:2px 5px ">'+data.size+'</h3>'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'
+                    $('#Data').append(row)
+                })
+            }else{
+                
+            }
         },
         error:function(response){
             console.log(response)
         }
     })
 }
-function download(){
-    var type = $('#project_size').val()
-    console.log(type)  
-    if(type === 'Small'){
-        console.log('tes')
-        window.location.href = '../download-template/small'
-    }else if(type === 'Medium'){
-        window.location.href = '../download-template/medium'
-    }else if(type === 'Large'){
-        window.location.href = '../download-template/large'
-    }else{
-        Swal.fire({
-            title:'Error!',
-            icon:'error',
-            html:'<p class="text-red-500"> Choose Project Size! </p>'
-        })
-    }
- 
-}
-function create(){
-    var service_manager = $('#service_manager').val()
-    var product_manager = $('#product_manager').val()
-    var office = $('#office').val()
-    var senior = $('#senior').val()
-    var game_senior= $('#game_senior').val()
-    var game_medior = $('#game_medior').val()
-    var game_junior = $('#game_junior').val()
-    var experience_senior = $('#experience_senior').val()
-    var experience_medior = $('#experience_medior').val()
-    var experience_junior = $('#experience_junior').val()
-    var ui_ux = $('#ui_ux').val()
-    var productonwerp_senior = $('#productonwerp_senior').val()
-    var productonwerp_medior = $('#productonwerp_medior').val()
-    var productonwerp_junior = $('#productonwerp_junior').val()
-    var programmer_senior = $('#programmer_senior').val()
-    var programmer_medior = $('#programmer_medior').val()
-    var programmer_junior = $('#programmer_junior').val()
-    var story_senior = $('#story_senior').val()
-    var story_medior = $('#story_medior').val()
-    var story_junior = $('#story_junior').val()
-    var host = $('#host').val()
-    var techniek = $('#techniek').val()
-    var muziek = $('#muziek').val()
-    var props = $('#props').val()
-    var link = $('#link').val()
-    var type = $('#project_size').val()
-    var title = $('#project-name').val()
-    $.ajax({
-        type:'POST',
-        url:'/create-project',
-        data:{
-            _token:csrfToken,
-            service_manager:service_manager,
-            product_manager:product_manager,
-            office_manager:office,
-            senior:senior,
-            gamedesigner_senior:game_senior,
-            gamedesigner_medior:game_medior,
-            gamedesigner_junior:game_junior,
-            experience_senior:experience_senior,
-            experience_medior:experience_medior,
-            experience_junior:experience_junior,
-            ui_ux:ui_ux,
-            productontwerp_senior:productonwerp_senior,
-            productontwerp_medior:productonwerp_medior,
-            productontwerp_junior:productonwerp_junior,
-            programmer_senior:programmer_senior,
-            programmer_medior:programmer_medior,
-            programmer_junior:programmer_junior,
-            story_senior:story_senior,
-            story_medior:story_medior,
-            story_junior:story_junior,
-            host:host,
-            techniek:techniek,
-            muziek:muziek,
-            props:props,
-            link:link,
-            type:type,
-            title:title
-        },
-        beforeSend:function(){
-            Swal.fire({
-                title: 'Loading...',
-                html: 'Please Wait',
-                icon: 'info',
-                showConfirmButton: false,
-                allowOutsideClick: false,
-                onBeforeOpen: () => {
-                    Swal.showLoading();
-                }
-            })
-        },
-        success:function(response){
-            Swal.fire({
-                title: 'success!',
-                text: 'success create new project!',
-                icon: 'success'
-            })
-        },
-        error: function(xhr, status, error) {
-            if(xhr.status == 422){
-                var errors = xhr.responseJSON.errors;
-                var errorMessage = '';
-    
-                $.each(errors, function(key, value) {
-                    errorMessage += '<p class="text-red-500">' + value + '</p>';
-                });
-    
-                Swal.fire({
-                    title: 'Gagal!',
-                    html: errorMessage,
-                    icon: 'error',
-                })
-            }else{
-                Swal.fire({
-                    title: 'Gagal!',
-                    text: JSON.parse(xhr.responseText).error,
-                    icon: 'error'
-                })
-            }
-        }
-    })
-}
-function showdropdown(){
-    $('.dropdown-edit').each(function() {
-        if (!$(this).hasClass('hidden')  && $(this).attr('id') !== ('dropdownlist-detail')) {
-          $(this).addClass('hidden');
-        }
+
+function getInitials(name) {
+    var words = name.split(' ');
+    var initials = words.map(function(word) {
+      return word.charAt(0);
     });
-    $('#dropdownlist-detail').toggleClass('hidden');
+    return initials.join('');
+}
+
+function detail(id){
+    window.location.href = '../project-team/'+id
 }

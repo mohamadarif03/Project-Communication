@@ -541,7 +541,7 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/pages/project.js') }}"></script>
+    <script src="{{ asset('js/pages/addproject.js') }}"></script>
 @endsection
 @section('tom-select')
 <link rel="stylesheet" href="{{ asset('plugin/tom-select/dist/css/tom-select height.css') }}">
