@@ -27,6 +27,12 @@
             .btn-close:hover {
                 background-color: rgb(244 233 215);
             }
+            .btn-close-delete-hover{
+                background-color: rgb(254 242 242);;
+            }
+            .btn-close-delete-hover:hover {
+                background-color: rgb(254 233 215);
+            }
         </style>
     </head>
     <body>

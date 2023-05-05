@@ -128,15 +128,18 @@
                             class="ml-1 bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="Responsibilities Type">
                     </div>
-                    
+
                     <div class="flex mt-2 gap-4 items-center">
                         <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
-                        <div class="flex rounded-md border ml-1"
+                        <div class="rounded-md grid grid-cols-6 border ml-1"
                         style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
-                        <input type="text" class="border-r" id="put"
-                        style="background-color: transparent; padding-right: 150px;" placeholder="#000000" disabled>
-                        <input type="color" name="" id="color" onchange="fetch()">
-                    </div>
+                            <input type="text" class="col-span-2" id="put"
+                            style="background-color: transparent;" placeholder="" disabled>
+                            <div class="col-span-1"></div>
+                            <div class="col-span-1"></div>
+                            <div class="col-span-1"></div>
+                            <input type="color" name="" class="w-full" id="color" onchange="fetch()">
+                        </div>
                     </div>
                     <div class="flex gap-4 mt-2 items-center">
                         <label for="name" class=" mb-2 text-xs font-medium text-gray-900 ">Description</label>
@@ -202,13 +205,17 @@
                             class="bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                             placeholder="Role" required>
                     </div>
+                    
                     <div class="flex mt-2 gap-4 items-center">
                         <label for="color" class="mb-2 mr-1 text-xs font-medium text-gray-900 ml-6">Color</label>
-                        <div class="flex rounded-md border"
-                            style="box-sizing: border-box; padding: 0; padding-left: 9px;">
-                            <input type="text" class="border-r" value="" id="put2"
-                                style="background-color: transparent; padding-right: 150px;" disabled>
-                            <input type="color" name="" value="" id="update-color" onchange="fetch()">
+                        <div class="rounded-md grid grid-cols-6 border ml-1"
+                        style=" box-sizing: border-box; padding: 0; padding-left: 9px;">
+                            <input type="text" class="col-span-2" id="put2"
+                            style="background-color: transparent;" placeholder="" disabled>
+                            <div class="col-span-1"></div>
+                            <div class="col-span-1"></div>
+                            <div class="col-span-1"></div>
+                            <input type="color" name="" class="w-full" id="update-color" onchange="fetch_update()">
                         </div>
                     </div>
                     <div class="flex gap-4 mt-2 items-center">
@@ -319,7 +326,7 @@
                 <div
                     class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
                     <button type="button" id="btn-close-delete"
-                        class="inline-block rounded bg-red-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                        class="btn-close-delete-hover inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-red-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
                         Close
                     </button>

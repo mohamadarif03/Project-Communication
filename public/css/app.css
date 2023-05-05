@@ -1568,9 +1568,6 @@ video {
 .border-l-\[0\.125rem\] {
   border-left-width: 0.125rem;
 }
-.border-r {
-  border-right-width: 1px;
-}
 .border-r-0 {
   border-right-width: 0px;
 }

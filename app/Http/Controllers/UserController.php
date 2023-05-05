@@ -33,6 +33,7 @@ class UserController extends Controller
                     'role'
                 ]
             ])->where('name','!=','admin')
+            ->orderBy('created_at', 'desc')
             ->paginate(9);
         }
         $links = $data->links('layouts.paginate');
