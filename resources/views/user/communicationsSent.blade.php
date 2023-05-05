@@ -10,18 +10,22 @@
             <div class="">
                 <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
                     data-te-ripple-init data-te-ripple-color="light"
-                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2">+
-                    Add
+                    class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs mr-2 mb-2"
+                    style="height: 40px; width: 150px;">
+                    + Add
                 </button>
+
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 <div class="relative mr-2">
-                    <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                    <select id="year" name="year"
+                        class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                         <option value="-1">All Years</option>
                     </select>
                 </div>
                 <div class="relative mr-2">
-                    <select id="month" name="month" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                    <select id="month" name="month"
+                        class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                         <option value="-1">All Month</option>
                         <option value="1">January</option>
                         <option value="2">February</option>
@@ -37,19 +41,23 @@
                         <option value="12">December</option>
                     </select>
                 </div>
-                <div class="relative mr-2">
-                    <select id="comtype" name="comtype" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
-                       <option value="">All Type</option>
+                <div class="relative mr-2" style="width: 155px">
+                    <select id="comtype" name="comtype"
+                        class="bg-white block w-full px-4 py-2 leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                        <option value="">All Type</option>
                     </select>
                 </div>
-                
-                <button type="button" onclick="search()" class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search md:mr-2" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+
+                <button type="button" onclick="search()"
+                    class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs mr-2 mb-2 flex items-center justify-center" style="height: 40px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search md:mr-2" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>Search
                 </button>
             </div>
-            
+
 
         </div>
         <!-- end container-fluid -->
@@ -63,10 +71,13 @@
     </div>
 
     <!--Modal 1-->
-    <div data-te-modal-init class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+    <div data-te-modal-init
+        class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="create-step-1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-full translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)]">
-            <div class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none w-full md:w-[60%] bg-white bg-clip-padding text-current shadow-lg outline-none ">
+            <div
+                class="pointer-events-auto relative flex mx-auto flex-col rounded-md border-none w-full md:w-[60%] bg-white bg-clip-padding text-current shadow-lg outline-none ">
                 <div
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
@@ -127,7 +138,7 @@
                                 <label for="to"
                                     class="w-36 mb-2 block text-xs font-medium text-gray-900 ">To</label>
                                 <Select multiple id="to" disabled name="to" class="w-full" placeholder="To">
-                                    <option value=""></option>                       
+                                    <option value=""></option>
                                 </Select>
                             </div>
                         </div>
@@ -217,7 +228,7 @@
                                 <label for="date" class=" mb-2 text-xs font-medium">Date</label><br>
                                 <input type="date"
                                     class="peer block min-h-[auto] w-full rounded border-0 bg-neutral-100 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none"
-                                    id="date" aria-label="" disabled/>
+                                    id="date" aria-label="" disabled />
 
                             </div>
                         </div>
@@ -345,7 +356,7 @@
 
 
 
-   
+
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="show" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
@@ -354,30 +365,30 @@
             <div
                 class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
                 <div
-                class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-2 dark:border-opacity-50">
-                <!--Modal title-->
-                <h5 class="text-lg font-bold leading-normal text-neutral-800" id="exampleModalScrollableLabel">
-                    Detail
-                </h5>
-                <!--Close button-->
-                <button type="button"
-                    class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-                    data-te-modal-dismiss aria-label="Close">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="h-6 w-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-2 dark:border-opacity-50">
+                    <!--Modal title-->
+                    <h5 class="text-lg font-bold leading-normal text-neutral-800" id="exampleModalScrollableLabel">
+                        Detail
+                    </h5>
+                    <!--Close button-->
+                    <button type="button"
+                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
 
                 <!--Modal body-->
-                
+
                 <div class="relative overflow-y-auto p-4">
                     <p class="font-bold leading-normal" id="exampleModalScrollableLabel">
                         Description
                     </p>
                     <p id="show-detail"></p>
-                    
+
                     <p class="font-bold leading-normal" id="exampleModalScrollableLabel">
                         Message
                     </p>
@@ -393,7 +404,7 @@
                         style="border: 2px solid black">
                         Close
                     </button>
-                    
+
                 </div>
             </div>
         </div>
@@ -444,4 +455,7 @@
 @endsection
 @section('javascript')
     <script src="{{ asset('js/pages/communication.js') }}"></script>
+@endsection
+@section('tom-select')
+    <link rel="stylesheet" href="{{ asset('plugin/tom-select/dist/css/tom-select.css') }}">
 @endsection

@@ -189,7 +189,7 @@
                         </div>
                         <div class="ml-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Product Manager</label>
-                            <Select multiple id="product_manager" name="product_manager" class="w-full" placeholder="Product Manager">
+                            <Select multiple id="product_manager" name="product_manager" class="w-full" style="max-height:90px;" placeholder="Product Manager">
                                 <Option value="">Product Manager</Option>
                             </Select>
                         </div>
@@ -542,4 +542,7 @@
 
 @section('javascript')
     <script src="{{ asset('js/pages/addproject.js') }}"></script>
+@endsection
+@section('tom-select')
+<link rel="stylesheet" href="{{ asset('plugin/tom-select/dist/css/tom-select height.css') }}">
 @endsection
