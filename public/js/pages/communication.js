@@ -179,7 +179,6 @@ function show(id){
     $('#show-message').text(message)
     $('#show-detail').text(detail)
     $('#show-id').val(id)
-    // $('#btn-show-modal').click()
 }
 function show1(id){
     var message = $('#btn-show1-'+id).data('message')
@@ -187,7 +186,6 @@ function show1(id){
     $('#show-message1').text(message)
     $('#show-detail1').text(detail)
     $('#show-id1').val(id)
-    // $('#btn-show-modal1').click()
 }
 
 GetCommunication()
@@ -203,7 +201,7 @@ function GetCommunication(){
                 $('#comtype').append(row)
                 $('#type').append(row)
             })
-            // new TomSelect('#comtype')  
+            
             new TomSelect('#type')  
         },
         error:function(response){
