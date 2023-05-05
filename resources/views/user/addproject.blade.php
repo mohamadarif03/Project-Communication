@@ -541,5 +541,5 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/pages/project.js') }}"></script>
+    <script src="{{ asset('js/pages/addproject.js') }}"></script>
 @endsection

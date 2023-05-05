@@ -9,14 +9,14 @@
         <div class="container-fluid flex justify-between mt-3">
 
             <div class="">
-                    <h1 class="text-xl font-semibold ml-3 text-black">Web Communication</h1>
-                    <p class="text-sm font-semibold ml-3 text-black">Small</p>
+                    <h1 class="text-xl font-semibold ml-3 text-black">{{$data->name}}</h1>
+                    <p class="text-sm font-semibold ml-3 text-black">{{$data->size}}</p>
 
             </div>
             <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
                 <div class="relative mr-2">
                     <button type="button" class=" rounded-lg focus:outline-none text-black focus:ring-4 focus:ring-yellow-300 font-medium text-xs px-5 py-2 mb-2 dark:focus:ring-yellow-900" style="border: 2px solid black">
-                        Small
+                        {{$data->size}}
                     </button>
                 </div>
                 <div class="relative mr-2">
@@ -116,13 +116,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-           
+            </div>         
         </div>
     </div>
 
-
-   
+   <input type="hidden" id="spreadSheetId" value="{{$data->sheetId}}">
 @endsection
 
 @section('javascript')

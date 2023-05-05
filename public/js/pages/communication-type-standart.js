@@ -30,7 +30,6 @@ function GetData(page){
             search:search
         },
         success:function(response){
-            console.log(response)
             var html = '<table class="min-w-full text-left text-sm font-light">'+
                             '<thead class="border-b font-medium ">'+
                                 '<tr>'+
