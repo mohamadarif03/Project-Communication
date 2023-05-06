@@ -16,7 +16,10 @@
                 </button>
 
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2">
+            
+            <div class="filter grid grid-cols-6 gap-2">
+                <div class="drop col-span-1"></div>
+                <div class="drop col-span-1"></div>
                 <div class="relative mr-2">
                     <select id="year" name="year"
                         class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
@@ -41,13 +44,12 @@
                         <option value="12">December</option>
                     </select>
                 </div>
-                <div class="relative mr-2" style="width: 155px">
+                <div class="relative mr-2">
                     <select id="comtype" name="comtype"
-                        class="bg-white block w-full px-4 py-2 leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                        class="bg-white block w-full px-4 py-2 w-full leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                         <option value="">All Type</option>
                     </select>
                 </div>
-
                 <button type="button" onclick="search()"
                     class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs mr-2 mb-2 flex items-center justify-center" style="height: 40px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -57,6 +59,7 @@
                     </svg>Search
                 </button>
             </div>
+                
 
 
         </div>
