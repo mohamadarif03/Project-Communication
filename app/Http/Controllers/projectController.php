@@ -25,6 +25,10 @@ class ProjectController extends Controller
     {
         return view('user.addproject');
     }
+    public function viewupdate()
+    {
+        return view('user.updateproject');
+    }
     public function download($type){
         if($type == 'small'){
             $filePath = public_path('template\small.xlsx');

@@ -61,16 +61,6 @@
                             <div class="">
                                 <ul class="list-disc">
                                     <li class="ml-16">Download excel template & upload into google spreadsheet</li>
-                                    <li class="ml-16">
-                                        <span class="flex items-center">
-                                          Add <b class="text-black ml-1" id="email">democomunication@global-impulse-385606.iam.gserviceaccount.com</b>
-                                          <svg xmlns="http://www.w3.org/2000/svg" style="cursor: pointer" width="16" height="16" fill="currentColor" class="bi bi-clipboard ml-2" viewBox="0 0 16 16">
-                                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-                                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-                                          </svg>
-                                        </span>
-                                      </li>
-                                      
                                     <li class="ml-16">Copy link & paste into <b class="text-black">Link</b> field</li>
                                 </ul>
                             </div>
@@ -80,7 +70,7 @@
                         <div class="mr-2 mt-6">
                             <label for="type" class="mb-2 text-sm font-bold text-gray-900">Project Size
                             </label>
-                            <Select id="project_size" name="project_size" class="w-full" placeholder="Project Size">
+                            <Select id="project_size" name="project_size" disabled class="w-full" placeholder="Project Size">
                                 <option value="">Project Size</option>
                                 <option value="Small">Small</option>
                                 <option value="Medium">Medium</option>
@@ -89,7 +79,7 @@
                         </div>
                         <div class="mr-2 mt-6">
                             <button type="button" onclick="download()" style="margin-top: 27px; background-color: #27AE60;"
-                                class="col-span-1 focus:outline-none text-white font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
+                                class="hidden col-span-1 focus:outline-none text-white font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     style="margin-right: 7px" fill="currentColor" class="bi bi-file-earmark-excel-fill"
                                     viewBox="0 0 16 16">
@@ -102,11 +92,11 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Link
+                            <label for="link" class=" mb-2 text-sm font-bold text-gray-900">Link
                             </label>
                             <input type="Links"
                                 class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
-                                placeholder="Http://" id="link" name="link" aria-label="" />
+                                placeholder="Http://" id="link" name="link" disabled aria-label="" />
                         </div>
 
                     </div>
@@ -551,7 +541,7 @@
 @endsection
 
 @section('javascript')
-    <script src="{{ asset('js/pages/addproject.js') }}"></script>
+    <script src="{{ asset('js/pages/updateproject.js') }}"></script>
 @endsection
 @section('tom-select')
 <link rel="stylesheet" href="{{ asset('plugin/tom-select/dist/css/tom-select height.css') }}">

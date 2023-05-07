@@ -15,7 +15,7 @@
                 Add
             </button>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
             <div class="relative mr-2">
                 <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                     <option value="-1">All Years</option>

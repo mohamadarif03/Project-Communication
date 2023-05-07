@@ -1,19 +1,5 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
-const icon = document.querySelector('.bi-clipboard');
-const email = document.querySelector('#email');
-
-icon.addEventListener('click', () => {
-  const textarea = document.createElement('textarea');
-  textarea.value = email.innerText;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand('copy');
-  document.body.removeChild(textarea);
-  alert('Email copied to clipboard!');
-});
-
-
 new TomSelect('#project_size')
 
 GetUser()
@@ -257,7 +243,7 @@ function download(){
     }
  
 }
-function create(){
+function update(){
     var service_manager = $('#service_manager').val()
     var product_manager = $('#product_manager').val()
     var office = $('#office').val()
@@ -286,8 +272,8 @@ function create(){
     var type = $('#project_size').val()
     var title = $('#project-name').val()
     $.ajax({
-        type:'POST',
-        url:'/create-project',
+        type:'PUT',
+        url:'/Update-project',
         data:{
             _token:csrfToken,
             service_manager:service_manager,
