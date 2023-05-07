@@ -1,0 +1,38 @@
+    /* ketika layar lebih kecil dari 640px */
+    @media (max-width: 639px) {
+        .filter {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .cardSent {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+            }
+        }
+
+        /* ketika layar antara 640px dan 1023px */
+        @media (min-width: 640px) and (max-width: 1075px) {
+            .filter {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .drop{
+            display: none;
+        }
+        .cardSent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            }
+        }
+
+        /* ketika layar lebih besar atau sama dengan 1024px */
+        @media (min-width: 1075px) {
+        .filter {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+        .cardSent {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            }
+        }

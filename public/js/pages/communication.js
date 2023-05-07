@@ -70,6 +70,16 @@ function GetDataReceive(page){
                         show = 'text-yellow-400'
                         disabled = ''
                     }
+                    if (data.communication_type.type.length > 30) {
+                        var sizeTextcommunication = 'style="font-size:9px;"'
+                        var sizeTextrole = 'text-[10px]'
+                    } else if (data.communication_type.type.length > 25){
+                        var sizeTextcommunication = 'style="font-size:11px;"'
+                        var sizeTextrole = 'text-[12px]'
+                    }else{
+                        var sizeTextcommunication = 'style="font-size:12px;"'
+                        var sizeTextrole = 'text-[12px]'
+                    }
                     var row = '<div class="block '+bg+' rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3"'+border+'>'+
                                 '<div class="h-8 p-2 items-center w-full flex justify-between ">'+
                                     '<p class="rounded-md text-xs py-0.5 px-2" '+bgdate+'>'+formatDate(data.date)+'</p>'+
@@ -80,13 +90,13 @@ function GetDataReceive(page){
                                     '</div>'+
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
-                                            '<h1 class="text-xs my-0 font-semibold">'+data.communication_type.type+'</h1>'+
+                                            '<h1 class="my-0 font-semibold" '+sizeTextcommunication+'>'+data.communication_type.type+'</h1>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
                                 '<div class="h-8 w-full flex items-center">'+
                                     '<i class="mdi mdi-account"></i>'+
-                                    '<p class=" ml-1.5 my-auto text-xs">'+data.user.name+'</p>'+
+                                    '<p class=" ml-1.5 my-auto '+sizeTextrole+'">'+data.user.userrole[0].role.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
                                         '<a href="" onclick="show1('+data.id+')" id="btn-show1-'+data.id+'" data-message="'+data.message+'" data-detail="'+data.communication_type.description+'" class="'+show+'" data-te-toggle="modal" data-te-target="#show1">'+
                                             'Show >'+
@@ -129,6 +139,17 @@ function GetDataSent(page){
             $('#Sent').html('')
             if(response.data.data.length > 0){
                 $.each(response.data.data,function(index,data){
+                    if (data.communication_type.type.length > 30) {
+                        var sizeTextcommunication = 'style="font-size:9px;"'
+                        var sizeTextrole = 'text-[10px]'
+                    } else if (data.communication_type.type.length > 25){
+                        var sizeTextcommunication = 'style="font-size:11px;"'
+                        var sizeTextrole = 'text-[12px]'
+                    }else{
+                        var sizeTextcommunication = 'style="font-size:12px;"'
+                        var sizeTextrole = 'text-[12px]'
+                    }
+                    
                     var row = '<div class="block rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3">'+
                                 '<div class="h-6 p-2 items-center w-full flex justify-between ">'+
                                    
@@ -140,13 +161,13 @@ function GetDataSent(page){
                                     '</div>'+
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
-                                            '<h1 class="text-xs my-0 font-bold">'+data.communication_type.type+'</h1>'+
+                                            '<h1 class="my-0 font-bold"'+sizeTextcommunication+'>'+data.communication_type.type+'</h1>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
                                 '<div class="h-8 w-full flex items-center">'+
                                     '<i class="mdi mdi-account"></i>'+
-                                    '<p class=" ml-1.5 my-auto text-xs">Head Finance</p>'+
+                                    '<p class=" ml-1.5 my-auto '+sizeTextrole+'">'+data.user.userrole[0].role.name+'</p>'+
                                     '<div class="ml-auto mr-2 text-xs text-yellow-400 font-semibold">'+
                                     '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-message="'+data.message+'" data-detail="'+data.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
                                     'Show >'+

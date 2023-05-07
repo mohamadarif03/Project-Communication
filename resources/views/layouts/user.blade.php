@@ -23,6 +23,8 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/inputcolor.css') }}">
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-stylesheet" />
+    <link rel="stylesheet" href="{{asset ('css/communication.css')}}">
+    <link rel="stylesheet" href="{{asset ('css/responsbility.css')}}">
 
     <style>
         .btn-close{
@@ -31,31 +33,7 @@
         .btn-close:hover {
             background-color: rgb(244 233 215);
         }
-       /* ketika layar lebih kecil dari 640px */
-@media (max-width: 639px) {
-  .filter {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* ketika layar antara 640px dan 1023px */
-@media (min-width: 640px) and (max-width: 1023px) {
-    .filter {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .drop{
-    display: none;
-  }
-}
-
-/* ketika layar lebih besar atau sama dengan 1024px */
-@media (min-width: 1024px) {
-  #filter {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-}
-
-
+        
     </style>
 
 </head>
