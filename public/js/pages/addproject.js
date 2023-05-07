@@ -351,10 +351,16 @@ function create(){
                     html: errorMessage,
                     icon: 'error',
                 })
-            }else{
+            }else if(xhr.status == 400){
                 Swal.fire({
                     title: 'Gagal!',
                     text: JSON.parse(xhr.responseText).error,
+                    icon: 'error'
+                })
+            }else{
+                Swal.fire({
+                    title: 'Gagal!',
+                    text: xhr.responseJSON.message,
                     icon: 'error'
                 })
             }
