@@ -23,7 +23,7 @@ class GoogleSheetController extends Controller
     }
 
     public function team(Request $request){
-        $spreadSheetId = '1VOiN8e8dxL_M7nydCTpkito0a9Kv_R8aF9FzrAa_ELY';
+        $spreadSheetId = $request->id;
         $teamSheet = new GoogleSheetService('projectteam!B5:C8');
         $teamSheet->documentId = $spreadSheetId;
         $arrayTeam = $teamSheet->readSheet();
