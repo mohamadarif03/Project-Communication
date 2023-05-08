@@ -71,95 +71,94 @@
                                 <div class="my-6 flex justify-between my-checkbox mr-1">
                                     <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
                                         Project</label>
-                                    <input type="checkbox" id="twin-101" data-twin="twin-102" value="startProject" checked name="my-checkbox"
-                                        id="">
+                                    <input type="checkbox" id="twin-101" data-twin="twin-102" value="startProject" name="my-checkbox">
                                 </div>
                                 <div class="my-6 flex justify-between my-checkbox mr-1">
                                     <label class="my-0 font-bold"
                                         style="font-size:14px;margin-right:9px">Afsluiting</label>
-                                    <input type="checkbox" id="twin-102" data-twin="twin-103" value="afsluiting" name="my-checkbox" id="">
+                                    <input type="checkbox" id="twin-102" data-twin="twin-103" value="afsluiting" name="my-checkbox">
                                 </div>
                                 @if ($data->size == 'Small')
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Impact Design</label>
                                         <input type="checkbox" id="twin-103" data-twin="twin-104 value="experienceImpact" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Design</label>
                                         <input type="checkbox" id="twin-104" data-twin="twin-105 value="experienceDesign" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">GameTrust +
                                             WOW Design</label>
-                                        <input type="checkbox" id="twin-105" data-twin="twin-106 value="gameTrust" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-105" data-twin="twin-106 value="gameTrust" name="my-checkbox" >
                                     </div>
                                 @elseif($data->size == 'Medium')
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">GameTrust</label>
-                                        <input type="checkbox" id="twin-106" data-twin="twin-107" value="gameTrust" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-106" data-twin="twin-107" value="gameTrust" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Human
                                             Design</label>
-                                        <input type="checkbox" id="twin-107" data-twin="twin-108 value="humanDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-107" data-twin="twin-108 value="humanDesign" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">Brainstrom</label>
-                                        <input type="checkbox" id="twin-108" data-twin="twin-109" value="brainStrom" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-108" data-twin="twin-109" value="brainStrom" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Design</label>
                                         <input type="checkbox" id="twin-109" data-twin="twin-110" value="experienceDesign" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">WOW
                                             Design</label>
-                                        <input type="checkbox" id="twin-110" data-twin="twin-111" value="wowDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-110" data-twin="twin-111" value="wowDesign" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">Levering</label>
-                                        <input type="checkbox" id="twin-111" data-twin="twin-112" value="levering" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-111" data-twin="twin-112" value="levering" name="my-checkbox" >
                                     </div>
                                 @elseif($data->size == 'Large')
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">GameTrust</label>
-                                        <input type="checkbox" id="twin-112" data-twin="twin-113" value="gameTrust" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-112" data-twin="twin-113" value="gameTrust" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Human
                                             Design</label>
-                                        <input type="checkbox" id="twin-113" data-twin="twin-114" value="humanDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-113" data-twin="twin-114" value="humanDesign" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">Concepting</label>
-                                        <input type="checkbox" id="twin-114" data-twin="twin-115" value="concepting" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-114" data-twin="twin-115" value="concepting" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Design</label>
                                         <input type="checkbox" id="twin-115" data-twin="twin-116" value="experienceDesign" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">WOW
                                             Design</label>
-                                        <input type="checkbox" id="twin-116" data-twin="twin-117" value="wowDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-116" data-twin="twin-117" value="wowDesign" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Impact
                                             Design</label>
-                                        <input type="checkbox" id="twin-117" data-twin="twin-118" value="impactDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-117" data-twin="twin-118" value="impactDesign" name="my-checkbox" >
                                     </div>
                                 @endif
                             </div>
@@ -193,94 +192,94 @@
                                     <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
                                         Project</label>
                                     <input type="checkbox" id="twin-102" data-twin="twin-101" value="startProject" checked name="my-checkbox"
-                                        id="">
+                                        >
                                 </div>
                                 <div class="my-6 flex justify-between my-checkbox mr-1">
                                     <label class="my-0 font-bold"
                                         style="font-size:14px;margin-right:9px">Afsluiting</label>
-                                    <input type="checkbox" id="twin-103" data-twin="twin-102" value="afsluiting" name="my-checkbox" id="">
+                                    <input type="checkbox" id="twin-103" data-twin="twin-102" value="afsluiting" name="my-checkbox" >
                                 </div>
                                 @if ($data->size == 'Small')
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Impact Design</label>
                                         <input type="checkbox" id="twin-104" data-twin="twin-103" value="experienceImpact" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Design</label>
                                         <input type="checkbox" id="twin-105" data-twin="twin-104" value="experienceDesign" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">GameTrust +
                                             WOW Design</label>
-                                        <input type="checkbox" id="twin-106" data-twin="twin-105" value="gameTrust" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-106" data-twin="twin-105" value="gameTrust" name="my-checkbox" >
                                     </div>
                                 @elseif($data->size == 'Medium')
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">GameTrust</label>
-                                        <input type="checkbox" id="twin-107" data-twin="twin-106" value="gameTrust" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-107" data-twin="twin-106" value="gameTrust" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Human
                                             Design</label>
-                                        <input type="checkbox" id="twin-108" data-twin="twin-107" value="humanDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-108" data-twin="twin-107" value="humanDesign" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">Brainstrom</label>
-                                        <input type="checkbox" id="twin-109" data-twin="twin-108" value="brainStrom" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-109" data-twin="twin-108" value="brainStrom" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Design</label>
                                         <input type="checkbox" id="twin-110" data-twin="twin-109" value="experienceDesign" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">WOW
                                             Design</label>
-                                        <input type="checkbox" id="twin-111" data-twin="twin-110" value="wowDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-111" data-twin="twin-110" value="wowDesign" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">Levering</label>
-                                        <input type="checkbox" id="twin-112" data-twin="twin-111" value="levering" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-112" data-twin="twin-111" value="levering" name="my-checkbox" >
                                     </div>
                                 @elseif($data->size == 'Large')
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">GameTrust</label>
-                                        <input type="checkbox" id="twin-113" data-twin="twin-112" value="gameTrust" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-113" data-twin="twin-112" value="gameTrust" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Human
                                             Design</label>
-                                        <input type="checkbox" id="twin-114" data-twin="twin-113" value="humanDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-114" data-twin="twin-113" value="humanDesign" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">Concepting</label>
-                                        <input type="checkbox" id="twin-115" data-twin="twin-114" value="concepting" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-115" data-twin="twin-114" value="concepting" name="my-checkbox" >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Design</label>
                                         <input type="checkbox" id="twin-116" data-twin="twin-115" value="experienceDesign" name="my-checkbox"
-                                            id="">
+                                            >
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">WOW
                                             Design</label>
-                                        <input type="checkbox" id="twin-117" data-twin="twin-116" value="wowDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-117" data-twin="twin-116" value="wowDesign" name="my-checkbox">
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Impact
                                             Design</label>
-                                        <input type="checkbox" id="twin-118" data-twin="twin-117" value="impactDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" id="twin-118" data-twin="twin-117" value="impactDesign" name="my-checkbox">
                                     </div>
                                 @endif
                             </div>
