@@ -68,52 +68,98 @@
                     <div class=" flex pt-0 items-center w-full ">
                         <div class="ml-2 flex my-auto">
                             <div class="ml-2 my-auto grid grid-cols-2 gap-2 flex justify-evenly">
+                                <div class="my-6 flex justify-between my-checkbox mr-1">
+                                    <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
+                                        Project</label>
+                                    <input type="checkbox" value="startProject" checked name="my-checkbox"
+                                        id="">
+                                </div>
+                                <div class="my-6 flex justify-between my-checkbox mr-1">
+                                    <label class="my-0 font-bold"
+                                        style="font-size:14px;margin-right:9px">Afsluiting</label>
+                                    <input type="checkbox" value="afsluiting" name="my-checkbox" id="">
+                                </div>
                                 @if ($data->size == 'Small')
-                                @elseif($data->size == 'Medium')
-                                    <div class="my-6 flex justify-between my-checkbox">
-                                        <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
-                                            Project</label>
-                                        <input type="checkbox" value="startProject" name="my-checkbox"
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
+                                            Impact Design</label>
+                                        <input type="checkbox" value="experienceImpact" name="my-checkbox"
                                             id="">
                                     </div>
-                                    <div class="my-6 flex justify-between my-checkbox"
-                                        style="margin-left: 30px; margin-right: 7px">
-                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Human
-                                            Design</label>
-                                        <input type="checkbox" value="humanDesign" name="my-checkbox" id="">
-                                    </div>
-                                    <div class="my-6 flex justify-between my-checkbox">
-                                        <label class="my-0 font-bold"
-                                            style="font-size:14px;margin-right:9px">Brainstrom</label>
-                                        <input type="checkbox" value="brainStrom" name="my-checkbox" id="">
-                                    </div>
-                                    <div class="my-6 flex justify-between my-checkbox"
-                                        style="margin-left: 30px; margin-right: 7px">
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
                                             Design</label>
-                                        <input type="checkbox" value="experienceDesign" name="my-checkbox" id="">
+                                        <input type="checkbox" value="experienceDesign" name="my-checkbox"
+                                            id="">
                                     </div>
-                                    <div class="my-6 flex justify-between my-checkbox">
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">GameTrust +
+                                            WOW Design</label>
+                                        <input type="checkbox" value="gameTrust" name="my-checkbox" id="">
+                                    </div>
+                                @elseif($data->size == 'Medium')
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">GameTrust</label>
                                         <input type="checkbox" value="gameTrust" name="my-checkbox" id="">
                                     </div>
-                                    <div
-                                        class="my-6 flex justify-between my-checkbox"style="margin-left: 30px; margin-right: 7px">
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Human
+                                            Design</label>
+                                        <input type="checkbox" value="humanDesign" name="my-checkbox" id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold"
+                                            style="font-size:14px;margin-right:9px">Brainstrom</label>
+                                        <input type="checkbox" value="brainStrom" name="my-checkbox" id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
+                                            Design</label>
+                                        <input type="checkbox" value="experienceDesign" name="my-checkbox"
+                                            id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">WOW
                                             Design</label>
                                         <input type="checkbox" value="wowDesign" name="my-checkbox" id="">
                                     </div>
-                                    <div class="my-6 flex justify-between my-checkbox">
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
                                             style="font-size:14px;margin-right:9px">Levering</label>
                                         <input type="checkbox" value="levering" name="my-checkbox" id="">
                                     </div>
-                                    <div
-                                        class="my-6 flex justify-between my-checkbox"style="margin-left: 30px; margin-right: 7px">
+                                @elseif($data->size == 'Large')
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
                                         <label class="my-0 font-bold"
-                                            style="font-size:14px;margin-right:9px">Afsluiting</label>
-                                        <input type="checkbox" value="afsluiting" name="my-checkbox" id="">
+                                            style="font-size:14px;margin-right:9px">GameTrust</label>
+                                        <input type="checkbox" value="gameTrust" name="my-checkbox" id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Human
+                                            Design</label>
+                                        <input type="checkbox" value="humanDesign" name="my-checkbox" id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold"
+                                            style="font-size:14px;margin-right:9px">Concepting</label>
+                                        <input type="checkbox" value="concepting" name="my-checkbox" id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Experience
+                                            Design</label>
+                                        <input type="checkbox" value="experienceDesign" name="my-checkbox"
+                                            id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">WOW
+                                            Design</label>
+                                        <input type="checkbox" value="wowDesign" name="my-checkbox" id="">
+                                    </div>
+                                    <div class="my-6 flex justify-between my-checkbox mr-1">
+                                        <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Impact
+                                            Design</label>
+                                        <input type="checkbox" value="impactDesign" name="my-checkbox" id="">
                                     </div>
                                 @endif
                             </div>
