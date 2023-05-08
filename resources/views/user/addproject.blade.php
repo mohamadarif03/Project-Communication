@@ -340,7 +340,7 @@
                         <div class="mr-2 mt-6">
                             <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Productontwerp
                                 Senior</label>
-                            <Select multiple id="productonwerp_senior" name="productonwerp_senior" class="w-full"
+                            <Select multiple id="productontwerp_senior" name="productonwerp_senior" class="w-full"
                                 placeholder="Productontwerp Senior">
                                 <Option value="">Productontwerp Senior</Option>
                             </Select>
@@ -348,7 +348,7 @@
                         <div class="ml-2 mr-2 mt-6">
                             <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Productontwerp
                                 Medior</label>
-                            <Select multiple id="productonwerp_medior" name="productonwerp_medior" class="w-full"
+                            <Select multiple id="productontwerp_medior" name="productonwerp_medior" class="w-full"
                                 placeholder="Productontwerp Medior">
                                 <Option value="">Productontwerp Medior</Option>
                                 
@@ -357,7 +357,7 @@
                         <div class="productonwerp-junior">
                             <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Productontwerp
                                 Junior</label>
-                            <Select multiple id="productonwerp_junior" name="productonwerp_junior" class="w-full"
+                            <Select multiple id="productontwerp_junior" name="productonwerp_junior" class="w-full"
                                 placeholder="Productontwerp Junior">
                                 <Option value="">Productontwerp Junior</Option>
                                 

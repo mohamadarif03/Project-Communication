@@ -135,7 +135,8 @@ class ProjectController extends Controller
     }
     public function viewupdate($id)
     {
-        return view('user.updateproject');
+        $data = Project::findorfail($id);
+        return view('user.updateproject',['data' => $data]);
     }
     public function download($type){
         if($type == 'small'){

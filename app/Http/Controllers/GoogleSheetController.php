@@ -88,17 +88,17 @@ class GoogleSheetController extends Controller
         //Check Valid Template
         $templateValidate = new GoogleSheetService('project!A1:B2');
         $templateValidate->documentId = $spreadsheetId;
-        if( !$templateValidate->checkSheetExist($request->type) || !$templateValidate->checkSheetExist('Projectteam')){
+        if( !$templateValidate->checkSheetExist($request->size) || !$templateValidate->checkSheetExist('Projectteam')){
             return response()->json([
                 'error' => "Your spreadsheet template doesn't match, please import excel template according to the project size you choose ( ".$request->type." )"
             ],400);
         }
 
-        //Title Value
-        $title[0] = $request->title;
-        $titleSheet = new GoogleSheetService('projectteam!C4:C4');
-        $titleSheet->documentId = $spreadsheetId;
-        $titleSheet->writeSheet($title);
+        //Project Name Value
+        $projectName[0] = $request->project_name;
+        $projectNameSheet = new GoogleSheetService('projectteam!C4:C4');
+        $projectNameSheet->documentId = $spreadsheetId;
+        $projectNameSheet->writeSheet($projectName);
         //Service Manager Value
         $serviceManager[0] = implode(',',$request->service_manager);
         $serviceManagerSheet = new GoogleSheetService('projectteam!C5:C5');
@@ -222,9 +222,9 @@ class GoogleSheetController extends Controller
         $propsSheet->writeSheet($props);
 
         $project = Project::create([
-            'name' => $request->title,
+            'name' => $request->project_name,
             'link' => $request->link,
-            'size' => $request->type,
+            'size' => $request->size,
             'sheetId' => $spreadsheetId,
         ]);
         
@@ -261,7 +261,7 @@ class GoogleSheetController extends Controller
         }
         return response()->json(['message' => 'success']);
     }
-    public function updateProjectTeam(Request $request){
+    public function updateProjectTeam(ProjectTeamRequest $request,$id){
 
         //Check Valid Link
         $url = $request->link;
@@ -278,17 +278,17 @@ class GoogleSheetController extends Controller
         //Check Valid Template
         $templateValidate = new GoogleSheetService('project!A1:B2');
         $templateValidate->documentId = $spreadsheetId;
-        if( !$templateValidate->checkSheetExist($request->type) || !$templateValidate->checkSheetExist('Projectteam')){
+        if( !$templateValidate->checkSheetExist($request->size) || !$templateValidate->checkSheetExist('Projectteam')){
             return response()->json([
                 'error' => "Your spreadsheet template doesn't match, please import excel template according to the project size you choose ( ".$request->type." )"
             ],400);
         }
 
-        //Title Value
-        $title[0] = $request->title;
-        $titleSheet = new GoogleSheetService('projectteam!C4:C4');
-        $titleSheet->documentId = $spreadsheetId;
-        $titleSheet->writeSheet($title);
+        //Project Name Value
+        $projectName[0] = $request->project_name;
+        $projectNameSheet = new GoogleSheetService('projectteam!C4:C4');
+        $projectNameSheet->documentId = $spreadsheetId;
+        $projectNameSheet->writeSheet($projectName);
         //Service Manager Value
         $serviceManager[0] = implode(',',$request->service_manager);
         $serviceManagerSheet = new GoogleSheetService('projectteam!C5:C5');
@@ -411,12 +411,46 @@ class GoogleSheetController extends Controller
         $propsSheet->documentId = $spreadsheetId;
         $propsSheet->writeSheet($props);
 
-        Project::create([
+        $project = Project::findorfail($id)->update([
             'name' => $request->title,
             'link' => $request->link,
-            'size' => $request->type,
+            'size' => $request->size,
             'sheetId' => $spreadsheetId,
-        ]);       
+        ]);
+        
+        ProjectMember::where('project_id',$project->id)->delete();
+
+        $members = collect($request->service_manager)
+                ->merge($request->office_manager)
+                ->merge($request->product_manager)
+                ->merge($request->senior)
+                ->merge($request->gamedesigner_junior)
+                ->merge($request->gamedesigner_medior)
+                ->merge($request->gamedesigner_senior)
+                ->merge($request->experienceDesigner_junior)
+                ->merge($request->experienceDesigner_medior)
+                ->merge($request->experienceDesigner_senior)
+                ->merge($request->ui_ux)
+                ->merge($request->productontwerp_junior)
+                ->merge($request->productontwerp_medior)
+                ->merge($request->productontwerp_senior)
+                ->merge($request->programmer_junior)
+                ->merge($request->programmer_medior)
+                ->merge($request->programmer_senior)
+                ->merge($request->story_junior)
+                ->merge($request->story_medior)
+                ->merge($request->story_senior)
+                ->merge($request->host)
+                ->merge($request->muziek)
+                ->merge($request->techniek)
+                ->merge($request->props)
+                ->unique();
+        foreach($members as $member){
+            ProjectMember::create([
+                'project_id' => $project->id,
+                'user_id' => $member
+            ]);
+        }
 
         return response()->json(['message' => 'success']);
     }

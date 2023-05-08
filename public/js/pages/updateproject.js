@@ -131,9 +131,9 @@ function GetUser(){
                 $('#experience_medior').append(row)
                 $('#experience_junior').append(row)
                 $('#ui_ux').append(row)
-                $('#productonwerp_senior').append(row)
-                $('#productonwerp_medior').append(row)
-                $('#productonwerp_junior').append(row)
+                $('#productontwerp_senior').append(row)
+                $('#productontwerp_medior').append(row)
+                $('#productontwerp_junior').append(row)
                 $('#programmer_senior').append(row)
                 $('#programmer_medior').append(row)
                 $('#programmer_junior').append(row)
@@ -165,26 +165,26 @@ function GetUser(){
                     $('#office').val(response.team[1][1].map(item => item.name))
                     $('#product_manager').val(response.team[2][1].map(item => item.name))
                     $('#senior').val(response.team[3][1].map(item => item.name))
-                    $('#game_junior').val(response.creative[0][1].map(item => item.item))
-                    $('#game_medior').val(response.creative[1][1].map(item => item.item))
-                    $('#game_senior').val(response.creative[2][1].map(item => item.item))
-                    $('#experience_junior').val(response.creative[3][1].map(item => item.item))
-                    $('#experience_medior').val(response.creative[4][1].map(item => item.item))
-                    $('#experience_senior').val(response.creative[5][1].map(item => item.item))
-                    $('#ui_ux').val(response.creative[6][1].map(item => item.item))
-                    $('#productontwerp_junior').val(response.creative[7][1].map(item => item.item))
-                    $('#productontwerp_medior').val(response.creative[8][1].map(item => item.item))
-                    $('#productontwerp_senior').val(response.creative[9][1].map(item => item.item))
-                    $('#programmer_junior').val(response.creative[10][1].map(item => item.item))
-                    $('#programmer_medior').val(response.creative[11][1].map(item => item.item))
-                    $('#programmer_senior').val(response.creative[12][1].map(item => item.item))
-                    $('#story_junior').val(response.creative[13][1].map(item => item.item))
-                    $('#story_medior').val(response.creative[14][1].map(item => item.item))
-                    $('#story_senior').val(response.creative[15][1].map(item => item.item))
-                    $('#host').val(response.chaperone[0][1].map(item => item.item))
-                    $('#muziek').val(response.chaperone[1][1].map(item => item.item))
-                    $('#techniek').val(response.chaperone[2][1].map(item => item.item))
-                    $('#props').val(response.chaperone[3][1].map(item => item.item))
+                    $('#game_junior').val(response.creative[0][1].map(item => item.name))
+                    $('#game_medior').val(response.creative[1][1].map(item => item.name))
+                    $('#game_senior').val(response.creative[2][1].map(item => item.name))
+                    $('#experience_junior').val(response.creative[3][1].map(item => item.name))
+                    $('#experience_medior').val(response.creative[4][1].map(item => item.name))
+                    $('#experience_senior').val(response.creative[5][1].map(item => item.name))
+                    $('#ui_ux').val(response.creative[6][1].map(item => item.name))
+                    $('#productontwerp_junior').val(response.creative[7][1].map(item => item.name))
+                    $('#productontwerp_medior').val(response.creative[8][1].map(item => item.name))
+                    $('#productontwerp_senior').val(response.creative[9][1].map(item => item.name))
+                    $('#programmer_junior').val(response.creative[10][1].map(item => item.name))
+                    $('#programmer_medior').val(response.creative[11][1].map(item => item.name))
+                    $('#programmer_senior').val(response.creative[12][1].map(item => item.name))
+                    $('#story_junior').val(response.creative[13][1].map(item => item.name))
+                    $('#story_medior').val(response.creative[14][1].map(item => item.name))
+                    $('#story_senior').val(response.creative[15][1].map(item => item.name))
+                    $('#host').val(response.chaperone[0][1].map(item => item.name))
+                    $('#muziek').val(response.chaperone[1][1].map(item => item.name))
+                    $('#techniek').val(response.chaperone[2][1].map(item => item.name))
+                    $('#props').val(response.chaperone[3][1].map(item => item.name))
                     new TomSelect('#service_manager',{
                         plugins: ['remove_button'],
                     })
@@ -218,13 +218,13 @@ function GetUser(){
                     new TomSelect('#ui_ux',{
                         plugins: ['remove_button'],
                     })
-                    new TomSelect('#productonwerp_senior',{
+                    new TomSelect('#productontwerp_senior',{
                         plugins: ['remove_button'],
                     })
-                    new TomSelect('#productonwerp_medior',{
+                    new TomSelect('#productontwerp_medior',{
                         plugins: ['remove_button'],
                     })
-                    new TomSelect('#productonwerp_junior',{
+                    new TomSelect('#productontwerp_junior',{
                         plugins: ['remove_button'],
                     })
                     new TomSelect('#programmer_senior',{
@@ -264,7 +264,11 @@ function GetUser(){
                     })
                 },
                 error:function(response){
-                    console.log(response)
+                    Swal.fire({
+                        title: 'Gagal!',
+                        text: response.responseJSON.message,
+                        icon: 'error'
+                    })
                 }
                 
             })
@@ -294,6 +298,7 @@ function download(){
  
 }
 function update(){
+    var id = $('#project-id').val()
     var service_manager = $('#service_manager').val()
     var product_manager = $('#product_manager').val()
     var office = $('#office').val()
@@ -305,9 +310,9 @@ function update(){
     var experience_medior = $('#experience_medior').val()
     var experience_junior = $('#experience_junior').val()
     var ui_ux = $('#ui_ux').val()
-    var productonwerp_senior = $('#productonwerp_senior').val()
-    var productonwerp_medior = $('#productonwerp_medior').val()
-    var productonwerp_junior = $('#productonwerp_junior').val()
+    var productontwerp_senior = $('#productontwerp_senior').val()
+    var productontwerp_medior = $('#productontwerp_medior').val()
+    var productontwerp_junior = $('#productontwerp_junior').val()
     var programmer_senior = $('#programmer_senior').val()
     var programmer_medior = $('#programmer_medior').val()
     var programmer_junior = $('#programmer_junior').val()
@@ -323,7 +328,7 @@ function update(){
     var title = $('#project-name').val()
     $.ajax({
         type:'PUT',
-        url:'/Update-project',
+        url:'/update-project/'+id,
         data:{
             _token:csrfToken,
             service_manager:service_manager,
@@ -337,9 +342,9 @@ function update(){
             experience_medior:experience_medior,
             experience_junior:experience_junior,
             ui_ux:ui_ux,
-            productontwerp_senior:productonwerp_senior,
-            productontwerp_medior:productonwerp_medior,
-            productontwerp_junior:productonwerp_junior,
+            productontwerp_senior:productontwerp_senior,
+            productontwerp_medior:productontwerp_medior,
+            productontwerp_junior:productontwerp_junior,
             programmer_senior:programmer_senior,
             programmer_medior:programmer_medior,
             programmer_junior:programmer_junior,
@@ -351,8 +356,8 @@ function update(){
             muziek:muziek,
             props:props,
             link:link,
-            type:type,
-            title:title
+            size:type,
+            project_name:title
         },
         beforeSend:function(){
             Swal.fire({
@@ -369,8 +374,12 @@ function update(){
         success:function(response){
             Swal.fire({
                 title: 'success!',
-                text: 'success create new project!',
+                text: 'success update project!',
                 icon: 'success'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '../project'
+                }
             })
         },
         error: function(xhr, status, error) {
