@@ -59,7 +59,7 @@ function GetData(filter){
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mr-2 bi bi-check2" viewBox="0 0 16 16">
                                                     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                                                     </svg>
-                                                <p class="my-auto">Mark As Do3ne</p>
+                                                <p class="my-auto">Mark As Done</p>
                                             </button>   
                                         </a>    
                                         </li>
@@ -68,10 +68,18 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Start Project</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                               
                             </div>`
 
                     $('#Data').append(row)
@@ -105,7 +113,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Impact</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +157,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Experience Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +201,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Brain Strom</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +247,15 @@ function GetData(filter){
                                         
                                         <div class="ml-2 flex my-auto">
                                             <div class="my-auto">
-                                                <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                                <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h-8 flex p-2 pt-0 items-center w-full ">
+                                        
+                                        <div class="ml-2 flex my-auto">
+                                            <div class="my-auto">
+                                                <h1 class="text-xs my-0">Game Trust</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -255,7 +292,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Afsluiting</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -292,7 +336,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Start Project</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -329,7 +380,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Human Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -366,7 +424,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Experience Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -403,7 +468,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Brain Strom</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -442,7 +514,15 @@ function GetData(filter){
                                         
                                         <div class="ml-2 flex my-auto">
                                             <div class="my-auto">
-                                                <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                                <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h-8 flex p-2 pt-0 items-center w-full ">
+                                        
+                                        <div class="ml-2 flex my-auto">
+                                            <div class="my-auto">
+                                                <h1 class="text-xs my-0">Game Trust</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -480,7 +560,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Wow Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -517,7 +604,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Lavering</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -554,7 +648,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Afsluiting</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -591,7 +692,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Start Project</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -628,7 +736,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Human Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -665,7 +780,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Experience Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -702,7 +824,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Concepting</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -741,7 +870,15 @@ function GetData(filter){
                                         
                                         <div class="ml-2 flex my-auto">
                                             <div class="my-auto">
-                                                <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                                <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h-8 flex p-2 pt-0 items-center w-full ">
+                                        
+                                        <div class="ml-2 flex my-auto">
+                                            <div class="my-auto">
+                                                <h1 class="text-xs my-0">Game Trust</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -779,7 +916,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Wow Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -816,7 +960,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Impact</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -853,7 +1004,14 @@ function GetData(filter){
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-sm my-0">`+data[1]+`</h1>
+                                            <h1 class="text-sm font-bold my-0">`+data[1]+`</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-6 flex p-2 pt-0 items-center w-full ">
+                                    <div class="ml-2 flex my-auto">
+                                        <div class="my-auto">
+                                            <h1 class="text-xs my-0">Afsluiting</h1>
                                         </div>
                                     </div>
                                 </div>
