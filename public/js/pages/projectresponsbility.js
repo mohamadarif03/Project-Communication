@@ -66,7 +66,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -104,7 +103,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -142,7 +140,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -180,7 +177,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -257,7 +253,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -295,7 +290,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -333,7 +327,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -371,7 +364,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -409,7 +401,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -487,7 +478,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -525,7 +515,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -563,7 +552,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -601,7 +589,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -639,7 +626,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -677,7 +663,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -715,7 +700,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -793,7 +777,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -831,7 +814,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
@@ -869,7 +851,6 @@ function GetData(filter){
                                     </ul>           
                                 </div>
                                 <div class="h-16 flex p-2 pt-0 items-center w-full ">
-                                    
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
                                             <h1 class="text-sm my-0">`+data[1]+`</h1>
