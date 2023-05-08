@@ -12,6 +12,9 @@ $('.my-checkbox').change(function() {
 });
 var first_filter = [];
 first_filter[0] = 'startProject'
+function checkget(id) {
+    $('#check-id').val(id)
+}
 GetData(first_filter)
 function GetData(filter){
     var project_id = $('#project-id').val()
@@ -51,12 +54,14 @@ function GetData(filter){
                                     </button>
                                     <ul id="dropdownlist-`+(index+100)+`" class="absolute dropdown-edit hidden z-[1000] float-left right-9 top-3 border-2 m-0 min-w-max list-none overflow-hidden rounded-lg p-1 border-none bg-white bg-clip-padding text-left text-base shadow-lg" >
                                         <li>
+                                        <a href="" onclick="checkget(`+data.id+`)" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">
                                             <button data-coordinate="`+coordinate+`" id="btn-mark-`+(index+100)+`"  onclick="mark(`+(index+100)+`)" class="btn-mark-done flex items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                          </svg>
-                                                <p class="my-auto">Mark As Done</p>
-                                            </button>       
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mr-2 bi bi-check2" viewBox="0 0 16 16">
+                                                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                                    </svg>
+                                                <p class="my-auto">Mark As Do3ne</p>
+                                            </button>   
+                                        </a>    
                                         </li>
                                     </ul>           
                                 </div>
