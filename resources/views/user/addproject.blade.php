@@ -207,7 +207,7 @@
                    
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
                         <button id="back2" type="button"
-                            class="btn-hover:hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            class="btn-hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
                             style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
@@ -419,7 +419,7 @@
                     </div>
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
                         <button id="back3" type="button"
-                            class="btn-hover:hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            class="btn-hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
                             style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
