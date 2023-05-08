@@ -591,42 +591,42 @@ class GoogleSheetController extends Controller
             $impactDesign = [];
             $afsluiting = [];
             if(in_array('startProject',$request->filter)){
-                $startProjectSheet = new GoogleSheetService('Medium!A5:B20');
+                $startProjectSheet = new GoogleSheetService('Large!A5:B20');
                 $startProjectSheet->documentId = $spreadSheetId;
                 $startProject = $startProjectSheet->readSheet();
             }
             if(in_array('humanDesign',$request->filter)){
-                $humanDesignSheet = new GoogleSheetService('Medium!C5:D15');
+                $humanDesignSheet = new GoogleSheetService('Large!C5:D15');
                 $humanDesignSheet->documentId = $spreadSheetId;
                 $humanDesign = $humanDesignSheet->readSheet();
             }
             if(in_array('concepting',$request->filter)){
-                $brainStromSheet = new GoogleSheetService('Medium!E5:F13');
+                $brainStromSheet = new GoogleSheetService('Large!E5:F13');
                 $brainStromSheet->documentId = $spreadSheetId;
                 $brainStrom = $brainStromSheet->readSheet();
             }
             if(in_array('experienceDesign',$request->filter)){
-                $experienceDesignSheet = new GoogleSheetService('Medium!G5:H12');
+                $experienceDesignSheet = new GoogleSheetService('Large!G5:H12');
                 $experienceDesignSheet->documentId = $spreadSheetId;
                 $experienceDesign = $experienceDesignSheet->readSheet();
             }
             if(in_array('gameTrust',$request->filter)){
-                $gameTrustSheet = new GoogleSheetService('Medium!A23:B45');
+                $gameTrustSheet = new GoogleSheetService('Large!A23:B45');
                 $gameTrustSheet->documentId = $spreadSheetId;
                 $gameTrust = $gameTrustSheet->readSheet();
             }
             if(in_array('wowDesign',$request->filter)){
-                $wowDesignSheet = new GoogleSheetService('Medoum!C23:D45');
+                $wowDesignSheet = new GoogleSheetService('Large!C23:D45');
                 $wowDesignSheet->documentId = $spreadSheetId;
                 $wowDesign = $wowDesignSheet->readSheet();
             }
             if(in_array('impactDesign',$request->filter)){
-                $impactDesignSheet = new GoogleSheetService('Medium!E23:F26');
+                $impactDesignSheet = new GoogleSheetService('Large!E23:F26');
                 $impactDesignSheet->documentId = $spreadSheetId;
                 $impactDesign = $impactDesignSheet->readSheet();
             }
             if(in_array('afsluiting',$request->filter)){
-                $afsluitingSheet = new GoogleSheetService('Medium!G23:H28');
+                $afsluitingSheet = new GoogleSheetService('Large!G23:H28');
                 $afsluitingSheet->documentId = $spreadSheetId;
                 $afsluiting = $afsluitingSheet->readSheet();
             }
