@@ -42,11 +42,13 @@ function GetData(filter){
                         <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                         <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>`
             $('#Data').html(load)
+            $('input[type="checkbox"][name="nama-checkbox"]').prop('disabled', true);
         },
         success:function(response){
             $('#Data').html('')
             if(size === 'Small'){
                 $.each(response.startProject.values,function(index, data){
+                    $('input[type="checkbox"][name="nama-checkbox"]').prop('disabled', false);
                     if(data[0] == 'x' || data[0] == 'X'){
                         var style = 'bg-green-200';
                         var style2 = 'border:solid green 2px'
