@@ -33,6 +33,33 @@
             .btn-close-delete-hover:hover {
                 background-color: rgb(254 233 215);
             }
+            /* grid-cols-1 md:grid-cols-2 lg:grid-cols-3 */
+            @media (max-width: 639px) {
+            .cardUser {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+            
+            }
+
+            @media (min-width: 640px) and (max-width: 1075px) {
+                .cardUser {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .filterUser{
+                flex-direction: row
+            }
+            /* md:flex-row */
+            
+            }
+            @media (min-width: 1076px) {
+            .cardUser {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .filterUser{
+                flex-direction: row
+            }
+           
+    }
         </style>
     </head>
     <body>

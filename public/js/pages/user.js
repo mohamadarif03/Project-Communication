@@ -43,8 +43,8 @@ function GetData(page){
                         var src = 'src="../storage/'+data.profile+'"'
                     }
                     if (data.email.length > 18) {
-                        var sizeTextEmail = 'style="font-size:8px;"'
-                        var size_role = 'font-size:10px;'
+                        var sizeTextEmail = 'style="font-size:12px;"'
+                        var size_role = 'font-size:14px;'
                         var fontWeightEmail = 'font-bold'
                     } else {
                         var sizeTextEmail = 'style="font-size:14px;"'

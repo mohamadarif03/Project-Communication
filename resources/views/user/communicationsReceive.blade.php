@@ -510,3 +510,6 @@
 @section('javascript')
     <script src="{{ asset('js/pages/communication.js') }}"></script>
 @endsection
+@section('styling-page')
+<link rel="stylesheet" href="{{asset ('css/communication.css')}}">
+@endsection

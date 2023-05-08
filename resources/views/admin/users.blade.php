@@ -5,7 +5,7 @@
 @section('content')
     <div class="content">
 
-        <div class="container-fluid flex flex-col md:flex-row justify-between mt-3">
+        <div class="filterUser container-fluid flex flex-col justify-between mt-3">
 
             <div class="">
                 <button type="button" data-te-toggle="modal" data-te-target="#create" data-te-ripple-init
@@ -32,7 +32,7 @@
         </div>
     </div> 
     <div class="w-full flex flex-col">
-        <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4" id="Data">
+        <div class="cardUser grid mx-3 gap-3 mt-4" id="Data">
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>
             <div class="col-span-1 bg-slate-300 rounded-md animate-pulse h-36"></div>

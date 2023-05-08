@@ -556,3 +556,6 @@
 @section('tom-select')
 <link rel="stylesheet" href="{{ asset('plugin/tom-select/dist/css/tom-select height.css') }}">
 @endsection
+@section('styling-page')
+<link rel="stylesheet" href="{{asset ('css/addproject.css')}}">
+@endsection
