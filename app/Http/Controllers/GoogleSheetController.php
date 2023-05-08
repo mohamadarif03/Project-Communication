@@ -25,7 +25,7 @@ class GoogleSheetController extends Controller
     public function team(Request $request){
         $spreadSheetId = $request->id;
         $teamSheet = new GoogleSheetService('projectteam!B5:C8');
-        $teamSheet->documentId = '12U_Y4cJ4ZbbpQd1BWmR0eml3hfBWvqsRM7NLMtWxopg';
+        $teamSheet->documentId = $spreadSheetId;
         $arrayTeam = $teamSheet->readSheet();
         $dataTeam = $arrayTeam->values;
         $index = 0;
@@ -39,7 +39,7 @@ class GoogleSheetController extends Controller
         $index = 0;
         
         $creativeSheet = new GoogleSheetService('projectteam!C9:D24');
-        $creativeSheet->documentId = '12U_Y4cJ4ZbbpQd1BWmR0eml3hfBWvqsRM7NLMtWxopg';
+        $creativeSheet->documentId = $spreadSheetId;
         $arrayCreative = $creativeSheet->readSheet();
         $dataCreative = $arrayCreative->values;
         foreach($dataCreative as $item){
@@ -52,7 +52,7 @@ class GoogleSheetController extends Controller
         $index = 0;
 
         $chaperoneSheet = new GoogleSheetService('projectteam!C25:D28');
-        $chaperoneSheet->documentId = '12U_Y4cJ4ZbbpQd1BWmR0eml3hfBWvqsRM7NLMtWxopg';
+        $chaperoneSheet->documentId = $spreadSheetId;
         $arrayChaperone = $chaperoneSheet->readSheet();
         $dataChaperone = $arrayChaperone->values;
         foreach($dataChaperone as $item){
