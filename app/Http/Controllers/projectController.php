@@ -17,9 +17,10 @@ class ProjectController extends Controller
         $data = Project::findorfail($id);
         return view('user.projectTeam',['data' => $data ]);
     }
-    public function view2()
+    public function view2($id)
     {
-        return view('user.projectResponsbility');
+        $data = Project::findorfail($id);
+        return view('user.projectResponsbility',['data' => $data]);
     }
     public function view3()
     {
