@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProjectTeamRequest;
 use App\Http\Services\GoogleSheetService;
 use App\Models\Project;
 use App\Models\ProjectMember;
@@ -70,7 +71,7 @@ class GoogleSheetController extends Controller
         return response()->json($data);
     }
 
-    public function createProjectTeam(Request $request){
+    public function createProjectTeam(ProjectTeamRequest $request){
 
         //Check Valid Link
         $url = $request->link;

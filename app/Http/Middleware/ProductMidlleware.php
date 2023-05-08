@@ -16,7 +16,7 @@ class ProductMidlleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(in_array('Product Manager',Auth()->user()->userrole->pluck('name')->toarray()) || in_array('Service Manager',Auth()->user()->userrole->pluck('name')->toarray())){
+        if(in_array('8',Auth()->user()->userrole->pluck('role_id')->toarray()) || in_array('9',Auth()->user()->userrole->pluck('role_id')->toarray())){
             return $next($request);
         }
         return redirect()->back();

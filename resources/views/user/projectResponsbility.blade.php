@@ -11,7 +11,6 @@
             <div class="">
                     <h1 class="text-xl font-semibold ml-3 text-black">{{$data->name}}</h1>
                     <p class="text-sm font-semibold ml-3 text-black">{{$data->size}}</p>
-
             </div>
             <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
                 <div class="relative mr-2">

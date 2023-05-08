@@ -145,80 +145,130 @@ function GetUser(){
                 $('#muziek').append(row)
                 $('#props').append(row)
             })
-            new TomSelect('#service_manager',{
-                plugins: ['remove_button'],
+            $.ajax({
+                type:'GET',
+                url:'/data-project-team',
+                beforeSend:function(){
+                    Swal.fire({
+                        title: 'Loading...',
+                        html: 'Please Wait',
+                        icon: 'info',
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        onBeforeOpen: () => {
+                            Swal.showLoading();
+                        }
+                    })
+                },
+                success:function(response){
+                    $('#service_manager').val(response.team[0][1].map(item => item.name))
+                    $('#office').val(response.team[1][1].map(item => item.name))
+                    $('#product_manager').val(response.team[2][1].map(item => item.name))
+                    $('#senior').val(response.team[3][1].map(item => item.name))
+                    $('#game_junior').val(response.creative[0][1].map(item => item.item))
+                    $('#game_medior').val(response.creative[1][1].map(item => item.item))
+                    $('#game_senior').val(response.creative[2][1].map(item => item.item))
+                    $('#experience_junior').val(response.creative[3][1].map(item => item.item))
+                    $('#experience_medior').val(response.creative[4][1].map(item => item.item))
+                    $('#experience_senior').val(response.creative[5][1].map(item => item.item))
+                    $('#ui_ux').val(response.creative[6][1].map(item => item.item))
+                    $('#productontwerp_junior').val(response.creative[7][1].map(item => item.item))
+                    $('#productontwerp_medior').val(response.creative[8][1].map(item => item.item))
+                    $('#productontwerp_senior').val(response.creative[9][1].map(item => item.item))
+                    $('#programmer_junior').val(response.creative[10][1].map(item => item.item))
+                    $('#programmer_medior').val(response.creative[11][1].map(item => item.item))
+                    $('#programmer_senior').val(response.creative[12][1].map(item => item.item))
+                    $('#story_junior').val(response.creative[13][1].map(item => item.item))
+                    $('#story_medior').val(response.creative[14][1].map(item => item.item))
+                    $('#story_senior').val(response.creative[15][1].map(item => item.item))
+                    $('#host').val(response.chaperone[0][1].map(item => item.item))
+                    $('#muziek').val(response.chaperone[1][1].map(item => item.item))
+                    $('#techniek').val(response.chaperone[2][1].map(item => item.item))
+                    $('#props').val(response.chaperone[3][1].map(item => item.item))
+                    new TomSelect('#service_manager',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#office',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#product_manager',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#senior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#game_senior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#game_medior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#game_junior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#experience_senior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#experience_medior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#experience_junior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#ui_ux',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#productonwerp_senior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#productonwerp_medior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#productonwerp_junior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#programmer_senior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#programmer_medior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#programmer_junior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#story_senior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#story_medior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#story_junior',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#host',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#techniek',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#muziek',{
+                        plugins: ['remove_button'],
+                    })
+                    new TomSelect('#props',{
+                        plugins: ['remove_button'],
+                    })
+                    Swal.fire({
+                        title:'Success',
+                        icon:'success',
+                        timer:'100'
+                    })
+                },
+                error:function(response){
+                    console.log(response)
+                }
+                
             })
-            new TomSelect('#office',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#product_manager',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#game_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#game_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#game_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#experience_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#experience_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#experience_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#ui_ux',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#productonwerp_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#productonwerp_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#productonwerp_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#programmer_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#programmer_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#programmer_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#story_senior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#story_medior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#story_junior',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#host',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#techniek',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#muziek',{
-                plugins: ['remove_button'],
-            })
-            new TomSelect('#props',{
-                plugins: ['remove_button'],
-            })
-           
-        },
+        },   
         error:function(response){
             console.log(response)
         }

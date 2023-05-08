@@ -1,3 +1,4 @@
+var csrfToken = $('meta[name="csrf-token"]').attr('content');
 function showdropdown(index){
     $('.dropdown-edit').each(function() {
         if (!$(this).hasClass('hidden')  && $(this).attr('id') !== ('dropdownlist-'+index)) {
@@ -108,6 +109,9 @@ function mark(id){
     $.ajax({
         type:'PUT',
         url:'/mark-project/'+id,
+        data:{
+            _token:csrfToken
+        },
         beforeSend:function(){
             Swal.fire({
                 title: 'Loading...',

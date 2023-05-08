@@ -227,11 +227,10 @@ function GetUser(){
             })
             new TomSelect('#muziek',{
                 plugins: ['remove_button'],
-            })
+            })        
             new TomSelect('#props',{
                 plugins: ['remove_button'],
-            })
-           
+            })      
         },
         error:function(response){
             console.log(response)

@@ -102,10 +102,15 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/read-all',[NotificationController::class,'readall']);
 
         Route::get('/download-template/{type}',[ProjectController::class,'download']);
-        Route::post('/create-project',[GoogleSheetController::class,'createProjectTeam']);
-        Route::put('/update-project/{id}',[GoogleSheetController::class,'updateProjectTeam']);
         Route::get('/data-project',[ProjectController::class,'data']);
 
+    });
+
+    Route::middleware('project')->group(function(){
+        Route::get('/edit-project/{id}',[ProjectController::class,'viewupdate']);
+        Route::put('/update-project/{id}',[GoogleSheetController::class,'updateProjectTeam']);
+        Route::post('/create-project',[GoogleSheetController::class,'createProjectTeam']);
+        Route::put('/mark-project/{id}',[ProjectController::class,'mark']);
     });
 
     Route::get('logout', [AuthController::class, 'logout']);
@@ -121,13 +126,12 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/project-team/{id}',[ProjectController::class,'projectTeam']);
     Route::get('/project-responsbility/{id}',[ProjectController::class,'projectResponsbility']);
     Route::get('/addproject',[ProjectController::class,'addProject']);
-    Route::get('/edit-project/{id}',[ProjectController::class,'viewupdate']);
     Route::get('/read-all',[NotificationController::class,'readall']);
     Route::get('/data-respons',[CommunicationController::class,'data']);
     Route::get('/data-project-team',[GoogleSheetController::class,'team']);
     Route::get('/data-project-responsbility',[GoogleSheetController::class,'task']);
     Route::put('/mark-project-responsbility',[GoogleSheetController::class,'mark']);
-    Route::put('/mark-project/{id}',[ProjectController::class,'mark']);
+
 });
 Route::put('/check/{id}',[CommunicationController::class,'check'])->name('check');
 Route::put('/done/{id}',[CommunicationController::class,'done'])->name('done');
