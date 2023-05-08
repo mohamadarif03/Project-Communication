@@ -118,9 +118,9 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::put('/profilUpdate/{id}',[ProfileController::class,'update']);
     Route::put('/resetPassword/{id}',[ProfileController::class,'reset']);
     Route::get('/project',[ProjectController::class,'view']);
-    Route::get('/project-team/{id}',[ProjectController::class,'view1']);
-    Route::get('/project-responsbility/{id}',[ProjectController::class,'view2']);
-    Route::get('/addproject',[ProjectController::class,'view3']);
+    Route::get('/project-team/{id}',[ProjectController::class,'projectTeam']);
+    Route::get('/project-responsbility/{id}',[ProjectController::class,'projectResponsbility']);
+    Route::get('/addproject',[ProjectController::class,'addProject']);
     Route::get('/updateproject',[ProjectController::class,'viewupdate']);
     Route::get('/read-all',[NotificationController::class,'readall']);
     Route::get('/data-respons',[CommunicationController::class,'data']);

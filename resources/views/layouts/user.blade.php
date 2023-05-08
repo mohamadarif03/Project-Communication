@@ -23,10 +23,7 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/inputcolor.css') }}">
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-stylesheet" />
-    {{-- <link rel="stylesheet" href="{{asset ('css/communication.css')}}">
-    <link rel="stylesheet" href="{{asset ('css/responsbility.css')}}">
-    <link rel="stylesheet" href="{{asset ('css/addproject.css')}}"> --}}
-    @yield('styling-page')
+        @yield('styling-page')
 
     <style>
         .btn-close{
