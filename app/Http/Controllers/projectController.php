@@ -153,19 +153,25 @@ class ProjectController extends Controller
 
     public function data(Request $request){
         if(in_array('8',Auth()->user()->userrole->pluck('role_id')->toarray()) || in_array('9',Auth()->user()->userrole->pluck('role_id')->toarray())){
-            $data = Project::when($request->year !== '-1', function($query) use ($request) {
-                return $query->whereYear('created_at', $request->year);
-            })->when($request->status !== '-1', function($query) use ($request) {
-                return $query->where('status',$request->status);
-            })->paginate(6);
+            $data = Project::
+            // when($request->year !== '-1', function($query) use ($request) {
+            //     return $query->whereYear('created_at', $request->year);
+            // })
+            // ->when($request->status !== '-1', function($query) use ($request) {
+            //     return $query->where('status','=', $request->status);
+            // })
+            // ->
+            paginate(6);
         }else{
             $data = Project::whereHas('projectmember', function($query) {
                 $query->where('user_id', Auth()->user()->id);
-            })->when($request->year !== '-1', function($query) use ($request) {
-                return $query->whereYear('created_at', $request->year);
-            })->when($request->status !== '-1', function($query) use ($request) {
-                return $query->where('status',$request->status);
-            })->paginate(6);
+            })
+            // ->when($request->year !== '-1', function($query) use ($request) {
+            //     return $query->whereYear('created_at', $request->year);
+            // })->when($request->status !== '-1', function($query) use ($request) {
+            //     return $query->where('status','=', $request->status);
+            // })
+            ->paginate(6);
         }
         $links = $data->links('layouts.paginate');
         return response()->json([
