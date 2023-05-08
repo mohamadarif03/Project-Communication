@@ -6,11 +6,12 @@ function showdropdown(index){
     });
     $('#dropdownlist-'+index).toggleClass('hidden');
 }
-GetData()
-function GetData(){
+var current_page = 1
+GetData(1)
+function GetData(page){
     $.ajax({
         type:'GET',
-        url:'/data-project',
+        url:'/data-project?page='+page,
         success:function(response){
             if(response.data.data.length > 0){
                 $('#Data').html('')
@@ -40,7 +41,7 @@ function GetData(){
                                         '</ul>'+           
                                     '</div>'+
                                     '<div class="h-16 flex p-2 pt-0 items-center w-full ">'+
-                                        '<div class="h-12 flex w-12 rounded-circle" style="background-color: red">'+
+                                        '<div class="h-12 flex w-12 rounded-circle" style="background-color: blue">'+
                                             '<p class="text-white m-auto font-semibold"> '+getInitials(data.name)+' </p>'+
                                         '</div>'+
                                         '<div class="ml-2 flex my-auto">'+
@@ -53,8 +54,16 @@ function GetData(){
                                 '</div>'
                     $('#Data').append(row)
                 })
+                $('#paginate').html(response.links);
+                current_page = response.pagination.current_page
             }else{
-                
+                var src = "src='../img/not-found.svg'";
+                var row =   
+                '<div class=" flex flex-col mt-6 items-center justify-center">'+
+                '<img '+src+' class="w-[20%] mt-4" alt="">'+
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no rule found !</p>'+
+                '</div'
+                $('#paginate').html(row)
             }
         },
         error:function(response){

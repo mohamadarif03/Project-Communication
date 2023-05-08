@@ -7,14 +7,12 @@ function showdropdown(index){
     });
     $('#dropdownlist-'+index).toggleClass('hidden');
 }
-function checkget(id) {
-    $('#check-id').val(id)
-}
-GetData()
-function GetData(){
+var current_page = 1
+GetData(1)
+function GetData(page){
     $.ajax({
         type:'GET',
-        url:'/data-project',
+        url:'/data-project?page='+page,
         success:function(response){
             if(response.data.data.length > 0){
                 $('#Data').html('')
@@ -38,17 +36,15 @@ function GetData(){
                                                     '<path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>'+
                                                     '<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>'+
                                                   '</svg>'+
-                                                        '<p class="my-auto text-black ml-2">Detail</p>'+
+                                                        '<p class="my-auto">Detail</p>'+
                                                     '</button>'+
                                                 '</li>'+
                                                 '<li>'+
-                                                    '<button  onclick="checkget('+data.id+')" class="btn-edit flex items-center">'+
+                                                    '<button onclick="mark('+data.id+')" class="btn-edit flex items-center">'+
                                                    ' <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">'+
                                                     '<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>'+
                                                   '</svg>'+
-                                                    '<a href="" onclick="checkget('+data.id+')" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
-                                                        '<p class="my-auto text-black ml-2">Mark as done</p>'+
-                                                    '</a>'+
+                                                        '<p class="my-auto">Mark as done</p>'+
                                                     '</button>'+
                                                 '</li>'+
                                                 '<li>'+
@@ -56,7 +52,7 @@ function GetData(){
                                                         '<svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'+
                                                             '<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>'+
                                                         '</svg>'+
-                                                        '<p class="my-auto text-black">Edit</p>'+
+                                                        '<p class="my-auto">Edit</p>'+
                                                     '</button>'+
                                                 '</li>'+
                                                 '<li>'+
@@ -64,7 +60,7 @@ function GetData(){
                                                     '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">'+
                                                     '<path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>'+
                                                     '</svg>'+
-                                                        '<p class="my-auto text-black ml-2">Delete</p>'+
+                                                        '<p class="my-auto">Delete</p>'+
                                                     '</button>'+
                                                 '</li>'+
                                         '</ul>'+           
@@ -83,6 +79,8 @@ function GetData(){
                                 '</div>'
                     $('#Data').append(row)
                 })
+                $('#paginate').html(response.links);
+                current_page = response.pagination.current_page
             }else{
                 
             }
@@ -112,8 +110,6 @@ function remove(id){
     
 }
 function mark(id){
-    var id = $('#check-id').val()
-
     $.ajax({
         type:'PUT',
         url:'/mark-project/'+id,
@@ -138,7 +134,6 @@ function mark(id){
                 text: 'success mark done!',
                 icon: 'success'
             })
-            $('#btn-close').click()
 
             $('#card-'+id).removeClass('bg-white').addClass('bg-green-200').css('border', 'solid 2px green');
             $('.dropdown-edit').each(function() {
