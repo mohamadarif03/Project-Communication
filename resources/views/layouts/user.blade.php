@@ -32,8 +32,8 @@
         .btn-close:hover {
             background-color: rgb(244 233 215);
         }
-        #form1{
-            
+        .btn-hover:hover{
+            background-color: rgba(231, 231, 231, 0.644)
         }
        
         
