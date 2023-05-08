@@ -161,6 +161,7 @@ function GetUser(){
                     })
                 },
                 success:function(response){
+                    console.log(response)
                     $('#service_manager').val(response.team[0][1].map(item => item.name))
                     $('#office').val(response.team[1][1].map(item => item.name))
                     $('#product_manager').val(response.team[2][1].map(item => item.name))
@@ -274,7 +275,11 @@ function GetUser(){
             })
         },   
         error:function(response){
-            console.log(response)
+            Swal.fire({
+                title: 'Gagal!',
+                text: response.responseJSON.message,
+                icon: 'error'
+            })
         }
     })
 }
