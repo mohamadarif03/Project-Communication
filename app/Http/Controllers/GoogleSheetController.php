@@ -519,7 +519,7 @@ class GoogleSheetController extends Controller
                 'brainStrom' => $brainStrom,
                 'experienceDesign' => $experienceDesign,
                 'gameTrust' => $gameTrust,
-                'experienceImpact' => $experienceImpact,
+                'impact' => $experienceImpact,
                 'afsluiting' => $afsluiting
             ];
         }else if($project->size === 'Medium'){
