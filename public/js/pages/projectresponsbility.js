@@ -5,6 +5,14 @@ $('.my-checkbox').change(function() {
     $(':checkbox[name="my-checkbox"]').filter(':checked').each(function() {
     checkboxValues.push($(this).val());
     });
+    var twin = $(this).data('twin')
+    $("#"+twin).click(function() {
+        if ($(this).is(":checked")) {
+          $(this).prop("checked", false);
+        } else {
+          $(this).prop("checked", true);
+        }
+    });
     if(checkboxValues.length === 0){
         checkboxValues[0] = 'null'
     }

@@ -71,7 +71,7 @@
                                 <div class="my-6 flex justify-between my-checkbox mr-1">
                                     <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
                                         Project</label>
-                                    <input type="checkbox" value="startProject" checked name="my-checkbox"
+                                    <input type="checkbox" id="twin-101" data-twin="twin-102" value="startProject" checked name="my-checkbox"
                                         id="">
                                 </div>
                                 <div class="my-6 flex justify-between my-checkbox mr-1">
@@ -192,7 +192,7 @@
                                 <div class="my-6 flex justify-between my-checkbox mr-1">
                                     <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
                                         Project</label>
-                                    <input type="checkbox" value="startProject" checked name="my-checkbox"
+                                    <input type="checkbox" id="twin-102" data-twin="twin-101" value="startProject" checked name="my-checkbox"
                                         id="">
                                 </div>
                                 <div class="my-6 flex justify-between my-checkbox mr-1">
