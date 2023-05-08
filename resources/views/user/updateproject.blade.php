@@ -72,9 +72,9 @@
                             </label>
                             <Select id="project_size" name="project_size" disabled class="w-full" placeholder="Project Size">
                                 <option value="">Project Size</option>
-                                <option value="Small">Small</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Large">Large</option>
+                                <option value="Small" {{$data->size == 'Small' ? 'selected' : ''}}>Small</option>
+                                <option value="Medium"  {{$data->size == 'Medium' ? 'selected' : ''}}>Medium</option>
+                                <option value="Large"  {{$data->size == 'Large' ? 'selected' : ''}}>Large</option>
                             </Select>
                         </div>
                         <div class="mr-2 mt-6">
@@ -96,7 +96,7 @@
                             </label>
                             <input type="Links"
                                 class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
-                                placeholder="Http://" id="link" name="link" disabled aria-label="" />
+                                placeholder="Http://" id="link" name="link" value="{{$data->link}}" disabled aria-label="" />
                         </div>
 
                     </div>
@@ -162,7 +162,7 @@
                             Name</label>
                         <input type="text"
                             class="peer block min-h-[auto] w-full rounded border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
-                            placeholder="Project Name" id="project-name" aria-label="" />
+                            placeholder="Project Name" id="project-name" value="{{$data->name}}" aria-label="" />
                     </div>
                     <div class="grid grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
@@ -330,7 +330,7 @@
                         <div class="mr-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Productontwerp
                                 Senior</label>
-                            <Select multiple id="productonwerp_senior" name="productonwerp_senior" class="w-full"
+                            <Select multiple id="productontwerp_senior" name="productonwerp_senior" class="w-full"
                                 placeholder="Productontwerp Senior">
                                 <Option value="">Productontwerp Senior</Option>
                             </Select>
@@ -338,7 +338,7 @@
                         <div class="ml-2 mr-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Productontwerp
                                 Medior</label>
-                            <Select multiple id="productonwerp_medior" name="productonwerp_medior" class="w-full"
+                            <Select multiple id="productontwerp_medior" name="productonwerp_medior" class="w-full"
                                 placeholder="Productontwerp Medior">
                                 <Option value="">Productontwerp Medior</Option>
                                 
@@ -347,7 +347,7 @@
                         <div class="ml-2 mt-6">
                             <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Productontwerp
                                 Junior</label>
-                            <Select multiple id="productonwerp_junior" name="productonwerp_junior" class="w-full"
+                            <Select multiple id="productontwerp_junior" name="productonwerp_junior" class="w-full"
                                 placeholder="Productontwerp Junior">
                                 <Option value="">Productontwerp Junior</Option>
                                 
