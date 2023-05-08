@@ -6,12 +6,12 @@
     <div class="content">
 
         <!-- Start Content-->
-        <div class=" container-fluid flex flex-col md:flex-row justify-evenly md:justify-between mt-3">
+        <div class="container-fluid flex flex-col md:flex-row justify-evenly md:justify-between mt-3">
             <div class="">
                 <button type="button" data-te-toggle="modal" id="btn-open-crate-step-1" data-te-target="#create-step-1"
                     data-te-ripple-init data-te-ripple-color="light"
                     class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-xs mr-2 mb-2"
-                    style="height: 40px; width: 150px;">
+                    style="height: 35px; width: 150px;">
                     + Add
                 </button>
 
@@ -51,7 +51,7 @@
                     </select>
                 </div>
                 <button type="button" onclick="search()"
-                    class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs mr-2 mb-2 flex items-center justify-center" style="height: 40px;">
+                    class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs mr-2 mb-2 flex items-center justify-center" style="height: 35px;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search md:mr-2" viewBox="0 0 16 16">
                         <path
@@ -64,10 +64,10 @@
 
         </div>
         <!-- end container-fluid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" style="margin-top: 10px" id="Sent">
-            <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
-            <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
-            <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
+        <div class="cardSent" style="margin-top: 10px" id="Sent">
+            <div class="h-36 bg-slate-300 rounded-md animate-pulse"></div>
+            <div class="h-36 bg-slate-300 rounded-md animate-pulse"></div>
+            <div class="h-36 bg-slate-300 rounded-md animate-pulse"></div>
         </div>
         <div class="mx-auto" id="pagination-sent">
         </div>

@@ -46,11 +46,11 @@
                 </li>
             </ul>
         </div>
-        <div id="form1" class="grid grid-cols-1">
+        <div id="form1" class="grid">
            
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
-                    <div class="grid grid-cols-1 mx-6">
+                    <div class="grid mx-6">
                         <div class="mr-2 mt-6 rounded-lg" style="background-color: #FBF5DE">
                             <div class="">
                                 <ul class="list-disc">
@@ -62,13 +62,13 @@
                                 <ul class="list-disc">
                                     <li class="ml-16">Download excel template & upload into google spreadsheet</li>
                                     <li class="ml-16">
-                                        <span class="flex items-center">
+                                        <span class="copy-link-excel items-center">
                                           Add <b class="text-black ml-1" id="email">democomunication@global-impulse-385606.iam.gserviceaccount.com</b>
                                           <svg xmlns="http://www.w3.org/2000/svg" style="cursor: pointer" width="16" height="16" fill="currentColor" class="bi bi-clipboard ml-2" viewBox="0 0 16 16">
                                             <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
                                             <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
                                           </svg>
-                                        </span>
+                                        </span> 
                                       </li>
                                       
                                     <li class="ml-16">Copy link & paste into <b class="text-black">Link</b> field</li>
@@ -76,9 +76,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-6">
+                    <div class="add-project-size grid mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class="mb-2 text-sm font-bold text-gray-900">Project Size
+                            <label for="type" class="mb-2 text-xs font-bold text-gray-900">Project Size
                             </label>
                             <Select id="project_size" name="project_size" class="w-full" placeholder="Project Size">
                                 <option value="">Project Size</option>
@@ -87,7 +87,7 @@
                                 <option value="Large">Large</option>
                             </Select>
                         </div>
-                        <div class="mr-2 mt-6">
+                        <div class="download-template mr-2">
                             <button type="button" onclick="download()" style="margin-top: 27px; background-color: #27AE60;"
                                 class="col-span-1 focus:outline-none text-white font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -100,9 +100,9 @@
                         </div>
 
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-6">
+                    <div class="add-project-link grid mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Link
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Link
                             </label>
                             <input type="Links"
                                 class="peer block min-h-[auto] w-full rounded border-2 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
@@ -168,7 +168,7 @@
             <div class=" rounded-md bg-white mt-6 ml-6">
                 <div class="h-full">
                     <div class="mt-6 mr-6 ml-6">
-                        <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Project
+                        <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Project
                             Name</label>
                         <input type="text"
                             class="peer block min-h-[auto] w-full rounded border-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear"
@@ -176,14 +176,14 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Service
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Service
                                 Manager</label>
                             <Select multiple id="service_manager" name="service_manager" class="w-full" placeholder="Service Manager">
                                 <Option value="">Service Manager</Option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Office
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Office
                                 Manager</label>
                             <Select multiple id="office" name="office" class="w-full" placeholder="Office Manager">
                                 <Option value="">Office Manager</Option>
@@ -192,13 +192,13 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Senior</label>
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Senior</label>
                             <Select multiple id="senior" name="senior" class="w-full" placeholder="Senior">
                                 <Option value="">Senior</Option>
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Product Manager</label>
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Product Manager</label>
                             <Select multiple id="product_manager" name="product_manager" class="w-full" style="max-height:90px;" placeholder="Product Manager">
                                 <Option value="">Product Manager</Option>
                             </Select>
@@ -268,7 +268,7 @@
                 <div class="h-full">
                     <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class="mb-2 text-sm font-bold text-gray-900">Gamedesigner
+                            <label for="type" class="mb-2 text-xs font-bold text-gray-900">Gamedesigner
                                 Senior</label>
                             <Select multiple id="game_senior" name="game_senior" class="w-full"
                                 placeholder="Gamedesigner Senior">
@@ -276,7 +276,7 @@
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Gamedesigner
                                 Medior</label>
                             <Select multiple id="game_medior" name="game_medior" class="w-full"
                                 placeholder="Gamedesigner Medior">
@@ -284,8 +284,8 @@
                                 
                             </Select>
                         </div>
-                        <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Gamedesigner
+                        <div class="game-junior">
+                            <label for="type" class="mb-2 text-xs font-bold text-gray-900">Gamedesigner
                                 Junior</label>
                             <Select multiple id="game_junior" name="game_junior" class="w-full"
                                 placeholder="Gamedesigner Junior">
@@ -297,7 +297,7 @@
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Experience Designer
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Experience Designer
                                 Senior</label>
                             <Select multiple id="experience_senior" name="experience_senior" class="w-full"
                                 placeholder="Experience Designer Senior">
@@ -306,7 +306,7 @@
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Experience Designer
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Experience Designer
                                 Medior</label>
                             <Select multiple id="experience_medior" name="experience_medior" class="w-full"
                                 placeholder="Experience Designer Medior">
@@ -314,8 +314,8 @@
                                 
                             </Select>
                         </div>
-                        <div class="ml-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Experience Designer
+                        <div class="experience-junior">
+                            <label for="type" class="mb-2 text-xs font-bold text-gray-900">Experience Designer
                                 Junior</label>
                             <Select multiple id="experience_junior" name="experience_junior" class="w-full"
                                 placeholder="Experience Designer Junior">
@@ -328,7 +328,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 mx-2 gap-6 ml-3 mr-4">
 
                         <div class="ml-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">UI/UX Junior</label>
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">UI/UX Junior</label>
                             <Select multiple id="ui_ux" name="ui_ux" class="w-full" placeholder="UI/UX Junior">
                                 <Option value="">UI/UX Junior</Option>
                                 
@@ -338,7 +338,7 @@
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Productontwerp
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Productontwerp
                                 Senior</label>
                             <Select multiple id="productonwerp_senior" name="productonwerp_senior" class="w-full"
                                 placeholder="Productontwerp Senior">
@@ -346,7 +346,7 @@
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Productontwerp
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Productontwerp
                                 Medior</label>
                             <Select multiple id="productonwerp_medior" name="productonwerp_medior" class="w-full"
                                 placeholder="Productontwerp Medior">
@@ -354,8 +354,8 @@
                                 
                             </Select>
                         </div>
-                        <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Productontwerp
+                        <div class="productonwerp-junior">
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Productontwerp
                                 Junior</label>
                             <Select multiple id="productonwerp_junior" name="productonwerp_junior" class="w-full"
                                 placeholder="Productontwerp Junior">
@@ -367,7 +367,7 @@
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 mx-6 gap-6">
                         <div class="mr-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Programmer Senior</label>
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Programmer Senior</label>
                             <Select multiple id="programmer_senior" name="programmer_senior" class="w-full"
                                 placeholder="Programmer Senior">
                                 <Option value="">Programmer Senior</Option>
@@ -375,15 +375,15 @@
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Programmer Medior</label>
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Programmer Medior</label>
                             <Select multiple id="programmer_medior" name="programmer_medior" class="w-full"
                                 placeholder="Programmer Medior">
                                 <Option value="">Programmer Medior</Option>
                                 
                             </Select>
                         </div>
-                        <div class="ml-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Programmer Junior</label>
+                        <div class="programmer-junior">
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Programmer Junior</label>
                             <Select multiple id="programmer_junior" name="programmer_junior" class="w-full"
                                 placeholder="Programmer Junior">
                                 <Option value="">Programmer Junior</Option>
@@ -394,7 +394,7 @@
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 mx-6 mt-3 gap-6">
                         <div class="mr-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Story Senior</label>
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Story Senior</label>
                             <Select multiple id="story_senior" name="story_senior" class="w-full"
                                 placeholder="Story Senior">
                                 <Option value="">Story Senior</Option>
@@ -402,15 +402,15 @@
                             </Select>
                         </div>
                         <div class="ml-2 mr-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Story Medior</label>
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Story Medior</label>
                             <Select multiple id="story_medior" name="story_medior" class="w-full"
                                 placeholder="Story Medior">
                                 <Option value="">Story Medior</Option>
                                 
                             </Select>
                         </div>
-                        <div class="ml-2 mt-4">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Story Junior</label>
+                        <div class="story-junior">
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Story Junior</label>
                             <Select multiple id="story_junior" name="story_junior" class="w-full"
                                 placeholder="Story Junior">
                                 <Option value="">Story Junior</Option>
@@ -494,7 +494,7 @@
                 <div class="h-full">
                     <div class="grid grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Host
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Host
                             </label>
                             <Select multiple id="host" name="host" class="w-full" placeholder="Host">
                                 <Option value="">Host</Option>
@@ -502,7 +502,7 @@
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Techniek
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Techniek
                             </label>
                             <Select multiple id="techniek" name="techniek" class="w-full" placeholder="Techniek">
                                 <Option value="">Techniek</Option>
@@ -512,7 +512,7 @@
                     </div>
                     <div class="grid grid-cols-2 gap-4 mx-6">
                         <div class="mr-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Muziek
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Muziek
                             </label>
                             <Select multiple id="muziek" name="muziek" class="w-full" placeholder="Muziek">
                                 <Option value="">Muziek</Option>
@@ -520,7 +520,7 @@
                             </Select>
                         </div>
                         <div class="ml-2 mt-6">
-                            <label for="type" class=" mb-2 text-sm font-bold text-gray-900">Props
+                            <label for="type" class=" mb-2 text-xs font-bold text-gray-900">Props
                             </label>
                             <Select multiple id="props" name="props" class="w-full" placeholder="Props">
                                 <Option value="">Props</Option>

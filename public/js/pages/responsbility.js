@@ -166,17 +166,20 @@ function formatDate(dateString) {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
 }
-function GetDataReceive(page){
+function GetDataReceive(page){ 
     var year = $('#year').val()
     var month = $('#month').val()
     var type = $('#comtype').val()
+    var status = $('#status').val()
+
     $.ajax({
         type:'GET',
         url:'/data-receive-task?page='+page,
         data:{
             year:year,
             month:month,
-            type:type
+            type:type,
+            status:status
         },
         success:function(response){
             $('#Receive').html('')
@@ -245,13 +248,15 @@ function GetDataSent(page){
     var year = $('#year').val()
     var month = $('#month').val()
     var type = $('#comtype').val()
+    var status = $('#status').val()
     $.ajax({
         type:'GET',
         url:'/data-sent-task?page='+page,
         data:{
             year:year,
             month:month,
-            type:type
+            type:type,
+            status:status
         },
         success:function(response){
             $('#Sent').html('')

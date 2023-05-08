@@ -15,13 +15,13 @@
                 Add
             </button>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <div class="relative mr-2">
+        <div class="filterResponsbility grid">
+            <div class="relative mr-2 col-span-1">
                 <select id="year" name="year" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                     <option value="-1">All Years</option>
                 </select>
             </div>
-            <div class="relative mr-2">
+            <div class="relative mr-2 col-span-1">
                 <select id="month" name="month" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                     <option value="-1">All Month</option>
                     <option value="1">January</option>
@@ -38,11 +38,22 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div class="relative mr-2">
+            <div class="relative mr-2 col-span-1">
                 <select id="comtype" name="comtype" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
-                   <option value="-1">All Type</option>
+                    <option value="-1">All Type</option>
                 </select>
             </div>
+            <div class="relative mr-2 col-span-1">
+                <select id="status" name="status" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
+                   <option value="-1">All Status</option>
+                   <option value="1">Complete</option>
+                   <option value="0">Uncomplete</option>
+                </select>
+            </div>
+            <div class="dropCol col-span-1"></div> 
+            <div class="dropCol col-span-1"></div> 
+            <div class="dropCol col-span-1"></div> 
+
             
             <button type="button" onclick="search()" class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search md:mr-2" viewBox="0 0 16 16">

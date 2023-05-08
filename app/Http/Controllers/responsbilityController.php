@@ -83,6 +83,15 @@ class ResponsbilityController extends Controller
                 'communicationType'
             ]
             ])->where('user_id',Auth()->user()->id)
+            ->where('status', $request->status)
+            ->orWhere(function($query) use ($request) {
+                $query
+                ->where('user_id', Auth()->user()->id)
+                ->where('status', 0);
+                if ($request->status != 2) {
+                    $query->where('status', 1);
+                }
+            })
             ->when($request->type !== '-1',function($query) use ($request){
                 return $query->where('responsbilities.rule_id',$request->type);
             })->when($request->year !== '-1', function($query) use ($request) {
@@ -92,6 +101,29 @@ class ResponsbilityController extends Controller
             })
             ->orderBy('created_at', 'desc')
             ->paginate(6);
+        $data = Responbility::with([
+            'user' =>[
+                'userrole' => [
+                    'role'
+                ]
+            ],
+            'rule' => [
+                'communicationType'
+            ]
+            ])->where('user_id',Auth()->user()->id)
+            ->when($request->type !== '-1',function($query) use ($request){
+                return $query->where('responsbilities.rule_id',$request->type);
+            })
+            ->when($request->status !== '-1', function($query) use ($request) {
+                return $query->where('status', $request->status);
+            })->when($request->year !== '-1', function($query) use ($request) {
+                return $query->whereYear('date', $request->year);
+            })->when($request->month !== '-1', function($query) use ($request) {
+                return $query->whereMonth('date', $request->month);
+            })
+            ->orderBy('created_at', 'desc')
+            ->paginate(6);
+        
 
         $links = $data->links('layouts.paginate');
         return response()->json([
@@ -118,9 +150,14 @@ class ResponsbilityController extends Controller
             'rule' => [
                 'CommunicationType'
             ]
-            ])->when($request->year !== '-1', function($query) use ($request) {
+            ])
+            ->when($request->year !== '-1', function($query) use ($request) {
                 return $query->whereYear('date', $request->year);
-            })->when($request->type !== '-1',function($query) use ($request){
+            })
+            ->when($request->status !== '-1', function($query) use ($request) {
+                return $query->where('status', $request->status);
+            })
+            ->when($request->type !== '-1',function($query) use ($request){
                 return $query->where('responsbilities.rule_id',$request->type);
             })->when($request->month !== '-1', function($query) use ($request) {
                 return $query->whereMonth('date', $request->month);

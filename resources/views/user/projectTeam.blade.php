@@ -44,7 +44,7 @@
             </a>
         </div>
         <div class="w-full flex flex-col">
-            <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-4 lg:grid-cols-4 mt-4" id="team">
+            <div class="cover-team grid mx-3 gap-3 mt-4" id="team">
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
@@ -53,7 +53,7 @@
             <div class="flex flex-col mt-2 w-full">
                 <h1 class="text-xl font-semibold ml-3 text-black">Creatives</h1>
             </div>
-            <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-4 lg:grid-cols-4 mt-4" id="creative">
+            <div class="cover-team grid mx-3 gap-3 mt-4" id="creative">
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
@@ -66,7 +66,7 @@
             <div class="flex flex-col mt-2 w-full">
                 <h1 class="text-xl font-semibold ml-3 text-black">Chaperones</h1>
             </div>
-            <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-4 lg:grid-cols-4 mt-4" id="chaperone">
+            <div class="cover-team grid mx-3 gap-3 mt-4" id="chaperone">
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
@@ -80,5 +80,8 @@
 
 @section('javascript')
     <script src="{{ asset('js/pages/projectteam.js') }}"></script>
+@endsection
+@section('styling-page')
+<link rel="stylesheet" href="{{asset ('css/projectTeam.css')}}">
 @endsection
 

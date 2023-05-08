@@ -1,0 +1,30 @@
+    /* ketika layar lebih kecil dari 640px */
+    @media (max-width: 639px) {
+        .cover-team {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 10px;
+        }
+        /* grid-cols-1 md:grid-cols-4 lg:grid-cols-4 */
+        }
+
+        /* ketika layar antara 640px dan 1023px */
+        @media (min-width: 640px) and (max-width: 1050px) {
+            .cover-team {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+        }
+
+        /* ketika layar lebih besar atau sama dengan 1024px */
+        @media (min-width: 1050px)  and (max-width: 1150px) {
+            .cover-team {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 10px;
+            }
+        }
+        @media (min-width: 1150px) {
+            .cover-team {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 10px;
+            }
+        }
