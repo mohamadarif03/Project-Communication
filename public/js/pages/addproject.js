@@ -314,8 +314,8 @@ function create(){
             muziek:muziek,
             props:props,
             link:link,
-            type:type,
-            title:title
+            size:type,
+            project_name:title
         },
         beforeSend:function(){
             Swal.fire({

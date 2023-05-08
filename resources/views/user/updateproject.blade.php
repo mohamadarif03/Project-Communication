@@ -525,7 +525,7 @@
                             Back
                         </button>
                         <button type="button"
-                            onclick="create()"
+                            onclick="update()"
                             class="col-span-1 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center">
                             Submit
                         </button>
@@ -536,7 +536,7 @@
     </div>
 
 
-
+<input type="hidden" id="project-id" value="{{$data->id}}">
 
 @endsection
 

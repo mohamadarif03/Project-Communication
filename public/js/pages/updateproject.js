@@ -298,6 +298,7 @@ function download(){
  
 }
 function update(){
+    var id = $('#project-id').val()
     var service_manager = $('#service_manager').val()
     var product_manager = $('#product_manager').val()
     var office = $('#office').val()
@@ -327,7 +328,7 @@ function update(){
     var title = $('#project-name').val()
     $.ajax({
         type:'PUT',
-        url:'/Update-project',
+        url:'/update-project/'+id,
         data:{
             _token:csrfToken,
             service_manager:service_manager,
@@ -341,9 +342,9 @@ function update(){
             experience_medior:experience_medior,
             experience_junior:experience_junior,
             ui_ux:ui_ux,
-            productontwerp_senior:productonwerp_senior,
-            productontwerp_medior:productonwerp_medior,
-            productontwerp_junior:productonwerp_junior,
+            productontwerp_senior:productontwerp_senior,
+            productontwerp_medior:productontwerp_medior,
+            productontwerp_junior:productontwerp_junior,
             programmer_senior:programmer_senior,
             programmer_medior:programmer_medior,
             programmer_junior:programmer_junior,
@@ -355,8 +356,8 @@ function update(){
             muziek:muziek,
             props:props,
             link:link,
-            type:type,
-            title:title
+            size:type,
+            project_name:title
         },
         beforeSend:function(){
             Swal.fire({
@@ -373,8 +374,12 @@ function update(){
         success:function(response){
             Swal.fire({
                 title: 'success!',
-                text: 'success create new project!',
+                text: 'success update project!',
                 icon: 'success'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '../project'
+                }
             })
         },
         error: function(xhr, status, error) {
