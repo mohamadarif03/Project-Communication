@@ -39,3 +39,6 @@
             gap: 10px;
         }
         }
+        .btn-hover:hover{
+            background-color: rgba(231, 231, 231, 0.644)
+        }

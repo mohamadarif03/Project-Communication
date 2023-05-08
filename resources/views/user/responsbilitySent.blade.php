@@ -435,11 +435,17 @@
                             Download File
                         </button>
                     </a>
-                    <button type="button"
-                        class="inline-block rounded bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
+                    {{-- <button type="button"
+                        class="inline-block rounded bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out "
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
                         style="border: 2px solid #4F4F4F; margin:7px">
                         Close
+                    </button> --}}
+                    <button type="button"
+                            class="btn-hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-6 py-2.5 mr-2 flex items-center"
+                            data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
+                            style="border: 2px solid #828282; color:#828282; margin: 7px">
+                            Close
                     </button>
 
                 </div>
