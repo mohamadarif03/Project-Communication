@@ -1,4 +1,18 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
+getyear()
+function getyear(){
+    var yearSelect = $('#year');
+
+    
+    var currentYear = new Date().getFullYear();
+
+
+    for (var i = currentYear - 5; i <= currentYear + 5; i++) {
+        yearSelect.append($('<option></option>').val(i).html(i));
+    }
+
+    yearSelect.val(currentYear);
+}
 function showdropdown(index){
     $('.dropdown-edit').each(function() {
         if (!$(this).hasClass('hidden')  && $(this).attr('id') !== ('dropdownlist-'+index)) {
@@ -10,12 +24,21 @@ function showdropdown(index){
 function checkget(id) {
     $('#check-id').val(id)
 }
+function search(){
+    GetData(1)
+}
 var current_page = 1
 GetData(1)
 function GetData(page){
+    var year = $('#year').val()
+    var status = $('#status').val()
     $.ajax({
         type:'GET',
         url:'/data-project?page='+page,
+        data:{
+            year:year,
+            status:status,
+        },
         success:function(response){
             if(response.data.data.length > 0){
                 $('#Data').html('')
