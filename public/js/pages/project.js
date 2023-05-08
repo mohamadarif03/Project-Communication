@@ -33,6 +33,7 @@ function GetData(page){
             status:status,
         },
         success:function(response){
+            console.log(response)
             if(response.data.data.length > 0){
                 $('#Data').html('')
                 $.each(response.data.data,function(index,data){
@@ -77,11 +78,12 @@ function GetData(page){
                 $('#paginate').html(response.links);
                 current_page = response.pagination.current_page
             }else{
+                $('#Data').html('')
                 var src = "src='../img/not-found.svg'";
                 var row =   
                 '<div class=" flex flex-col mt-6 items-center justify-center">'+
                 '<img '+src+' class="w-[20%] mt-4" alt="">'+
-                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no rule found !</p>'+
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no project found !</p>'+
                 '</div'
                 $('#paginate').html(row)
             }

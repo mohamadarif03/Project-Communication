@@ -42,7 +42,6 @@ function GetData(page){
         success:function(response){
             if(response.data.data.length > 0){
                 $('#Data').html('')
-                console.log(response)
                 $.each(response.data.data,function(index,data){
                     if(data.status == 'done'){
                         var style = 'bg-green-200'
@@ -113,11 +112,18 @@ function GetData(page){
                 $('#paginate').html(response.links);
                 current_page = response.pagination.current_page
             }else{
-                
+                $('#Data').html('')
+                var src = "src='../img/not-found.svg'";
+                var row =   
+                '<div class=" flex flex-col mt-6 items-center justify-center">'+
+                '<img '+src+' class="w-[20%] mt-4" alt="">'+
+                            '<p class="fotnt-semibold text-xl mt-2 text-gray-500"><span class="text-gray-600 font-bold">Oops,</span>no project found !</p>'+
+                '</div'
+                $('#paginate').html(row)
             }
         },
         error:function(response){
-            console.log(response)
+            console.log(response.responseJSON.message)
         }
     })
 }
