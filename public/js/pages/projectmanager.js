@@ -42,6 +42,7 @@ function GetData(page){
         success:function(response){
             if(response.data.data.length > 0){
                 $('#Data').html('')
+                console.log(response)
                 $.each(response.data.data,function(index,data){
                     if(data.status == 'done'){
                         var style = 'bg-green-200'

@@ -156,7 +156,7 @@ class ProjectController extends Controller
             $data = Project::when($request->year !== '-1', function($query) use ($request) {
                 return $query->whereYear('created_at', $request->year);
             })->when($request->status !== '-1', function($query) use ($request) {
-                return $query->where('status', $request->status);
+                return $query->where('status',$request->status);
             })->paginate(6);
         }else{
             $data = Project::whereHas('projectmember', function($query) {
@@ -164,7 +164,7 @@ class ProjectController extends Controller
             })->when($request->year !== '-1', function($query) use ($request) {
                 return $query->whereYear('created_at', $request->year);
             })->when($request->status !== '-1', function($query) use ($request) {
-                return $query->where('status', $request->status);
+                return $query->where('status',$request->status);
             })->paginate(6);
         }
         $links = $data->links('layouts.paginate');
