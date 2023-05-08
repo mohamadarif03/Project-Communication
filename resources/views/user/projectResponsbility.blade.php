@@ -73,7 +73,7 @@
                                     <div class="my-6 flex justify-between my-checkbox">
                                         <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
                                             Project</label>
-                                        <input type="checkbox" value="startProject" checked name="my-checkbox"
+                                        <input type="checkbox" value="startProject" name="my-checkbox"
                                             id="">
                                     </div>
                                     <div class="my-6 flex justify-between my-checkbox"
