@@ -1,6 +1,6 @@
 @extends('layouts.user')
 @section('Project.li', 'mm-active')
-@section('Project.b', 'active')
+@section('Project.a', 'active')
 @section('Project.svg', 'white')
 @section('content')
 
@@ -91,7 +91,7 @@
                                 <label class="my-0 font-bold" style="font-size:14px;margin-right:9px">Afsluiting</label>
                                 <input type="checkbox" value="afsluiting" name="my-checkbox" id="">
                               </div>
-                              {{-- @endif   --}}
+                              @endif  
                         </div>     
                     </div>
                 </div>      
