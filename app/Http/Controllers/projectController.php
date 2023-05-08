@@ -10,6 +10,9 @@ class ProjectController extends Controller
 {
     public function view()
     {
+        if(in_array('Product Manager',Auth()->user()->userrole->pluck('name')->toarray()) || in_array('Service Manager',Auth()->user()->userrole->pluck('name')->toarray())){
+            return view('user.projectmanager');
+        }
         return view('user.project');
     }
     public function projectTeam($id)
@@ -26,7 +29,7 @@ class ProjectController extends Controller
     {
         return view('user.addproject');
     }
-    public function viewupdate()
+    public function viewupdate($id)
     {
         return view('user.updateproject');
     }
@@ -58,6 +61,13 @@ class ProjectController extends Controller
                 'to' => $data->lastItem()
             ]
         ]);
+    }
+
+    public function mark($id){
+        Project::findorfail($id)->update([
+            'status' => 'done'
+        ]);
+        return response()->json(['message' => 'success']);
     }
     
 }

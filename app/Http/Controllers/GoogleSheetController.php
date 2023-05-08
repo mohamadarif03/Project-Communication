@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\GoogleSheetService;
 use App\Models\Project;
+use App\Models\ProjectMember;
 use App\Models\User;
 use Illuminate\Http\Request;
 class GoogleSheetController extends Controller
@@ -219,13 +220,44 @@ class GoogleSheetController extends Controller
         $propsSheet->documentId = $spreadsheetId;
         $propsSheet->writeSheet($props);
 
-        Project::create([
+        $project = Project::create([
             'name' => $request->title,
             'link' => $request->link,
             'size' => $request->type,
             'sheetId' => $spreadsheetId,
-        ]);       
-
+        ]);
+        
+        $members = collect($request->service_manager)
+                ->merge($request->office_manager)
+                ->merge($request->product_manager)
+                ->merge($request->senior)
+                ->merge($request->gamedesigner_junior)
+                ->merge($request->gamedesigner_medior)
+                ->merge($request->gamedesigner_senior)
+                ->merge($request->experienceDesigner_junior)
+                ->merge($request->experienceDesigner_medior)
+                ->merge($request->experienceDesigner_senior)
+                ->merge($request->ui_ux)
+                ->merge($request->productontwerp_junior)
+                ->merge($request->productontwerp_medior)
+                ->merge($request->productontwerp_senior)
+                ->merge($request->programmer_junior)
+                ->merge($request->programmer_medior)
+                ->merge($request->programmer_senior)
+                ->merge($request->story_junior)
+                ->merge($request->story_medior)
+                ->merge($request->story_senior)
+                ->merge($request->host)
+                ->merge($request->muziek)
+                ->merge($request->techniek)
+                ->merge($request->props)
+                ->unique();
+        foreach($members as $member){
+            ProjectMember::create([
+                'project_id' => $project->id,
+                'user_id' => $member
+            ]);
+        }
         return response()->json(['message' => 'success']);
     }
     public function updateProjectTeam(Request $request){
@@ -409,7 +441,50 @@ class GoogleSheetController extends Controller
         $project = Project::findorfail($request->project_id);
         $spreadSheetId = $project->sheetId;
         if($project->size === 'Small'){
-            $data = [];
+            $startProject = [];
+            $brainStrom = [];
+            $experienceDesign = [];
+            $gameTrust = [];
+            $experienceImpact = [];
+            $afsluiting  = [];
+            if(in_array('startProject',$request->filter)){
+                $startProjectSheet = new GoogleSheetService('Small!A5:B18');
+                $startProjectSheet->documentId = $spreadSheetId;
+                $startProject = $startProjectSheet->readSheet();
+            }
+            if(in_array('brainStrom',$request->filter)){
+                $brainStromSheet = new GoogleSheetService('Small!C5:D12');
+                $brainStromSheet->documentId = $spreadSheetId;
+                $brainStrom = $brainStromSheet->readSheet();
+            }
+            if(in_array('experienceDesign',$request->filter)){
+                $experienceDesignSheet = new GoogleSheetService('Small!E5:F9');
+                $experienceDesignSheet->documentId = $spreadSheetId;
+                $experienceDesign = $experienceDesignSheet->readSheet();
+            }
+            if(in_array('gameTrust',$request->filter)){
+                $gameTrustSheet = new GoogleSheetService('Small!A22:B47');
+                $gameTrustSheet->documentId = $spreadSheetId;
+                $gameTrust = $gameTrustSheet->readSheet();
+            }
+            if(in_array('experienceImpact',$request->filter)){
+                $experienceImpactSheet = new GoogleSheetService('Small!C22:D25');
+                $experienceImpactSheet->documentId = $spreadSheetId;
+                $experienceImpact = $experienceImpactSheet->readSheet();
+            }
+            if(in_array('afsluiting',$request->filter)){
+                $afsluitingSheet = new GoogleSheetService('Small!C22:D26');
+                $afsluitingSheet->documentId = $spreadSheetId;
+                $afsluiting = $afsluitingSheet->readSheet();
+            }
+            $data = [
+                'startProject' => $startProject,
+                'brainStrom' => $brainStrom,
+                'experienceDesign' => $experienceDesign,
+                'gameTrust' => $gameTrust,
+                'experienceImpact' => $experienceImpact,
+                'afsluiting' => $afsluiting
+            ];
         }else if($project->size === 'Medium'){
             $startProject = [];
             $humanDesign = [];
@@ -423,31 +498,38 @@ class GoogleSheetController extends Controller
                 $startProjectSheet = new GoogleSheetService('Medium!A5:B20');
                 $startProjectSheet->documentId = $spreadSheetId;
                 $startProject = $startProjectSheet->readSheet();
-            }else if(in_array('humanDesign',$request->filter)){
+            }
+            if(in_array('humanDesign',$request->filter)){
                 $humanDesignSheet = new GoogleSheetService('Medium!C5:D15');
                 $humanDesignSheet->documentId = $spreadSheetId;
                 $humanDesign = $humanDesignSheet->readSheet();
-            }else if(in_array('brainStrom',$request->filter)){
+            }
+            if(in_array('brainStrom',$request->filter)){
                 $brainStromSheet = new GoogleSheetService('Medium!E5:F13');
                 $brainStromSheet->documentId = $spreadSheetId;
                 $brainStrom = $brainStromSheet->readSheet();
-            }else if(in_array('experienceDesign',$request->filter)){
+            }
+            if(in_array('experienceDesign',$request->filter)){
                 $experienceDesignSheet = new GoogleSheetService('Medium!G5:H12');
                 $experienceDesignSheet->documentId = $spreadSheetId;
                 $experienceDesign = $experienceDesignSheet->readSheet();
-            }else if(in_array('gameTrust',$request->filter)){
+            }
+            if(in_array('gameTrust',$request->filter)){
                 $gameTrustSheet = new GoogleSheetService('Medium!A23:B45');
                 $gameTrustSheet->documentId = $spreadSheetId;
                 $gameTrust = $gameTrustSheet->readSheet();
-            }else if(in_array('wowDesign',$request->filter)){
+            }
+            if(in_array('wowDesign',$request->filter)){
                 $wowDesignSheet = new GoogleSheetService('Medoum!C23:D45');
                 $wowDesignSheet->documentId = $spreadSheetId;
                 $wowDesign = $wowDesignSheet->readSheet();
-            }else if(in_array('levering',$request->filter)){
+            }
+            if(in_array('levering',$request->filter)){
                 $leveringSheet = new GoogleSheetService('Medium!E23:F26');
                 $leveringSheet->documentId = $spreadSheetId;
                 $levering = $leveringSheet->readSheet();
-            }else if(in_array('afsluiting',$request->filter)){
+            }
+            if(in_array('afsluiting',$request->filter)){
                 $afsluitingSheet = new GoogleSheetService('Medium!G23:H28');
                 $afsluitingSheet->documentId = $spreadSheetId;
                 $afsluiting = $afsluitingSheet->readSheet();
@@ -463,7 +545,64 @@ class GoogleSheetController extends Controller
                 'afsluiting' => $afsluiting
             ];
         }else if($project->size === 'Large'){
-            $data = [];
+            $startProject = [];
+            $humanDesign = [];
+            $concepting = [];
+            $experienceDesign = [];
+            $gameTrust = [];
+            $wowDesign = [];
+            $impactDesign = [];
+            $afsluiting = [];
+            if(in_array('startProject',$request->filter)){
+                $startProjectSheet = new GoogleSheetService('Medium!A5:B20');
+                $startProjectSheet->documentId = $spreadSheetId;
+                $startProject = $startProjectSheet->readSheet();
+            }
+            if(in_array('humanDesign',$request->filter)){
+                $humanDesignSheet = new GoogleSheetService('Medium!C5:D15');
+                $humanDesignSheet->documentId = $spreadSheetId;
+                $humanDesign = $humanDesignSheet->readSheet();
+            }
+            if(in_array('concepting',$request->filter)){
+                $brainStromSheet = new GoogleSheetService('Medium!E5:F13');
+                $brainStromSheet->documentId = $spreadSheetId;
+                $brainStrom = $brainStromSheet->readSheet();
+            }
+            if(in_array('experienceDesign',$request->filter)){
+                $experienceDesignSheet = new GoogleSheetService('Medium!G5:H12');
+                $experienceDesignSheet->documentId = $spreadSheetId;
+                $experienceDesign = $experienceDesignSheet->readSheet();
+            }
+            if(in_array('gameTrust',$request->filter)){
+                $gameTrustSheet = new GoogleSheetService('Medium!A23:B45');
+                $gameTrustSheet->documentId = $spreadSheetId;
+                $gameTrust = $gameTrustSheet->readSheet();
+            }
+            if(in_array('wowDesign',$request->filter)){
+                $wowDesignSheet = new GoogleSheetService('Medoum!C23:D45');
+                $wowDesignSheet->documentId = $spreadSheetId;
+                $wowDesign = $wowDesignSheet->readSheet();
+            }
+            if(in_array('impactDesign',$request->filter)){
+                $impactDesignSheet = new GoogleSheetService('Medium!E23:F26');
+                $impactDesignSheet->documentId = $spreadSheetId;
+                $impactDesign = $impactDesignSheet->readSheet();
+            }
+            if(in_array('afsluiting',$request->filter)){
+                $afsluitingSheet = new GoogleSheetService('Medium!G23:H28');
+                $afsluitingSheet->documentId = $spreadSheetId;
+                $afsluiting = $afsluitingSheet->readSheet();
+            }
+            $data = [
+                'startProject' => $startProject,
+                'humanDesign' => $humanDesign,
+                'concepting' => $concepting,
+                'experienceDesign' => $experienceDesign,
+                'gameTrust' => $gameTrust,
+                'wowDesign' => $wowDesign,
+                'impact' => $impactDesign,
+                'afsluiting' => $afsluiting
+            ];
         }
         return response()->json($data);
     }
