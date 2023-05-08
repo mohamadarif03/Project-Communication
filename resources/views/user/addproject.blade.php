@@ -64,10 +64,10 @@
                                     <li class="ml-16">
                                         <span class="copy-link-excel items-center">
                                           Add <b class="text-black ml-1" id="email">democomunication@global-impulse-385606.iam.gserviceaccount.com</b>
-                                          <svg xmlns="http://www.w3.org/2000/svg" style="cursor: pointer" width="16" height="16" fill="currentColor" class="bi bi-clipboard ml-2" viewBox="0 0 16 16">
+                                          <svg xmlns="http://www.w3.org/2000/svg" style="cursor: pointer" width="16" height="16" fill="currentColor" class="mr-1 bi bi-clipboard ml-2" viewBox="0 0 16 16">
                                             <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
                                             <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-                                          </svg>
+                                          </svg> as Editor
                                         </span> 
                                       </li>
                                       
@@ -207,7 +207,7 @@
                    
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
                         <button id="back2" type="button"
-                            class="col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            class="btn-hover:hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
                             style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
@@ -419,7 +419,7 @@
                     </div>
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
                         <button id="back3" type="button"
-                            class="col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            class="btn-hover:hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
                             style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
@@ -528,7 +528,7 @@
                     </div>
                     <div class="flex" style="margin-right: 40px; margin-top: 20px; margin-bottom: 20px; float: right;">
                         <button id="back4" type="button"
-                            class="col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
+                            class="btn-hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-5 py-2.5 mr-2 mb-2 flex items-center"
                             style="border: 2px solid #828282; color:#828282">
                             Back
                         </button>
