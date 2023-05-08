@@ -159,7 +159,7 @@
                         <li class="menu-title">Pages</li>
 
                         <li class="@yield('Dashboard.li')">
-                            <a href="dashboard" class="@yield('Dashboard.a')">
+                            <a href="/dashboard" class="@yield('Dashboard.a')">
                                 <i class="mdi mdi-view-dashboard"></i>
                                 <span> Dashboard <span class="bg-red-500 ml-2 rounded-sm px-2 text-xs text-white">Ongoing</span> </span>
                             </a>
@@ -174,8 +174,8 @@
                                 <span>Communication</span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="communication-sent">Sent</a></li>
-                                <li><a href="communication-receive">Receive</a></li>
+                                <li><a href="/communication-sent">Sent</a></li>
+                                <li><a href="/communication-receive">Receive</a></li>
                             </ul>
                         </li>
                         <li class="@yield('Responsbility.li')">
@@ -191,12 +191,12 @@
                                 <span>Responsbility</span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="responsbility-sent">Sent</a></li>
-                                <li><a href="responsbility-receive">Receive</a></li>
+                                <li><a href="/responsbility-sent">Sent</a></li>
+                                <li><a href="/responsbility-receive">Receive</a></li>
                             </ul>
                         </li>
                         <li class="@yield('Project.li')">
-                            <a href="project" class="@yield('Project.a')">
+                            <a href="/project" class="@yield('Project.a')">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-kanban" viewBox="0 0 16 16">
                                     <path
