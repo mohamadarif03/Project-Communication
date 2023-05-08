@@ -23,8 +23,10 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/inputcolor.css') }}">
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-stylesheet" />
-    <link rel="stylesheet" href="{{asset ('css/communication.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset ('css/communication.css')}}">
     <link rel="stylesheet" href="{{asset ('css/responsbility.css')}}">
+    <link rel="stylesheet" href="{{asset ('css/addproject.css')}}"> --}}
+    @yield('styling-page')
 
     <style>
         .btn-close{
@@ -36,101 +38,7 @@
         #form1{
             
         }
-        @media (max-width: 639px) {
-        .add-project-size {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            gap: 10px;
-        }
-        .game-junior{
-            margin-top: 0;
-        }
-        .download-template{
-            margin-top: 0;
-            margin-left: 0;
-
-        }
-        .experience-junior{
-            margin-top: 0;
-            margin-left: 0;
-        }
-        .productonwerp-junior{
-            margin-top: 0;
-            margin-left: 0;
-        }
-        .story-junior{
-            margin-top: 0;
-            margin-left: 0;
-        }
-        .programmer-junior{
-            margin-top: 0;
-            margin-left: 0;
-        }
-    }
-        @media (min-width: 640px) and (max-width: 1075px) {
-        .add-project-size {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-
-        }
-        .download-template{
-            margin-top: 1.5rem;
-        }
-        .game-junior{
-            margin-top: 1.5rem;
-            margin-left: 0.5rem;
-
-        }
-        .productonwerp-junior{
-            margin-top: 1.5rem;
-            margin-left: 0.5rem;
-
-        }
-        .experience-junior{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-        }
-        .story-junior{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-        }
-        .programmer-junior{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-        }
-    }
-        
-        @media (min-width: 1075px) {
-        .add-project-size {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-        }
-        .download-template{
-            margin-top: 1.5rem;
-        }
-        .game-junior{
-            margin-top: 1.5rem;
-            margin-left: 0.5rem;
-        }
-        .productonwerp-junior{
-            margin-top: 1.5rem;
-            margin-left: 0.5rem;
-        }
-        .experience-junior{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-
-        }
-        .story-junior{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-
-        }
-        .programmer-junior{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-
-        }
-    }
+       
         
         
     </style>
