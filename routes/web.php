@@ -111,6 +111,7 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::put('/update-project/{id}',[GoogleSheetController::class,'updateProjectTeam']);
         Route::post('/create-project',[GoogleSheetController::class,'createProjectTeam']);
         Route::put('/mark-project/{id}',[ProjectController::class,'mark']);
+        Route::delete('/delete-project/{id}',[ProjectController::class,'delete']);
     });
 
     Route::get('logout', [AuthController::class, 'logout']);

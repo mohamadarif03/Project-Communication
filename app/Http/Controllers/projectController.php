@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Services\GoogleSheetService;
 use App\Models\Project;
+use App\Models\ProjectMember;
 
 class ProjectController extends Controller
 {
@@ -193,6 +194,14 @@ class ProjectController extends Controller
             'status' => 'done'
         ]);
         return response()->json(['message' => 'success']);
+    }
+    public function delete($id){
+        $user = ProjectMember::where('project_id',$id)->delete();
+        
+        Project::findorfail($id)->delete();
+        return response()->json([
+            'success' => 'Success Delete Role!'
+        ],200);
     }
     
 }
