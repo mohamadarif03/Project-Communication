@@ -1,10 +1,5 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 $('.my-checkbox').change(function() {
-    var checkboxValues = [];
-
-    $(':checkbox[name="my-checkbox"]').filter(':checked').each(function() {
-    checkboxValues.push($(this).val());
-    });
     var twin = $(this).data('twin')
     $("#"+twin).click(function() {
         if ($(this).is(":checked")) {
@@ -13,6 +8,12 @@ $('.my-checkbox').change(function() {
           $(this).prop("checked", true);
         }
     });
+    var checkboxValues = [];
+
+    $(':checkbox[name="my-checkbox"]').filter(':checked').each(function() {
+    checkboxValues.push($(this).val());
+    });
+    
     if(checkboxValues.length === 0){
         checkboxValues[0] = 'null'
     }
