@@ -1,6 +1,6 @@
 @extends('layouts.user')
 @section('Project.li', 'mm-active')
-@section('Project.b', 'active')
+@section('Project.a', 'active')
 @section('Project.svg', 'white')
 @section('content')
 

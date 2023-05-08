@@ -254,9 +254,10 @@ class GoogleSheetController extends Controller
                 ->merge($request->props)
                 ->unique();
         foreach($members as $member){
+            $user = user::where('name',$member)->first();
             ProjectMember::create([
                 'project_id' => $project->id,
-                'user_id' => $member
+                'user_id' => $user->id
             ]);
         }
         return response()->json(['message' => 'success']);
@@ -412,13 +413,13 @@ class GoogleSheetController extends Controller
         $propsSheet->writeSheet($props);
 
         $project = Project::findorfail($id)->update([
-            'name' => $request->title,
+            'name' => $request->project_name,
             'link' => $request->link,
             'size' => $request->size,
             'sheetId' => $spreadsheetId,
         ]);
         
-        ProjectMember::where('project_id',$project->id)->delete();
+        ProjectMember::where('project_id',$id)->delete();
 
         $members = collect($request->service_manager)
                 ->merge($request->office_manager)
@@ -446,9 +447,10 @@ class GoogleSheetController extends Controller
                 ->merge($request->props)
                 ->unique();
         foreach($members as $member){
+            $user = user::where('name',$member)->first();
             ProjectMember::create([
-                'project_id' => $project->id,
-                'user_id' => $member
+                'project_id' => $id,
+                'user_id' => $user->id
             ]);
         }
 

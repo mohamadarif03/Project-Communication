@@ -46,8 +46,8 @@
             <div class="relative mr-2 col-span-1">
                 <select id="status" name="status" class="bg-white block w-full px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500">
                    <option value="-1">All Status</option>
-                   <option value="1">Complete</option>
-                   <option value="0">Uncomplete</option>
+                   <option value="done">Complete</option>
+                   <option value="progress">Uncomplete</option>
                 </select>
             </div>
             <div class="dropCol col-span-1"></div> 
