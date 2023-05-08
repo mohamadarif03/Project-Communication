@@ -537,6 +537,7 @@
 
 
 <input type="hidden" id="project-id" value="{{$data->id}}">
+<input type="hidden" id="spreadsheet-id" value="{{$data->sheetId}}">
 
 @endsection
 

@@ -145,9 +145,13 @@ function GetUser(){
                 $('#muziek').append(row)
                 $('#props').append(row)
             })
+            var id = $('#spreadsheet-id').val()
             $.ajax({
                 type:'GET',
                 url:'/data-project-team',
+                data:{
+                    id:id
+                },
                 beforeSend:function(){
                     Swal.fire({
                         title: 'Loading...',
