@@ -131,7 +131,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Impact</h1>
+                                            <h1 class="text-xs my-0">Experience Impact Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +266,7 @@ function GetData(filter){
                                         
                                         <div class="ml-2 flex my-auto">
                                             <div class="my-auto">
-                                                <h1 class="text-xs my-0">Game Trust</h1>
+                                                <h1 class="text-xs my-0">GameTrust + WOW Design</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -578,7 +578,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Wow Design</h1>
+                                            <h1 class="text-xs my-0">WOW Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -934,7 +934,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Wow Design</h1>
+                                            <h1 class="text-xs my-0">WOW Design</h1>
                                         </div>
                                     </div>
                                 </div>
