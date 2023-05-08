@@ -10,4 +10,8 @@ class Project extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function ProjectMember(){
+        return $this->hasMany(ProjectMember::class);
+    }
 }

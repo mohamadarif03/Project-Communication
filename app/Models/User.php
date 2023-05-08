@@ -55,5 +55,8 @@ class User extends Authenticatable
     public function rule(){
         return $this->hasMany(Rule::class);
     }
+    public function projectmember(){
+        return $this->hasMany(ProjectMember::class);
+    }
     
 }
