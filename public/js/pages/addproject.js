@@ -334,6 +334,10 @@ function create(){
                 title: 'success!',
                 text: 'success create new project!',
                 icon: 'success'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '../project'
+                }
             })
         },
         error: function(xhr, status, error) {

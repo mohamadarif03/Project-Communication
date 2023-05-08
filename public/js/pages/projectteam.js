@@ -22,8 +22,8 @@ function GetData(){
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
                                             '<h3 class="text-xs font-bold text-slate-900 my-0">'+user.name+'</h3>'+
-                                            '<h3 class="text-xs text-slate-500 my-0">'+user.email+'</h3>'+
-                                            '<h3 class="text-xs text-black rounded-lg font-bold my-0 absolute" style="background-color: #D9D9D9; color:black; padding:2px">'+data[0]+'</h3>'+
+                                            '<h3 class="text-slate-500 my-0" style="font-size: 10px">'+user.email+'</h3>'+
+                                            '<h3 class="text-black rounded-lg font-bold my-0 absolute" style="background-color: #D9D9D9; color:black; padding:2px; font-size: 10px">'+data[0]+'</h3>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
@@ -47,8 +47,8 @@ function GetData(){
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
                                             '<h3 class="text-xs font-bold text-slate-900 my-0">'+user.name+'</h3>'+
-                                            '<h3 class="text-xs text-slate-500 my-0">'+user.email+'</h3>'+
-                                            '<h3 class="text-xs text-black rounded-lg font-bold my-0 absolute" style="background-color: #D9D9D9; color:black; padding:2px">'+data[0]+'</h3>'+
+                                            '<h3 class="text-slate-500 my-0" style="font-size: 10px">'+user.email+'</h3>'+
+                                            '<h3 class="text-black rounded-lg font-bold my-0 absolute" style="background-color: #D9D9D9; color:black; padding:2px; font-size: 10px">'+data[0]+'</h3>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
@@ -71,8 +71,8 @@ function GetData(){
                                     '<div class="ml-2 flex my-auto">'+
                                         '<div class="my-auto">'+
                                             '<h3 class="text-xs font-bold text-slate-900 my-0">'+user.name+'</h3>'+
-                                            '<h3 class="text-xs text-slate-500 my-0">'+user.email+'</h3>'+
-                                            '<h3 class="text-xs text-black rounded-lg font-bold my-0 absolute" style="background-color: #D9D9D9; color:black; padding:2px">'+data[0]+'</h3>'+
+                                            '<h3 class="text-slate-500 my-0" style="font-size: 10px">'+user.email+'</h3>'+
+                                            '<h3 class="text-xs text-black rounded-lg font-bold my-0 absolute" style="background-color: #D9D9D9; color:black; padding:2px; font-size: 10px">'+data[0]+'</h3>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>'+
