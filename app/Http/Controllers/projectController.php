@@ -152,7 +152,13 @@ class ProjectController extends Controller
     }
 
     public function data(){
-        $data = Project::paginate(6);
+        if(in_array('8',Auth()->user()->userrole->pluck('role_id')->toarray()) || in_array('9',Auth()->user()->userrole->pluck('role_id')->toarray())){
+            $data = Project::paginate(6);
+        }else{
+            $data = Project::whereHas('projectmember', function($query) {
+                $query->where('user_id', Auth()->user()->id);
+            })->paginate(6);
+        }
         $links = $data->links('layouts.paginate');
         return response()->json([
             'data' => $data,

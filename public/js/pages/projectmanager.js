@@ -7,11 +7,12 @@ function showdropdown(index){
     });
     $('#dropdownlist-'+index).toggleClass('hidden');
 }
-GetData()
-function GetData(){
+var current_page = 1
+GetData(1)
+function GetData(page){
     $.ajax({
         type:'GET',
-        url:'/data-project',
+        url:'/data-project?page='+page,
         success:function(response){
             if(response.data.data.length > 0){
                 $('#Data').html('')
@@ -78,6 +79,8 @@ function GetData(){
                                 '</div>'
                     $('#Data').append(row)
                 })
+                $('#paginate').html(response.links);
+                current_page = response.pagination.current_page
             }else{
                 
             }

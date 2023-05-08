@@ -39,6 +39,8 @@
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
                 <div class="col-span-1 h-36 bg-slate-300 rounded-md animate-pulse"></div>
             </div>
+            <div class="mx-auto" id="paginate">
+            </div>
         </div>
     </div>
 
