@@ -5,7 +5,6 @@ namespace App\Charts;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\Responbility;
 
 class CommunicationChart
 {
@@ -18,13 +17,14 @@ class CommunicationChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\BarChart
     {
+        $userId = Auth::user()->id;
+        $userIdString = strval($userId);
         $data = [];
-        $grafik = $data = Responbility::where('status', 1)
-            ->whereHas('rule',function($query){
-                $query->whereHas('torule',function($query){
-                    $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
-                });
-            })->orderBy('created_at', 'desc')->get();
+        $grafik = DB::table('communications')
+            ->select(DB::raw('status, COUNT(*) as total'))
+            ->groupBy('status')
+            ->whereRaw("FIND_IN_SET('$userIdString', `to`)")
+            ->get();
         
         $labels = $grafik->pluck('status')->map(function ($status) {
             return $status == 0 ? 'Uncompleted' : 'Completed';
@@ -38,6 +38,6 @@ class CommunicationChart
             ->setTitle('Communication')
             ->addData('Total', $data)
             ->setLabels($labels)
-            ->setColors($colors);
+            ->setColors(['#4AE64F', '#ff6384']);
     }
 }
