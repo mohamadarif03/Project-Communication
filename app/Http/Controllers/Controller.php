@@ -26,7 +26,6 @@ class Controller extends BaseController
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
             $userId = Auth::user()->id;
-            $userIdString = strval($userId); 
             $communicationCount = Responbility::where('user_id', $userId)->count();
             $complete = Responbility::where('user_id', $userId)->where('status', 1)->count();
             $uncomplete = Responbility::where('user_id', $userId)->where('status', 0)->count();

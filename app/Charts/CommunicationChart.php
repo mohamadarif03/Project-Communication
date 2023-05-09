@@ -18,12 +18,10 @@ class CommunicationChart
     public function build(): \ArielMejiaDev\LarapexCharts\BarChart
     {
         $userId = Auth::user()->id;
-        $userIdString = strval($userId);
         $data = [];
-        $grafik = DB::table('communications')
+        $grafik = DB::table('responsbilities')
             ->select(DB::raw('status, COUNT(*) as total'))
             ->groupBy('status')
-            ->whereRaw("FIND_IN_SET('$userIdString', `to`)")
             ->get();
         
         $labels = $grafik->pluck('status')->map(function ($status) {
