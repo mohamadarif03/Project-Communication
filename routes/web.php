@@ -94,6 +94,7 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/data-task-type-filter',[ResponsbilityController::class,'task_type_filter']);
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);
         Route::get('/data-receive-task',[ResponsbilityController::class,'receive']);
+        Route::get('/data-receive-responsbility-dashboard-uncomplete',[ResponsbilityController::class,'receiveUncomplete']);
         Route::get('/profil1',[ProfileController::class,'view1']);
 
         //Notification

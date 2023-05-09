@@ -177,15 +177,44 @@ class CommunicationController extends Controller
     public function receiveUncomplete(Request $request)
     {
 
-        $data = Communication::with(['CommunicationType', 'user'])
-            ->join('to_communications', 'to_communications.communication_id', '=', 'communications.id')
-            ->where('to_communications.user_id', Auth()->user()->id)
-            ->where('status', 0)
-            ->select('communications.*')
-            ->limit(3)
-            ->get(); 
-
-        return response()->json($data);
+        $data = Responbility::with([
+            'user' => [
+                'userrole' =>[
+                    'role'
+                ]
+            ],
+            'rule' => [
+                'CommunicationType'
+            ]
+            ])
+            ->when($request->year !== '-1', function($query) use ($request) {
+                return $query->whereYear('date', $request->year);
+            })
+            ->when($request->status !== '-1', function($query) use ($request) {
+                return $query->where('status', $request->status);
+            })
+            ->when($request->type !== '-1',function($query) use ($request){
+                return $query->where('responsbilities.rule_id',$request->type);
+            })->when($request->month !== '-1', function($query) use ($request) {
+                return $query->whereMonth('date', $request->month);
+            })->join('rules','rules.id','=','responsbilities.rule_id')
+              ->join('to_rules','to_rules.rule_id','=','rules.id')
+              ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
+              ->select('responsbilities.*')
+              ->paginate(6);
+        $links = $data->links('layouts.paginate');
+        return response()->json([
+            'data' => $data,
+            'links' => $links->render(),
+            'pagination' => [
+                'total' => $data->total(),
+                'per_page' => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page' => $data->lastPage(),
+                'from' => $data->firstItem(),
+                'to' => $data->lastItem()
+            ]
+        ]);
     }
     public function receiveComplete(Request $request)
     {

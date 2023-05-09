@@ -178,4 +178,22 @@ class ResponsbilityController extends Controller
             ]
         ]);
     }
+    public function receiveUncomplete(Request $request){
+        $data = Responbility::with([
+            'user' => [
+                'userrole' =>[
+                    'role'
+                ]
+            ],
+            'rule' => [
+                'CommunicationType'
+            ]
+            ])
+            ->where('status', 0)
+            ->join('rules','rules.id','=','responsbilities.rule_id')
+              ->join('to_rules','to_rules.rule_id','=','rules.id')
+              ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
+              ->select('responsbilities.*');
+        return response()->json($data);
+    }
 }

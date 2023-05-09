@@ -9,7 +9,7 @@
             
             <div class="rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
                 <div class="border-b-2 pb-2">
-                    <h1 class="ml-2 mt-2 text-sm font-bold ">Complete Communication</h1>
+                    <h1 class="ml-2 mt-2 text-sm font-bold ">Complete Responsbility</h1>
                 </div>
                 <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md" id="Complete">
                     
@@ -17,7 +17,7 @@
             </div>
             <div class="rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
                 <div class="border-b-2 pb-2">
-                    <h1 class="ml-2 mt-2 text-sm font-bold ">Uncomplete Communication</h1>
+                    <h1 class="ml-2 mt-2 text-sm font-bold ">Uncomplete Responsbility</h1>
                 </div>
                 <div class=" w-full h-36 px-2 py-1 mt-1 rounded-md" id="Uncomplete">
                     
