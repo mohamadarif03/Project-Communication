@@ -175,6 +175,7 @@
 </div>
 
 
+
 <script src="{{ $CommunicationChart->cdn() }}"></script>
 
 {{ $CommunicationChart->script() }}

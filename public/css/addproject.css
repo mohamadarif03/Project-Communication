@@ -69,9 +69,7 @@
         margin-top: 1rem;
         margin-left: 0.5rem;
     }
-    .copy-link-excel{
-        display: flex
-    }
+
 }
     
     @media (min-width: 1075px) {

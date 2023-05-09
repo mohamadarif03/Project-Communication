@@ -35,7 +35,44 @@
         .btn-hover:hover{
             background-color: rgba(231, 231, 231, 0.644)
         }
-       
+        .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tengah {
+  flex: 0 0 60%;
+  height: 50vh;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.isi {
+  flex: 0 0 60%;
+  height: 50vh;
+  background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media query untuk layar mobile */
+@media only screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .tengah, .isi {
+    flex: 0 0 100%;
+  }
+  .isi {
+    order: -1;
+  }
+}
+
         
         
     </style>
