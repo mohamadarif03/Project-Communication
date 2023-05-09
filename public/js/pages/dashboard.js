@@ -23,6 +23,7 @@ function formatDate(dateString) {
     return date.toLocaleDateString('en-US', options);
 }
 function show(id){
+    $('#detail-show').click()
     var link = $('#btn-show-'+id).data('link');
     var how = $('#btn-show-'+id).data('how');
     var file = $('#btn-show-'+id).data('file');
@@ -86,8 +87,10 @@ GetDataComplete()
               '</div>'
                     $('#Uncomplete').append(row)
                 })
-                var see = '<a href="responsbility-receive" class="text-black flex justify-center font-bold py-2">See All</a>'
-                $('#Uncomplete').append(see)
+                if (response.length == 3) {
+                    var see = '<a href="responsbility-receive" class="text-black flex justify-center font-bold py-2">See All</a>'
+                    $('#Uncomplete').append(see)
+                }
         },
         error:function(response){
             console.log(response)
@@ -131,8 +134,10 @@ GetDataComplete()
               '</div>'
                     $('#Complete').append(row)
                 })
+                if (response.length == 3) {
                 var see = '<a href="responsbility-receive" class="text-black flex justify-center font-bold py-2">See All</a>'
                 $('#Complete').append(see)
+                }
         },
         error:function(response){
             console.log(response)
