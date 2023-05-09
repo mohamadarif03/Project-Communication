@@ -25,18 +25,16 @@ class ResponsbilityController extends Controller
 
     public function task_type(){
         $data = Rule::with('fromrule','torule','communicationtype')
-                    ->join('from_rules','from_rules.rule_id','=','rules.id')
-                    ->whereIn('from_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
-                    ->select('rules.*')
-                    ->get();
+                    ->whereHas('fromrule',function($query){
+                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                    })->get();
         return response()->json($data);
     }
     public function task_type_filter(){
         $data = Rule::with('fromrule','torule','communicationtype')
-                    ->join('to_rules','to_rules.rule_id','=','rules.id')
-                    ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
-                    ->select('rules.*')
-                    ->get();
+                    ->whereHas('fromrule',function($query){
+                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                    })->get();
         return response()->json($data);
     }
 
@@ -55,10 +53,10 @@ class ResponsbilityController extends Controller
         ]);
 
         $to = ToRule::where('rule_id',$request->type)->pluck('role_id')->toarray();
-        $user = User::join('user_roles','user_roles.user_id','=','users.id')
-                      ->whereIn('user_roles.role_id',$to)
-                      ->pluck('users.id')
-                      ->toarray();
+        $user = User::whereHas('userrole',function($query) use ($to){
+                        $query->whereIn('role_id',$to);
+                      })->pluck('id')
+                        ->toarray();
         $notif = Notification::create([
             'responsbility_id'=> $data->id,
             'user_id' => Auth()->user()->id
