@@ -18,7 +18,6 @@ class CommunicationChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\BarChart
     {
-        $userId = Auth::user()->id;
         $data = [];
         $grafik = $data = Responbility::where('status', 1)
             ->whereHas('rule',function($query){
@@ -31,11 +30,13 @@ class CommunicationChart
             return $status == 0 ? 'Uncompleted' : 'Completed';
         })->toArray();
         
+        $data = $grafik->pluck('total')->toArray();
         
         $colors = ['#4AE64F', '#36A2EB'];
         
         return $this->chart->BarChart()
             ->setTitle('Communication')
+            ->addData('Total', $data)
             ->setLabels($labels)
             ->setColors($colors);
     }
