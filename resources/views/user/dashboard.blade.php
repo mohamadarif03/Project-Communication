@@ -74,7 +74,7 @@
                         <option value="November">November</option>
                         <option value="December">December</option>
                     </select>
-                        <canvas id="mychart" class="h-auto"></canvas>
+                        <canvas id="mychart" ></canvas>
                 </div>
             </div>
         </div> <!-- end container-fluid -->
@@ -285,7 +285,9 @@
             }
             },
             responsive: false,
-            maintainAspectRatio: false,
+   maintainAspectRatio: false,
+   height: 400,
+   width: 600,
             }
         });
     </script>
