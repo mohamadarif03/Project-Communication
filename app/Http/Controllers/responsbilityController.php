@@ -190,10 +190,11 @@ class ResponsbilityController extends Controller
             ]
             ])
             ->where('status', 0)
-            ->join('rules','rules.id','=','responsbilities.rule_id')
-              ->join('to_rules','to_rules.rule_id','=','rules.id')
-              ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
-              ->select('responsbilities.*');
+            ->whereHas('rule',function($query){
+                $query->whereHas('torule',function($query){
+                    $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                });
+            })->limit(3);
         return response()->json($data);
     }
 }
