@@ -78,7 +78,7 @@ GetDataComplete()
                       '<i class="mdi mdi-account"></i>'+
                       '<p class=" ml-1.5 my-auto text-xs">'+data.user.userrole[0].role.name+'</p>'+
                       '<div class="ml-auto mr-2 text-xs font-semibold" style="color: black>'+
-                      '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-how="'+data.rule.how+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" data-te-toggle="modal" data-te-target="#show">'+
+                      '<a href="" onclick="show('+data.id+')" id="btn-show-'+data.id+'" data-link="'+data.link+'" data-how="'+data.rule.how+'" data-file="'+data.file+'" data-detail="'+data.rule.communication_type.description+'" class="text-yellow-400" >'+
                       'Show >'+
                   '</a>'+
                       '</div>'+
