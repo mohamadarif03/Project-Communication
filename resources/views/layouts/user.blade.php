@@ -198,7 +198,7 @@
                         <li class="@yield('Dashboard.li')">
                             <a href="/dashboard" class="@yield('Dashboard.a')">
                                 <i class="mdi mdi-view-dashboard"></i>
-                                <span> Dashboard <span class="bg-red-500 ml-2 rounded-sm px-2 text-xs text-white">Ongoing</span> </span>
+                                <span> Dashboard </span>
                             </a>
                         </li>
                         <li class="@yield('Communication.li')">
