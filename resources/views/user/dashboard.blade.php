@@ -19,6 +19,7 @@
                 <div class="rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
                     <div class="border-b-2 pb-2">
                         <h1 class="ml-2 mt-2 text-sm font-bold ">Uncomplete Responsbility</h1>
+                        <a href="" data-te-toggle="modal" data-te-target="#show">test</a>
                     </div>
                     <div class=" w-full h-auto px-2 py-1 mt-1 rounded-md" id="Uncomplete">
 
