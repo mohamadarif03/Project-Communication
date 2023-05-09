@@ -100,10 +100,12 @@ class GoogleSheetController extends Controller
         $projectNameSheet->documentId = $spreadsheetId;
         $projectNameSheet->writeSheet($projectName);
         //Service Manager Value
-        $serviceManager[0] = implode(',',$request->service_manager);
-        $serviceManagerSheet = new GoogleSheetService('projectteam!C5:C5');
-        $serviceManagerSheet->documentId = $spreadsheetId;
-        $serviceManagerSheet->writeSheet($serviceManager);
+        if($request->service_manager){
+            $serviceManager[0] = implode(',',$request->service_manager);
+            $serviceManagerSheet = new GoogleSheetService('projectteam!C5:C5');
+            $serviceManagerSheet->documentId = $spreadsheetId;
+            $serviceManagerSheet->writeSheet($serviceManager);
+        }
         //Office Manager Value
         $officeManager[0] = implode(',',$request->office_manager);
         $officeManagerSheet = new GoogleSheetService('projectteam!C6:C6');
