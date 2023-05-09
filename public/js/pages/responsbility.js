@@ -377,7 +377,7 @@ function create(){
             success:function(response){
                 Swal.fire({
                     title: 'success!',
-                    text: 'Success Create New User!',
+                    text: 'Success Create New responsbility!',
                     icon: 'success'
                 }).then(function() {
                     location.reload();
