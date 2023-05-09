@@ -1,3 +1,4 @@
+var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
 
   $(document).ready(function() {
@@ -17,6 +18,7 @@
     });
     return initials.join('');
 }
+
 function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -152,3 +154,39 @@ function show1(id){
     $('#show-id1').val(id)
     // $('#btn-show-modal1').click()
 }
+function checkget(id) {
+    $('#check-id').val(id)
+}
+function check(){
+    var id = $('#check-id').val()
+    // console.log(id)
+    $.ajax({
+      url: '/done/'+id,
+      type: 'PUT',
+      data:{
+        _token:csrfToken
+      },
+      success: function(response){
+        Swal.fire({
+            title: 'Success!',
+            text: 'Success Check Responsibility!',
+            icon: 'success',
+            timer: 4000
+        }).then(function(){
+            location.reload();
+        });
+        $('#btn-close').click()
+
+    },
+    
+    error: function(response){
+        Swal.fire({
+            title: 'Error!',
+            html: response.responseJSON.message,
+
+            icon: 'error'
+        })
+
+    }
+    });
+  }
