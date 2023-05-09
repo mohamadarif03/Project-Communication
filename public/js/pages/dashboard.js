@@ -87,8 +87,10 @@ GetDataComplete()
               '</div>'
                     $('#Uncomplete').append(row)
                 })
-                var see = '<a href="responsbility-receive" class="text-black flex justify-center font-bold py-2">See All</a>'
-                $('#Uncomplete').append(see)
+                if (response.length == 3) {
+                    var see = '<a href="responsbility-receive" class="text-black flex justify-center font-bold py-2">See All</a>'
+                    $('#Uncomplete').append(see)
+                }
         },
         error:function(response){
             console.log(response)
@@ -132,8 +134,10 @@ GetDataComplete()
               '</div>'
                     $('#Complete').append(row)
                 })
+                if (response.length == 3) {
                 var see = '<a href="responsbility-receive" class="text-black flex justify-center font-bold py-2">See All</a>'
                 $('#Complete').append(see)
+                }
         },
         error:function(response){
             console.log(response)
