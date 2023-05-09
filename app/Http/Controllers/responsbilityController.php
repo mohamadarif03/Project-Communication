@@ -194,7 +194,7 @@ class ResponsbilityController extends Controller
                 $query->whereHas('torule',function($query){
                     $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
                 });
-            })->limit(3);
+            })->get();
         return response()->json($data);
     }
 }
