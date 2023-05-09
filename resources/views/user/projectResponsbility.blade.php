@@ -77,7 +77,7 @@
                     </div>
                     <div class=" flex pt-0 items-center w-full ">
                         <div class="ml-2 flex my-auto">
-                            <div id="viewMobile" class="ml-2 my-auto">
+                            <div id="viewMobile" class="ml-2 my-auto grid gap-2">
                                 <div class="viewMobile my-6 flex justify-between my-checkbox mr-1">
                                     <label class="my-0 font-bold" style="font-size:14px; margin-right:9px">Start
                                         Project</label>
