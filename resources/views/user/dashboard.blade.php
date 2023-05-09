@@ -20,6 +20,7 @@
                     <div class="border-b-2 pb-2">
                         <h1 class="ml-2 mt-2 text-sm font-bold ">Uncomplete Responsbility</h1>
                         <a href="" class="hidden" id="detail-show" data-te-toggle="modal" data-te-target="#show">Detail</a>
+                        <a class="hidden" id="show-uncomplete-test" data-te-toggle="modal" data-te-target="#show-uncomplete">Detail Uncomplete</a>
                     </div>
                     <div class=" w-full h-auto px-2 py-1 mt-1 rounded-md" id="Uncomplete">
 
@@ -182,6 +183,87 @@
     <div data-te-modal-init
         class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
         id="show" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
+        <div data-te-modal-dialog-ref
+            class="pointer-events-none relative h-[calc(100%-1rem)] w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
+            <div
+                class="pointer-events-auto relative flex max-h-[100%] w-full flex-col overflow-hidden rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                <div
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-2 dark:border-opacity-50">
+                    <!--Modal title-->
+                    <h5 class="text-lg font-bold leading-normal text-neutral-800" id="exampleModalScrollableLabel">
+                        Detail
+                    </h5>
+                    <!--Close button-->
+                    <button type="button"
+                        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!--Modal body-->
+
+                <div class="relative overflow-y-auto p-4">
+                    <p class="font-bold leading-normal" id="exampleModalScrollableLabel">
+                        Description
+                    </p>
+                    <p id="show-detail"></p>
+
+                    <p class="font-bold leading-normal" id="exampleModalScrollableLabel">
+                        How
+                    </p>
+                    <p id="show-how"></p>
+                    {{-- <a href="" id="show-file" target="_blank"></a> --}}
+
+                </div>
+
+                <!--Modal footer-->
+
+                <div
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-1">
+                    <a href="" id="show-link" target="_blank">
+                        <button type="button"
+                            class="flex inline-block rounded bg-yellow-400 hover:bg-yellow-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white"
+                            style="margin: 7px" data-te-ripple-init data-te-ripple-color="light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="font-bold bi bi-link-45deg" viewBox="0 0 16 16">
+                                <path
+                                    d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                                <path
+                                    d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+                            </svg>Open Link
+                        </button>
+                    </a>
+                    <a href="" id="show-file" target="_blank">
+                        <button type="button"
+                            class="flex inline-block rounded bg-yellow-400 hover:bg-yellow-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white"
+                            style="margin: 7px" data-te-ripple-init data-te-ripple-color="light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="font-bold mr-1 bi bi-download" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                            </svg>
+                            Download File
+                        </button>
+                    </a>
+                    <button type="button"
+                        class="btn-hover col-span-1 text-black focus:ring-yellow-300 font-medium rounded-lg text-xs px-6 py-2.5 mr-2 flex items-center"
+                        data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
+                        style="border: 2px solid #828282; color:#828282; margin: 7px">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-te-modal-init
+        class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="show-uncomplete" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
         <div data-te-modal-dialog-ref
             class="pointer-events-none relative h-[calc(100%-1rem)] w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:h-[calc(100%-3.5rem)] min-[576px]:max-w-[500px]">
             <div
