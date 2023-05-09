@@ -74,7 +74,7 @@
                         <option value="November">November</option>
                         <option value="December">December</option>
                     </select>
-                    <div class="h-96">
+                    <div class="" style="height: 540px">
                         <canvas id="mychart" ></canvas>
                     </div>
                 </div>
