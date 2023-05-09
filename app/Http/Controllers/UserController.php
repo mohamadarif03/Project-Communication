@@ -23,9 +23,9 @@ class UserController extends Controller
                 'userrole' => [
                     'role'
                 ]
-            ])->join('user_roles','users.id','=','user_roles.user_id')
-              ->where('users.name','!=','admin')
-              ->where('user_roles.role_id',$request->search)
+            ])->whereHas('userrole',function($query) use ($request){
+                $query->where('role_id',$request->search);
+            })->where('name','!=','admin')
               ->paginate(9);
         }else{
             $data = User::with([
