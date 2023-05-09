@@ -30,7 +30,7 @@ class GoogleSheetController extends Controller
         $dataTeam = $arrayTeam->values;
         $index = 0;
         foreach($dataTeam as $item){
-            if( count($dataTeam[$index][1]) > 1){
+            if( count($dataTeam[$index]) > 1){
                 $dataTeam[$index][1] = User::whereIn('name', explode(',', $item[1]))
                                   ->select('name', 'email', 'profile')
                                   ->get()
@@ -60,7 +60,7 @@ class GoogleSheetController extends Controller
         $arrayChaperone = $chaperoneSheet->readSheet();
         $dataChaperone = $arrayChaperone->values;
         foreach($dataChaperone as $item){
-            if(count($dataChaperone[$index][1]) > 1){
+            if(count($dataChaperone[$index]) > 1){
                 $dataChaperone[$index][1] = User::whereIn('name', explode(',', $item[1]))
                                   ->select('name', 'email', 'profile')
                                   ->get()
