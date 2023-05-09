@@ -23,6 +23,7 @@ function formatDate(dateString) {
     return date.toLocaleDateString('en-US', options);
 }
 function show(id){
+    $('#detail-show').click()
     var link = $('#btn-show-'+id).data('link');
     var how = $('#btn-show-'+id).data('how');
     var file = $('#btn-show-'+id).data('file');
