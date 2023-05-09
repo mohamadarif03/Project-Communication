@@ -194,7 +194,26 @@ class ResponsbilityController extends Controller
                 $query->whereHas('torule',function($query){
                     $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
                 });
-            })->get();
+            })->orderBy('created_at', 'desc')->get()->take(3);
+        return response()->json($data);
+    }
+    public function receiveComplete(Request $request){
+        $data = Responbility::with([
+            'user' => [
+                'userrole' =>[
+                    'role'
+                ]
+            ],
+            'rule' => [
+                'CommunicationType'
+            ]
+            ])
+            ->where('status', 1)
+            ->whereHas('rule',function($query){
+                $query->whereHas('torule',function($query){
+                    $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                });
+            })->orderBy('created_at', 'desc')->get()->take(3);
         return response()->json($data);
     }
 }
