@@ -30,7 +30,7 @@
                             <h1 class="text-5xl font-bold">{{$communicationCount}}</h1>
                         </div>
                         <div class="">
-                            <p class="text-xs font-bold">Total Communication</p>
+                            <p class="text-xs font-bold">Total Responsbility</p>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                             <h1 class="text-5xl font-bold">{{$complete}}</h1>
                         </div>
                         <div class="">
-                            <p class="text-xs font-bold">Complete Communication</p>
+                            <p class="text-xs font-bold">Complete Responsbility</p>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             <h1 class="text-5xl font-bold">{{$uncomplete}}</h1>
                         </div>
                         <div class="">
-                            <p class="text-xs font-bold">Uncomplete Communication</p>
+                            <p class="text-xs font-bold">Uncomplete Responsbility</p>
                         </div>
                     </div>
                 </div>
