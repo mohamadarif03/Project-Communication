@@ -26,7 +26,6 @@ class CommunicationRequest extends FormRequest
         return [
             'type' => 'required',
             'to' => 'required',
-            'date' => 'required',
             'message' => 'required'
         ];
     }
