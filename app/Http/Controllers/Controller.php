@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Charts\CommunicationChart;
 use App\Models\Communication;
+use App\Models\Responbility;
 use App\Models\CommunicationType;
 use App\Models\Role;
 use App\Models\User;
@@ -26,9 +27,9 @@ class Controller extends BaseController
         }else{
             $userId = Auth::user()->id;
             $userIdString = strval($userId); 
-            $communicationCount = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->count();
-            $complete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 1)->count();
-            $uncomplete = Communication::whereRaw("FIND_IN_SET('$userIdString', `to`)")->where('status', 0)->count();
+            $communicationCount = Responbility::where('user_id', $userId)->count();
+            $complete = Responbility::where('user_id', $userId)->where('status', 1)->count();
+            $uncomplete = Responbility::where('user_id', $userId)->where('status', 0)->count();
             
             
             return view('user.dashboard', [
