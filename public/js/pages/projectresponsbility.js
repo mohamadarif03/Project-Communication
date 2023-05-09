@@ -86,7 +86,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Start Project</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Start Project</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Experience Design</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Experience Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +219,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Brain Strom</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Brain Strom</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -310,7 +310,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Afsluiting</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Afsluiting</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -354,7 +354,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Start Project</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Start Project</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -398,7 +398,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Human Design</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Human Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -442,7 +442,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Experience Design</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Experience Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -486,7 +486,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Brain Strom</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Brain Strom</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -533,7 +533,7 @@ function GetData(filter){
                                         
                                         <div class="ml-2 flex my-auto">
                                             <div class="my-auto">
-                                                <h1 class="text-xs my-0">Game Trust</h1>
+                                                <h1 class="text-xs my-0" style="color: gray">Game Trust</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -578,7 +578,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">WOW Design</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">WOW Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -622,7 +622,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Lavering</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Lavering</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -666,7 +666,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Afsluiting</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Afsluiting</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -710,7 +710,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Start Project</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Start Project</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -754,7 +754,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Human Design</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Human Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -798,7 +798,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Experience Design</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Experience Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -889,7 +889,7 @@ function GetData(filter){
                                         
                                         <div class="ml-2 flex my-auto">
                                             <div class="my-auto">
-                                                <h1 class="text-xs my-0">Game Trust</h1>
+                                                <h1 class="text-xs my-0" style="color: gray">Game Trust</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -934,7 +934,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">WOW Design</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">WOW Design</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -1022,7 +1022,7 @@ function GetData(filter){
                                 <div class="h-6 flex p-2 pt-0 items-center w-full ">
                                     <div class="ml-2 flex my-auto">
                                         <div class="my-auto">
-                                            <h1 class="text-xs my-0">Afsluiting</h1>
+                                            <h1 class="text-xs my-0" style="color: gray">Afsluiting</h1>
                                         </div>
                                     </div>
                                 </div>
