@@ -25,14 +25,20 @@ class Controller extends BaseController
             $role = Role::count();
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
-            $userId = Auth::user()->id;
-            $communicationCount = Responbility::where('user_id', $userId)->count();
-            $complete = Responbility::where('user_id', $userId)->where('status', 1)->count();
-            $uncomplete = Responbility::where('user_id', $userId)->where('status', 0)->count();
-            
-            
+            $complete = Responbility::where('status', 1)
+                ->whereHas('rule',function($query){
+                    $query->whereHas('torule',function($query){
+                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                    });
+                })->count();
+            $uncomplete = Responbility::where('status', 0)
+                ->whereHas('rule',function($query){
+                    $query->whereHas('torule',function($query){
+                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                    });
+            })->count();
+            $communicationCount = $complete + $uncomplete;
             return view('user.dashboard', [
-                'CommunicationChart' => $CommunicationChart->build(),
                 'communicationCount' => $communicationCount,
                 'complete' => $complete,
                 'uncomplete' => $uncomplete
