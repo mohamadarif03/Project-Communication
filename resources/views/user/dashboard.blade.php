@@ -74,7 +74,9 @@
                         <option value="November">November</option>
                         <option value="December">December</option>
                     </select>
-                    {!! $CommunicationChart->container() !!}
+                    <div class="h-full">
+                        <canvas class="h-full" id="mychart"></canvas>
+                    </div>
                 </div>
             </div>
         </div> <!-- end container-fluid -->
@@ -254,18 +256,37 @@
                         style="border: 2px solid #828282; color:#828282; margin: 7px">
                         Close
                     </button>
-
                 </div>
             </div>
         </div>
     </div>
-
-
-
-    <script src="{{ $CommunicationChart->cdn() }}"></script>
-
-    {{ $CommunicationChart->script() }}
 @endsection
 @section('javascript')
     <script src="{{ asset('js/pages/dashboard.js') }}"></script>
+    <script src="{{asset('plugin/chart.js/dist/chart.umd.js')}}"></script>
+    <script>
+        const ctx = document.getElementById('mychart');
+        new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Complete', 'Uncomplete'],
+            datasets: [{
+            label: 'Responsbility',
+            data: [{{$complete}},{{$uncomplete}}],
+            borderWidth: 2,
+            backgroundColor: [
+                'green',
+                'red',
+                ],
+            }]
+        },
+        options: {
+            scales: {
+            y: {
+                beginAtZero: true
+            }
+            }
+        }
+        });
+    </script>
 @endsection
