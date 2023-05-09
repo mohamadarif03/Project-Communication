@@ -29,41 +29,54 @@ class GoogleSheetController extends Controller
         $arrayTeam = $teamSheet->readSheet();
         $dataTeam = $arrayTeam->values;
         $index = 0;
-        foreach($dataTeam as $item){
-            $dataTeam[$index][1] = User::whereIn('name', explode(',', $item[1]))
-                              ->select('name', 'email', 'profile')
-                              ->get()
-                              ->toArray(); 
-            $index++;
+        if($dataTeam){
+            foreach($dataTeam as $item){
+                $dataTeam[$index][1] = User::whereIn('name', explode(',', $item[1]))
+                                  ->select('name', 'email', 'profile')
+                                  ->get()
+                                  ->toArray(); 
+                $index++;
+            }
+            $index = 0;
+        }else{
+            $dataTeam[][] = null;
         }
-        $index = 0;
-        
+          
         $creativeSheet = new GoogleSheetService('projectteam!C9:D24');
         $creativeSheet->documentId = $spreadSheetId;
         $arrayCreative = $creativeSheet->readSheet();
         $dataCreative = $arrayCreative->values;
-        foreach($dataCreative as $item){
-            $dataCreative[$index][1] = User::whereIn('name', explode(',', $item[1]))
-                              ->select('name', 'email', 'profile')
-                              ->get()
-                              ->toArray(); 
-            $index++;
+        if($dataCreative){
+            foreach($dataCreative as $item){
+                $dataCreative[$index][1] = User::whereIn('name', explode(',', $item[1]))
+                                  ->select('name', 'email', 'profile')
+                                  ->get()
+                                  ->toArray(); 
+                $index++;
+            }
+            $index = 0;
+        }else{
+            $dataCreative[][] = null;
         }
-        $index = 0;
 
         $chaperoneSheet = new GoogleSheetService('projectteam!C25:D28');
         $chaperoneSheet->documentId = $spreadSheetId;
         $arrayChaperone = $chaperoneSheet->readSheet();
         $dataChaperone = $arrayChaperone->values;
-        foreach($dataChaperone as $item){
-            $dataChaperone[$index][1] = User::whereIn('name', explode(',', $item[1]))
-                              ->select('name', 'email', 'profile')
-                              ->get()
-                              ->toArray(); 
-            $index++;
+        if($dataChaperone){
+            foreach($dataChaperone as $item){
+                $dataChaperone[$index][1] = User::whereIn('name', explode(',', $item[1]))
+                                  ->select('name', 'email', 'profile')
+                                  ->get()
+                                  ->toArray(); 
+                $index++;
+            }
+        }else{
+            $dataChaperone[][] = null;
         }
+        
 
-        $data = [
+             $data = [
             'team' => $dataTeam,
             'creative' => $dataCreative,
             'chaperone' => $dataChaperone
