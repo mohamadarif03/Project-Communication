@@ -90,7 +90,7 @@ class GoogleSheetController extends Controller
         $templateValidate->documentId = $spreadsheetId;
         if( !$templateValidate->checkSheetExist($request->size) || !$templateValidate->checkSheetExist('Projectteam')){
             return response()->json([
-                'error' => "Your spreadsheet template doesn't match, please import excel template according to the project size you choose ( ".$request->type." )"
+                'error' => "Your spreadsheet template doesn't match, please import excel template according to the project size you choose ( ".$request->size." )"
             ],400);
         }
 
