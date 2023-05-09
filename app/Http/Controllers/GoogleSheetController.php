@@ -29,50 +29,44 @@ class GoogleSheetController extends Controller
         $arrayTeam = $teamSheet->readSheet();
         $dataTeam = $arrayTeam->values;
         $index = 0;
-        if($dataTeam){
-            foreach($dataTeam as $item){
+        foreach($dataTeam as $item){
+            if($dataTeam[$index][1]){
                 $dataTeam[$index][1] = User::whereIn('name', explode(',', $item[1]))
                                   ->select('name', 'email', 'profile')
                                   ->get()
                                   ->toArray(); 
-                $index++;
-            }
-            $index = 0;
-        }else{
-            $dataTeam[][] = null;
+            } 
+            $index++;
         }
+        $index = 0;
           
         $creativeSheet = new GoogleSheetService('projectteam!C9:D24');
         $creativeSheet->documentId = $spreadSheetId;
         $arrayCreative = $creativeSheet->readSheet();
         $dataCreative = $arrayCreative->values;
-        if($dataCreative){
-            foreach($dataCreative as $item){
+        foreach($dataCreative as $item){
+            if($dataCreative[$index][1]){
                 $dataCreative[$index][1] = User::whereIn('name', explode(',', $item[1]))
                                   ->select('name', 'email', 'profile')
                                   ->get()
                                   ->toArray(); 
-                $index++;
             }
-            $index = 0;
-        }else{
-            $dataCreative[][] = null;
+            $index++;
         }
+        $index = 0;
 
         $chaperoneSheet = new GoogleSheetService('projectteam!C25:D28');
         $chaperoneSheet->documentId = $spreadSheetId;
         $arrayChaperone = $chaperoneSheet->readSheet();
         $dataChaperone = $arrayChaperone->values;
-        if($dataChaperone){
-            foreach($dataChaperone as $item){
+        foreach($dataChaperone as $item){
+            if($dataChaperone[$index][1]){
                 $dataChaperone[$index][1] = User::whereIn('name', explode(',', $item[1]))
                                   ->select('name', 'email', 'profile')
                                   ->get()
-                                  ->toArray(); 
-                $index++;
+                                  ->toArray();               
             }
-        }else{
-            $dataChaperone[][] = null;
+            $index++;
         }
         
 
