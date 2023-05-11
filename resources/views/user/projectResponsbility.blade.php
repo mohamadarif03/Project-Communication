@@ -15,13 +15,10 @@
             </div>
             <div class="">
                 <div class="relative mr-2">
-                    <a href="javascript:history.back()" type="button"
-                        class=" rounded-lg focus:outline-none text-black font-medium text-xs px-5 py-2 mb-2"
-                        style="border: 2px solid black">
+                    <a href="../project" type="button" class="text-black rounded-lg focus:outline-none text-black font-medium text-xs px-5 py-2 mb-2" style="border: 2px solid black; color:black">
                         Back
-                </a>
+                    </a>
                 </div>
-
             </div>
 
 
