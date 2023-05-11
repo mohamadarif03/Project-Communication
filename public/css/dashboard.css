@@ -1,0 +1,43 @@
+  @media (max-width: 639px) {
+    .cardComplete{
+        grid-column: span 12;
+    }
+    .cardUncomplete{
+        grid-column: span 12;
+    }
+    .totalResponsbility{
+        grid-column: span 12;
+    }
+    .filterYear{
+        grid-column: span 12;
+    }
+    }
+
+    @media (min-width: 640px) and (max-width: 1075px) {
+        .cardComplete{
+            grid-column: span 6;
+        }
+        .cardUncomplete{
+            grid-column: span 6;
+        }
+        .totalResponsbility{
+            grid-column: span 4;
+        }
+        .filterYear{
+            grid-column: span 8;
+        }
+    }
+    @media (min-width: 1076px) {
+        .cardComplete{
+            grid-column: span 3;
+        }
+        .cardUncomplete{
+            grid-column: span 3;
+        }
+        .totalResponsbility{
+            grid-column: span 2;
+        }
+        .filterYear{
+            grid-column: span 4;
+        }
+    }

@@ -115,12 +115,12 @@ GetDataComplete()
                       '<p class="rounded-md text-xs py-0.5 px-2" style="background-color: #E0E0E0; color: black;">'+formatDate(data.date)+'</p>'+
                   '</div>'+
                   '<div class="h-16 flex p-2 items-center w-full ">'+
-                      '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.rule.communication_type.color+'">'+
+                      '<div class="h-10 flex w-10 rounded-circle" style="background-color:'+data.rule.communication_type.color+'">'+
                           '<p class="text-white m-auto font-semibold">'+getInitials(data.rule.communication_type.type)+'</p>'+
                       '</div>'+
                       '<div class="ml-2 flex my-auto">'+
                           '<div class="my-auto">'+
-                              '<h1 class="text-sm my-0 font-semibold">'+data.rule.communication_type.type+'</h1>'+
+                              '<h1 class="text-xs my-0 font-semibold">'+data.rule.communication_type.type+'</h1>'+
                           '</div>'+
                       '</div>'+
                   '</div>'+
@@ -162,12 +162,12 @@ GetDataComplete()
                       '<p class="rounded-md text-xs py-0.5 px-2" style="background-color: green; color: white;">'+formatDate(data.date)+'</p>'+
                   '</div>'+
                   '<div class="h-16 flex p-2 items-center w-full ">'+
-                      '<div class="h-12 flex w-12 rounded-circle" style="background-color:'+data.rule.communication_type.color+'">'+
+                      '<div class="h-10 flex w-10 rounded-circle" style="background-color:'+data.rule.communication_type.color+'">'+
                           '<p class="text-white m-auto font-semibold">'+getInitials(data.rule.communication_type.type)+'</p>'+
                       '</div>'+
                       '<div class="ml-2 flex my-auto">'+
                           '<div class="my-auto">'+
-                              '<h1 class="text-sm my-0 font-semibold">'+data.rule.communication_type.type+'</h1>'+
+                              '<h1 class="text-xs my-0 font-semibold">'+data.rule.communication_type.type+'</h1>'+
                           '</div>'+
                       '</div>'+
                   '</div>'+

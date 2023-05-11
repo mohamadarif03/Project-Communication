@@ -16,13 +16,13 @@
         }
 
         /* ketika layar lebih besar atau sama dengan 1024px */
-        @media (min-width: 1050px)  and (max-width: 1250px) {
+        @media (min-width: 1050px)  and (max-width: 1204px) {
             .cover-team {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 10px;
             }
         }
-        @media (min-width: 1250px) {
+        @media (min-width: 1204px) {
             .cover-team {
                 grid-template-columns: repeat(4, minmax(0, 1fr));
                 gap: 10px;

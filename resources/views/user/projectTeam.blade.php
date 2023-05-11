@@ -15,19 +15,17 @@
             </div>
             <div class="">
                 <div class="relative mr-2">
-                    <button type="button" class=" rounded-lg focus:outline-none text-black focus:ring-4 focus:ring-yellow-300 font-medium text-xs px-5 py-2 mb-2 dark:focus:ring-yellow-900" style="border: 2px solid black">
-                        {{$data->size}}
-                    </button>
+                    <a href="../project" type="button" class="rounded-lg focus:outline-none text-black font-medium text-xs px-5 py-2 mb-2" style="border: 2px solid black; color:black">
+                        Back
+                    </a>
                 </div>
-               
-               
             </div>
             
 
         </div>
        
         <div class="flex mt-2 items-center justify-center">
-            <button type="button" class=" focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium text-xs px-5 py-2.5 mb-2 dark:focus:ring-yellow-900">
+            <button type="button" class=" focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium text-xs px-5 py-2.5 mb-2">
                 Team
             </button>
             <a href="/project-responsbility/{{$data->id}}">

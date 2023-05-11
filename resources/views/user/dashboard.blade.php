@@ -7,7 +7,7 @@
             <h1 class="text-xl font-bold mb-2">Hi, {{ Auth()->user()->name }}</h1>
             <div class="grid grid-cols-12 gap-2">
 
-                <div class="rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
+                <div class="cardComplete rounded-md border bg-white">
                     <div class="border-b-2 pb-2">
                         <h1 class="ml-2 mt-2 text-sm font-bold ">Complete Responsbility</h1>
                     </div>
@@ -16,7 +16,7 @@
                     </div>
                     
                 </div>
-                <div class="rounded-md border bg-white col-span-12 md:col-span-6 lg:col-span-3">
+                <div class="cardUncomplete rounded-md border bg-white">
                     <div class="border-b-2 pb-2">
                         <h1 class="ml-2 mt-2 text-sm font-bold ">Uncomplete Responsbility</h1>
                         <a href="" class="hidden" id="detail-show" data-te-toggle="modal" data-te-target="#show">Detail</a>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div
-                    class="rounded-md bg-white flex col-span-12 md:col-span-4 flex-col lg:col-span-2 text-center bg-transparent">
+                    class="totalResponsbility rounded-md bg-white flex flex-col text-center bg-transparent">
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="rounded-md bg-white col-span-12 md:col-span-8 lg:col-span-4">
+                <div class="filterYear rounded-md bg-white">
                     <select id="month" name="month"
                         class="border border-gray-500 block w-[30%] m-3 ml-auto px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500 bg-white ">
                         <option value="January">January</option>
@@ -92,7 +92,7 @@
                 <div
                     class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
                     <div
-                        class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                        class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-2">
                         <!--Modal title-->
                         <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
                             Confirmation
@@ -108,7 +108,7 @@
 
                     <!--Modal footer-->
                     <div
-                        class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                        class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-2 ">
                         <button type="button" id="btn-close"
                             class="inline-block rounded bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-gray-900 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                             data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light"
@@ -374,4 +374,7 @@
             }
         });
     </script>
+@endsection
+@section('styling-page')
+<link rel="stylesheet" href="{{asset ('css/dashboard.css')}}">
 @endsection
