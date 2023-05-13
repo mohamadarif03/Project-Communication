@@ -270,7 +270,7 @@ function update(){
 
             Swal.fire({
                 title: 'Error!',
-                html:response.responseJSON.message,
+                html:errorMessage,
                 // html: response.responseJSON.message,
                 icon: 'error',
             })

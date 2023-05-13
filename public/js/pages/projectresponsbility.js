@@ -583,7 +583,6 @@ function GetData(filter){
                                     </div>
                                 </div>
                             </div>`
-
                     $('#Data').append(row)
                 })
 
