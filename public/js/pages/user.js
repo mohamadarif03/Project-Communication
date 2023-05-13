@@ -1,5 +1,3 @@
-
-
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
 GetRole()
 GetData(1)
@@ -129,8 +127,6 @@ function showdropdown(index){
     });
     $('#dropdownlist-'+index).toggleClass('hidden');
 }
-
-
 function create(){
     var name = $('#name').val()
     var email = $('#email').val()
