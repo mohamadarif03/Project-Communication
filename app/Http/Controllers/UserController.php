@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function view(Request $request)
+    public function view()
     {
         return view('admin.users');
     }
