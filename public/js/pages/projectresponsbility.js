@@ -13,10 +13,7 @@ $('.my-checkbox').change(function() {
     $(':checkbox[name="my-checkbox"]').filter(':checked').each(function() {
     checkboxValues.push($(this).val());
     });
-    
-    if(checkboxValues.length === 0){
-        checkboxValues[0] = 'null'
-    }
+
     GetData(checkboxValues)
 });
 var first_filter = [];
@@ -1140,4 +1137,40 @@ function mark(index){
         }
       })
 }
+
+
+//export data
+$('#exportDataRuang').click(function(e) {
+    e.preventDefault();
+    var checkboxValues = [];
+
+    $(':checkbox[name="my-checkbox"]').filter(':checked').each(function() {
+    checkboxValues.push($(this).val());
+    });
+    var url = "{{ route('data-ruang-export'}}";
+    $.ajax({
+        url: url,
+        type: "GET",
+        data: {
+            data_export:checkboxValues
+        },
+        success: function(response) {
+            $('#btnCloseDataRuangExport').click();
+            $('#formExportDataRuang')[0].reset();
+            swal.fire({
+                icon: 'success',
+                title: 'Berhasil Mengeksport Data Ruang'
+            });
+            window.location.reload();
+        },
+        error: function(xhr) {
+
+            swal.fire({
+                icon: 'error',
+                title: 'ada kesalahan sistem',
+                text: 'Silahkan coba lagi',
+            });
+        }
+    });
+});
 
