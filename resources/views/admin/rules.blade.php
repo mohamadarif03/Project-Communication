@@ -29,7 +29,8 @@
         </div>
         <!-- end container-fluid -->
         <div class="w-full flex flex-col">
-            <div class="grid mx-3 gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4" id="Data">
+            <div class="cardRules grid mx-3 gap-3 mt-4" id="Data">
+                
             </div>
             <div class="mx-auto mt-8" id="paginate">
 
