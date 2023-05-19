@@ -27,7 +27,27 @@ class Controller extends BaseController
             $role = Role::count();
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
-            return view('user.dashboard');
+            $now = Carbon::now();
+            $complete = Responbility::where('status', 1)
+                    ->whereHas('rule',function($query){
+                        $query->whereHas('torule',function($query){
+                            $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                        });
+                    })
+                    ->count();
+            $uncomplete = Responbility::where('status', 0)
+                    ->whereHas('rule',function($query){
+                        $query->whereHas('torule',function($query){
+                            $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                        });
+                    })
+                    ->count();
+            $communicationCount = $complete + $uncomplete;
+            return view('user.dashboard',[
+                'complete' => $complete,
+                'uncomplete' => $uncomplete,
+                'total' => $communicationCount
+            ]);
         }
     }
 
@@ -40,7 +60,7 @@ class Controller extends BaseController
                     });
                 })->when($request->month !== '-1', function($query) use ($request) {
                     return $query->whereMonth('date', $request->month);
-                })->whereYear('date',$now->year)
+                })
                 ->count();
         $uncomplete = Responbility::where('status', 0)
                 ->whereHas('rule',function($query){
@@ -49,7 +69,7 @@ class Controller extends BaseController
                     });
                 })->when($request->month !== '-1', function($query) use ($request) {
                     return $query->whereMonth('date', $request->month);
-                })->whereYear('date',$now->year)
+                })
                 ->count();
         $communicationCount = $complete + $uncomplete;
         return response()->json([

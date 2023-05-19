@@ -31,7 +31,7 @@
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold" id="total"></h1>
+                                <h1 class="text-5xl font-bold" id="total">{{$total}}</h1>
                             </div>
                             <div class="">
                                 <p class="text-xs font-bold">Total Responsbility</p>
@@ -41,7 +41,7 @@
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold" id="complete"></h1>
+                                <h1 class="text-5xl font-bold" id="complete">{{$complete}}</h1>
                             </div>
                             <div class="">
                                 <p class="text-xs font-bold">Complete Responsbility</p>
@@ -51,7 +51,7 @@
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold" id="uncomplete"></h1>
+                                <h1 class="text-5xl font-bold" id="uncomplete">{{$uncomplete}}</h1>
                             </div>
                             <div class="">
                                 <p class="text-xs font-bold" > Uncomplete Responsbility</p>
@@ -355,9 +355,6 @@
             var Month = $(this).val();
             GetChart(Month);
         });
-        $('#complete').html(complete)
-        $('#uncomplete').html(uncomplete)
-        $('#total').html((complete+uncomplete))
         let ctx = document.getElementById('mychart');
                 var chart = new Chart(ctx, {
                 type: 'bar',
@@ -396,9 +393,6 @@
                 console.log(response)
                 complete = response.complete
                 uncomplete = response.uncomplete
-                $('#complete').html(complete)
-                $('#uncomplete').html(uncomplete)
-                $('#total').html(response.total)
                 ctx = document.getElementById('mychart');
                 chart = new Chart(ctx, {
                 type: 'bar',
