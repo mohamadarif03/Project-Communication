@@ -6,7 +6,7 @@ var csrfToken = $('meta[name="csrf-token"]').attr('content');
     var monthSelect = $('#month');
   
     // ambil bulan saat ini
-    var currentMonth = new Date().getMonth();
+    var currentMonth = new Date().getMonth() + 1;
   
     // set opsi default di select berdasarkan bulan saat ini
     monthSelect.val(monthSelect.find('option').eq(currentMonth).val());

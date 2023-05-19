@@ -41,20 +41,20 @@
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold"></h1>
+                                <h1 class="text-5xl font-bold" id="complete"></h1>
                             </div>
                             <div class="">
-                                <p class="text-xs font-bold" id="complete">Complete Responsbility</p>
+                                <p class="text-xs font-bold">Complete Responsbility</p>
                             </div>
                         </div>
                     </div>
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold"></h1>
+                                <h1 class="text-5xl font-bold" id="uncomplete"></h1>
                             </div>
                             <div class="">
-                                <p class="text-xs font-bold" id="uncomplete">Uncomplete Responsbility</p>
+                                <p class="text-xs font-bold" > Uncomplete Responsbility</p>
                             </div>
                         </div>
                     </div>
@@ -352,7 +352,7 @@
         var uncomplete = 0
 
         $('#month').change(function() {
-            Month = $(this).val();
+            var Month = $(this).val();
             GetChart(Month);
         });
         $('#complete').html(complete)
@@ -393,6 +393,7 @@
             },
             success:function(response){
                 chart.destroy()
+                console.log(response)
                 complete = response.complete
                 uncomplete = response.uncomplete
                 $('#complete').html(complete)
