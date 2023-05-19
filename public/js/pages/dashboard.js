@@ -6,7 +6,6 @@ var csrfToken = $('meta[name="csrf-token"]').attr('content');
     });
     return initials.join('');
 }
-
 function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -93,7 +92,6 @@ GetDataComplete()
         url:'/data-receive-responsbility-dashboard-complete',
         success:function(response){
                 $.each(response,function(index,data){
-                  console.log(index)
                   var row = '<div class="block w-full bg-green-200 rounded-lg p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] mr-3 my-2" style="border: 2px solid green">'+
                   '<div class="h-4 p-2 items-center w-full flex justify-between">'+
                   '<a href="" onclick="checkget('+data.id+')" data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init data-te-ripple-color="light">'+
