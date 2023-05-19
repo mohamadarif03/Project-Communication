@@ -1,16 +1,4 @@
 var csrfToken = $('meta[name="csrf-token"]').attr('content');
-
-
-  $(document).ready(function() {
-    // dapatkan elemen select month
-    var monthSelect = $('#month');
-  
-    // ambil bulan saat ini
-    var currentMonth = new Date().getMonth() + 1;
-  
-    // set opsi default di select berdasarkan bulan saat ini
-    monthSelect.val(monthSelect.find('option').eq(currentMonth).val());
-  });
   function getInitials(name) {
     var words = name.split(' ');
     var initials = words.map(function(word) {

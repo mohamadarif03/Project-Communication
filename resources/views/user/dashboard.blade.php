@@ -348,8 +348,8 @@
     <script src="{{ asset('js/pages/dashboard.js') }}"></script>
     <script src="{{asset('plugin/chart.js/dist/chart.umd.js')}}"></script>
     <script>
-        var complete = 0
-        var uncomplete = 0
+        var complete = {{$complete}}
+        var uncomplete = {{$uncomplete}}
 
         $('#month').change(function() {
             var Month = $(this).val();
@@ -390,7 +390,6 @@
             },
             success:function(response){
                 chart.destroy()
-                console.log(response)
                 complete = response.complete
                 uncomplete = response.uncomplete
                 ctx = document.getElementById('mychart');
