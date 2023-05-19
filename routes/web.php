@@ -105,6 +105,7 @@ Route::middleware('auth', 'verified')->group(function () {
 
         Route::get('/download-template/{type}',[ProjectController::class,'download']);
         Route::get('/data-project',[ProjectController::class,'data']);
+        Route::get('/data-chart',[Controller::class,'chart']);
 
     });
 

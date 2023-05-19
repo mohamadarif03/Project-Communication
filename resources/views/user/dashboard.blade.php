@@ -31,7 +31,7 @@
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold">{{ $communicationCount }}</h1>
+                                <h1 class="text-5xl font-bold" id="total"></h1>
                             </div>
                             <div class="">
                                 <p class="text-xs font-bold">Total Responsbility</p>
@@ -41,20 +41,20 @@
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold">{{ $complete }}</h1>
+                                <h1 class="text-5xl font-bold"></h1>
                             </div>
                             <div class="">
-                                <p class="text-xs font-bold">Complete Responsbility</p>
+                                <p class="text-xs font-bold" id="complete">Complete Responsbility</p>
                             </div>
                         </div>
                     </div>
                     <div class="rounded-md my-auto bg-white" style="height: 32%;">
                         <div class="flex flex-col h-full w-full items-center justify-center">
                             <div class="">
-                                <h1 class="text-5xl font-bold">{{ $uncomplete }}</h1>
+                                <h1 class="text-5xl font-bold"></h1>
                             </div>
                             <div class="">
-                                <p class="text-xs font-bold">Uncomplete Responsbility</p>
+                                <p class="text-xs font-bold" id="uncomplete">Uncomplete Responsbility</p>
                             </div>
                         </div>
                     </div>
@@ -62,18 +62,19 @@
                 <div class="filterYear rounded-md bg-white">
                     <select id="month" name="month"
                         class="border border-gray-500 block w-[30%] m-3 ml-auto px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500 bg-white ">
-                        <option value="January">January</option>
-                        <option value="February">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="August">August</option>
-                        <option value="September">September</option>
-                        <option value="October">October</option>
-                        <option value="November">November</option>
-                        <option value="December">December</option>
+                        <option value="-1">All Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
                     </select>
                     <div class="" style="height: 540px">
                         <canvas id="mychart" ></canvas>
@@ -347,32 +348,89 @@
     <script src="{{ asset('js/pages/dashboard.js') }}"></script>
     <script src="{{asset('plugin/chart.js/dist/chart.umd.js')}}"></script>
     <script>
-        const ctx = document.getElementById('mychart');
-        new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Complete', 'Uncomplete'],
-            datasets: [{
-            label: 'Responsbility',
-            data: [{{$complete}},{{$uncomplete}}],
-            borderWidth: 2,
-            backgroundColor: [
-                'green',
-                'red',
-                ],
-            }]
-        },
-        options: {
-            scales: {
-            y: {
-                beginAtZero: true
-            }
-            },
-            responsive: true,
-            maintainAspectRatio: false,
-            height: 400,
-            }
+        var complete = 0
+        var uncomplete = 0
+
+        $('#month').change(function() {
+            Month = $(this).val();
+            GetChart(Month);
         });
+        $('#complete').html(complete)
+        $('#uncomplete').html(uncomplete)
+        $('#total').html((complete+uncomplete))
+        let ctx = document.getElementById('mychart');
+                var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Complete', 'Uncomplete'],
+                    datasets: [{
+                    label: 'Responsbility',
+                    data: [complete,uncomplete],
+                    borderWidth: 2,
+                    backgroundColor: [
+                        'green',
+                        'red',
+                        ],
+                    }]
+                },
+                options: {
+                    scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    height: 400,
+                    }
+                });
+        function GetChart(month){
+            $.ajax({
+            type:'GET',
+            url:'/data-chart',
+            data:{
+                month:month
+            },
+            success:function(response){
+                chart.destroy()
+                complete = response.complete
+                uncomplete = response.uncomplete
+                $('#complete').html(complete)
+                $('#uncomplete').html(uncomplete)
+                $('#total').html(response.total)
+                ctx = document.getElementById('mychart');
+                chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Complete', 'Uncomplete'],
+                    datasets: [{
+                    label: 'Responsbility',
+                    data: [complete,uncomplete],
+                    borderWidth: 2,
+                    backgroundColor: [
+                        'green',
+                        'red',
+                        ],
+                    }]
+                },
+                options: {
+                    scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    height: 400,
+                    }
+                });
+            },
+            error:function(response){
+                console.log(response)
+            }
+        })
+        }
+        
     </script>
 @endsection
 @section('styling-page')

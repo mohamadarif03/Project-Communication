@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Charts\CommunicationChart;
 use App\Models\Communication;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\Responbility;
 use App\Models\CommunicationType;
 use App\Models\Role;
@@ -25,25 +27,36 @@ class Controller extends BaseController
             $role = Role::count();
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
-            $complete = Responbility::where('status', 1)
-                ->whereHas('rule',function($query){
-                    $query->whereHas('torule',function($query){
-                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
-                    });
-                })->count();
-            $uncomplete = Responbility::where('status', 0)
-                ->whereHas('rule',function($query){
-                    $query->whereHas('torule',function($query){
-                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
-                    });
-            })->count();
-            $communicationCount = $complete + $uncomplete;
-            return view('user.dashboard', [
-                'communicationCount' => $communicationCount,
-                'complete' => $complete,
-                'uncomplete' => $uncomplete
-            ]);
+            return view('user.dashboard');
         }
+    }
+
+    public function chart(Request $request){
+        $now = Carbon::now();
+        $complete = Responbility::where('status', 1)
+                ->whereHas('rule',function($query){
+                    $query->whereHas('torule',function($query){
+                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                    });
+                })->when($request->month !== '-1', function($query) use ($request) {
+                    return $query->whereMonth('date', $request->month);
+                })->whereYear('date',$now->year)
+                ->count();
+        $uncomplete = Responbility::where('status', 0)
+                ->whereHas('rule',function($query){
+                    $query->whereHas('torule',function($query){
+                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                    });
+                })->when($request->month !== '-1', function($query) use ($request) {
+                    return $query->whereMonth('date', $request->month);
+                })->whereYear('date',$now->year)
+                ->count();
+        $communicationCount = $complete + $uncomplete;
+        return response()->json([
+            'complete' => $complete,
+            'uncomplete' => $uncomplete,
+            'total' => $communicationCount
+        ]);
     }
    
 }
