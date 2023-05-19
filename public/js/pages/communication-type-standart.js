@@ -227,7 +227,7 @@ function update(){
         success: function(response){
             Swal.fire({
                 title: 'Success!',
-                text: 'Success Update Task!',
+                text: 'Success Update Responsbility!',
                 icon: 'success',
                 timer: 4000
             })

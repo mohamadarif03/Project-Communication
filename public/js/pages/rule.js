@@ -199,7 +199,7 @@ function create(){
         success:function(response){
             Swal.fire({
                 title: 'success!',
-                text: 'Success Create New Type!',
+                text: 'Success Create New Rule!',
                 icon: 'success'
             }).then(function() {
                 location.reload();
