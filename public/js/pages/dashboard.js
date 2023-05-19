@@ -6,7 +6,6 @@ var csrfToken = $('meta[name="csrf-token"]').attr('content');
     });
     return initials.join('');
 }
-
 function formatDate(dateString) {
     const date = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
