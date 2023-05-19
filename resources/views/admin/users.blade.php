@@ -241,7 +241,7 @@
                     class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Delete Role
+                        Delete User
                     </h5>
                     <!--Close button-->
                     <button type="button"
