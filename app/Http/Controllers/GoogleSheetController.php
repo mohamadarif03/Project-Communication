@@ -12,9 +12,8 @@ class GoogleSheetController extends Controller
 {
     public function team(Request $request){
         $spreadSheetId = $request->id;
-        $teamSheet = new GoogleSheetService('projectteam!B5:C8');
-        $teamSheet->documentId = $spreadSheetId;
-        $arrayTeam = $teamSheet->readSheet();
+        $Sheet = new GoogleSheetService($spreadSheetId);
+        $arrayTeam = $Sheet->readSheet('projectteam!B5:C8');
         $dataTeam = $arrayTeam->values;
         $index = 0;
         foreach($dataTeam as $item){
@@ -27,10 +26,7 @@ class GoogleSheetController extends Controller
             $index++;
         }
         $index = 0;
-          
-        $creativeSheet = new GoogleSheetService('projectteam!C9:D24');
-        $creativeSheet->documentId = $spreadSheetId;
-        $arrayCreative = $creativeSheet->readSheet();
+        $arrayCreative = $Sheet->readSheet('projectteam!C9:D24');
         $dataCreative = $arrayCreative->values;
         foreach($dataCreative as $item){
             if( count($dataCreative[$index]) > 1 ){
@@ -42,10 +38,7 @@ class GoogleSheetController extends Controller
             $index++;
         }
         $index = 0;
-
-        $chaperoneSheet = new GoogleSheetService('projectteam!C25:D28');
-        $chaperoneSheet->documentId = $spreadSheetId;
-        $arrayChaperone = $chaperoneSheet->readSheet();
+        $arrayChaperone = $Sheet->readSheet('projectteam!C25:D28');
         $dataChaperone = $arrayChaperone->values;
         foreach($dataChaperone as $item){
             if(count($dataChaperone[$index]) > 1){
@@ -81,9 +74,8 @@ class GoogleSheetController extends Controller
         $spreadsheetId = $matches[1];
 
         //Check Valid Template
-        $templateValidate = new GoogleSheetService('project!A1:B2');
-        $templateValidate->documentId = $spreadsheetId;
-        if( !$templateValidate->checkSheetExist($request->size) || !$templateValidate->checkSheetExist('Projectteam')){
+        $Sheet = new GoogleSheetService($spreadsheetId);
+        if( !$Sheet->checkSheetExist($request->size) || !$Sheet->checkSheetExist('Projectteam')){
             return response()->json([
                 'error' => "Your spreadsheet template doesn't match, please import excel template according to the project size you choose ( ".$request->size." )"
             ],400);
@@ -91,177 +83,127 @@ class GoogleSheetController extends Controller
 
         //Project Name Value
         $projectName[0] = $request->project_name;
-        $projectNameSheet = new GoogleSheetService('projectteam!C4:C4');
-        $projectNameSheet->documentId = $spreadsheetId;
-        $projectNameSheet->writeSheet($projectName);
+        $Sheet->writeSheet($projectName,'projectteam!C4:C4');
         //Service Manager Value
         if($request->service_manager){
             $serviceManager[0] = implode(',',$request->service_manager);
-            $serviceManagerSheet = new GoogleSheetService('projectteam!C5:C5');
-            $serviceManagerSheet->documentId = $spreadsheetId;
-            $serviceManagerSheet->writeSheet($serviceManager);
+            $Sheet->writeSheet($serviceManager,'projectteam!C5:C5');
         }
         //Office Manager Value
         if($request->office_manager){
             $officeManager[0] = implode(',',$request->office_manager);
-            $officeManagerSheet = new GoogleSheetService('projectteam!C6:C6');
-            $officeManagerSheet->documentId = $spreadsheetId;
-            $officeManagerSheet->writeSheet($officeManager);
+            $Sheet->writeSheet($officeManager,'projectteam!C6:C6');
         }
         //Product Manager Value
         if($request->product_manager){
             $productManager[0] = implode(',',$request->product_manager);
-            $productManagerSheet = new GoogleSheetService('projectteam!C7:C7');
-            $productManagerSheet->documentId = $spreadsheetId;
-            $productManagerSheet->writeSheet($productManager);
+            $Sheet->writeSheet($productManager,'projectteam!C7:C7');
         }
         //Senior Value
         if($request->senior){
             $senior[0] = implode(',',$request->senior);
-            $seniorSheet = new GoogleSheetService('projectteam!C8:C8');
-            $seniorSheet->documentId = $spreadsheetId;
-            $seniorSheet->writeSheet($senior);
+            $Sheet->writeSheet($senior,'projectteam!C8:C8');
         }
 
         //Game Designer Junior
         if($request->gamedesigner_junior){
             $gameDesignerJunior[0] = implode(',',$request->gamedesigner_junior);
-            $gameDesignerJuniorSheet = new GoogleSheetService('projectteam!D9:D9');
-            $gameDesignerJuniorSheet->documentId = $spreadsheetId;
-            $gameDesignerJuniorSheet->writeSheet($gameDesignerJunior);
+            $Sheet->writeSheet($gameDesignerJunior,'projectteam!D9:D9');
         }
         //Game Designer Medior
         if($request->gamedesigner_medior){
             $gameDesignerMedior[0] = implode(',',$request->gamedesigner_medior);
-            $gameDesignerMediorSheet = new GoogleSheetService('projectteam!D10:D10');
-            $gameDesignerMediorSheet->documentId = $spreadsheetId;
-            $gameDesignerMediorSheet->writeSheet($gameDesignerMedior);
+            $Sheet->writeSheet($gameDesignerMedior,'projectteam!D10:D10');
         }
         //Game Designer Senior
         if($request->gamedesigner_senior){
             $gameDesignerSenior[0] = implode(',',$request->gamedesigner_senior);
-            $gameDesignerSeniorSheet = new GoogleSheetService('projectteam!D11:D11');
-            $gameDesignerSeniorSheet->documentId = $spreadsheetId;
-            $gameDesignerSeniorSheet->writeSheet($gameDesignerSenior);
+            $Sheet->writeSheet($gameDesignerSenior,'projectteam!D11:D11');
         }
         //Experience Junior
         if($request->experience_junior){
             $experienceDesignerJunior[0] = implode(',',$request->experience_junior);
-            $experienceDesignerJuniorSheet = new GoogleSheetService('projectteam!D12:12');
-            $experienceDesignerJuniorSheet->documentId = $spreadsheetId;
-            $experienceDesignerJuniorSheet->writeSheet($experienceDesignerJunior);
+            $Sheet->writeSheet($experienceDesignerJunior,'projectteam!D12:12');
         }
         //Experience Medior
         if($request->experience_medior){
             $experienceDesignerMedior[0] = implode(',',$request->experience_medior);
-            $experienceDesignerMediorSheet = new GoogleSheetService('projectteam!D13:D13');
-            $experienceDesignerMediorSheet->documentId = $spreadsheetId;
-            $experienceDesignerMediorSheet->writeSheet($experienceDesignerMedior);
+            $Sheet->writeSheet($experienceDesignerMedior,'projectteam!D13:D13');
         }
         //Experience Senior
         if($request->experience_senior){
             $experienceDesignerSenior[0] = implode(',',$request->experience_senior);
-            $experienceDesignerSeniorSheet = new GoogleSheetService('projectteam!D14:D14');
-            $experienceDesignerSeniorSheet->documentId = $spreadsheetId;
-            $experienceDesignerSeniorSheet->writeSheet($experienceDesignerSenior);
+            $Sheet->writeSheet($experienceDesignerSenior,'projectteam!D14:D14');
         }
         // //UI UX
         if($request->ui_ux){
             $Ui_Ux[0] = implode(',',$request->ui_ux);
-            $Ui_UxSheet = new GoogleSheetService('projectteam!D15:D15');
-            $Ui_UxSheet->documentId = $spreadsheetId;
-            $Ui_UxSheet->writeSheet($Ui_Ux);
+            $Sheet->writeSheet($Ui_Ux,'projectteam!D15:D15');
         }
         //Productontwerp junior
         if($request->productontwerp_junior){
             $productOntWerpJunior[0] = implode(',',$request->productontwerp_junior);
-            $productOntWerpJuniorSheet = new GoogleSheetService('projectteam!D16:D16');
-            $productOntWerpJuniorSheet->documentId = $spreadsheetId;
-            $productOntWerpJuniorSheet->writeSheet($productOntWerpJunior);
+            $Sheet->writeSheet($productOntWerpJunior,'projectteam!D16:D16');
         }
         //Productontwerp medior
         if($request->productontwerp_medior){
             $productOntWerpMedior[0] = implode(',',$request->productontwerp_medior);
-            $productOntWerpMediorSheet = new GoogleSheetService('projectteam!D17:D17');
-            $productOntWerpMediorSheet->documentId = $spreadsheetId;
-            $productOntWerpMediorSheet->writeSheet($productOntWerpMedior);
+            $Sheet->writeSheet($productOntWerpMedior,'projectteam!D17:D17');
         }
         //Productontwerp Senior
         if($request->productontwerp_senior){
             $productOntWerpSenior[0] = implode(',',$request->productontwerp_senior);
-            $productOntWerpSeniorSheet = new GoogleSheetService('projectteam!D18:D18');
-            $productOntWerpSeniorSheet->documentId = $spreadsheetId;
-            $productOntWerpSeniorSheet->writeSheet($productOntWerpSenior);
+            $Sheet->writeSheet($productOntWerpSenior,'projectteam!D18:D18');
         }
         //Programmer junior
         if($request->programmer_junior){
             $programmerJunior[0] = implode(',',$request->programmer_junior);
-            $programmerJuniorSheet = new GoogleSheetService('projectteam!D19:D19');
-            $programmerJuniorSheet->documentId = $spreadsheetId;
-            $programmerJuniorSheet->writeSheet($programmerJunior);
+            $Sheet->writeSheet($programmerJunior,'projectteam!D19:D19');
         }
         //Programmer medior
         if($request->programmer_medior){
             $programmerMedior[0] = implode(',',$request->programmer_medior);
-            $programmerMediorSheet = new GoogleSheetService('projectteam!D20:D20');
-            $programmerMediorSheet->documentId = $spreadsheetId;
-            $programmerMediorSheet->writeSheet($programmerMedior);
+            $Sheet->writeSheet($programmerMedior,'projectteam!D20:D20');
         }
         //Programmer Senior
         if($request->programmer_senior){
             $programmerSenior[0] = implode(',',$request->programmer_senior);
-            $programmerSeniorSheet = new GoogleSheetService('projectteam!D21:D21');
-            $programmerSeniorSheet->documentId = $spreadsheetId;
-            $programmerSeniorSheet->writeSheet($programmerSenior);
+            $Sheet->writeSheet($programmerSenior,'projectteam!D21:D21');
         }
         //Story junior
         if($request->story_junior){
             $storyJunior[0] = implode(',',$request->story_junior);
-            $storyJuniorSheet = new GoogleSheetService('projectteam!D22:D22');
-            $storyJuniorSheet->documentId = $spreadsheetId;
-            $storyJuniorSheet->writeSheet($storyJunior);
+            $Sheet->writeSheet($storyJunior,'projectteam!D22:D22');
         }
         //Story medior
         if($request->story_medior){
             $storyMedior[0] = implode(',',$request->story_medior);
-            $storyMediorSheet = new GoogleSheetService('projectteam!D23:D23');
-            $storyMediorSheet->documentId = $spreadsheetId;
-            $storyMediorSheet->writeSheet($storyMedior);
+            $Sheet->writeSheet($storyMedior,'projectteam!D23:D23');
         }
         //Story Senior
         if($request->story_senior){
             $storySenior[0] = implode(',',$request->story_senior);
-            $storySeniorSheet = new GoogleSheetService('projectteam!D24:D24');
-            $storySeniorSheet->documentId = $spreadsheetId;
-            $storySeniorSheet->writeSheet($storySenior);
+            $Sheet->writeSheet($storySenior,'projectteam!D24:D24');
         }
         //Host
         if($request->host){
             $host[0] = implode(',',$request->host);
-            $hostSheet = new GoogleSheetService('projectteam!D25:D25');
-            $hostSheet->documentId = $spreadsheetId;
-            $hostSheet->writeSheet($host);
+            $Sheet->writeSheet($host,'projectteam!D25:D25');
         }
         //Techniek
         if($request->techniek){
             $teckniek[0] = implode(',',$request->techniek);
-            $teckniekSheet = new GoogleSheetService('projectteam!D26:D26');
-            $teckniekSheet->documentId = $spreadsheetId;
-            $teckniekSheet->writeSheet($teckniek);
+            $Sheet->writeSheet($teckniek,'projectteam!D26:D26');
         }
         //Muziek
         if($request->muziek){
             $muziek[0] = implode(',',$request->muziek);
-            $muziekSheet = new GoogleSheetService('projectteam!D27:D27');
-            $muziekSheet->documentId = $spreadsheetId;
-            $muziekSheet->writeSheet($muziek);
+            $Sheet->writeSheet($muziek,'projectteam!D27:D27');
         }
         //Props
         if($request->props){
             $props[0] = implode(',',$request->props);
-            $propsSheet = new GoogleSheetService('projectteam!D28:D28');
-            $propsSheet->documentId = $spreadsheetId;
-            $propsSheet->writeSheet($props);
+            $Sheet->writeSheet($props,'projectteam!D28:D28');
         }
 
         $project = Project::create([
@@ -320,189 +262,139 @@ class GoogleSheetController extends Controller
         $spreadsheetId = $matches[1];
 
         //Check Valid Template
-        $templateValidate = new GoogleSheetService('project!A1:B2');
-        $templateValidate->documentId = $spreadsheetId;
-        if( !$templateValidate->checkSheetExist($request->size) || !$templateValidate->checkSheetExist('Projectteam')){
+        $Sheet = new GoogleSheetService($spreadsheetId);
+        if( !$Sheet->checkSheetExist($request->size) || !$Sheet->checkSheetExist('Projectteam')){
             return response()->json([
-                'error' => "Your spreadsheet template doesn't match, please import excel template according to the project size you choose ( ".$request->type." )"
+                'error' => "Your spreadsheet template doesn't match, please import excel template according to the project size you choose ( ".$request->size." )"
             ],400);
         }
 
         //Project Name Value
         $projectName[0] = $request->project_name;
-        $projectNameSheet = new GoogleSheetService('projectteam!C4:C4');
-        $projectNameSheet->documentId = $spreadsheetId;
-        $projectNameSheet->writeSheet($projectName);
+        $Sheet->writeSheet($projectName,'projectteam!C4:C4');
         //Service Manager Value
         if($request->service_manager){
             $serviceManager[0] = implode(',',$request->service_manager);
-            $serviceManagerSheet = new GoogleSheetService('projectteam!C5:C5');
-            $serviceManagerSheet->documentId = $spreadsheetId;
-            $serviceManagerSheet->writeSheet($serviceManager);
+            $Sheet->writeSheet($serviceManager,'projectteam!C5:C5');
         }
         //Office Manager Value
         if($request->office_manager){
             $officeManager[0] = implode(',',$request->office_manager);
-            $officeManagerSheet = new GoogleSheetService('projectteam!C6:C6');
-            $officeManagerSheet->documentId = $spreadsheetId;
-            $officeManagerSheet->writeSheet($officeManager);
+            $Sheet->writeSheet($officeManager,'projectteam!C6:C6');
         }
         //Product Manager Value
         if($request->product_manager){
             $productManager[0] = implode(',',$request->product_manager);
-            $productManagerSheet = new GoogleSheetService('projectteam!C7:C7');
-            $productManagerSheet->documentId = $spreadsheetId;
-            $productManagerSheet->writeSheet($productManager);
+            $Sheet->writeSheet($productManager,'projectteam!C7:C7');
         }
         //Senior Value
         if($request->senior){
             $senior[0] = implode(',',$request->senior);
-            $seniorSheet = new GoogleSheetService('projectteam!C8:C8');
-            $seniorSheet->documentId = $spreadsheetId;
-            $seniorSheet->writeSheet($senior);
+            $Sheet->writeSheet($senior,'projectteam!C8:C8');
         }
+
         //Game Designer Junior
         if($request->gamedesigner_junior){
             $gameDesignerJunior[0] = implode(',',$request->gamedesigner_junior);
-            $gameDesignerJuniorSheet = new GoogleSheetService('projectteam!D9:D9');
-            $gameDesignerJuniorSheet->documentId = $spreadsheetId;
-            $gameDesignerJuniorSheet->writeSheet($gameDesignerJunior);
+            $Sheet->writeSheet($gameDesignerJunior,'projectteam!D9:D9');
         }
         //Game Designer Medior
         if($request->gamedesigner_medior){
             $gameDesignerMedior[0] = implode(',',$request->gamedesigner_medior);
-            $gameDesignerMediorSheet = new GoogleSheetService('projectteam!D10:D10');
-            $gameDesignerMediorSheet->documentId = $spreadsheetId;
-            $gameDesignerMediorSheet->writeSheet($gameDesignerMedior);
+            $Sheet->writeSheet($gameDesignerMedior,'projectteam!D10:D10');
         }
         //Game Designer Senior
         if($request->gamedesigner_senior){
             $gameDesignerSenior[0] = implode(',',$request->gamedesigner_senior);
-            $gameDesignerSeniorSheet = new GoogleSheetService('projectteam!D11:D11');
-            $gameDesignerSeniorSheet->documentId = $spreadsheetId;
-            $gameDesignerSeniorSheet->writeSheet($gameDesignerSenior);
+            $Sheet->writeSheet($gameDesignerSenior,'projectteam!D11:D11');
         }
         //Experience Junior
         if($request->experience_junior){
             $experienceDesignerJunior[0] = implode(',',$request->experience_junior);
-            $experienceDesignerJuniorSheet = new GoogleSheetService('projectteam!D12:12');
-            $experienceDesignerJuniorSheet->documentId = $spreadsheetId;
-            $experienceDesignerJuniorSheet->writeSheet($experienceDesignerJunior);
+            $Sheet->writeSheet($experienceDesignerJunior,'projectteam!D12:12');
         }
         //Experience Medior
         if($request->experience_medior){
             $experienceDesignerMedior[0] = implode(',',$request->experience_medior);
-            $experienceDesignerMediorSheet = new GoogleSheetService('projectteam!D13:D13');
-            $experienceDesignerMediorSheet->documentId = $spreadsheetId;
-            $experienceDesignerMediorSheet->writeSheet($experienceDesignerMedior);
+            $Sheet->writeSheet($experienceDesignerMedior,'projectteam!D13:D13');
         }
         //Experience Senior
         if($request->experience_senior){
             $experienceDesignerSenior[0] = implode(',',$request->experience_senior);
-            $experienceDesignerSeniorSheet = new GoogleSheetService('projectteam!D14:D14');
-            $experienceDesignerSeniorSheet->documentId = $spreadsheetId;
-            $experienceDesignerSeniorSheet->writeSheet($experienceDesignerSenior);
+            $Sheet->writeSheet($experienceDesignerSenior,'projectteam!D14:D14');
         }
         // //UI UX
         if($request->ui_ux){
             $Ui_Ux[0] = implode(',',$request->ui_ux);
-            $Ui_UxSheet = new GoogleSheetService('projectteam!D15:D15');
-            $Ui_UxSheet->documentId = $spreadsheetId;
-            $Ui_UxSheet->writeSheet($Ui_Ux);
+            $Sheet->writeSheet($Ui_Ux,'projectteam!D15:D15');
         }
         //Productontwerp junior
         if($request->productontwerp_junior){
             $productOntWerpJunior[0] = implode(',',$request->productontwerp_junior);
-            $productOntWerpJuniorSheet = new GoogleSheetService('projectteam!D16:D16');
-            $productOntWerpJuniorSheet->documentId = $spreadsheetId;
-            $productOntWerpJuniorSheet->writeSheet($productOntWerpJunior);
+            $Sheet->writeSheet($productOntWerpJunior,'projectteam!D16:D16');
         }
         //Productontwerp medior
         if($request->productontwerp_medior){
             $productOntWerpMedior[0] = implode(',',$request->productontwerp_medior);
-            $productOntWerpMediorSheet = new GoogleSheetService('projectteam!D17:D17');
-            $productOntWerpMediorSheet->documentId = $spreadsheetId;
-            $productOntWerpMediorSheet->writeSheet($productOntWerpMedior);
+            $Sheet->writeSheet($productOntWerpMedior,'projectteam!D17:D17');
         }
         //Productontwerp Senior
         if($request->productontwerp_senior){
             $productOntWerpSenior[0] = implode(',',$request->productontwerp_senior);
-            $productOntWerpSeniorSheet = new GoogleSheetService('projectteam!D18:D18');
-            $productOntWerpSeniorSheet->documentId = $spreadsheetId;
-            $productOntWerpSeniorSheet->writeSheet($productOntWerpSenior);
+            $Sheet->writeSheet($productOntWerpSenior,'projectteam!D18:D18');
         }
         //Programmer junior
         if($request->programmer_junior){
             $programmerJunior[0] = implode(',',$request->programmer_junior);
-            $programmerJuniorSheet = new GoogleSheetService('projectteam!D19:D19');
-            $programmerJuniorSheet->documentId = $spreadsheetId;
-            $programmerJuniorSheet->writeSheet($programmerJunior);
+            $Sheet->writeSheet($programmerJunior,'projectteam!D19:D19');
         }
         //Programmer medior
         if($request->programmer_medior){
             $programmerMedior[0] = implode(',',$request->programmer_medior);
-            $programmerMediorSheet = new GoogleSheetService('projectteam!D20:D20');
-            $programmerMediorSheet->documentId = $spreadsheetId;
-            $programmerMediorSheet->writeSheet($programmerMedior);
+            $Sheet->writeSheet($programmerMedior,'projectteam!D20:D20');
         }
         //Programmer Senior
         if($request->programmer_senior){
             $programmerSenior[0] = implode(',',$request->programmer_senior);
-            $programmerSeniorSheet = new GoogleSheetService('projectteam!D21:D21');
-            $programmerSeniorSheet->documentId = $spreadsheetId;
-            $programmerSeniorSheet->writeSheet($programmerSenior);
+            $Sheet->writeSheet($programmerSenior,'projectteam!D21:D21');
         }
         //Story junior
         if($request->story_junior){
             $storyJunior[0] = implode(',',$request->story_junior);
-            $storyJuniorSheet = new GoogleSheetService('projectteam!D22:D22');
-            $storyJuniorSheet->documentId = $spreadsheetId;
-            $storyJuniorSheet->writeSheet($storyJunior);
+            $Sheet->writeSheet($storyJunior,'projectteam!D22:D22');
         }
         //Story medior
         if($request->story_medior){
             $storyMedior[0] = implode(',',$request->story_medior);
-            $storyMediorSheet = new GoogleSheetService('projectteam!D23:D23');
-            $storyMediorSheet->documentId = $spreadsheetId;
-            $storyMediorSheet->writeSheet($storyMedior);
+            $Sheet->writeSheet($storyMedior,'projectteam!D23:D23');
         }
         //Story Senior
         if($request->story_senior){
             $storySenior[0] = implode(',',$request->story_senior);
-            $storySeniorSheet = new GoogleSheetService('projectteam!D24:D24');
-            $storySeniorSheet->documentId = $spreadsheetId;
-            $storySeniorSheet->writeSheet($storySenior);
+            $Sheet->writeSheet($storySenior,'projectteam!D24:D24');
         }
         //Host
         if($request->host){
             $host[0] = implode(',',$request->host);
-            $hostSheet = new GoogleSheetService('projectteam!D25:D25');
-            $hostSheet->documentId = $spreadsheetId;
-            $hostSheet->writeSheet($host);
+            $Sheet->writeSheet($host,'projectteam!D25:D25');
         }
         //Techniek
         if($request->techniek){
             $teckniek[0] = implode(',',$request->techniek);
-            $teckniekSheet = new GoogleSheetService('projectteam!D26:D26');
-            $teckniekSheet->documentId = $spreadsheetId;
-            $teckniekSheet->writeSheet($teckniek);
+            $Sheet->writeSheet($teckniek,'projectteam!D26:D26');
         }
         //Muziek
         if($request->muziek){
             $muziek[0] = implode(',',$request->muziek);
-            $muziekSheet = new GoogleSheetService('projectteam!D27:D27');
-            $muziekSheet->documentId = $spreadsheetId;
-            $muziekSheet->writeSheet($muziek);
+            $Sheet->writeSheet($muziek,'projectteam!D27:D27');
         }
         //Props
         if($request->props){
             $props[0] = implode(',',$request->props);
-            $propsSheet = new GoogleSheetService('projectteam!D28:D28');
-            $propsSheet->documentId = $spreadsheetId;
-            $propsSheet->writeSheet($props);
+            $Sheet->writeSheet($props,'projectteam!D28:D28');
         }
 
-        $project = Project::findorfail($id)->update([
+        Project::findorfail($id)->update([
             'name' => $request->project_name,
             'link' => $request->link,
             'size' => $request->size,
@@ -556,10 +448,9 @@ class GoogleSheetController extends Controller
         }else {
             $range = 'Large!'.$request->coordinate;
         }
-        $sheet = new GoogleSheetService($range);
-        $sheet->documentId = $project->sheetId;
+        $sheet = new GoogleSheetService($project->sheetId);
         $data[0] = 'X';
-        $sheet->writeSheet($data);
+        $sheet->writeSheet($data,$range);
 
         return response()->json(['message' => 'success']);
     }
@@ -567,6 +458,7 @@ class GoogleSheetController extends Controller
     public function task(Request $request){
         $project = Project::findorfail($request->project_id);
         $spreadSheetId = $project->sheetId;
+        $Sheet = new GoogleSheetService($spreadSheetId);
         if($project->size === 'Small'){
             $startProject = [];
             $brainStrom = [];
@@ -575,34 +467,22 @@ class GoogleSheetController extends Controller
             $experienceImpact = [];
             $afsluiting  = [];
             if(in_array('startProject',$request->filter)){
-                $startProjectSheet = new GoogleSheetService('Small!A5:B18');
-                $startProjectSheet->documentId = $spreadSheetId;
-                $startProject = $startProjectSheet->readSheet();
+                $startProject = $Sheet->readSheet('Small!A5:B18');
             }
             if(in_array('brainStrom',$request->filter)){
-                $brainStromSheet = new GoogleSheetService('Small!C5:D12');
-                $brainStromSheet->documentId = $spreadSheetId;
-                $brainStrom = $brainStromSheet->readSheet();
+                $brainStrom = $Sheet->readSheet('Small!C5:D12');
             }
             if(in_array('experienceDesign',$request->filter)){
-                $experienceDesignSheet = new GoogleSheetService('Small!E5:F9');
-                $experienceDesignSheet->documentId = $spreadSheetId;
-                $experienceDesign = $experienceDesignSheet->readSheet();
+                $experienceDesign = $Sheet->readSheet('Small!E5:F9');
             }
             if(in_array('gameTrust',$request->filter)){
-                $gameTrustSheet = new GoogleSheetService('Small!A22:B47');
-                $gameTrustSheet->documentId = $spreadSheetId;
-                $gameTrust = $gameTrustSheet->readSheet();
+                $gameTrust = $Sheet->readSheet('Small!A22:B47');
             }
             if(in_array('experienceImpact',$request->filter)){
-                $experienceImpactSheet = new GoogleSheetService('Small!C22:D25');
-                $experienceImpactSheet->documentId = $spreadSheetId;
-                $experienceImpact = $experienceImpactSheet->readSheet();
+                $experienceImpact = $Sheet->readSheet('Small!C22:D25');
             }
             if(in_array('afsluiting',$request->filter)){
-                $afsluitingSheet = new GoogleSheetService('Small!C22:D26');
-                $afsluitingSheet->documentId = $spreadSheetId;
-                $afsluiting = $afsluitingSheet->readSheet();
+                $afsluiting = $Sheet->readSheet('Small!C22:D26');
             }
             $data = [
                 'startProject' => $startProject,
@@ -622,44 +502,28 @@ class GoogleSheetController extends Controller
             $levering = [];
             $afsluiting = [];
             if(in_array('startProject',$request->filter)){
-                $startProjectSheet = new GoogleSheetService('Medium!A5:B20');
-                $startProjectSheet->documentId = $spreadSheetId;
-                $startProject = $startProjectSheet->readSheet();
+                $startProject = $Sheet->readSheet('Medium!A5:B20');
             }
             if(in_array('humanDesign',$request->filter)){
-                $humanDesignSheet = new GoogleSheetService('Medium!C5:D15');
-                $humanDesignSheet->documentId = $spreadSheetId;
-                $humanDesign = $humanDesignSheet->readSheet();
+                $humanDesign = $Sheet->readSheet('Medium!C5:D15');
             }
             if(in_array('brainStrom',$request->filter)){
-                $brainStromSheet = new GoogleSheetService('Medium!E5:F13');
-                $brainStromSheet->documentId = $spreadSheetId;
-                $brainStrom = $brainStromSheet->readSheet();
+                $brainStrom = $Sheet->readSheet('Medium!E5:F13');
             }
             if(in_array('experienceDesign',$request->filter)){
-                $experienceDesignSheet = new GoogleSheetService('Medium!G5:H12');
-                $experienceDesignSheet->documentId = $spreadSheetId;
-                $experienceDesign = $experienceDesignSheet->readSheet();
+                $experienceDesign = $Sheet->readSheet('Medium!G5:H12');
             }
             if(in_array('gameTrust',$request->filter)){
-                $gameTrustSheet = new GoogleSheetService('Medium!A23:B45');
-                $gameTrustSheet->documentId = $spreadSheetId;
-                $gameTrust = $gameTrustSheet->readSheet();
+                $gameTrust = $Sheet->readSheet('Medium!A23:B45');
             }
             if(in_array('wowDesign',$request->filter)){
-                $wowDesignSheet = new GoogleSheetService('Medoum!C23:D45');
-                $wowDesignSheet->documentId = $spreadSheetId;
-                $wowDesign = $wowDesignSheet->readSheet();
+                $wowDesign = $Sheet->readSheet('Medium!C23:D45');
             }
             if(in_array('levering',$request->filter)){
-                $leveringSheet = new GoogleSheetService('Medium!E23:F26');
-                $leveringSheet->documentId = $spreadSheetId;
-                $levering = $leveringSheet->readSheet();
+                $levering = $Sheet->readSheet('Medium!E23:F26');
             }
             if(in_array('afsluiting',$request->filter)){
-                $afsluitingSheet = new GoogleSheetService('Medium!G23:H28');
-                $afsluitingSheet->documentId = $spreadSheetId;
-                $afsluiting = $afsluitingSheet->readSheet();
+                $afsluiting = $Sheet->readSheet('Medium!G23:H28');
             }
             $data = [
                 'startProject' => $startProject,
@@ -681,44 +545,28 @@ class GoogleSheetController extends Controller
             $impactDesign = [];
             $afsluiting = [];
             if(in_array('startProject',$request->filter)){
-                $startProjectSheet = new GoogleSheetService('Large!A5:B20');
-                $startProjectSheet->documentId = $spreadSheetId;
-                $startProject = $startProjectSheet->readSheet();
+                $startProject = $Sheet->readSheet('Large!A5:B20');
             }
             if(in_array('humanDesign',$request->filter)){
-                $humanDesignSheet = new GoogleSheetService('Large!C5:D15');
-                $humanDesignSheet->documentId = $spreadSheetId;
-                $humanDesign = $humanDesignSheet->readSheet();
+                $humanDesign = $Sheet->readSheet('Large!C5:D15');
             }
             if(in_array('concepting',$request->filter)){
-                $brainStromSheet = new GoogleSheetService('Large!E5:F13');
-                $brainStromSheet->documentId = $spreadSheetId;
-                $brainStrom = $brainStromSheet->readSheet();
+                $brainStrom = $Sheet->readSheet('Large!E5:F13');
             }
             if(in_array('experienceDesign',$request->filter)){
-                $experienceDesignSheet = new GoogleSheetService('Large!G5:H12');
-                $experienceDesignSheet->documentId = $spreadSheetId;
-                $experienceDesign = $experienceDesignSheet->readSheet();
+                $experienceDesign = $Sheet->readSheet('Large!G5:H12');
             }
             if(in_array('gameTrust',$request->filter)){
-                $gameTrustSheet = new GoogleSheetService('Large!A23:B45');
-                $gameTrustSheet->documentId = $spreadSheetId;
-                $gameTrust = $gameTrustSheet->readSheet();
+                $gameTrust = $Sheet->readSheet('Large!A23:B45');
             }
             if(in_array('wowDesign',$request->filter)){
-                $wowDesignSheet = new GoogleSheetService('Large!C23:D45');
-                $wowDesignSheet->documentId = $spreadSheetId;
-                $wowDesign = $wowDesignSheet->readSheet();
+                $wowDesign = $Sheet->readSheet('Large!C23:D45');
             }
             if(in_array('impactDesign',$request->filter)){
-                $impactDesignSheet = new GoogleSheetService('Large!E23:F26');
-                $impactDesignSheet->documentId = $spreadSheetId;
-                $impactDesign = $impactDesignSheet->readSheet();
+                $impactDesign = $Sheet->readSheet('Large!E23:F26');
             }
             if(in_array('afsluiting',$request->filter)){
-                $afsluitingSheet = new GoogleSheetService('Large!G23:H28');
-                $afsluitingSheet->documentId = $spreadSheetId;
-                $afsluiting = $afsluitingSheet->readSheet();
+                $afsluiting = $Sheet->readSheet('Large!G23:H28');
             }
             $data = [
                 'startProject' => $startProject,
