@@ -38,21 +38,27 @@
             .cardUser {
                 grid-template-columns: repeat(1, minmax(0, 1fr));
             }
-            
+            .cardRules {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
             }
-
+            }
             @media (min-width: 640px) and (max-width: 1075px) {
                 .cardUser {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+                .cardRules {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
             .filterUser{
                 flex-direction: row
             }
             /* md:flex-row */
-            
             }
             @media (min-width: 1076px) {
             .cardUser {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .cardRules {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
             .filterUser{

@@ -245,10 +245,10 @@
             <div
                 class="pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none ">
                 <div
-                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
+                    class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-2">
                     <!--Modal title-->
                     <h5 class="text-xl font-medium leading-normal text-neutral-800 " id="exampleModalScrollableLabel">
-                        Detail
+                        Description
                     </h5>
                     <!--Close button-->
                     <button type="button"
@@ -269,7 +269,7 @@
 
                 <!--Modal footer-->
                 <div
-                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 ">
+                    class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-2">
                     <button type="button" id="btn-close-update"
                         class="inline-block rounded bg-yellow-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-yellow-500 transition duration-150 ease-in-out hover:bg-yellow-accent-100 focus:bg-yellow-accent-100 focus:outline-none focus:ring-0 active:bg-yellow-accent-200"
                         data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
