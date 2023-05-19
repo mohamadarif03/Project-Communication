@@ -28,14 +28,14 @@ class Controller extends BaseController
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
         }else{
             $now = Carbon::now();
-            $complete = Responbility::where('status', 1)
+            $complete = Responbility::where('status', 1)->orWhere('user_id', Auth::id())
                     ->whereHas('rule',function($query){
                         $query->whereHas('torule',function($query){
                             $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
                         });
                     })
                     ->count();
-            $uncomplete = Responbility::where('status', 0)
+            $uncomplete = Responbility::where('status', 0)->orWhere('user_id', Auth::id())
                     ->whereHas('rule',function($query){
                         $query->whereHas('torule',function($query){
                             $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());

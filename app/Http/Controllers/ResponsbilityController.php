@@ -190,6 +190,7 @@ class ResponsbilityController extends Controller
             ]
             ])
             ->where('status', 0)
+            ->orWhere('user_id', Auth::id())
             ->whereHas('rule',function($query){
                 $query->whereHas('torule',function($query){
                     $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
@@ -209,6 +210,7 @@ class ResponsbilityController extends Controller
             ]
             ])
             ->where('status', 1)
+            ->orWhere('user_id', Auth::id())
             ->whereHas('rule',function($query){
                 $query->whereHas('torule',function($query){
                     $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
