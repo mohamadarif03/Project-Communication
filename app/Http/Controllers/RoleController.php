@@ -66,6 +66,11 @@ class RoleController extends Controller
                 'error' => "there is a user with this role, can't delete it"
             ],400);
         }
+        if($id == 8 || $id == 9){
+            return response()->json([
+                'error' => "This role cannot be deleted!"
+            ],400);
+        }
         Role::findorfail($id)->delete();
         return response()->json([
             'success' => 'Success Delete Role!'
