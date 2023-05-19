@@ -61,7 +61,7 @@
                 </div>
                 <div class="filterYear rounded-md bg-white">
                     <select id="month" name="month"
-                        class="border border-gray-500 block w-[30%] m-3 ml-auto px-4 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500 bg-white ">
+                        class="border border-gray-500 block w-[30%] m-3 ml-auto px-2 py-2 text-sm leading-tight border-gray-300 rounded-md appearance-none focus:outline-none focus:border-yellow-500 bg-white ">
                         <option value="-1">All Month</option>
                         <option value="1">January</option>
                         <option value="2">February</option>
