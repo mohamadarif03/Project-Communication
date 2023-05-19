@@ -60,7 +60,7 @@ class Controller extends BaseController
                     });
                 })->when($request->month !== '-1', function($query) use ($request) {
                     return $query->whereMonth('date', $request->month);
-                })
+                })->whereYear('date',$now->year)
                 ->count();
         $uncomplete = Responbility::where('status', 0)
                 ->whereHas('rule',function($query){
@@ -69,7 +69,7 @@ class Controller extends BaseController
                     });
                 })->when($request->month !== '-1', function($query) use ($request) {
                     return $query->whereMonth('date', $request->month);
-                })
+                })->whereYear('date',$now->year)
                 ->count();
         $communicationCount = $complete + $uncomplete;
         return response()->json([
