@@ -90,7 +90,7 @@ function create(){
 
             Swal.fire({
                 title: 'Gagal!',
-                html: response.responseJSON.message,
+                html: errorMessage,
                 icon: 'error',
             })
         }

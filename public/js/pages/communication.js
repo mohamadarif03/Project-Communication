@@ -118,7 +118,7 @@ function GetDataReceive(page){
             }
         },
         error:function(response){
-            
+            console.log(response)
         }
     })
 }
@@ -189,7 +189,7 @@ function GetDataSent(page){
             }
         },
         error:function(response){
-
+            console.log(response)
         }
     })
 }
@@ -354,7 +354,7 @@ function create(){
             Swal.fire({
                 title: 'Error!',
                 // html: errorMessage,
-                html: response.responseJSON.message,
+                html: errorMessage,
                 icon: 'error',
             })
         }

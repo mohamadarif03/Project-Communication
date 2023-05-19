@@ -10,18 +10,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 class GoogleSheetController extends Controller
 {
-    public function auth(){
-        $sheet = new GoogleSheetService('projectteam!C4:C8');
-        $sheet->documentId = '1DJEAgPDiBlJGe1AdG1HA2MGx5KsvugS-_BlO3dqeG_8';
-        dd($sheet->readSheet());
-    }
-
-    public function new(){
-        $sheet = new GoogleSheetService('A1:A10');
-        $tes = $sheet->createSheet('Sheet Baru aja 2');
-        return response()->json($tes);
-    }
-
     public function team(Request $request){
         $spreadSheetId = $request->id;
         $teamSheet = new GoogleSheetService('projectteam!B5:C8');

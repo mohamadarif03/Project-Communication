@@ -159,11 +159,11 @@ class ResponsbilityController extends Controller
                 return $query->where('responsbilities.rule_id',$request->type);
             })->when($request->month !== '-1', function($query) use ($request) {
                 return $query->whereMonth('date', $request->month);
-            })->join('rules','rules.id','=','responsbilities.rule_id')
-              ->join('to_rules','to_rules.rule_id','=','rules.id')
-              ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
-              ->select('responsbilities.*')
-              ->paginate(6);
+            })->whereHas('rule',function($query){
+                $query->whereHas('torule',function($query){
+                    $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
+                });
+            })->paginate(6);
         $links = $data->links('layouts.paginate');
         return response()->json([
             'data' => $data,

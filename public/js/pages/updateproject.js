@@ -289,7 +289,6 @@ function GetUser(){
 }
 function download(){
     var type = $('#project_size').val()
-    console.log(type)  
     if(type === 'Small'){
         console.log('tes')
         window.location.href = '../download-template/small'
