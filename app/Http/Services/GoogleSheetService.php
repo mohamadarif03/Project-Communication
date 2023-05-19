@@ -13,12 +13,12 @@ class GoogleSheetService
 {
     public $client, $service, $documentId, $range;
 
-    public function __construct($range)
+    public function __construct($sheetId)
     {
         $this->client = $this->getClient();
         $this->service = new Sheets($this->client);
-        $this->documentId = 'ID DARI SHEET';
-        $this->range = $range;
+        $this->documentId = $sheetId;
+        $this->range = 'A1:A1';
     }
 
     public function getClient()
@@ -33,13 +33,13 @@ class GoogleSheetService
         return $client;
     }
 
-    public function readSheet()
+    public function readSheet($range)
     {
-        $doc = $this->service->spreadsheets_values->get($this->documentId, $this->range);
+        $doc = $this->service->spreadsheets_values->get($this->documentId, $range);
         return $doc;
     }
 
-    public function writeSheet($values)
+    public function writeSheet($values,$range)
     {
         $body = new ValueRange([
             'values' => [
@@ -49,7 +49,7 @@ class GoogleSheetService
         $params = [
             'valueInputOption' => 'RAW'
         ];
-        $result = $this->service->spreadsheets_values->update($this->documentId, $this->range, $body, $params);
+        $result = $this->service->spreadsheets_values->update($this->documentId, $range, $body, $params);
     }
 
     public function appendSheet($values)
