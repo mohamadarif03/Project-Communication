@@ -13,8 +13,11 @@ $('.my-checkbox').change(function() {
     $(':checkbox[name="my-checkbox"]').filter(':checked').each(function() {
     checkboxValues.push($(this).val());
     });
-
-    GetData(checkboxValues)
+    if(checkboxValues.length > 0){
+        GetData(checkboxValues)
+    }else{
+        $('#Data').html('')
+    } 
 });
 var first_filter = [];
 first_filter[0] = 'startProject'
