@@ -52,23 +52,27 @@ class ProjectController extends Controller
         if($request->year === '-1'){
             if(in_array(8,Auth()->user()->userrole->pluck('role_id')->toarray()) || in_array(9,Auth()->user()->userrole->pluck('role_id')->toarray())){
                 $data = Project::where('status','LIKE','%'.$request->status.'%')
+                ->orderBy('created_at','desc')
                 ->paginate(6);
             }else{
                 $data = Project::whereHas('projectmember', function($query) {
                     $query->where('user_id', Auth()->user()->id);
                 })->where('status','LIKE','%'.$request->status.'%')
+                ->orderBy('created_at','desc')
                 ->paginate(6);
             }
         }else{
             if(in_array(8,Auth()->user()->userrole->pluck('role_id')->toarray()) || in_array(9,Auth()->user()->userrole->pluck('role_id')->toarray())){
                 $data = Project::where('status','LIKE','%'.$request->status.'%')
                 ->whereYear('created_at',$request->year)
+                ->orderBy('created_at','desc')
                 ->paginate(6);
             }else{
                 $data = Project::whereHas('projectmember', function($query) {
                     $query->where('user_id', Auth()->user()->id);
                 })->where('status','LIKE','%'.$request->status.'%')
                 ->whereYear('created_at',$request->year)
+                ->orderBy('created_at','desc')
                 ->paginate(6);
             }
         }

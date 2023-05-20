@@ -163,7 +163,8 @@ class ResponsbilityController extends Controller
                 $query->whereHas('torule',function($query){
                     $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
                 });
-            })->paginate(6);
+            })->orderBy('created_at','desc')
+            ->paginate(6);
         $links = $data->links('layouts.paginate');
         return response()->json([
             'data' => $data,
