@@ -42,11 +42,15 @@ class Controller extends BaseController
                     });
                 })
                 ->count();
+                $uncompletesent = Responbility::where('status', 0)->where('user_id',Auth()->user()->id)
+                    ->count();
+                $completesent = Responbility::where('status', 1)->where('user_id',Auth()->user()->id)
+                    ->count();
 
-            $communicationCount = $complete + $uncomplete;
+            $communicationCount = $complete + $uncomplete + $completesent + $uncompletesent;
             return view('user.dashboard', [
-                'complete' => $complete,
-                'uncomplete' => $uncomplete,
+                'complete' => $complete + $completesent,
+                'uncomplete' => $uncomplete + $uncompletesent,
                 'total' => $communicationCount
             ]);
         }
