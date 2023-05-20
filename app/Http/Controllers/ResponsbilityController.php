@@ -190,7 +190,6 @@ class ResponsbilityController extends Controller
             ]
             ])
             ->where('status', 0)
-            ->orWhere('user_id', Auth::id())
             ->whereHas('rule',function($query){
                 $query->whereHas('torule',function($query){
                     $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
@@ -198,6 +197,22 @@ class ResponsbilityController extends Controller
             })->orderBy('created_at', 'desc')->get()->take(3);
         return response()->json($data);
     }
+    public function sentUncomplete(){
+        $data = Responbility::with([
+            'user' =>[
+                'userrole' => [
+                    'role'
+                ]
+            ],
+            'rule' => [
+                'communicationType'
+            ]
+            ])
+            ->where('status', 0)->where('user_id',Auth()->user()->id)
+            ->orderBy('created_at', 'desc')->get()->take(3);
+        return response()->json($data);
+    }
+    
     public function receiveComplete(Request $request){
         $data = Responbility::with([
             'user' => [
@@ -210,12 +225,26 @@ class ResponsbilityController extends Controller
             ]
             ])
             ->where('status', 1)
-            ->orWhere('user_id', Auth::id())
             ->whereHas('rule',function($query){
                 $query->whereHas('torule',function($query){
                     $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
                 });
             })->orderBy('created_at', 'desc')->get()->take(3);
+        return response()->json($data);
+    }
+    public function sentComplete(Request $request){
+        $data = Responbility::with([
+            'user' =>[
+                'userrole' => [
+                    'role'
+                ]
+            ],
+            'rule' => [
+                'communicationType'
+            ]
+            ])
+            ->where('status', 1)->where('user_id',Auth()->user()->id)
+            ->orderBy('created_at', 'desc')->get()->take(3);
         return response()->json($data);
     }
 }

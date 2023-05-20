@@ -20,30 +20,31 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function index(CommunicationChart $CommunicationChart){
-        if(in_array(1,Auth()->user()->userrole->pluck('role_id')->toarray())){ 
+    public function index(CommunicationChart $CommunicationChart)
+    {
+        if (in_array(1, Auth()->user()->userrole->pluck('role_id')->toarray())) {
             $userCount = User::count();
             $communicationtypeCount = CommunicationType::count();
             $role = Role::count();
             return view('admin.dashboard', compact('userCount', 'communicationtypeCount', 'role'));
-        }else{
-            $now = Carbon::now();
-            $complete = Responbility::where('status', 1)->orWhere('user_id', Auth::id())
-                    ->whereHas('rule',function($query){
-                        $query->whereHas('torule',function($query){
-                            $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
-                        });
-                    })
-                    ->count();
-            $uncomplete = Responbility::where('status', 0)->orWhere('user_id', Auth::id())
-                    ->whereHas('rule',function($query){
-                        $query->whereHas('torule',function($query){
-                            $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
-                        });
-                    })
-                    ->count();
+        } else {
+            $complete = Responbility::where('status', 1)
+                ->whereHas('rule', function ($query) {
+                    $query->whereHas('torule', function ($query) {
+                        $query->whereIn('role_id', Auth()->user()->userrole->pluck('role_id')->toarray());
+                    });
+                })
+                ->count();
+            $uncomplete = Responbility::where('status', 0)
+                ->whereHas('rule', function ($query) {
+                    $query->whereHas('torule', function ($query) {
+                        $query->where('role_id', Auth()->user()->userrole->pluck('role_id')->toArray());
+                    });
+                })
+                ->count();
+
             $communicationCount = $complete + $uncomplete;
-            return view('user.dashboard',[
+            return view('user.dashboard', [
                 'complete' => $complete,
                 'uncomplete' => $uncomplete,
                 'total' => $communicationCount
@@ -51,26 +52,27 @@ class Controller extends BaseController
         }
     }
 
-    public function chart(Request $request){
+    public function chart(Request $request)
+    {
         $now = Carbon::now();
         $complete = Responbility::where('status', 1)
-                ->whereHas('rule',function($query){
-                    $query->whereHas('torule',function($query){
-                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
-                    });
-                })->when($request->month !== '-1', function($query) use ($request) {
-                    return $query->whereMonth('date', $request->month);
-                })->whereYear('date',$now->year)
-                ->count();
+            ->whereHas('rule', function ($query) {
+                $query->whereHas('torule', function ($query) {
+                    $query->whereIn('role_id', Auth()->user()->userrole->pluck('role_id')->toarray());
+                });
+            })->when($request->month !== '-1', function ($query) use ($request) {
+                return $query->whereMonth('date', $request->month);
+            })->whereYear('date', $now->year)
+            ->count();
         $uncomplete = Responbility::where('status', 0)
-                ->whereHas('rule',function($query){
-                    $query->whereHas('torule',function($query){
-                        $query->whereIn('role_id',Auth()->user()->userrole->pluck('role_id')->toarray());
-                    });
-                })->when($request->month !== '-1', function($query) use ($request) {
-                    return $query->whereMonth('date', $request->month);
-                })->whereYear('date',$now->year)
-                ->count();
+            ->whereHas('rule', function ($query) {
+                $query->whereHas('torule', function ($query) {
+                    $query->whereIn('role_id', Auth()->user()->userrole->pluck('role_id')->toarray());
+                });
+            })->when($request->month !== '-1', function ($query) use ($request) {
+                return $query->whereMonth('date', $request->month);
+            })->whereYear('date', $now->year)
+            ->count();
         $communicationCount = $complete + $uncomplete;
         return response()->json([
             'complete' => $complete,
@@ -78,5 +80,4 @@ class Controller extends BaseController
             'total' => $communicationCount
         ]);
     }
-   
 }

@@ -95,7 +95,9 @@ Route::middleware('auth', 'verified')->group(function () {
         Route::get('/data-sent-task',[ResponsbilityController::class,'sent']);
         Route::get('/data-receive-task',[ResponsbilityController::class,'receive']);
         Route::get('/data-receive-responsbility-dashboard-uncomplete',[ResponsbilityController::class,'receiveUncomplete']);
+        Route::get('/data-sent-responsbility-dashboard-uncomplete',[ResponsbilityController::class,'sentUncomplete']);
         Route::get('/data-receive-responsbility-dashboard-complete',[ResponsbilityController::class,'receiveComplete']);
+        Route::get('/data-sent-responsbility-dashboard-complete',[ResponsbilityController::class,'sentComplete']);
         Route::get('/profil1',[ProfileController::class,'view1']);
 
         //Notification
