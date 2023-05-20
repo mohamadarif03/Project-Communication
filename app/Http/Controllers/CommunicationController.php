@@ -138,6 +138,7 @@ class CommunicationController extends Controller
                     return $query->whereYear('date', $request->year);
                 })
                 ->select('communications.*')
+                ->orderBy('created_at','desc')
                 ->paginate(6);
             $links = $data->links('layouts.paginate');
         } else {
@@ -158,6 +159,7 @@ class CommunicationController extends Controller
                     return $query->whereMonth('date', $request->month);
                 })
                 ->select('communications.*')
+                ->orderBy('created_at','desc')
                 ->paginate(6);
             $links = $data->links('layouts.paginate');
         }
@@ -201,6 +203,7 @@ class CommunicationController extends Controller
               ->join('to_rules','to_rules.rule_id','=','rules.id')
               ->whereIn('to_rules.role_id',Auth()->user()->userrole->pluck('role_id')->toarray())
               ->select('responsbilities.*')
+              ->orderBy('created_at','desc')
               ->paginate(6);
         $links = $data->links('layouts.paginate');
         return response()->json([
